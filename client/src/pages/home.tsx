@@ -4,6 +4,7 @@ import Services from "@/components/services";
 import Solutions from "@/components/solutions";
 import Expertise from "@/components/expertise";
 import WhyChoose from "@/components/why-choose";
+import EngagementModels from "@/components/engagement-models";
 import Brands from "@/components/brands";
 import Portfolio from "@/components/portfolio";
 import Statistics from "@/components/statistics";
@@ -21,6 +22,7 @@ export default function Home() {
       <Solutions />
       <Expertise />
       <WhyChoose />
+      <EngagementModels />
       <Brands />
       <Portfolio />
       <Statistics />
