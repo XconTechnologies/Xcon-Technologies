@@ -26,7 +26,7 @@ export default function Header() {
   };
 
   return (
-    <header className={`fixed w-full top-0 z-50 bg-white shadow-sm transition-transform duration-300 ${isScrolled ? "navbar-scroll" : ""}`}>
+    <header className={`fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300 ${isScrolled ? "navbar-scroll" : ""}`}>
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -37,34 +37,40 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             <button
+              onClick={() => scrollToSection("home")}
+              className="text-gray-700 hover:text-orange-500 transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-orange-500 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
+            >
+              Home
+            </button>
+            <button
               onClick={() => scrollToSection("services")}
-              className="text-gray-dark hover:text-primary transition-colors font-medium"
+              className="text-gray-700 hover:text-orange-500 transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-orange-500 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection("industries")}
-              className="text-gray-dark hover:text-primary transition-colors font-medium"
+              className="text-gray-700 hover:text-orange-500 transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-orange-500 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
             >
               Industries
             </button>
             <button
               onClick={() => scrollToSection("portfolio")}
-              className="text-gray-dark hover:text-primary transition-colors font-medium"
+              className="text-gray-700 hover:text-orange-500 transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-orange-500 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
             >
               Portfolio
             </button>
             <button
               onClick={() => scrollToSection("about")}
-              className="text-gray-dark hover:text-primary transition-colors font-medium"
+              className="text-gray-700 hover:text-orange-500 transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-orange-500 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
             >
-              About
+              Insights
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className="text-gray-dark hover:text-primary transition-colors font-medium"
+              className="text-gray-700 hover:text-orange-500 transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-orange-500 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
             >
-              Contact
+              Technologies
             </button>
           </nav>
 
@@ -72,9 +78,9 @@ export default function Header() {
           <div className="hidden lg:flex items-center space-x-4">
             <Button
               onClick={() => scrollToSection("contact")}
-              className="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-lg font-medium transition-colors"
+              className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-medium transition-colors uppercase text-sm"
             >
-              Get Started
+              GET A QUOTE
             </Button>
           </div>
 
@@ -94,40 +100,46 @@ export default function Header() {
           <div className="lg:hidden border-t bg-white">
             <nav className="flex flex-col space-y-4 px-4 py-6">
               <button
+                onClick={() => scrollToSection("home")}
+                className="text-gray-700 hover:text-orange-500 transition-colors font-medium text-left"
+              >
+                Home
+              </button>
+              <button
                 onClick={() => scrollToSection("services")}
-                className="text-gray-dark hover:text-primary transition-colors font-medium text-left"
+                className="text-gray-700 hover:text-orange-500 transition-colors font-medium text-left"
               >
                 Services
               </button>
               <button
                 onClick={() => scrollToSection("industries")}
-                className="text-gray-dark hover:text-primary transition-colors font-medium text-left"
+                className="text-gray-700 hover:text-orange-500 transition-colors font-medium text-left"
               >
                 Industries
               </button>
               <button
                 onClick={() => scrollToSection("portfolio")}
-                className="text-gray-dark hover:text-primary transition-colors font-medium text-left"
+                className="text-gray-700 hover:text-orange-500 transition-colors font-medium text-left"
               >
                 Portfolio
               </button>
               <button
                 onClick={() => scrollToSection("about")}
-                className="text-gray-dark hover:text-primary transition-colors font-medium text-left"
+                className="text-gray-700 hover:text-orange-500 transition-colors font-medium text-left"
               >
-                About
+                Insights
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
-                className="text-gray-dark hover:text-primary transition-colors font-medium text-left"
+                className="text-gray-700 hover:text-orange-500 transition-colors font-medium text-left"
               >
-                Contact
+                Technologies
               </button>
               <Button
                 onClick={() => scrollToSection("contact")}
-                className="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-lg font-medium transition-colors mt-4"
+                className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-medium transition-colors mt-4 uppercase text-sm"
               >
-                Get Started
+                GET A QUOTE
               </Button>
             </nav>
           </div>
