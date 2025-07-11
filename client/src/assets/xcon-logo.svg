@@ -1,0 +1,17 @@
+<svg width="200" height="40" viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clipPath="url(#clip0)">
+    <path d="M0 20L10 10L20 20L10 30L0 20Z" fill="#7CB342"/>
+    <path d="M10 10L20 20L10 30L0 20L10 10Z" fill="#7CB342"/>
+    <path d="M35 28V12H45V16H40V20H45V24H40V28H35Z" fill="white"/>
+    <path d="M50 28V12H60V16H55V20H60V24H55V28H50Z" fill="white"/>
+    <path d="M65 28V12H75V16H70V20H75V24H70V28H65Z" fill="white"/>
+    <path d="M80 28V12H90V16H85V20H90V24H85V28H80Z" fill="white"/>
+    <path d="M35 36V32H180V36H35Z" fill="white"/>
+    <text x="35" y="35" fontFamily="Arial" fontSize="3" fill="white">TECHNOLOGIES.COM</text>
+  </g>
+  <defs>
+    <clipPath id="clip0">
+      <rect width="200" height="40" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
