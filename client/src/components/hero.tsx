@@ -20,7 +20,7 @@ export default function Hero() {
           playsInline
         >
           <source
-            src="https://videos.pexels.com/video-files/4144980/4144980-hd_1920_1080_25fps.mp4"
+            src="https://videos.pexels.com/video-files/3129957/3129957-uhd_3840_2160_25fps.mp4"
             type="video/mp4"
           />
           {/* Fallback background image */}
