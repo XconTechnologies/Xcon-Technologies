@@ -7,31 +7,26 @@ export default function Expertise() {
       icon: <Car className="h-6 w-6" />,
       title: "Automotive",
       description: "Implement easy IoT solution for real-time vehicle tracking, predictive maintenance, enhanced safety features, and data analytics to optimize fleet management.",
-      featured: false,
     },
     {
       icon: <Heart className="h-6 w-6" />,
       title: "Healthcare",
       description: "Leverage secure telemedicine platforms, integrated EMR/EHR systems, real-time patient monitoring, and AI-driven diagnostics to improve healthcare outcomes.",
-      featured: true,
     },
     {
       icon: <Smartphone className="h-6 w-6" />,
       title: "On-Demand",
       description: "Utilize cloud platforms for scalable operations, real-time GPS tracking, AI-driven demand forecasting, and instant delivery management to enhance customer satisfaction.",
-      featured: false,
     },
     {
       icon: <ShoppingCart className="h-6 w-6" />,
       title: "Ecommerce",
       description: "Implement scalable best ecommerce platforms with AI-driven product recommendations, secure payment gateways, and real-time inventory management for seamless shopping experiences.",
-      featured: false,
     },
     {
       icon: <DollarSign className="h-6 w-6" />,
       title: "Fintech",
       description: "Leverage cloud-based platforms for secure transactions, real-time data analytics, AI-driven financial insights, and fraud detection to optimize customer experiences.",
-      featured: true,
     },
   ];
 
@@ -46,26 +41,14 @@ export default function Expertise() {
           <CarouselContent className="-ml-4">
             {domains.map((domain, index) => (
               <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
-                <div className={`h-full rounded-3xl p-8 transition-all duration-300 ${
-                  domain.featured 
-                    ? "bg-primary text-white" 
-                    : "bg-white hover:shadow-lg"
-                }`}>
-                  <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-6 ${
-                    domain.featured
-                      ? "bg-white/20 text-white"
-                      : "bg-primary text-white"
-                  }`}>
+                <div className="h-full rounded-3xl p-8 transition-all duration-300 bg-white hover:bg-primary hover:text-white group hover:shadow-lg">
+                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-6 bg-primary text-white group-hover:bg-white/20 group-hover:text-white">
                     {domain.icon}
                   </div>
-                  <h3 className={`text-2xl font-bold mb-4 ${
-                    domain.featured ? "text-white" : "text-gray-800"
-                  }`}>
+                  <h3 className="text-2xl font-bold mb-4 text-gray-800 group-hover:text-white">
                     {domain.title}
                   </h3>
-                  <p className={`leading-relaxed ${
-                    domain.featured ? "text-white/90" : "text-gray-600"
-                  }`}>
+                  <p className="leading-relaxed text-gray-600 group-hover:text-white/90">
                     {domain.description}
                   </p>
                 </div>
