@@ -10,13 +10,28 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden pt-32 pb-20 min-h-screen">
-      {/* Background image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1926&q=80')"
-        }}
-      />
+      {/* Video Background */}
+      <div className="absolute inset-0 w-full h-full">
+        <video
+          className="w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source
+            src="https://videos.pexels.com/video-files/4144980/4144980-hd_1920_1080_25fps.mp4"
+            type="video/mp4"
+          />
+          {/* Fallback background image */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: "url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1926&q=80')"
+            }}
+          />
+        </video>
+      </div>
       
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/60"></div>
@@ -26,7 +41,7 @@ export default function Hero() {
           {/* Left content */}
           <div className="text-white">
             <div className="mb-6">
-              <span className="text-orange-500 text-sm font-semibold tracking-wide uppercase">
+              <span className="text-primary text-sm font-semibold tracking-wide uppercase">
                 Digital Transformation Company
               </span>
             </div>
@@ -40,7 +55,7 @@ export default function Hero() {
             <div className="mb-12">
               <Button
                 onClick={() => scrollToSection("contact")}
-                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all transform hover:scale-105"
+                className="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-full font-semibold text-lg transition-all transform hover:scale-105"
               >
                 Schedule a Call
               </Button>
@@ -64,17 +79,17 @@ export default function Hero() {
               <div className="w-80 h-96 bg-gradient-to-b from-gray-800 to-gray-900 rounded-[3rem] p-2 shadow-2xl">
                 <div className="w-full h-full bg-black rounded-[2.5rem] p-4 overflow-hidden">
                   <div className="space-y-3">
-                    <div className="h-4 bg-gray-700 rounded w-3/4"></div>
+                    <div className="h-4 bg-primary/30 rounded w-3/4"></div>
                     <div className="h-4 bg-gray-700 rounded w-1/2"></div>
-                    <div className="h-4 bg-gray-700 rounded w-2/3"></div>
+                    <div className="h-4 bg-primary/30 rounded w-2/3"></div>
                     <div className="h-4 bg-gray-700 rounded w-full"></div>
-                    <div className="h-4 bg-gray-700 rounded w-4/5"></div>
+                    <div className="h-4 bg-primary/30 rounded w-4/5"></div>
                     <div className="h-4 bg-gray-700 rounded w-3/5"></div>
-                    <div className="h-4 bg-gray-700 rounded w-2/3"></div>
+                    <div className="h-4 bg-primary/30 rounded w-2/3"></div>
                     <div className="h-4 bg-gray-700 rounded w-full"></div>
-                    <div className="h-4 bg-gray-700 rounded w-1/2"></div>
+                    <div className="h-4 bg-primary/30 rounded w-1/2"></div>
                     <div className="h-4 bg-gray-700 rounded w-4/5"></div>
-                    <div className="h-4 bg-gray-700 rounded w-3/4"></div>
+                    <div className="h-4 bg-primary/30 rounded w-3/4"></div>
                     <div className="h-4 bg-gray-700 rounded w-2/3"></div>
                   </div>
                 </div>
