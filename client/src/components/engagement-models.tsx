@@ -1,27 +1,27 @@
-import { Users, User, UserPlus, ShoppingCart, DollarSign, Heart, GraduationCap, MessageSquare, Building, Music, Landmark, Home, Briefcase, Truck, Monitor, Heart as HeartIcon, Car, Plane } from "lucide-react";
+import { Users, User, UserPlus, ShoppingCart, DollarSign, Heart, GraduationCap, MessageSquare, Building, Music, Landmark, Home, Briefcase, Truck, Monitor, Heart as HeartIcon, Car, Plane, ArrowUpDown } from "lucide-react";
 
 export default function EngagementModels() {
   const engagementModels = [
     {
       title: "Project-Based Development",
-      centerText: "OUR TEAM",
+      centerText: "OUR\nTM",
       topText: "YOU",
       description: "Assign dedicated product managers & developers for your adaptive software development project.",
-      icon: <Users className="h-6 w-6" />
+      featured: false
     },
     {
       title: "Team-Based Development", 
-      centerText: "YOUR TEAM",
+      centerText: "YOUR\nTM",
       topText: "",
       description: "Deploy a cooperative and professional team to deliver custom end-to-end software solutions",
-      icon: <User className="h-6 w-6" />
+      featured: true
     },
     {
       title: "Staff Augmentation",
-      centerText: "YOUR TEAM",
+      centerText: "YOUR\nTM",
       topText: "",
       description: "Integrate the best and expert app developers into your team for improved project success.",
-      icon: <UserPlus className="h-6 w-6" />
+      featured: false
     }
   ];
 
@@ -56,22 +56,41 @@ export default function EngagementModels() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {engagementModels.map((model, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group">
+              <div key={index} className={`rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group ${
+                model.featured ? 'bg-primary text-white' : 'bg-white'
+              }`}>
                 {/* Top circle */}
                 <div className="text-center mb-8">
                   {model.topText && (
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 border-2 border-primary rounded-full mb-4">
-                      <span className="text-primary font-bold text-sm">{model.topText}</span>
+                    <div className={`inline-flex items-center justify-center w-16 h-16 border-2 rounded-full mb-4 ${
+                      model.featured 
+                        ? 'bg-white/20 border-white text-white' 
+                        : 'bg-primary/10 border-primary text-primary'
+                    }`}>
+                      <span className="font-bold text-sm">{model.topText}</span>
                     </div>
                   )}
+                  
+                  {/* Animated double arrow */}
+                  <div className={`flex justify-center mb-4 ${model.featured ? 'text-white' : 'text-primary'}`}>
+                    <div className="animate-bounce">
+                      <ArrowUpDown className="h-6 w-6" />
+                    </div>
+                  </div>
                 </div>
                 
                 {/* Diagram */}
                 <div className="relative mb-8">
                   <div className="flex justify-center">
                     {/* Center circle */}
-                    <div className="w-20 h-20 bg-primary/10 border-2 border-primary rounded-full flex items-center justify-center">
-                      <span className="text-primary font-bold text-xs text-center leading-tight">{model.centerText}</span>
+                    <div className={`w-20 h-20 border-2 rounded-full flex items-center justify-center ${
+                      model.featured 
+                        ? 'bg-white/20 border-white text-white' 
+                        : 'bg-primary/10 border-primary text-primary'
+                    }`}>
+                      <span className="font-bold text-xs text-center leading-tight whitespace-pre-line">
+                        {model.centerText}
+                      </span>
                     </div>
                   </div>
                   
@@ -85,13 +104,18 @@ export default function EngagementModels() {
                         return (
                           <div
                             key={i}
-                            className="absolute w-12 h-12 bg-primary/10 border-2 border-primary rounded-full flex items-center justify-center"
+                            className={`absolute w-12 h-12 border-2 rounded-full flex items-center justify-center animate-pulse ${
+                              model.featured 
+                                ? 'bg-white/20 border-white text-white' 
+                                : 'bg-primary/10 border-primary text-primary'
+                            }`}
                             style={{
                               left: `calc(50% + ${x}px - 24px)`,
                               top: `calc(50% + ${y}px - 24px)`,
+                              animationDelay: `${i * 0.2}s`,
                             }}
                           >
-                            <User className="h-4 w-4 text-primary" />
+                            <User className="h-4 w-4" />
                           </div>
                         );
                       })}
@@ -110,13 +134,18 @@ export default function EngagementModels() {
                         return (
                           <div
                             key={i}
-                            className="absolute border-t-2 border-dashed border-primary/30"
+                            className={`absolute border-t-2 border-dashed animate-pulse ${
+                              model.featured 
+                                ? 'border-white/30' 
+                                : 'border-primary/30'
+                            }`}
                             style={{
                               left: `calc(50% + ${x1}px)`,
                               top: `calc(50% + ${y1}px)`,
                               width: `${Math.sqrt((x2-x1)**2 + (y2-y1)**2)}px`,
                               transformOrigin: '0 0',
                               transform: `rotate(${Math.atan2(y2-y1, x2-x1)}rad)`,
+                              animationDelay: `${i * 0.1}s`,
                             }}
                           />
                         );
@@ -126,8 +155,16 @@ export default function EngagementModels() {
                 </div>
                 
                 <div className="text-center">
-                  <h3 className="text-xl font-bold text-gray-800 mb-4">{model.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{model.description}</p>
+                  <h3 className={`text-xl font-bold mb-4 ${
+                    model.featured ? 'text-white' : 'text-gray-800'
+                  }`}>
+                    {model.title}
+                  </h3>
+                  <p className={`leading-relaxed ${
+                    model.featured ? 'text-white/90' : 'text-gray-600'
+                  }`}>
+                    {model.description}
+                  </p>
                 </div>
               </div>
             ))}
