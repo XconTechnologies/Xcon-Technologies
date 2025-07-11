@@ -1,55 +1,80 @@
-import { Car, Heart, Zap, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import { Car, Heart, Smartphone, ShoppingCart, DollarSign } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 export default function Expertise() {
   const domains = [
     {
-      icon: <Car className="h-8 w-8" />,
+      icon: <Car className="h-6 w-6" />,
       title: "Automotive",
-      description: "Implement IoT telematics and AI-driven predictive maintenance to optimize fleet management. Gain real-time data for efficient route planning while reducing reduced downtime, improve safety and efficiency with advanced analytics.",
+      description: "Implement easy IoT solution for real-time vehicle tracking, predictive maintenance, enhanced safety features, and data analytics to optimize fleet management.",
+      featured: false,
     },
     {
-      icon: <Heart className="h-8 w-8" />,
+      icon: <Heart className="h-6 w-6" />,
       title: "Healthcare",
-      description: "Utilize HIPAA-compliant telemedicine platforms and integrated EHR/EMR systems for streamlined patient care. Leverage AI-powered diagnostics for better outcomes and predictive analytics to enhance operational efficiency.",
+      description: "Leverage secure telemedicine platforms, integrated EMR/EHR systems, real-time patient monitoring, and AI-driven diagnostics to improve healthcare outcomes.",
+      featured: true,
     },
     {
-      icon: <Zap className="h-8 w-8" />,
+      icon: <Smartphone className="h-6 w-6" />,
       title: "On-Demand",
-      description: "Adopt scalable cloud architectures with fast, real-time tracking and AI-driven demand forecasting. Ensure rapid deployment with microservices architecture. optimize user experiences. Scale effortlessly with fluctuating demands.",
+      description: "Utilize cloud platforms for scalable operations, real-time GPS tracking, AI-driven demand forecasting, and instant delivery management to enhance customer satisfaction.",
+      featured: false,
+    },
+    {
+      icon: <ShoppingCart className="h-6 w-6" />,
+      title: "Ecommerce",
+      description: "Implement scalable best ecommerce platforms with AI-driven product recommendations, secure payment gateways, and real-time inventory management for seamless shopping experiences.",
+      featured: false,
+    },
+    {
+      icon: <DollarSign className="h-6 w-6" />,
+      title: "Fintech",
+      description: "Leverage cloud-based platforms for secure transactions, real-time data analytics, AI-driven financial insights, and fraud detection to optimize customer experiences.",
+      featured: true,
     },
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-12">Expertise Across Domains</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-8">Expertise Across Domains</h2>
         </div>
         
-        <div className="relative">
-          {/* Navigation arrows */}
-          <button className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow z-10">
-            <ChevronLeft className="h-6 w-6 text-gray-600" />
-          </button>
-          <button className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow z-10">
-            <ChevronRight className="h-6 w-6 text-gray-600" />
-          </button>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <Carousel className="w-full" opts={{ align: "start", loop: true }}>
+          <CarouselContent className="-ml-4">
             {domains.map((domain, index) => (
-              <div key={index} className="bg-gray-50 rounded-3xl p-8 hover:shadow-lg transition-all duration-300 group">
-                <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mb-6 text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-colors">
-                  {domain.icon}
+              <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+                <div className={`h-full rounded-3xl p-8 transition-all duration-300 ${
+                  domain.featured 
+                    ? "bg-primary text-white" 
+                    : "bg-white hover:shadow-lg"
+                }`}>
+                  <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-6 ${
+                    domain.featured
+                      ? "bg-white/20 text-white"
+                      : "bg-primary text-white"
+                  }`}>
+                    {domain.icon}
+                  </div>
+                  <h3 className={`text-2xl font-bold mb-4 ${
+                    domain.featured ? "text-white" : "text-gray-800"
+                  }`}>
+                    {domain.title}
+                  </h3>
+                  <p className={`leading-relaxed ${
+                    domain.featured ? "text-white/90" : "text-gray-600"
+                  }`}>
+                    {domain.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-4">{domain.title}</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">{domain.description}</p>
-                <button className="flex items-center text-gray-800 font-semibold hover:text-orange-500 transition-colors group">
-                  <ArrowRight className="h-5 w-5 transform group-hover:translate-x-1 transition-transform" />
-                </button>
-              </div>
+              </CarouselItem>
             ))}
-          </div>
-        </div>
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex" />
+          <CarouselNext className="hidden md:flex" />
+        </Carousel>
       </div>
     </section>
   );
