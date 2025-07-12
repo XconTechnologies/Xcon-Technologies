@@ -60,197 +60,197 @@ export default function Header() {
               {/* Mega Menu Dropdown */}
               {isMegaMenuOpen && (
                 <div 
-                  className="absolute top-full left-0 mt-2 w-[800px] bg-white rounded-lg shadow-2xl z-50 p-8"
+                  className="absolute top-full left-[-200px] mt-2 w-[1000px] bg-white rounded-lg shadow-2xl z-50 p-8"
                   onMouseEnter={() => setIsMegaMenuOpen(true)}
                   onMouseLeave={() => setIsMegaMenuOpen(false)}
                 >
-                  <div className="grid grid-cols-4 gap-8">
-                    {/* Mobile App Development */}
-                    <div>
-                      <h3 className="text-lg font-bold text-gray-800 mb-4">Mobile App Development</h3>
-                      <ul className="space-y-2">
-                        <li>
-                          <a href="/services/mobile-app-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                            iOS App Development
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/services/mobile-app-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                            Android App Development
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/services/mobile-app-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                            Cross Platform App Development
-                          </a>
-                        </li>
-                      </ul>
+                  <div className="grid grid-cols-3 gap-8">
+                    {/* Column 1 */}
+                    <div className="space-y-6">
+                      <div>
+                        <h3 className="text-lg font-bold text-gray-800 mb-3">Mobile App Development</h3>
+                        <ul className="space-y-2">
+                          <li>
+                            <a href="/services/mobile-app-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                              iOS App Development
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/services/mobile-app-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                              Android App Development
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/services/mobile-app-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                              Cross Platform App Development
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                      
+                      <div>
+                        <h3 className="text-lg font-bold text-gray-800 mb-3">Game Development</h3>
+                        <ul className="space-y-2">
+                          <li>
+                            <a href="/services/game-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                              2D Game Development
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/services/game-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                              3D Game Development
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/services/game-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                              Web3 Game Development
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                      
+                      <div>
+                        <h3 className="text-lg font-bold text-gray-800 mb-3">Staff Augmentation</h3>
+                        <ul className="space-y-2">
+                          <li>
+                            <a href="/services/staff-augmentation" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                              Hire Android App Developer
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/services/staff-augmentation" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                              Hire iOS App Developer
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/services/staff-augmentation" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                              Hire Node.js Developer
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                     
-                    {/* Custom Software Development */}
-                    <div>
-                      <h3 className="text-lg font-bold text-gray-800 mb-4">Custom Software Development</h3>
-                      <ul className="space-y-2">
-                        <li>
-                          <a href="/services/custom-software-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                            ERP Solution
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/services/custom-software-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                            CRM Solution
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/services/custom-software-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                            CMS Solution
-                          </a>
-                        </li>
-                      </ul>
+                    {/* Column 2 */}
+                    <div className="space-y-6">
+                      <div>
+                        <h3 className="text-lg font-bold text-gray-800 mb-3">Custom Software Development</h3>
+                        <ul className="space-y-2">
+                          <li>
+                            <a href="/services/custom-software-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                              ERP Solution
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/services/custom-software-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                              CRM Solution
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/services/custom-software-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                              CMS Solution
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                      
+                      <div>
+                        <h3 className="text-lg font-bold text-gray-800 mb-3">Artificial Intelligence</h3>
+                        <ul className="space-y-2">
+                          <li>
+                            <a href="/services/artificial-intelligence" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                              Generative AI
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/services/artificial-intelligence" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                              Natural Language Processing
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/services/artificial-intelligence" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                              AI Agent Development
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                      
+                      <div>
+                        <h3 className="text-lg font-bold text-gray-800 mb-3">Blockchain Development</h3>
+                        <ul className="space-y-2">
+                          <li>
+                            <a href="/services/blockchain-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                              Metaverse Development
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/services/blockchain-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                              NFT Development
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                     
-                    {/* Web Development */}
-                    <div>
-                      <h3 className="text-lg font-bold text-gray-800 mb-4">Web Development</h3>
-                      <ul className="space-y-2">
-                        <li>
-                          <a href="/services/web-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                            Ecommerce Website Development
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/services/web-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                            Web Portals
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                    
-                    {/* Cloud Services */}
-                    <div>
-                      <h3 className="text-lg font-bold text-gray-800 mb-4">Cloud Services</h3>
-                      <ul className="space-y-2">
-                        <li>
-                          <a href="/services/cloud-services" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                            Cloud Application Development
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/services/cloud-services" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                            Cloud Migration
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/services/cloud-services" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                            Cloud Support & Maintenance
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                    
-                    {/* Game Development */}
-                    <div>
-                      <h3 className="text-lg font-bold text-gray-800 mb-4">Game Development</h3>
-                      <ul className="space-y-2">
-                        <li>
-                          <a href="/services/game-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                            2D Game Development
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/services/game-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                            3D Game Development
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/services/game-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                            Web3 Game Development
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                    
-                    {/* Artificial Intelligence */}
-                    <div>
-                      <h3 className="text-lg font-bold text-gray-800 mb-4">Artificial Intelligence</h3>
-                      <ul className="space-y-2">
-                        <li>
-                          <a href="/services/artificial-intelligence" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                            Generative AI
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/services/artificial-intelligence" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                            Natural Language Processing
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/services/artificial-intelligence" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                            AI Agent Development
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                    
-                    {/* Digital Marketing Services */}
-                    <div>
-                      <h3 className="text-lg font-bold text-gray-800 mb-4">Digital Marketing Services</h3>
-                      <ul className="space-y-2">
-                        <li>
-                          <a href="/services/digital-marketing" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                            Social Media Marketing
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/services/digital-marketing" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                            Search Engine Marketing
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/services/digital-marketing" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                            Search Engine Optimization
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                    
-                    {/* Staff Augmentation */}
-                    <div>
-                      <h3 className="text-lg font-bold text-gray-800 mb-4">Staff Augmentation</h3>
-                      <ul className="space-y-2">
-                        <li>
-                          <a href="/services/staff-augmentation" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                            Hire Android App Developer
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/services/staff-augmentation" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                            Hire iOS App Developer
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/services/staff-augmentation" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                            Hire Node.js Developer
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                    
-                    {/* Blockchain Development */}
-                    <div>
-                      <h3 className="text-lg font-bold text-gray-800 mb-4">Blockchain Development</h3>
-                      <ul className="space-y-2">
-                        <li>
-                          <a href="/services/blockchain-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                            Metaverse Development
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/services/blockchain-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                            NFT Development
-                          </a>
-                        </li>
-                      </ul>
+                    {/* Column 3 */}
+                    <div className="space-y-6">
+                      <div>
+                        <h3 className="text-lg font-bold text-gray-800 mb-3">Web Development</h3>
+                        <ul className="space-y-2">
+                          <li>
+                            <a href="/services/web-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                              Ecommerce Website Development
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/services/web-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                              Web Portals
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                      
+                      <div>
+                        <h3 className="text-lg font-bold text-gray-800 mb-3">Cloud Services</h3>
+                        <ul className="space-y-2">
+                          <li>
+                            <a href="/services/cloud-services" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                              Cloud Application Development
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/services/cloud-services" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                              Cloud Migration
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/services/cloud-services" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                              Cloud Support & Maintenance
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                      
+                      <div>
+                        <h3 className="text-lg font-bold text-gray-800 mb-3">Digital Marketing Services</h3>
+                        <ul className="space-y-2">
+                          <li>
+                            <a href="/services/digital-marketing" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                              Social Media Marketing
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/services/digital-marketing" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                              Search Engine Marketing
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/services/digital-marketing" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                              Search Engine Optimization
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>

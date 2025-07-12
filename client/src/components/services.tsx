@@ -201,20 +201,20 @@ export default function Services() {
         </div>
 
         {/* Content area */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
           {/* Left side - Content */}
-          <div>
+          <div className="flex flex-col justify-center">
             <div className="bg-primary text-white px-6 py-2 rounded-full inline-block mb-6">
               <h3 className="text-lg font-semibold">
                 {activeTabData?.content.title}
               </h3>
             </div>
             
-            <div className="space-y-4">
+            <div className="space-y-4 flex-1">
               {activeTabData?.content.bulletPoints.map((point, index) => (
                 <div key={index} className="flex items-start">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                  <p className="text-gray-700 leading-relaxed">
+                  <p className="text-gray-700 leading-relaxed text-sm">
                     {point}
                   </p>
                 </div>
@@ -224,12 +224,12 @@ export default function Services() {
 
           {/* Right side - Image */}
           <div className="lg:pl-8">
-            <div className="rounded-2xl overflow-hidden">
+            <div className="rounded-2xl overflow-hidden h-[400px]">
               <img 
                 key={activeTab}
                 src={activeTabData?.content.image} 
                 alt={activeTabData?.content.cardTitle}
-                className="w-full h-auto object-cover transition-opacity duration-150"
+                className="w-full h-full object-cover transition-opacity duration-150"
               />
             </div>
           </div>
