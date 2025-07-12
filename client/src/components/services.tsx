@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Code, Database, Cloud, Smartphone, Edit } from "lucide-react";
+import { Code, Database, Cloud, Smartphone, Edit, Target, BarChart3, Repeat } from "lucide-react";
 import softwareImg from "@assets/Xcon web - software_1752304457704.jpg";
 import mvpImg from "@assets/Xcon web - MVP development_1752304457706.jpg";
 import cloudImg from "@assets/Xcon web - cloud Computing_1752304457707.jpg";
@@ -100,6 +100,60 @@ export default function Services() {
         image: uiuxImg,
         cardTitle: "Enhance User Satisfaction with our Flawless UI/UX Design"
       }
+    },
+    {
+      id: "mvp-development",
+      title: "MVP Development",
+      icon: <Target className="h-6 w-6" />,
+      content: {
+        title: "MVP Development",
+        bulletPoints: [
+          "Turning ideas into scalable, market-ready MVPs.",
+          "Rapid prototyping with core features implementation.",
+          "User feedback integration for iterative improvement.",
+          "Cost-effective development approach for startups.",
+          "Quick market entry with minimal viable products.",
+          "Scalable architecture for future growth."
+        ],
+        image: mvpImg,
+        cardTitle: "Turning Ideas into Scalable, Market-Ready MVPs"
+      }
+    },
+    {
+      id: "digital-marketing",
+      title: "Digital Marketing",
+      icon: <BarChart3 className="h-6 w-6" />,
+      content: {
+        title: "Digital Marketing",
+        bulletPoints: [
+          "Drive more traffic, leads and sales with customized digital marketing.",
+          "SEO optimization for better search engine rankings.",
+          "Social media marketing and content strategy.",
+          "Pay-per-click advertising campaigns.",
+          "Email marketing automation and analytics.",
+          "Conversion rate optimization for better results."
+        ],
+        image: digitalMarketingImg,
+        cardTitle: "Drive More Traffic, Leads & Sales with Customized Digital Marketing Plan"
+      }
+    },
+    {
+      id: "data-engineering",
+      title: "Data Engineering",
+      icon: <Repeat className="h-6 w-6" />,
+      content: {
+        title: "Data Engineering",
+        bulletPoints: [
+          "Turn raw data into clear and useful information for better decisions.",
+          "Automate how data is collected, cleaned, and organized for efficiency.",
+          "Offer data engineering solutions that are according to businesses of all types and sizes.",
+          "Use the latest tools to guarantee secure and reliable data management.",
+          "Connect different data systems for a smooth and unified experience.",
+          "Build flexible systems that grow with your business requirements."
+        ],
+        image: dataEngineeringImg,
+        cardTitle: "Transforming Data into Business Intelligence"
+      }
     }
   ];
 
@@ -118,12 +172,12 @@ export default function Services() {
         </div>
         
         {/* Horizontal tabs */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-3 mb-12 max-w-4xl mx-auto">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center justify-center w-16 h-16 rounded-full border-2 transition-all duration-300 ${
+              className={`flex items-center justify-center w-14 h-14 rounded-full border-2 transition-all duration-300 ${
                 activeTab === tab.id
                   ? "bg-primary text-white border-primary"
                   : "bg-white text-gray-600 border-gray-300 hover:border-primary hover:text-primary"
