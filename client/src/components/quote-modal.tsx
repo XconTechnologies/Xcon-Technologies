@@ -90,21 +90,6 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
             src="/attached_assets/Light-Logo.5ba91110-2048x403_1752305014932.png" 
             alt="XCon Technologies" 
             className="h-12 w-auto mx-auto mb-2"
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.style.display = 'none';
-              // Fallback to text logo
-              const parent = target.parentElement;
-              if (parent) {
-                parent.innerHTML = `
-                  <div class="inline-flex items-center">
-                    <span class="text-3xl font-bold text-primary">X</span>
-                    <span class="text-3xl font-bold text-gray-800">CON</span>
-                  </div>
-                  <div class="text-sm text-gray-600 mt-1">TECHNOLOGIES.COM</div>
-                `;
-              }
-            }}
           />
         </div>
 
