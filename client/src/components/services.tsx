@@ -1,13 +1,13 @@
 import { useState } from "react";
-import { Code, Repeat, Monitor, Smartphone, Edit } from "lucide-react";
+import { Code, Database, Cloud, Smartphone, Repeat } from "lucide-react";
 
 export default function Services() {
-  const [activeTab, setActiveTab] = useState("web-development");
+  const [activeTab, setActiveTab] = useState("cloud-engineering");
 
   const tabs = [
     {
       id: "web-development",
-      title: "Web Application Development",
+      title: "Web Development",
       icon: <Code className="h-6 w-6" />,
       content: {
         title: "Web Application Development",
@@ -17,40 +17,38 @@ export default function Services() {
           "Ensuring your software solutions are efficiently maintained and updated.",
           "Our website and application development provide solutions that focus on user experience and satisfaction.",
           "Seamlessly integrating new and the right software with existing systems for improved efficiency."
-        ],
-        image: "/api/placeholder/400/300"
+        ]
       }
     },
     {
-      id: "software-consulting",
-      title: "Software Consulting",
-      icon: <Repeat className="h-6 w-6" />,
+      id: "database-management",
+      title: "Database Management",
+      icon: <Database className="h-6 w-6" />,
       content: {
-        title: "Software Consulting",
+        title: "Database Management",
         bulletPoints: [
-          "Strategic software planning and architecture design.",
-          "Technology stack selection and optimization.",
-          "Risk assessment and mitigation strategies.",
-          "Compliance and security advisory services.",
-          "Performance optimization and scalability planning."
-        ],
-        image: "/api/placeholder/400/300"
+          "Database design and optimization for maximum performance.",
+          "Data migration and integration services.",
+          "Database security and backup solutions.",
+          "Performance monitoring and tuning.",
+          "Cloud database implementation and management."
+        ]
       }
     },
     {
-      id: "digital-solutions",
-      title: "Digital Solutions",
-      icon: <Monitor className="h-6 w-6" />,
+      id: "cloud-engineering",
+      title: "Cloud Engineering",
+      icon: <Cloud className="h-6 w-6" />,
       content: {
-        title: "Digital Solutions",
+        title: "Cloud Engineering",
         bulletPoints: [
-          "End-to-end digital transformation services.",
-          "Cloud migration and integration solutions.",
-          "Data analytics and business intelligence.",
-          "Process automation and optimization.",
-          "Digital marketing and e-commerce platforms."
-        ],
-        image: "/api/placeholder/400/300"
+          "Build secure and scalable cloud solutions for business growth.",
+          "Migrate your data and applications to the cloud with ease.",
+          "Optimize performance with multi-cloud and hybrid cloud setups.",
+          "Automate processes and improve efficiency with cloud computing.",
+          "Protect your data with advanced cloud security measures.",
+          "Get 24/7 support for seamless cloud operations and maintenance."
+        ]
       }
     },
     {
@@ -65,24 +63,22 @@ export default function Services() {
           "Progressive web applications (PWAs).",
           "Mobile app testing and optimization.",
           "App store deployment and maintenance."
-        ],
-        image: "/api/placeholder/400/300"
+        ]
       }
     },
     {
-      id: "uiux-design",
-      title: "UI/UX Design",
-      icon: <Edit className="h-6 w-6" />,
+      id: "software-consulting",
+      title: "Software Consulting",
+      icon: <Repeat className="h-6 w-6" />,
       content: {
-        title: "UI/UX Design",
+        title: "Software Consulting",
         bulletPoints: [
-          "User-centered design and research.",
-          "Responsive web and mobile interfaces.",
-          "Interactive prototypes and wireframes.",
-          "Usability testing and optimization.",
-          "Brand identity and visual design systems."
-        ],
-        image: "/api/placeholder/400/300"
+          "Strategic software planning and architecture design.",
+          "Technology stack selection and optimization.",
+          "Risk assessment and mitigation strategies.",
+          "Compliance and security advisory services.",
+          "Performance optimization and scalability planning."
+        ]
       }
     }
   ];
@@ -157,7 +153,7 @@ export default function Services() {
             <div className="bg-gray-900 rounded-2xl p-8 text-white relative overflow-hidden">
               <div className="relative z-10">
                 <h3 className="text-2xl font-bold mb-4">
-                  Unlock Growth with Scalable, <span className="text-primary">SEO-Friendly Website</span> Solutions
+                  <span className="text-primary">Optimizing Cloud Infrastructure</span> for Smarter Business Decisions.
                 </h3>
                 <button className="bg-primary text-white px-6 py-3 rounded-lg font-semibold mt-6 hover:bg-primary/90 transition-colors">
                   Get a Quote
@@ -168,10 +164,15 @@ export default function Services() {
                 </div>
               </div>
               
-              {/* Decorative elements */}
-              <div className="absolute top-4 right-4 w-16 h-16 bg-primary/20 rounded-full"></div>
-              <div className="absolute bottom-4 right-8 w-12 h-12 bg-white/10 rounded-lg"></div>
+              {/* Decorative elements - Cloud/Server icons */}
+              <div className="absolute top-4 right-4 w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center">
+                <Cloud className="h-8 w-8 text-primary" />
+              </div>
+              <div className="absolute bottom-4 right-8 w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
+                <Database className="h-6 w-6 text-white/70" />
+              </div>
               <div className="absolute bottom-8 right-4 w-8 h-8 bg-primary/30 rounded-full"></div>
+              <div className="absolute top-1/2 right-2 w-6 h-6 bg-green-400/20 rounded-sm"></div>
             </div>
           </div>
         </div>
