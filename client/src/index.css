@@ -20,6 +20,20 @@
   animation-play-state: paused;
 }
 
+/* Modal styles to prevent scroll issues */
+.modal-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  z-index: 9999 !important;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
 :root {
   --background: hsl(0, 0%, 100%);
   --foreground: hsl(222, 47%, 11%);
