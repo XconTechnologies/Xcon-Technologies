@@ -1,15 +1,15 @@
 export default function ClientLogos() {
   const logos = [
-    { name: "PCA", logo: "https://via.placeholder.com/120x40/e8e9ea/495057?text=PCA" },
-    { name: "ARTIFIC", logo: "https://via.placeholder.com/120x40/e8e9ea/495057?text=ARTIFIC" },
-    { name: "STUDYPASS", logo: "https://via.placeholder.com/120x40/e8e9ea/495057?text=STUDYPASS" },
-    { name: "DUNYA", logo: "https://via.placeholder.com/120x40/e8e9ea/495057?text=DUNYA" },
-    { name: "COINBASE", logo: "https://via.placeholder.com/120x40/e8e9ea/495057?text=COINBASE" },
-    { name: "AMAZON", logo: "https://via.placeholder.com/120x40/e8e9ea/495057?text=AMAZON" },
-    { name: "ALPHA", logo: "https://via.placeholder.com/120x40/e8e9ea/495057?text=ALPHA" },
-    { name: "RECYCLING", logo: "https://via.placeholder.com/120x40/e8e9ea/495057?text=RECYCLING" },
-    { name: "LAWLESS", logo: "https://via.placeholder.com/120x40/e8e9ea/495057?text=LAWLESS" },
-    { name: "PARTNERS", logo: "https://via.placeholder.com/120x40/e8e9ea/495057?text=PARTNERS" },
+    { name: "PCA", logo: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjZjhmOWZhIi8+Cjx0ZXh0IHg9IjYwIiB5PSIyNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzQ5NTA1NyIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iYm9sZCI+UENBPC90ZXh0Pgo8L3N2Zz4K" },
+    { name: "ARTIFIC", logo: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjZjhmOWZhIi8+Cjx0ZXh0IHg9IjYwIiB5PSIyNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzQ5NTA1NyIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iYm9sZCI+QVJUSUZJQZM8L3RleHQ+Cjwvc3ZnPgo=" },
+    { name: "STUDYPASS", logo: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjZjhmOWZhIi8+Cjx0ZXh0IHg9IjYwIiB5PSIyNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzQ5NTA1NyIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEwIiBmb250LXdlaWdodD0iYm9sZCI+U1RVRFLBQVNTPC90ZXh0Pgo8L3N2Zz4K" },
+    { name: "DUNYA", logo: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjZjhmOWZhIi8+Cjx0ZXh0IHg9IjYwIiB5PSIyNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzQ5NTA1NyIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iYm9sZCI+RFVOWTM8L3RleHQ+Cjwvc3ZnPgo=" },
+    { name: "COINBASE", logo: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjZjhmOWZhIi8+Cjx0ZXh0IHg9IjYwIiB5PSIyNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzQ5NTA1NyIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEwIiBmb250LXdlaWdodD0iYm9sZCI+Q09JTkJBU0U8L3RleHQ+Cjwvc3ZnPgo=" },
+    { name: "AMAZON", logo: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjZjhmOWZhIi8+Cjx0ZXh0IHg9IjYwIiB5PSIyNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzQ5NTA1NyIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iYm9sZCI+QU1BWlJOPC90ZXh0Pgo8L3N2Zz4K" },
+    { name: "ALPHA", logo: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjZjhmOWZhIi8+Cjx0ZXh0IHg9IjYwIiB5PSIyNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzQ5NTA1NyIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iYm9sZCI+QUxQSBE8L3RleHQ+Cjwvc3ZnPgo=" },
+    { name: "RECYCLING", logo: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjZjhmOWZhIi8+Cjx0ZXh0IHg9IjYwIiB5PSIyNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzQ5NTA1NyIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjkiIGZvbnQtd2VpZ2h0PSJib2xkIj5SRUNZXEyJTkc8L3RleHQ+Cjwvc3ZnPgo=" },
+    { name: "LAWLESS", logo: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjZjhmOWZhIi8+Cjx0ZXh0IHg9IjYwIiB5PSIyNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzQ5NTA1NyIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iYm9sZCI+TEFXTaVTUzwvdGV4dD4KPC9zdmc+Cg==" },
+    { name: "PARTNERS", logo: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjZjhmOWZhIi8+Cjx0ZXh0IHg9IjYwIiB5PSIyNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzQ5NTA1NyIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEwIiBmb250LXdlaWdodD0iYm9sZCI+UEFSVFNFV1J8L3RleHQ+Cjwvc3ZnPgo=" },
   ];
 
   // Duplicate the logos array to create seamless scrolling
@@ -41,12 +41,7 @@ export default function ClientLogos() {
                   alt={logo.name}
                   className="max-w-full max-h-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
                   style={{ maxWidth: '120px', maxHeight: '40px' }}
-                  onLoad={() => console.log(`Logo loaded: ${logo.name}`)}
-                  onError={(e) => {
-                    console.error(`Logo failed to load: ${logo.name}`);
-                    const target = e.target as HTMLImageElement;
-                    target.src = `https://via.placeholder.com/120x40/e8e9ea/495057?text=${logo.name}`;
-                  }}
+
                 />
               </div>
             ))}

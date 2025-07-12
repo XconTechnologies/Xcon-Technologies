@@ -40,23 +40,38 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-2xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto relative">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[9999] p-4">
+      <div className="bg-white rounded-2xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto relative shadow-2xl">
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-full transition-colors"
+          className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-full transition-colors z-10"
         >
           <X className="h-5 w-5 text-gray-500" />
         </button>
 
         {/* XCon Logo */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center">
-            <span className="text-3xl font-bold text-primary">X</span>
-            <span className="text-3xl font-bold text-gray-800">CON</span>
-          </div>
-          <div className="text-sm text-gray-600 mt-1">TECHNOLOGIES.COM</div>
+          <img 
+            src="/attached_assets/Light-Logo.5ba91110-2048x403_1752305014932.png" 
+            alt="XCon Technologies" 
+            className="h-12 w-auto mx-auto mb-2"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.style.display = 'none';
+              // Fallback to text logo
+              const parent = target.parentElement;
+              if (parent) {
+                parent.innerHTML = `
+                  <div class="inline-flex items-center">
+                    <span class="text-3xl font-bold text-primary">X</span>
+                    <span class="text-3xl font-bold text-gray-800">CON</span>
+                  </div>
+                  <div class="text-sm text-gray-600 mt-1">TECHNOLOGIES.COM</div>
+                `;
+              }
+            }}
+          />
         </div>
 
         {/* Form */}
