@@ -1,4 +1,4 @@
-import { Users, User, UserPlus, ShoppingCart, DollarSign, Heart, GraduationCap, MessageSquare, Building, Music, Landmark, Home, Briefcase, Truck, Monitor, Heart as HeartIcon, Car, Plane, ArrowUpDown } from "lucide-react";
+import { Users, User, UserPlus, ShoppingCart, DollarSign, Heart, GraduationCap, MessageSquare, Building, Music, Landmark, Home, Briefcase, Truck, Monitor, Heart as HeartIcon, Car, Plane, ArrowUpDown, ArrowDown } from "lucide-react";
 
 export default function EngagementModels() {
   const engagementModels = [
@@ -57,27 +57,42 @@ export default function EngagementModels() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {engagementModels.map((model, index) => (
               <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group">
-                {/* Top circle */}
-                <div className="text-center mb-6">
-                  {model.topText && (
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 border-2 border-primary rounded-full mb-4">
-                      <span className="text-primary font-bold text-sm">{model.topText}</span>
+                {/* Top circle for first model only */}
+                {index === 0 && (
+                  <div className="text-center mb-6">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-white border-2 border-primary rounded-full mb-4">
+                      <span className="text-gray-800 font-bold text-sm">{model.topText}</span>
                     </div>
-                  )}
-                  
-                  {/* Animated double arrow */}
-                  <div className="flex justify-center mb-4 text-primary">
-                    <div className="animate-bounce">
-                      <ArrowUpDown className="h-6 w-6" />
+                    
+                    {/* Animated arrow */}
+                    <div className="flex justify-center mb-4 text-primary">
+                      <div className="animate-bounce">
+                        <ArrowDown className="h-6 w-6" />
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
+                
+                {/* For other models, add user icon and arrow */}
+                {index !== 0 && (
+                  <div className="text-center mb-6">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-white border-2 border-primary rounded-full mb-4">
+                      <User className="h-6 w-6 text-primary" />
+                    </div>
+                    
+                    <div className="flex justify-center mb-4 text-primary">
+                      <div className="animate-bounce">
+                        <ArrowDown className="h-6 w-6" />
+                      </div>
+                    </div>
+                  </div>
+                )}
                 
                 {/* Diagram */}
                 <div className="relative mb-8 h-48 flex items-center justify-center">
                   {/* Center circle */}
-                  <div className="w-20 h-20 bg-primary/10 border-2 border-primary rounded-full flex items-center justify-center z-10">
-                    <span className="text-primary font-bold text-xs text-center leading-tight whitespace-pre-line">
+                  <div className="w-20 h-20 bg-white border-2 border-primary rounded-full flex items-center justify-center z-10">
+                    <span className="text-gray-800 font-bold text-xs text-center leading-tight whitespace-pre-line">
                       {model.centerText}
                     </span>
                   </div>
@@ -92,7 +107,7 @@ export default function EngagementModels() {
                         return (
                           <div
                             key={i}
-                            className="absolute w-12 h-12 bg-primary/10 border-2 border-primary rounded-full flex items-center justify-center animate-pulse"
+                            className="absolute w-12 h-12 bg-white border-2 border-primary rounded-full flex items-center justify-center animate-pulse"
                             style={{
                               left: `calc(50% + ${x}px - 24px)`,
                               top: `calc(50% + ${y}px - 24px)`,
@@ -138,7 +153,7 @@ export default function EngagementModels() {
                   <h3 className="text-xl font-bold text-gray-800 mb-4">
                     {model.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed text-sm">
                     {model.description}
                   </p>
                 </div>
