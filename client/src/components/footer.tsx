@@ -1,71 +1,121 @@
-import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
-import XConLogo from "@/assets/xcon-logo.svg";
+import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-16">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div>
-            <img src={XConLogo} alt="XCon Technologies" className="h-8 w-auto mb-4" />
-            <p className="text-gray-400 mb-4">
-              Leading digital transformation company delivering innovative web, mobile, and software solutions.
+    <footer className="bg-gray-100 text-gray-800">
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {/* Left Column - Company Info */}
+          <div className="space-y-6">
+            <div className="flex items-center space-x-2">
+              <div className="text-2xl font-bold">
+                <span className="text-primary">X</span>
+                <span className="text-gray-800">Con</span>
+              </div>
+              <div className="text-sm text-gray-500">
+                TECHNOLOGIES.COM
+              </div>
+            </div>
+            
+            <p className="text-gray-600 leading-relaxed">
+              At XCon Technologies, we're more than just a software company in the US. We are your partners in innovation. Let's build the future together with cutting-edge IT solutions according to your business requirements. Contact us today to transform your software development ideas into reality!
             </p>
+            
+            <div className="space-y-3">
+              <div className="flex items-center space-x-3">
+                <Phone className="h-5 w-5 text-primary" />
+                <span className="text-gray-800">+1 (504) 369-9609</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Mail className="h-5 w-5 text-primary" />
+                <span className="text-gray-800">askforqoute@xcontechnologies.com</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <MapPin className="h-5 w-5 text-primary" />
+                <span className="text-gray-800">1235 East Blvd, Suite E PMB 5100, Charlotte, North Carolina, 28203, United States</span>
+              </div>
+            </div>
+            
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+              <a href="#" className="bg-gray-800 text-white p-2 rounded-full hover:bg-primary transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+              <a href="#" className="bg-gray-800 text-white p-2 rounded-full hover:bg-primary transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+              <a href="#" className="bg-gray-800 text-white p-2 rounded-full hover:bg-primary transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
           </div>
-          
-          {/* Services */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Services</h4>
-            <nav className="space-y-2">
-              <a href="#" className="block text-gray-400 hover:text-primary transition-colors">Web Development</a>
-              <a href="#" className="block text-gray-400 hover:text-primary transition-colors">Mobile Apps</a>
-              <a href="#" className="block text-gray-400 hover:text-primary transition-colors">Custom Software</a>
-              <a href="#" className="block text-gray-400 hover:text-primary transition-colors">UI/UX Design</a>
-              <a href="#" className="block text-gray-400 hover:text-primary transition-colors">E-commerce</a>
-            </nav>
+
+          {/* Middle Column - Services */}
+          <div className="space-y-6">
+            <h3 className="text-xl font-bold text-gray-800">Services</h3>
+            <ul className="space-y-3 text-gray-600">
+              <li><a href="#" className="hover:text-primary transition-colors">Software Development</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Web Development</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Mobile App Development</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">UI/UX Design</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Data Engineering</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">SaaS & PaaS Development</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">MVP Development</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">DevOps Development & Service</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">QA (Quality Assurance) Testing</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">IT Consultation</a></li>
+            </ul>
           </div>
-          
-          {/* Company */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Company</h4>
-            <nav className="space-y-2">
-              <a href="#" className="block text-gray-400 hover:text-primary transition-colors">About Us</a>
-              <a href="#" className="block text-gray-400 hover:text-primary transition-colors">Our Team</a>
-              <a href="#" className="block text-gray-400 hover:text-primary transition-colors">Careers</a>
-              <a href="#" className="block text-gray-400 hover:text-primary transition-colors">Blog</a>
-              <a href="#" className="block text-gray-400 hover:text-primary transition-colors">Contact</a>
-            </nav>
+
+          {/* Right Column - Company Links */}
+          <div className="space-y-6">
+            <ul className="space-y-3 text-gray-600">
+              <li><a href="#" className="hover:text-primary transition-colors">Privacy Policy</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Terms Of Service</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">About Us</a></li>
+            </ul>
           </div>
-          
-          {/* Contact */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Contact</h4>
-            <div className="space-y-2 text-gray-400">
-              <p>123 Business Street, Suite 100</p>
-              <p>New York, NY 10001</p>
-              <p>+1 (555) 123-4567</p>
-              <p>contact@xcontechnologies.com</p>
+        </div>
+
+        {/* Badges Section */}
+        <div className="flex flex-wrap justify-center gap-4 mt-12 mb-12">
+          <div className="bg-teal-600 text-white px-4 py-2 rounded-lg text-sm font-semibold">
+            Service Excellence Award
+          </div>
+          <div className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold">
+            2024 Leader in B2B Marketplace
+          </div>
+          <div className="bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-semibold">
+            Quality Service Provider
+          </div>
+          <div className="bg-blue-800 text-white px-4 py-2 rounded-lg text-sm font-semibold">
+            Top IT Services Company
+          </div>
+        </div>
+
+        {/* Newsletter Section */}
+        <div className="bg-white rounded-2xl p-8 shadow-sm">
+          <div className="text-center">
+            <h3 className="text-2xl font-bold text-gray-800 mb-6">
+              Subscribe To Our Newsletter
+            </h3>
+            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              />
+              <button className="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center">
+                <ArrowRight className="h-5 w-5" />
+              </button>
             </div>
           </div>
         </div>
-        
-        <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 XCon Technologies. All rights reserved.</p>
+
+        {/* Copyright */}
+        <div className="text-center mt-8 pt-8 border-t border-gray-200">
+          <p className="text-gray-500">
+            © 2025 XCON Technologies. All Rights Reserved.
+          </p>
         </div>
       </div>
     </footer>
