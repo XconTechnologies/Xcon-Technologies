@@ -1,8 +1,16 @@
 import { useState } from "react";
-import { Code, Database, Cloud, Smartphone, Repeat } from "lucide-react";
+import { Code, Database, Cloud, Smartphone, Edit } from "lucide-react";
+import softwareImg from "@assets/Xcon web - software_1752304457704.jpg";
+import mvpImg from "@assets/Xcon web - MVP development_1752304457706.jpg";
+import cloudImg from "@assets/Xcon web - cloud Computing_1752304457707.jpg";
+import digitalMarketingImg from "@assets/Xcon web - Digital Marketing_1752304457708.jpg";
+import dataEngineeringImg from "@assets/Xcon web - Data Engineering_1752304457709.jpg";
+import seoImg from "@assets/Xcon web - Seo_1752304457710.jpg";
+import appImg from "@assets/Xcon web - app_1752304457711.jpg";
+import uiuxImg from "@assets/Xcon UI UX service 2_1752304457712.jpg";
 
 export default function Services() {
-  const [activeTab, setActiveTab] = useState("cloud-engineering");
+  const [activeTab, setActiveTab] = useState("web-development");
 
   const tabs = [
     {
@@ -17,22 +25,26 @@ export default function Services() {
           "Ensuring your software solutions are efficiently maintained and updated.",
           "Our website and application development provide solutions that focus on user experience and satisfaction.",
           "Seamlessly integrating new and the right software with existing systems for improved efficiency."
-        ]
+        ],
+        image: seoImg,
+        cardTitle: "Unlock Growth with Scalable, SEO-Friendly Website Solutions"
       }
     },
     {
-      id: "database-management",
-      title: "Database Management",
+      id: "software-consulting",
+      title: "Software Consulting",
       icon: <Database className="h-6 w-6" />,
       content: {
-        title: "Database Management",
+        title: "Software Consulting",
         bulletPoints: [
-          "Database design and optimization for maximum performance.",
-          "Data migration and integration services.",
-          "Database security and backup solutions.",
-          "Performance monitoring and tuning.",
-          "Cloud database implementation and management."
-        ]
+          "Strategic software planning and architecture design.",
+          "Technology stack selection and optimization.",
+          "Risk assessment and mitigation strategies.",
+          "Compliance and security advisory services.",
+          "Performance optimization and scalability planning."
+        ],
+        image: softwareImg,
+        cardTitle: "Smart Software for Smart Business Decisions"
       }
     },
     {
@@ -48,7 +60,9 @@ export default function Services() {
           "Automate processes and improve efficiency with cloud computing.",
           "Protect your data with advanced cloud security measures.",
           "Get 24/7 support for seamless cloud operations and maintenance."
-        ]
+        ],
+        image: cloudImg,
+        cardTitle: "Optimizing Cloud Infrastructure for Smarter Business Decisions"
       }
     },
     {
@@ -56,29 +70,35 @@ export default function Services() {
       title: "Mobile Development",
       icon: <Smartphone className="h-6 w-6" />,
       content: {
-        title: "Mobile Development",
+        title: "App Development",
         bulletPoints: [
-          "Native iOS and Android app development.",
-          "Cross-platform mobile solutions.",
-          "Progressive web applications (PWAs).",
-          "Mobile app testing and optimization.",
-          "App store deployment and maintenance."
-        ]
+          "Designing mobile applications for better accessibility.",
+          "Ensuring high performance and smooth user experience on mobile platforms.",
+          "Providing cross-platform mobile application development services.",
+          "Crafting responsive mobile application software for all screen sizes.",
+          "Building apps with integrated push notifications and real-time updates.",
+          "Maintaining mobile app development software for continued performance and reliability."
+        ],
+        image: appImg,
+        cardTitle: "Turning Your Business Needs into Smart, Functional Apps"
       }
     },
     {
-      id: "software-consulting",
-      title: "Software Consulting",
-      icon: <Repeat className="h-6 w-6" />,
+      id: "uiux-design",
+      title: "UI/UX Design",
+      icon: <Edit className="h-6 w-6" />,
       content: {
-        title: "Software Consulting",
+        title: "UI/UX Design",
         bulletPoints: [
-          "Strategic software planning and architecture design.",
-          "Technology stack selection and optimization.",
-          "Risk assessment and mitigation strategies.",
-          "Compliance and security advisory services.",
-          "Performance optimization and scalability planning."
-        ]
+          "Focus on users' needs for a seamless experience.",
+          "Maintain visual and functional consistency for easy navigation.",
+          "Ensure designs adapt across all devices and screen sizes.",
+          "Make designs inclusive for all users, including those with disabilities.",
+          "Prioritize content to guide users to key information effectively.",
+          "Provide clear feedback to user actions through visual cues."
+        ],
+        image: uiuxImg,
+        cardTitle: "Enhance User Satisfaction with our Flawless UI/UX Design"
       }
     }
   ];
@@ -150,29 +170,12 @@ export default function Services() {
 
           {/* Right side - Image */}
           <div className="lg:pl-8">
-            <div className="bg-gray-900 rounded-2xl p-8 text-white relative overflow-hidden">
-              <div className="relative z-10">
-                <h3 className="text-2xl font-bold mb-4">
-                  <span className="text-primary">Optimizing Cloud Infrastructure</span> for Smarter Business Decisions.
-                </h3>
-                <button className="bg-primary text-white px-6 py-3 rounded-lg font-semibold mt-6 hover:bg-primary/90 transition-colors">
-                  Get a Quote
-                </button>
-                <div className="mt-4 text-sm text-gray-400">
-                  <p>askforqoute@xcontechnologies.com</p>
-                  <p>www.xcontechnologies.com</p>
-                </div>
-              </div>
-              
-              {/* Decorative elements - Cloud/Server icons */}
-              <div className="absolute top-4 right-4 w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center">
-                <Cloud className="h-8 w-8 text-primary" />
-              </div>
-              <div className="absolute bottom-4 right-8 w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
-                <Database className="h-6 w-6 text-white/70" />
-              </div>
-              <div className="absolute bottom-8 right-4 w-8 h-8 bg-primary/30 rounded-full"></div>
-              <div className="absolute top-1/2 right-2 w-6 h-6 bg-green-400/20 rounded-sm"></div>
+            <div className="rounded-2xl overflow-hidden">
+              <img 
+                src={activeTabData?.content.image} 
+                alt={activeTabData?.content.cardTitle}
+                className="w-full h-auto object-cover"
+              />
             </div>
           </div>
         </div>
