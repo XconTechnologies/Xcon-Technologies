@@ -203,29 +203,27 @@ export default function Services() {
         </div>
 
         {/* Content area */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch min-h-[500px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Left side - Content */}
-          <div className="flex flex-col justify-between">
-            <div>
-              <div className="bg-primary text-white px-6 py-2 rounded-full inline-block mb-6">
-                <h3 className="text-lg font-semibold">
-                  {activeTabData?.content.title}
-                </h3>
-              </div>
-              
-              <div className="space-y-4 mb-8">
-                {activeTabData?.content.bulletPoints.map((point, index) => (
-                  <div key={index} className="flex items-start">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                    <p className="text-gray-700 leading-relaxed text-sm">
-                      {point}
-                    </p>
-                  </div>
-                ))}
-              </div>
+          <div className="space-y-6">
+            <div className="bg-primary text-white px-6 py-2 rounded-full inline-block">
+              <h3 className="text-lg font-semibold">
+                {activeTabData?.content.title}
+              </h3>
             </div>
             
-            <div className="mt-auto">
+            <div className="space-y-4">
+              {activeTabData?.content.bulletPoints.map((point, index) => (
+                <div key={index} className="flex items-start">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                  <p className="text-gray-700 leading-relaxed text-sm">
+                    {point}
+                  </p>
+                </div>
+              ))}
+            </div>
+            
+            <div className="pt-2">
               <button 
                 onClick={() => setIsQuoteModalOpen(true)}
                 className="bg-primary text-white px-8 py-3 rounded-lg text-base font-semibold hover:bg-primary/90 transition-colors"
@@ -237,7 +235,7 @@ export default function Services() {
 
           {/* Right side - Image */}
           <div className="lg:pl-8">
-            <div className="rounded-2xl overflow-hidden h-[500px] w-full">
+            <div className="rounded-2xl overflow-hidden h-[400px] w-full">
               <img 
                 key={activeTab}
                 src={activeTabData?.content.image} 
