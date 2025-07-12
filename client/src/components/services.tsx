@@ -226,9 +226,10 @@ export default function Services() {
           <div className="lg:pl-8">
             <div className="rounded-2xl overflow-hidden">
               <img 
+                key={activeTab}
                 src={activeTabData?.content.image} 
                 alt={activeTabData?.content.cardTitle}
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover transition-opacity duration-150"
               />
             </div>
           </div>
