@@ -73,27 +73,57 @@ export default function Hero() {
             </div>
           </div>
           
-          {/* Right content - Mobile phone mockup */}
-          <div className="relative lg:flex justify-center items-center hidden">
-            <div className="relative">
-              <div className="w-80 h-96 bg-gradient-to-b from-gray-800 to-gray-900 rounded-[3rem] p-2 shadow-2xl">
-                <div className="w-full h-full bg-black rounded-[2.5rem] p-4 overflow-hidden">
-                  <div className="space-y-3">
-                    <div className="h-4 bg-primary/30 rounded w-3/4"></div>
-                    <div className="h-4 bg-gray-700 rounded w-1/2"></div>
-                    <div className="h-4 bg-primary/30 rounded w-2/3"></div>
-                    <div className="h-4 bg-gray-700 rounded w-full"></div>
-                    <div className="h-4 bg-primary/30 rounded w-4/5"></div>
-                    <div className="h-4 bg-gray-700 rounded w-3/5"></div>
-                    <div className="h-4 bg-primary/30 rounded w-2/3"></div>
-                    <div className="h-4 bg-gray-700 rounded w-full"></div>
-                    <div className="h-4 bg-primary/30 rounded w-1/2"></div>
-                    <div className="h-4 bg-gray-700 rounded w-4/5"></div>
-                    <div className="h-4 bg-primary/30 rounded w-3/4"></div>
-                    <div className="h-4 bg-gray-700 rounded w-2/3"></div>
-                  </div>
+          {/* Right side - Contact Form */}
+          <div className="hidden lg:block">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+              <h3 className="text-2xl font-bold text-white mb-6">Get Started Today</h3>
+              <form className="space-y-4">
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  />
                 </div>
-              </div>
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Your Email"
+                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="tel"
+                    placeholder="Your Phone"
+                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  />
+                </div>
+                <div>
+                  <select className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                    <option value="" className="text-gray-800">Select Service</option>
+                    <option value="web-development" className="text-gray-800">Web Development</option>
+                    <option value="mobile-app" className="text-gray-800">Mobile App Development</option>
+                    <option value="custom-software" className="text-gray-800">Custom Software Development</option>
+                    <option value="ai-services" className="text-gray-800">AI Services</option>
+                    <option value="cloud-services" className="text-gray-800">Cloud Services</option>
+                    <option value="digital-marketing" className="text-gray-800">Digital Marketing</option>
+                  </select>
+                </div>
+                <div>
+                  <textarea
+                    placeholder="Tell us about your project..."
+                    rows={3}
+                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="w-full bg-primary hover:bg-primary/90 text-white py-3 px-6 rounded-lg font-semibold transition-colors"
+                >
+                  Send Message
+                </button>
+              </form>
             </div>
           </div>
         </div>

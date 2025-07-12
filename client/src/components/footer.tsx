@@ -71,21 +71,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Badges Section */}
-        <div className="flex flex-wrap justify-center gap-4 mt-12 mb-12">
-          <div className="bg-teal-600 text-white px-4 py-2 rounded-lg text-sm font-semibold">
-            Service Excellence Award
-          </div>
-          <div className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold">
-            2024 Leader in B2B Marketplace
-          </div>
-          <div className="bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-semibold">
-            Quality Service Provider
-          </div>
-          <div className="bg-blue-800 text-white px-4 py-2 rounded-lg text-sm font-semibold">
-            Top IT Services Company
-          </div>
-        </div>
+
 
         {/* Newsletter Section */}
         <div className="bg-white rounded-2xl p-8 shadow-sm">
