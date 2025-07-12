@@ -31,13 +31,13 @@ export default function ClientLogos() {
   const duplicatedLogos = [...logos, ...logos];
 
   return (
-    <section className="py-16 bg-white overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+    <section className="py-32 bg-white overflow-hidden min-h-screen flex items-center">
+      <div className="max-w-[1440px] mx-auto px-4 lg:px-8 w-full">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
             Trusted by Leading Companies
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             We've had the privilege of working with some of the world's most innovative companies
           </p>
         </div>

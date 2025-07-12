@@ -27,11 +27,16 @@
   left: 0 !important;
   right: 0 !important;
   bottom: 0 !important;
-  z-index: 9999 !important;
+  z-index: 999999 !important;
+  margin: 0 !important;
+  padding: 16px !important;
 }
 
 body.modal-open {
-  overflow: hidden;
+  overflow: hidden !important;
+  position: fixed !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 :root {

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
@@ -52,9 +53,29 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
 
   if (!isOpen) return null;
 
-  return (
-    <div className="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[9999] p-4">
-      <div className="bg-white rounded-2xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto relative shadow-2xl transform scale-100">
+  const modalContent = (
+    <div 
+      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4" 
+      style={{ 
+        position: 'fixed', 
+        top: 0, 
+        left: 0, 
+        right: 0, 
+        bottom: 0, 
+        zIndex: 999999,
+        margin: 0,
+        padding: '16px'
+      }}
+      onClick={onClose}
+    >
+      <div 
+        className="bg-white rounded-2xl p-8 w-full max-w-2xl max-h-[90vh] overflow-y-auto relative shadow-2xl"
+        style={{ 
+          transform: 'scale(1)',
+          transformOrigin: 'center center'
+        }}
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Close button */}
         <button
           onClick={onClose}
@@ -200,4 +221,6 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
       </div>
     </div>
   );
+
+  return createPortal(modalContent, document.body);
 }
