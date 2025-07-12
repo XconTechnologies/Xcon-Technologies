@@ -54,8 +54,8 @@ export default function ClientLogos() {
                 <img
                   src={logo.logo}
                   alt={logo.name}
-                  className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                  style={{ maxWidth: '140px', maxHeight: '60px' }}
+                  className="max-w-full max-h-full object-contain transition-all duration-300"
+                  style={{ width: '140px', height: '60px', objectFit: 'contain' }}
                 />
               </div>
             ))}
