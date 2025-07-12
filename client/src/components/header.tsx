@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import XConLogo from "@assets/Light-Logo.5ba91110-2048x403_1752305014932.png";
 import QuoteModal from "./quote-modal";
@@ -8,6 +8,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,12 +45,218 @@ export default function Header() {
             >
               Home
             </button>
-            <button
-              onClick={() => scrollToSection("services")}
-              className="text-white hover:text-primary transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
-            >
-              Services
-            </button>
+            
+            {/* Services Mega Menu */}
+            <div className="relative">
+              <button
+                onMouseEnter={() => setIsMegaMenuOpen(true)}
+                onMouseLeave={() => setIsMegaMenuOpen(false)}
+                className="text-white hover:text-primary transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full flex items-center space-x-1"
+              >
+                <span>Services</span>
+                <ChevronDown className="h-4 w-4" />
+              </button>
+              
+              {/* Mega Menu Dropdown */}
+              {isMegaMenuOpen && (
+                <div 
+                  className="absolute top-full left-0 mt-2 w-[800px] bg-white rounded-lg shadow-2xl z-50 p-8"
+                  onMouseEnter={() => setIsMegaMenuOpen(true)}
+                  onMouseLeave={() => setIsMegaMenuOpen(false)}
+                >
+                  <div className="grid grid-cols-4 gap-8">
+                    {/* Mobile App Development */}
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-800 mb-4">Mobile App Development</h3>
+                      <ul className="space-y-2">
+                        <li>
+                          <a href="/services/mobile-app-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                            iOS App Development
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/services/mobile-app-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                            Android App Development
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/services/mobile-app-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                            Cross Platform App Development
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    
+                    {/* Custom Software Development */}
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-800 mb-4">Custom Software Development</h3>
+                      <ul className="space-y-2">
+                        <li>
+                          <a href="/services/custom-software-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                            ERP Solution
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/services/custom-software-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                            CRM Solution
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/services/custom-software-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                            CMS Solution
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    
+                    {/* Web Development */}
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-800 mb-4">Web Development</h3>
+                      <ul className="space-y-2">
+                        <li>
+                          <a href="/services/web-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                            Ecommerce Website Development
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/services/web-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                            Web Portals
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    
+                    {/* Cloud Services */}
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-800 mb-4">Cloud Services</h3>
+                      <ul className="space-y-2">
+                        <li>
+                          <a href="/services/cloud-services" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                            Cloud Application Development
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/services/cloud-services" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                            Cloud Migration
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/services/cloud-services" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                            Cloud Support & Maintenance
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    
+                    {/* Game Development */}
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-800 mb-4">Game Development</h3>
+                      <ul className="space-y-2">
+                        <li>
+                          <a href="/services/game-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                            2D Game Development
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/services/game-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                            3D Game Development
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/services/game-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                            Web3 Game Development
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    
+                    {/* Artificial Intelligence */}
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-800 mb-4">Artificial Intelligence</h3>
+                      <ul className="space-y-2">
+                        <li>
+                          <a href="/services/artificial-intelligence" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                            Generative AI
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/services/artificial-intelligence" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                            Natural Language Processing
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/services/artificial-intelligence" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                            AI Agent Development
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    
+                    {/* Digital Marketing Services */}
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-800 mb-4">Digital Marketing Services</h3>
+                      <ul className="space-y-2">
+                        <li>
+                          <a href="/services/digital-marketing" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                            Social Media Marketing
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/services/digital-marketing" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                            Search Engine Marketing
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/services/digital-marketing" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                            Search Engine Optimization
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    
+                    {/* Staff Augmentation */}
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-800 mb-4">Staff Augmentation</h3>
+                      <ul className="space-y-2">
+                        <li>
+                          <a href="/services/staff-augmentation" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                            Hire Android App Developer
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/services/staff-augmentation" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                            Hire iOS App Developer
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/services/staff-augmentation" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                            Hire Node.js Developer
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    
+                    {/* Blockchain Development */}
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-800 mb-4">Blockchain Development</h3>
+                      <ul className="space-y-2">
+                        <li>
+                          <a href="/services/blockchain-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                            Metaverse Development
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/services/blockchain-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                            NFT Development
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+            
             <button
               onClick={() => scrollToSection("industries")}
               className="text-white hover:text-primary transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
