@@ -38,6 +38,15 @@ export default function GameDevelopment() {
               </p>
             </div>
           </div>
+          
+          <div className="text-center mt-16">
+            <button 
+              onClick={() => window.open('mailto:askforquote@xcontechnologies.com', '_blank')}
+              className="bg-primary text-white px-12 py-4 rounded-lg text-lg font-semibold hover:bg-primary/90 transition-colors"
+            >
+              Get a Quote
+            </button>
+          </div>
         </div>
       </div>
       <Footer />
