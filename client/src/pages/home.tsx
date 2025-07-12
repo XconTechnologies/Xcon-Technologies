@@ -1,5 +1,6 @@
 import Header from "@/components/header";
 import Hero from "@/components/hero";
+import Services from "@/components/services";
 import Solutions from "@/components/solutions";
 import Expertise from "@/components/expertise";
 import WhyChoose from "@/components/why-choose";
@@ -15,6 +16,7 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       <Header />
       <Hero />
+      <Services />
       <Solutions />
       <Expertise />
       <WhyChoose />
