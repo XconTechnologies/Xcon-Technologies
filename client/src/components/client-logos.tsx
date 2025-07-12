@@ -1,15 +1,15 @@
 export default function ClientLogos() {
   const logos = [
-    { name: "PCA", logo: "https://logo.clearbit.com/pca.com" },
-    { name: "Artific", logo: "https://via.placeholder.com/120x60/f8f9fa/6c757d?text=ARTIFIC" },
-    { name: "StudyPass", logo: "https://via.placeholder.com/120x60/f8f9fa/6c757d?text=STUDYPASS" },
-    { name: "Dunya", logo: "https://via.placeholder.com/120x60/f8f9fa/6c757d?text=DUNYA" },
-    { name: "Coinbase", logo: "https://logo.clearbit.com/coinbase.com" },
-    { name: "Amazon", logo: "https://logo.clearbit.com/amazon.com" },
-    { name: "Alpha", logo: "https://via.placeholder.com/120x60/f8f9fa/6c757d?text=ALPHA" },
-    { name: "Recycling", logo: "https://via.placeholder.com/120x60/f8f9fa/6c757d?text=RECYCLING" },
-    { name: "Lawless", logo: "https://via.placeholder.com/120x60/f8f9fa/6c757d?text=LAWLESS" },
-    { name: "Partners", logo: "https://via.placeholder.com/120x60/f8f9fa/6c757d?text=PARTNERS" },
+    { name: "PCA", logo: "https://via.placeholder.com/120x40/e8e9ea/495057?text=PCA" },
+    { name: "ARTIFIC", logo: "https://via.placeholder.com/120x40/e8e9ea/495057?text=ARTIFIC" },
+    { name: "STUDYPASS", logo: "https://via.placeholder.com/120x40/e8e9ea/495057?text=STUDYPASS" },
+    { name: "DUNYA", logo: "https://via.placeholder.com/120x40/e8e9ea/495057?text=DUNYA" },
+    { name: "COINBASE", logo: "https://via.placeholder.com/120x40/e8e9ea/495057?text=COINBASE" },
+    { name: "AMAZON", logo: "https://via.placeholder.com/120x40/e8e9ea/495057?text=AMAZON" },
+    { name: "ALPHA", logo: "https://via.placeholder.com/120x40/e8e9ea/495057?text=ALPHA" },
+    { name: "RECYCLING", logo: "https://via.placeholder.com/120x40/e8e9ea/495057?text=RECYCLING" },
+    { name: "LAWLESS", logo: "https://via.placeholder.com/120x40/e8e9ea/495057?text=LAWLESS" },
+    { name: "PARTNERS", logo: "https://via.placeholder.com/120x40/e8e9ea/495057?text=PARTNERS" },
   ];
 
   // Duplicate the logos array to create seamless scrolling
@@ -33,16 +33,19 @@ export default function ClientLogos() {
             {duplicatedLogos.map((logo, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 mx-8 flex items-center justify-center"
-                style={{ minWidth: '120px', height: '60px' }}
+                className="flex-shrink-0 mx-8 flex items-center justify-center bg-gray-50 rounded-lg p-4"
+                style={{ minWidth: '140px', height: '60px' }}
               >
                 <img
                   src={logo.logo}
                   alt={logo.name}
-                  className="max-w-full max-h-full object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
+                  className="max-w-full max-h-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
+                  style={{ maxWidth: '120px', maxHeight: '40px' }}
+                  onLoad={() => console.log(`Logo loaded: ${logo.name}`)}
                   onError={(e) => {
+                    console.error(`Logo failed to load: ${logo.name}`);
                     const target = e.target as HTMLImageElement;
-                    target.src = `https://via.placeholder.com/120x60/f8f9fa/6c757d?text=${logo.name}`;
+                    target.src = `https://via.placeholder.com/120x40/e8e9ea/495057?text=${logo.name}`;
                   }}
                 />
               </div>
