@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import XConLogo from "@assets/Light-Logo.5ba91110-2048x403_1752305014932.png";
+import QuoteModal from "./quote-modal";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -77,7 +79,7 @@ export default function Header() {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center space-x-4">
             <Button
-              onClick={() => scrollToSection("contact")}
+              onClick={() => setIsQuoteModalOpen(true)}
               className="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-full font-medium transition-colors uppercase text-sm"
             >
               GET A QUOTE
@@ -136,7 +138,7 @@ export default function Header() {
                 Technologies
               </button>
               <Button
-                onClick={() => scrollToSection("contact")}
+                onClick={() => setIsQuoteModalOpen(true)}
                 className="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-full font-medium transition-colors mt-4 uppercase text-sm"
               >
                 GET A QUOTE
@@ -145,6 +147,12 @@ export default function Header() {
           </div>
         )}
       </div>
+      
+      {/* Quote Modal */}
+      <QuoteModal 
+        isOpen={isQuoteModalOpen} 
+        onClose={() => setIsQuoteModalOpen(false)} 
+      />
     </header>
   );
 }

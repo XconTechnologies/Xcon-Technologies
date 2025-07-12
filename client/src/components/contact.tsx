@@ -169,7 +169,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1">Email</h4>
-                    <p className="text-gray-300">contact@xcontechnologies.com</p>
+                    <p className="text-gray-300">askforquote@xcontechnologies.com</p>
                   </div>
                 </div>
               </div>
