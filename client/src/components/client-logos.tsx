@@ -49,13 +49,13 @@ export default function ClientLogos() {
               <div
                 key={index}
                 className="flex-shrink-0 mx-6 flex items-center justify-center bg-white border-2 border-gray-100 rounded-lg p-4 transition-all duration-300 hover:border-[#7CB342] hover:shadow-lg"
-                style={{ minWidth: '160px', height: '80px' }}
+                style={{ minWidth: '200px', height: '120px' }}
               >
                 <img
                   src={logo.logo}
                   alt={logo.name}
-                  className="max-w-full max-h-full object-contain transition-all duration-300"
-                  style={{ width: '140px', height: '60px', objectFit: 'contain' }}
+                  className="transition-all duration-300"
+                  style={{ width: '180px', height: '90px', objectFit: 'contain' }}
                 />
               </div>
             ))}
