@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Code, Database, Cloud, Smartphone, Edit, Target, BarChart3, Repeat } from "lucide-react";
+import QuoteModal from "./quote-modal";
 import softwareImg from "@assets/Xcon web - software_1752304457704.jpg";
 import mvpImg from "@assets/Xcon web - MVP development_1752304457706.jpg";
 import cloudImg from "@assets/Xcon web - cloud Computing_1752304457707.jpg";
@@ -11,6 +12,7 @@ import uiuxImg from "@assets/Xcon UI UX service 2_1752304457712.jpg";
 
 export default function Services() {
   const [activeTab, setActiveTab] = useState("web-development");
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
 
   const tabs = [
     {
@@ -201,40 +203,56 @@ export default function Services() {
         </div>
 
         {/* Content area */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch min-h-[500px]">
           {/* Left side - Content */}
-          <div className="flex flex-col justify-center">
-            <div className="bg-primary text-white px-6 py-2 rounded-full inline-block mb-6">
-              <h3 className="text-lg font-semibold">
-                {activeTabData?.content.title}
-              </h3>
+          <div className="flex flex-col justify-between">
+            <div>
+              <div className="bg-primary text-white px-6 py-2 rounded-full inline-block mb-6">
+                <h3 className="text-lg font-semibold">
+                  {activeTabData?.content.title}
+                </h3>
+              </div>
+              
+              <div className="space-y-4 mb-8">
+                {activeTabData?.content.bulletPoints.map((point, index) => (
+                  <div key={index} className="flex items-start">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                    <p className="text-gray-700 leading-relaxed text-sm">
+                      {point}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
             
-            <div className="space-y-4 flex-1">
-              {activeTabData?.content.bulletPoints.map((point, index) => (
-                <div key={index} className="flex items-start">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                  <p className="text-gray-700 leading-relaxed text-sm">
-                    {point}
-                  </p>
-                </div>
-              ))}
+            <div className="mt-auto">
+              <button 
+                onClick={() => setIsQuoteModalOpen(true)}
+                className="bg-primary text-white px-8 py-3 rounded-lg text-base font-semibold hover:bg-primary/90 transition-colors"
+              >
+                Get a Quote
+              </button>
             </div>
           </div>
 
           {/* Right side - Image */}
           <div className="lg:pl-8">
-            <div className="rounded-2xl overflow-hidden h-[400px]">
+            <div className="rounded-2xl overflow-hidden h-[500px] w-full">
               <img 
                 key={activeTab}
                 src={activeTabData?.content.image} 
                 alt={activeTabData?.content.cardTitle}
-                className="w-full h-full object-cover transition-opacity duration-150"
+                className="w-full h-full object-contain bg-gray-50 transition-opacity duration-150"
               />
             </div>
           </div>
         </div>
       </div>
+      
+      <QuoteModal 
+        isOpen={isQuoteModalOpen} 
+        onClose={() => setIsQuoteModalOpen(false)} 
+      />
     </section>
   );
 }
