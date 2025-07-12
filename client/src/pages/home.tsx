@@ -9,6 +9,7 @@ import ValuesProjects from "@/components/values-projects";
 import Brands from "@/components/brands";
 import Portfolio from "@/components/portfolio";
 import Statistics from "@/components/statistics";
+import ClientLogos from "@/components/client-logos";
 import About from "@/components/about";
 import Testimonials from "@/components/testimonials";
 import Contact from "@/components/contact";
@@ -28,6 +29,7 @@ export default function Home() {
       <Brands />
       <Portfolio />
       <Statistics />
+      <ClientLogos />
       <About />
       <Testimonials />
       <Contact />
