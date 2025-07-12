@@ -161,7 +161,7 @@ export default function Services() {
 
   return (
     <section id="services" className="py-20 bg-white">
-      <div className="container mx-auto px-4 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
             What <span className="text-primary">Services</span> We Offer

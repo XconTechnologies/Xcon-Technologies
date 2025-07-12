@@ -32,7 +32,7 @@ export default function Expertise() {
 
   return (
     <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
         <div className="mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-8">Expertise Across Domains</h2>
         </div>

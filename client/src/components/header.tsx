@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import XConLogo from "@/assets/xcon-logo.svg";
+import XConLogo from "@assets/Light-Logo.5ba91110-2048x403_1752305014932.png";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,11 +27,11 @@ export default function Header() {
 
   return (
     <header className={`fixed w-full top-0 z-50 bg-transparent transition-all duration-300 ${isScrolled ? "bg-black/80 backdrop-blur-sm" : ""}`}>
-      <div className="container mx-auto px-4 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <img src={XConLogo} alt="XCon Technologies" className="h-10 w-auto" />
+            <img src={XConLogo} alt="XCon Technologies" className="h-12 w-auto" />
           </div>
 
           {/* Desktop Navigation */}

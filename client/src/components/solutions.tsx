@@ -22,7 +22,7 @@ export default function Solutions() {
 
   return (
     <section className="py-20 bg-primary/5">
-      <div className="container mx-auto px-4 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
         <div className="mb-16">
           <div className="bg-primary/10 rounded-lg p-4 inline-block mb-8">
             <h2 className="text-4xl md:text-5xl font-bold text-primary">Examples of Solutions We Deliver</h2>

@@ -53,7 +53,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-20 gradient-overlay text-white">
-      <div className="container mx-auto px-4 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Get Started Today</h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">

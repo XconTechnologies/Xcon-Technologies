@@ -106,3 +106,11 @@ Preferred communication style: Simple, everyday language.
 - **Problem**: Efficient development workflow for full-stack app
 - **Solution**: Vite for frontend, tsx for backend, unified build process
 - **Benefits**: Fast HMR, TypeScript execution, production optimization
+
+## Recent Changes
+
+- **Logo Updates (January 2025)**: Updated header and footer logos with new XCon Technologies professional logos from provided assets
+- **Layout Width Constraint (January 2025)**: Set website layout to maximum width of 1440px instead of full width for better design consistency across all sections
+- **Service Images Integration**: Integrated 8 professional service images that correspond to each service tab with dynamic content switching
+- **Services Section Enhancement**: Updated "What Services We Offer" section from vertical to horizontal tabs layout with 8 services (Web Development, Software Consulting, Cloud Engineering, Mobile Development, UI/UX Design, MVP Development, Digital Marketing, Data Engineering)
+- **Footer Completion**: Completed comprehensive footer section with exact design, XCon Technologies branding, 10 services list, award badges, newsletter subscription, and social media links

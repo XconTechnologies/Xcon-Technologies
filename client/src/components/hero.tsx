@@ -36,7 +36,7 @@ export default function Hero() {
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/60"></div>
       
-      <div className="container mx-auto px-4 lg:px-8 relative z-10 h-full">
+      <div className="max-w-[1440px] mx-auto px-4 lg:px-8 relative z-10 h-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
           {/* Left content */}
           <div className="text-white">

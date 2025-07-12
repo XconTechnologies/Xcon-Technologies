@@ -63,7 +63,7 @@ export default function WhyChoose() {
 
   return (
     <section className="py-20 bg-white">
-      <div className="container mx-auto px-4 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
         {/* Technology Stack */}
         <div className="mb-20">
           <div className="text-center mb-12">
