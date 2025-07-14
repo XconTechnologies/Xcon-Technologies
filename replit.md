@@ -109,6 +109,8 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+- **Logo Animation Speed Enhancement (January 2025)**: Improved client logos scrolling animation from 30s to 20s for faster, smoother movement with maintained hover pause functionality
+- **Hero Section Redesign (January 2025)**: Removed contact form from hero section and centered all content (heading, description, button, and featured brands) for better visual hierarchy and user experience
 - **Client Logos Update (January 2025)**: Expanded client logos section with 20 authentic company logos including Harvest Energy, Accommodation Solutions, Cloud Choice Technologies, Lawless, Knopee, US Pro Listing, Alfikrah United, FloPro, Dunya Consultants, Velocity Tuning, Oliver, Quinnie Plastic Surgery, Suto Tech, MSK Consultants, Muslim Hub, Net Giant Technologies, Meet, Pi Systems, Renovex, and Motor Metrics
 - **Hero Section Contact Form (January 2025)**: Removed award badges from footer and added professional contact form to hero section with transparent styling, form validation, and service selection dropdown
 - **Industries and Technologies Mega Menus (January 2025)**: Added comprehensive mega menus for Industries and Technologies sections matching TekRevol website structure with 3-column layouts, organized categories, and hover effects
