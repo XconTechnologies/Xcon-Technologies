@@ -1,5 +1,11 @@
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import XConLogo from "@assets/Xcon Logo_1752305014933.png";
+import securityBadge from '@assets/image_1752486683692.png';
+import cloudPractitionerBadge from '@assets/image_1752486680154.png';
+import devopsBadge from '@assets/image_1752486676167.png';
+import developerBadge from '@assets/image_1752486671099.png';
+import solutionsArchitectBadge from '@assets/image_1752486691404.png';
+import sysopsBadge from '@assets/image_1752486687667.png';
 
 export default function Footer() {
   return (
@@ -99,7 +105,7 @@ export default function Footer() {
             <a href="https://www.security.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-all duration-300 hover:shadow-2xl">
               <div className="w-24 h-24 flex items-center justify-center">
                 <img 
-                  src="/attached_assets/image_1752486683692.png" 
+                  src={securityBadge} 
                   alt="AWS Security Specialty Certification" 
                   className="w-full h-full object-contain"
                 />
@@ -108,7 +114,7 @@ export default function Footer() {
             <a href="https://www.cloud-practitioner.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-all duration-300 hover:shadow-2xl">
               <div className="w-24 h-24 flex items-center justify-center">
                 <img 
-                  src="/attached_assets/image_1752486680154.png" 
+                  src={cloudPractitionerBadge} 
                   alt="AWS Cloud Practitioner Foundational Certification" 
                   className="w-full h-full object-contain"
                 />
@@ -117,7 +123,7 @@ export default function Footer() {
             <a href="https://devops.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-all duration-300 hover:shadow-2xl">
               <div className="w-24 h-24 flex items-center justify-center">
                 <img 
-                  src="/attached_assets/image_1752486676167.png" 
+                  src={devopsBadge} 
                   alt="AWS DevOps Engineer Professional Certification" 
                   className="w-full h-full object-contain"
                 />
@@ -126,7 +132,7 @@ export default function Footer() {
             <a href="https://www.developer.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-all duration-300 hover:shadow-2xl">
               <div className="w-24 h-24 flex items-center justify-center">
                 <img 
-                  src="/attached_assets/image_1752486671099.png" 
+                  src={developerBadge} 
                   alt="AWS Developer Associate Certification" 
                   className="w-full h-full object-contain"
                 />
@@ -135,7 +141,7 @@ export default function Footer() {
             <a href="https://www.solution-architect.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-all duration-300 hover:shadow-2xl">
               <div className="w-24 h-24 flex items-center justify-center">
                 <img 
-                  src="/attached_assets/image_1752486691404.png" 
+                  src={solutionsArchitectBadge} 
                   alt="AWS Solutions Architect Professional Certification" 
                   className="w-full h-full object-contain"
                 />
@@ -144,7 +150,7 @@ export default function Footer() {
             <a href="https://www.sysops.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-all duration-300 hover:shadow-2xl">
               <div className="w-24 h-24 flex items-center justify-center">
                 <img 
-                  src="/attached_assets/image_1752486687667.png" 
+                  src={sysopsBadge} 
                   alt="AWS SysOps Administrator Associate Certification" 
                   className="w-full h-full object-contain"
                 />
