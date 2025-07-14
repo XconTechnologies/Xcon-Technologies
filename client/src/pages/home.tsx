@@ -6,6 +6,7 @@ import WhyChoose from "@/components/why-choose";
 import EngagementModels from "@/components/engagement-models";
 import ValuesProjects from "@/components/values-projects";
 import Statistics from "@/components/statistics";
+import FAQs from "@/components/faqs";
 import ConsultationContact from "@/components/consultation-contact";
 import Footer from "@/components/footer";
 
@@ -20,6 +21,7 @@ export default function Home() {
       <EngagementModels />
       <ValuesProjects />
       <Statistics />
+      <FAQs />
       <ConsultationContact />
       <Footer />
     </div>
