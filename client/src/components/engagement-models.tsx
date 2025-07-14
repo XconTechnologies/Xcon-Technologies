@@ -1,4 +1,7 @@
 import { Users, User, UserPlus, ShoppingCart, DollarSign, Heart, GraduationCap, MessageSquare, Building, Music, Landmark, Home, Briefcase, Truck, Monitor, Heart as HeartIcon, Car, Plane, ArrowUpDown, ArrowDown } from "lucide-react";
+import video1 from "@assets/1_1752476678531.mp4";
+import video2 from "@assets/2_1752476678532.mp4";
+import video3 from "@assets/3_1752476678532.mp4";
 
 export default function EngagementModels() {
   const engagementModels = [
@@ -7,21 +10,24 @@ export default function EngagementModels() {
       centerText: "OUR\nPM",
       topText: "YOU",
       description: "Assign dedicated product managers & developers for your adaptive software development project.",
-      featured: false
+      featured: false,
+      video: video1
     },
     {
       title: "Team-Based Development", 
       centerText: "YOUR\nPM",
       topText: "",
       description: "Deploy a cooperative and professional team to deliver custom end-to-end software solutions",
-      featured: false
+      featured: false,
+      video: video2
     },
     {
       title: "Staff Augmentation",
       centerText: "YOUR\nPM",
       topText: "",
       description: "Integrate the best and expert app developers into your team for improved project success.",
-      featured: false
+      featured: false,
+      video: video3
     }
   ];
 
@@ -49,8 +55,8 @@ export default function EngagementModels() {
         {/* Engagement Models */}
         <div className="mb-20">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800">
-              Our <span className="text-primary">Engagement</span> Models
+            <h2 className="text-4xl md:text-5xl font-bold text-primary">
+              Our Engagement Models
             </h2>
           </div>
           
@@ -88,65 +94,19 @@ export default function EngagementModels() {
                   </div>
                 )}
                 
-                {/* Diagram */}
+                {/* Video Animation */}
                 <div className="relative mb-8 h-48 flex items-center justify-center">
-                  {/* Center circle */}
-                  <div className="w-20 h-20 bg-white border-2 border-primary rounded-full flex items-center justify-center z-10">
-                    <span className="text-gray-800 font-bold text-xs text-center leading-tight whitespace-pre-line">
-                      {model.centerText}
-                    </span>
-                  </div>
-                  
-                  {/* Surrounding circles */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="relative w-56 h-56">
-                      {[...Array(6)].map((_, i) => {
-                        const angle = (i * 60) * Math.PI / 180;
-                        const x = Math.cos(angle) * 90;
-                        const y = Math.sin(angle) * 90;
-                        return (
-                          <div
-                            key={i}
-                            className="absolute w-12 h-12 bg-white border-2 border-primary rounded-full flex items-center justify-center animate-pulse"
-                            style={{
-                              left: `calc(50% + ${x}px - 24px)`,
-                              top: `calc(50% + ${y}px - 24px)`,
-                              animationDelay: `${i * 0.2}s`,
-                            }}
-                          >
-                            <User className="h-4 w-4 text-primary" />
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                  
-                  {/* Connecting lines */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="relative w-56 h-56">
-                      {[...Array(6)].map((_, i) => {
-                        const angle = (i * 60) * Math.PI / 180;
-                        const x1 = Math.cos(angle) * 40;
-                        const y1 = Math.sin(angle) * 40;
-                        const x2 = Math.cos(angle) * 90;
-                        const y2 = Math.sin(angle) * 90;
-                        return (
-                          <div
-                            key={i}
-                            className="absolute border-t-2 border-dashed border-primary/30 animate-pulse"
-                            style={{
-                              left: `calc(50% + ${x1}px)`,
-                              top: `calc(50% + ${y1}px)`,
-                              width: `${Math.sqrt((x2-x1)**2 + (y2-y1)**2)}px`,
-                              transformOrigin: '0 0',
-                              transform: `rotate(${Math.atan2(y2-y1, x2-x1)}rad)`,
-                              animationDelay: `${i * 0.1}s`,
-                            }}
-                          />
-                        );
-                      })}
-                    </div>
-                  </div>
+                  <video
+                    key={index}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-contain rounded-lg"
+                  >
+                    <source src={model.video} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
                 
                 <div className="text-center">
@@ -165,8 +125,8 @@ export default function EngagementModels() {
         {/* Industries Section */}
         <div>
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800">
-              <span className="text-primary">Industries</span> we deal
+            <h2 className="text-4xl md:text-5xl font-bold text-primary">
+              Industries we deal
             </h2>
           </div>
           
