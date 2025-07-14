@@ -74,7 +74,7 @@ export default function Footer() {
 
 
         {/* Newsletter Section */}
-        <div className="p-8">
+        <div className="mt-8 pt-8 border-t border-gray-200">
           <div className="text-center">
             <h3 className="text-2xl font-bold text-gray-800 mb-6">
               Subscribe To Our Newsletter
@@ -93,7 +93,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="text-center mt-8 pt-8 border-t border-gray-200">
+        <div className="text-center mt-8 pt-6">
           <p className="text-gray-500">
             © 2025 XCON Technologies. All Rights Reserved.
           </p>
