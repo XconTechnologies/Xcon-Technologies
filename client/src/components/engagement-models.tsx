@@ -55,7 +55,7 @@ export default function EngagementModels() {
         {/* Engagement Models */}
         <div className="mb-20">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
               Our <span className="text-primary">Engagement</span> Models
             </h2>
           </div>
@@ -64,7 +64,7 @@ export default function EngagementModels() {
             {engagementModels.map((model, index) => (
               <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group">
                 {/* Video Animation */}
-                <div className="relative mb-8 h-48 flex items-center justify-center">
+                <div className="relative mb-8 h-64 flex items-center justify-center">
                   <video
                     key={index}
                     autoPlay
@@ -91,30 +91,7 @@ export default function EngagementModels() {
           </div>
         </div>
 
-        {/* Industries Section */}
-        <div>
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800">
-              <span className="text-primary">Industries</span> we deal
-            </h2>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {industries.map((industry, index) => (
-              <div 
-                key={index}
-                className="bg-white rounded-2xl p-6 flex flex-col items-center justify-center hover:bg-primary hover:text-white transition-all duration-300 group min-h-[140px]"
-              >
-                <div className="text-primary group-hover:text-white transition-colors mb-4">
-                  {industry.icon}
-                </div>
-                <h3 className="text-lg font-semibold text-gray-800 group-hover:text-white transition-colors text-center">
-                  {industry.name}
-                </h3>
-              </div>
-            ))}
-          </div>
-        </div>
+
       </div>
     </section>
   );

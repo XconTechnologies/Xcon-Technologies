@@ -43,8 +43,8 @@ export default function Hero() {
         <div className="flex flex-col items-center justify-center min-h-[80vh] text-center">
           {/* Centered content */}
           <div className="text-white max-w-6xl mx-auto">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
-              Grow Your Business with XCON Technologies!
+            <h1 className="text-4xl md:text-5xl lg:text-6xl mb-8 leading-tight">
+              Grow Your Business with <span className="font-bold">XCON Technologies!</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
               Welcome to XCON Technologies, where innovation meets digital expertise. Dive into our cutting-edge IT solutions, from advanced website and application development to seamless network integration. Let this IT software development company, XCON be your trusted partner in navigating the fast-changing technology landscape. Discover how we can take your digital journey to the next level.
@@ -58,24 +58,24 @@ export default function Hero() {
               </Button>
             </div>
             
-            {/* Featured clients section */}
+            {/* Trusted by Leading Companies section */}
             <div className="text-white">
-              <p className="text-sm text-gray-400 mb-6">Our Valued Partners</p>
-              <div className="flex items-center justify-center space-x-12 opacity-90">
+              <p className="text-sm text-gray-400 mb-6">Trusted by Leading Companies</p>
+              <div className="flex items-center justify-center space-x-8 opacity-90 flex-wrap gap-y-4">
                 <img 
                   src={dunyaLogo} 
                   alt="Dunya Consultants" 
-                  className="h-6 object-contain filter brightness-0 invert"
+                  className="h-8 object-contain filter brightness-0 invert"
                 />
                 <img 
                   src={cloudChoiceLogo} 
                   alt="Cloud Choice Technologies" 
-                  className="h-6 object-contain filter brightness-0 invert"
+                  className="h-8 object-contain filter brightness-0 invert"
                 />
                 <img 
                   src={renovexLogo} 
                   alt="Renovex" 
-                  className="h-6 object-contain filter brightness-0 invert"
+                  className="h-8 object-contain filter brightness-0 invert"
                 />
               </div>
             </div>
