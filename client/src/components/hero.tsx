@@ -1,9 +1,7 @@
 import { Button } from "@/components/ui/button";
-import harvestLogo from "@assets/HE-Logo-1 (1)_1752473995302.jpg";
-import knopeeLogo from "@assets/Knopee-Logo_1752473995304.webp";
-import mskLogo from "@assets/MSK-logo-5k-by-5k-1-1-1024x410_1752474237687.png";
-import netGiantLogo from "@assets/Net-Giant-1024x336_1752474237688.png";
-import floProLogo from "@assets/cropped-FloPro-Logo-Update-01-1-e1732599710397_1752474011380.png";
+import dunyaLogo from "@assets/DC-Blue-Logo-1536x360_1752475378358.png";
+import cloudChoiceLogo from "@assets/imgpsh_fullsize_anim_1752475378360.png";
+import muslimHubLogo from "@assets/Muslim-Hub-revv-02-scaled-e1730651956666 (1)_1752475378362.jpg";
 
 export default function Hero() {
   const scrollToSection = (sectionId: string) => {
@@ -62,32 +60,22 @@ export default function Hero() {
             
             {/* Featured clients section */}
             <div className="text-white">
-              <p className="text-sm text-gray-400 mb-6">Trusted by Leading Companies</p>
-              <div className="flex items-center justify-center space-x-12 opacity-80">
+              <p className="text-sm text-gray-400 mb-6">Our Valued Partners</p>
+              <div className="flex items-center justify-center space-x-16 opacity-80">
                 <img 
-                  src={harvestLogo} 
-                  alt="Harvest Energy" 
-                  className="h-8 object-contain filter brightness-0 invert"
+                  src={dunyaLogo} 
+                  alt="Dunya Consultants" 
+                  className="h-10 object-contain filter brightness-0 invert"
                 />
                 <img 
-                  src={knopeeLogo} 
-                  alt="Knopee" 
-                  className="h-8 object-contain filter brightness-0 invert"
+                  src={cloudChoiceLogo} 
+                  alt="Cloud Choice Technologies" 
+                  className="h-10 object-contain filter brightness-0 invert"
                 />
                 <img 
-                  src={mskLogo} 
-                  alt="MSK Consultants" 
-                  className="h-8 object-contain filter brightness-0 invert"
-                />
-                <img 
-                  src={netGiantLogo} 
-                  alt="Net Giant Technologies" 
-                  className="h-8 object-contain filter brightness-0 invert"
-                />
-                <img 
-                  src={floProLogo} 
-                  alt="FloPro" 
-                  className="h-8 object-contain filter brightness-0 invert"
+                  src={muslimHubLogo} 
+                  alt="Muslim Hub" 
+                  className="h-10 object-contain filter brightness-0 invert"
                 />
               </div>
             </div>
