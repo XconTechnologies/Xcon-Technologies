@@ -61,22 +61,28 @@ export default function Hero() {
             {/* Featured clients section */}
             <div className="text-white">
               <p className="text-sm text-gray-400 mb-6">Our Valued Partners</p>
-              <div className="flex items-center justify-center space-x-16 opacity-80">
-                <img 
-                  src={dunyaLogo} 
-                  alt="Dunya Consultants" 
-                  className="h-10 object-contain filter brightness-0 invert"
-                />
-                <img 
-                  src={cloudChoiceLogo} 
-                  alt="Cloud Choice Technologies" 
-                  className="h-10 object-contain filter brightness-0 invert"
-                />
-                <img 
-                  src={muslimHubLogo} 
-                  alt="Muslim Hub" 
-                  className="h-10 object-contain filter brightness-0 invert"
-                />
+              <div className="flex items-center justify-center space-x-16 opacity-90">
+                <div className="flex items-center justify-center bg-white/10 rounded-lg p-3" style={{ width: '140px', height: '60px' }}>
+                  <img 
+                    src={dunyaLogo} 
+                    alt="Dunya Consultants" 
+                    className="max-h-8 max-w-full object-contain filter brightness-0 invert"
+                  />
+                </div>
+                <div className="flex items-center justify-center bg-white/10 rounded-lg p-3" style={{ width: '140px', height: '60px' }}>
+                  <img 
+                    src={cloudChoiceLogo} 
+                    alt="Cloud Choice Technologies" 
+                    className="max-h-8 max-w-full object-contain filter brightness-0 invert"
+                  />
+                </div>
+                <div className="flex items-center justify-center bg-white/10 rounded-lg p-3" style={{ width: '140px', height: '60px' }}>
+                  <img 
+                    src={muslimHubLogo} 
+                    alt="Muslim Hub" 
+                    className="max-h-8 max-w-full object-contain filter brightness-0 invert"
+                  />
+                </div>
               </div>
             </div>
           </div>
