@@ -1,30 +1,24 @@
-import dunyaLogo from "@assets/DC-Blue-Logo-1536x360_1752307590480.png";
-import harvestLogo from "@assets/HE-Logo-1 (1)_1752307590481.jpg";
-import usProLogo from "@assets/Untitled design (8)_1752307590482.png";
-import mskLogo from "@assets/Untitled design (9)_1752307590482.png";
-import renovexLogo from "@assets/Untitled design (10)_1752307590483.png";
-import cloudChoiceLogo from "@assets/Untitled design (12)_1752307590484.png";
-import lawlessLogo from "@assets/Untitled design (13)_1752307590485.png";
-import quinnieLogo from "@assets/Untitled design (14)_1752307590486.png";
-import sutoTechLogo from "@assets/Untitled design (15)_1752307590487.png";
-import nationalBankLogo from "@assets/Untitled design (16)_1752307590488.png";
-import easyIeltsLogo from "@assets/Untitled design (17)_1752307590488.png";
-import priyyLogo from "@assets/Untitled design (18)_1752307590489.png";
+import harvestLogo from "@assets/HE-Logo-1 (1)_1752473995302.jpg";
+import accommodationLogo from "@assets/IMG-20240308-WA0130-removebg-preview_1752473995303.png";
+import cloudChoiceLogo from "@assets/imgpsh_fullsize_anim_1752473995303.png";
+import lawlessLogo from "@assets/jghih-1536x743_1752473995304.png";
+import knopeeLogo from "@assets/Knopee-Logo_1752473995304.webp";
+import usProLogo from "@assets/Logo uslisitingpro_1752473995305.png";
+import alfikrahLogo from "@assets/ALFIKRAH-UNITED-LOGO_1752474011378.png";
+import floProLogo from "@assets/cropped-FloPro-Logo-Update-01-1-e1732599710397_1752474011380.png";
+import dunyaLogo from "@assets/DC-Blue-Logo-1536x360_1752474011381.png";
 
 export default function ClientLogos() {
   const logos = [
     { name: "Dunya Consultants", logo: dunyaLogo },
     { name: "Harvest Energy", logo: harvestLogo },
-    { name: "US Pro Listing", logo: usProLogo },
-    { name: "MSK Consultants", logo: mskLogo },
-    { name: "Renovex", logo: renovexLogo },
+    { name: "Accommodation Solutions", logo: accommodationLogo },
     { name: "Cloud Choice Technologies", logo: cloudChoiceLogo },
-    { name: "Lawless Interiors", logo: lawlessLogo },
-    { name: "Quinnie Plastic Surgery", logo: quinnieLogo },
-    { name: "Suto Tech", logo: sutoTechLogo },
-    { name: "National Bank", logo: nationalBankLogo },
-    { name: "Easy IELTS Center", logo: easyIeltsLogo },
-    { name: "Priyy Interiors", logo: priyyLogo },
+    { name: "Lawless", logo: lawlessLogo },
+    { name: "Knopee", logo: knopeeLogo },
+    { name: "US Pro Listing", logo: usProLogo },
+    { name: "Alfikrah United", logo: alfikrahLogo },
+    { name: "FloPro", logo: floProLogo },
   ];
 
   // Duplicate the logos array to create seamless scrolling
