@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Code, Database, Cloud, Smartphone, Edit, Target, BarChart3, Repeat } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import QuoteModal from "./quote-modal";
@@ -160,6 +160,19 @@ export default function Services() {
     }
   ];
 
+  // Auto-cycle through tabs every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveTab(currentTab => {
+        const currentIndex = tabs.findIndex(tab => tab.id === currentTab);
+        const nextIndex = (currentIndex + 1) % tabs.length;
+        return tabs[nextIndex].id;
+      });
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [tabs]);
+
   const activeTabData = tabs.find(tab => tab.id === activeTab);
 
   return (
@@ -236,12 +249,16 @@ export default function Services() {
 
           {/* Right side - Image */}
           <div className="lg:pl-8">
-            <div className="rounded-2xl overflow-hidden h-[400px] w-full">
+            <div className="rounded-2xl overflow-hidden h-[400px] w-full bg-white">
               <img 
                 key={activeTab}
                 src={activeTabData?.content.image} 
                 alt={activeTabData?.content.cardTitle}
-                className="w-full h-full object-contain bg-gray-50 transition-opacity duration-150"
+                className="w-full h-full object-contain transition-opacity duration-150"
+                style={{
+                  filter: 'brightness(1) contrast(1) saturate(1)',
+                  mixBlendMode: 'normal'
+                }}
               />
             </div>
           </div>
