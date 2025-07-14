@@ -110,8 +110,8 @@ Preferred communication style: Simple, everyday language.
 ## Recent Changes
 
 - **Sora Font Implementation (January 2025)**: Implemented Sora font throughout entire website for all headings, text, buttons, and content elements
-- **Headings Centered and Green (January 2025)**: Updated all section headings to use centered text alignment and green color (#7CB342) for consistency across all components
-- **Engagement Models Video Animations (January 2025)**: Added three video animations to the engagement models section replacing the previous diagram illustrations
+- **Headings Green and Black Design (January 2025)**: Updated all section headings to use green and black color combination with specific words highlighted in green for visual emphasis
+- **Engagement Models Cleanup (January 2025)**: Removed top circles and arrows from engagement models while keeping video animations clean and streamlined
 - **Solutions Section Removal (January 2025)**: Removed "Examples of Solutions We Deliver" section and its import from home page to streamline website content and focus on core services
 - **Logo Animation Speed Enhancement (January 2025)**: Improved client logos scrolling animation from 30s to 20s for faster, smoother movement with maintained hover pause functionality
 - **Hero Section Logo Enhancement (January 2025)**: Replaced Muslim Hub with Renovex logo, removed background containers, and reduced logo size to h-6 for cleaner appearance. All 3 partner logos (Dunya Consultants, Cloud Choice Technologies, Renovex) now display with equal sizing and consistent white filter effects

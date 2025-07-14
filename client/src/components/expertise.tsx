@@ -34,7 +34,7 @@ export default function Expertise() {
     <section className="py-20 bg-gray-50">
       <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
         <div className="mb-16 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8">Expertise Across Domains</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-8">Expertise <span className="text-primary">Across</span> Domains</h2>
         </div>
         
         <Carousel className="w-full" opts={{ align: "start", loop: true }}>

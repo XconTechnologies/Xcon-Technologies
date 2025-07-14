@@ -55,45 +55,14 @@ export default function EngagementModels() {
         {/* Engagement Models */}
         <div className="mb-20">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary">
-              Our Engagement Models
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800">
+              Our <span className="text-primary">Engagement</span> Models
             </h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {engagementModels.map((model, index) => (
               <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group">
-                {/* Top circle for first model only */}
-                {index === 0 && (
-                  <div className="text-center mb-6">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-white border-2 border-primary rounded-full mb-4">
-                      <span className="text-gray-800 font-bold text-sm">{model.topText}</span>
-                    </div>
-                    
-                    {/* Animated arrow */}
-                    <div className="flex justify-center mb-4 text-primary">
-                      <div className="animate-bounce">
-                        <ArrowDown className="h-6 w-6" />
-                      </div>
-                    </div>
-                  </div>
-                )}
-                
-                {/* For other models, add user icon and arrow */}
-                {index !== 0 && (
-                  <div className="text-center mb-6">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-white border-2 border-primary rounded-full mb-4">
-                      <User className="h-6 w-6 text-primary" />
-                    </div>
-                    
-                    <div className="flex justify-center mb-4 text-primary">
-                      <div className="animate-bounce">
-                        <ArrowDown className="h-6 w-6" />
-                      </div>
-                    </div>
-                  </div>
-                )}
-                
                 {/* Video Animation */}
                 <div className="relative mb-8 h-48 flex items-center justify-center">
                   <video
@@ -125,8 +94,8 @@ export default function EngagementModels() {
         {/* Industries Section */}
         <div>
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary">
-              Industries we deal
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800">
+              <span className="text-primary">Industries</span> we deal
             </h2>
           </div>
           
