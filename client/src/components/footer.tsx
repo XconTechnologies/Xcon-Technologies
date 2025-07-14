@@ -1,5 +1,11 @@
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import XConLogo from "@assets/Xcon Logo_1752305014933.png";
+import SecurityBadge from "@assets/image_1752481490857.png";
+import CloudPractitionerBadge from "@assets/image_1752481487169.png";
+import DevOpsBadge from "@assets/image_1752481482616.png";
+import DeveloperBadge from "@assets/image_1752481477577.png";
+import SolutionArchitectBadge from "@assets/image_1752481473615.png";
+import SysOpsBadge from "@assets/image_1752481493690.png";
 
 export default function Footer() {
   return (
@@ -68,6 +74,28 @@ export default function Footer() {
               <li><a href="#" className="hover:text-primary transition-colors">Terms Of Service</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">About Us</a></li>
             </ul>
+            
+            {/* Certification Badges */}
+            <div className="grid grid-cols-3 gap-3 mt-6">
+              <a href="https://www.security.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                <img src={SecurityBadge} alt="Security Specialty" className="w-full h-auto" />
+              </a>
+              <a href="https://www.cloud-practitioner.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                <img src={CloudPractitionerBadge} alt="Cloud Practitioner" className="w-full h-auto" />
+              </a>
+              <a href="https://devops.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                <img src={DevOpsBadge} alt="DevOps Engineer" className="w-full h-auto" />
+              </a>
+              <a href="https://www.developer.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                <img src={DeveloperBadge} alt="Developer Associate" className="w-full h-auto" />
+              </a>
+              <a href="https://www.solution-architect.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                <img src={SolutionArchitectBadge} alt="Solutions Architect" className="w-full h-auto" />
+              </a>
+              <a href="https://www.sysops.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                <img src={SysOpsBadge} alt="SysOps Administrator" className="w-full h-auto" />
+              </a>
+            </div>
           </div>
         </div>
 
