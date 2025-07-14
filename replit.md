@@ -112,7 +112,7 @@ Preferred communication style: Simple, everyday language.
 - **Sora Font Implementation (January 2025)**: Implemented Sora font throughout entire website for all headings, text, buttons, and content elements
 - **Headings Green and Black Design (January 2025)**: Updated all section headings to use green and black color combination with specific words highlighted in green for visual emphasis
 - **Header Spacing Enhancement (January 2025)**: Added top spacing to header (h-24 mt-2) and adjusted hero section padding (pt-36) for better visual balance
-- **Footer Certification Badges (January 2025)**: Added 6 AWS certification badges (Security, Cloud Practitioner, DevOps, Developer, Solution Architect, SysOps) with respective links in 3x2 grid layout below company links
+- **Footer Layout Reorganization (January 2025)**: Moved certification badges to center bottom section (horizontal line) and moved newsletter subscription to right column below company links for better layout organization
 - **Footer Spacing Fix (January 2025)**: Adjusted footer padding from px-4 to px-8 lg:px-16 to match reference design with proper left and right spacing
 - **Footer Contact Details Update (January 2025)**: Updated contact information with new phone number (+15133024718), kept same email (askforquote@xcontechnologies.com), and simplified address to "Ohio City, USA"
 - **Newsletter Section Background Fix (January 2025)**: Removed white background box from newsletter subscription section in footer to match the gray footer background for consistent design
