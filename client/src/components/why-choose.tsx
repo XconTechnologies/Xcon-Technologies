@@ -1,32 +1,8 @@
 import { Star, Settings, Globe, Database, Zap, MessageCircle, ArrowRight } from "lucide-react";
-import nodeLogo from "@assets/image_1752480019266.png";
-import openaiLogo from "@assets/image_1752480026099.png";
-import vueLogo from "@assets/image_1752480028607.png";
-import gitLogo from "@assets/image_1752480031073.png";
-import flutterLogo from "@assets/image_1752480033784.png";
-import awsLogo from "@assets/image_1752480036762.png";
-import azureLogo from "@assets/image_1752480039668.png";
-import dotnetLogo from "@assets/image_1752480044886.png";
-import reactLogo from "@assets/image_1752480048249.png";
-import atlassianLogo from "@assets/image_1752480055553.png";
-import graphqlLogo from "@assets/image_1752480075430.png";
-import mongodbLogo from "@assets/image_1752480082277.png";
+import techLogos from "@assets/image_1752480531522.png";
 
 export default function WhyChoose() {
-  const technologies = [
-    { name: "Node.js", logo: nodeLogo },
-    { name: "OpenAI", logo: openaiLogo },
-    { name: "Laravel", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" },
-    { name: "MongoDB", logo: mongodbLogo },
-    { name: "GraphQL", logo: graphqlLogo },
-    { name: "Atlassian", logo: atlassianLogo },
-    { name: "Flutter", logo: flutterLogo },
-    { name: "AWS", logo: awsLogo },
-    { name: "Meta", logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" },
-    { name: ".NET", logo: dotnetLogo },
-    { name: "React", logo: reactLogo },
-    { name: "Docker", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
-  ];
+
 
   const features = [
     {
@@ -75,24 +51,12 @@ export default function WhyChoose() {
             </p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-            {technologies.map((tech, index) => (
-              <div 
-                key={index} 
-                className="bg-gray-50 rounded-2xl p-6 flex flex-col items-center justify-center hover:shadow-lg transition-all duration-300 min-h-[120px]"
-              >
-                <img 
-                  src={tech.logo} 
-                  alt={tech.name}
-                  className="w-12 h-12 mb-2 object-contain"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                  }}
-                />
-                <span className="text-sm font-medium text-gray-700 text-center">{tech.name}</span>
-              </div>
-            ))}
+          <div className="flex justify-center">
+            <img 
+              src={techLogos} 
+              alt="Technology Stack"
+              className="max-w-full h-auto object-contain"
+            />
           </div>
         </div>
 
