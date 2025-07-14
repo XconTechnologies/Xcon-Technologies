@@ -102,7 +102,7 @@ export default function Footer() {
             <h3 className="text-2xl font-bold text-gray-800">Our <span className="text-primary">Certifications</span></h3>
           </div>
           <div className="flex justify-center items-center gap-8 flex-wrap">
-            <a href="https://www.security.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300">
+            <a href="https://www.security.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300 certification-badge">
               <div className="w-24 h-24 flex items-center justify-center">
                 <img 
                   src={securityBadge} 
@@ -111,7 +111,7 @@ export default function Footer() {
                 />
               </div>
             </a>
-            <a href="https://www.cloud-practitioner.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300">
+            <a href="https://www.cloud-practitioner.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300 certification-badge">
               <div className="w-24 h-24 flex items-center justify-center">
                 <img 
                   src={cloudPractitionerBadge} 
@@ -120,7 +120,7 @@ export default function Footer() {
                 />
               </div>
             </a>
-            <a href="https://devops.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300">
+            <a href="https://devops.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300 certification-badge">
               <div className="w-24 h-24 flex items-center justify-center">
                 <img 
                   src={devopsBadge} 
@@ -129,7 +129,7 @@ export default function Footer() {
                 />
               </div>
             </a>
-            <a href="https://www.developer.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300">
+            <a href="https://www.developer.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300 certification-badge">
               <div className="w-24 h-24 flex items-center justify-center">
                 <img 
                   src={developerBadge} 
@@ -138,7 +138,7 @@ export default function Footer() {
                 />
               </div>
             </a>
-            <a href="https://www.solution-architect.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300">
+            <a href="https://www.solution-architect.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300 certification-badge">
               <div className="w-24 h-24 flex items-center justify-center">
                 <img 
                   src={solutionsArchitectBadge} 
@@ -147,7 +147,7 @@ export default function Footer() {
                 />
               </div>
             </a>
-            <a href="https://www.sysops.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300">
+            <a href="https://www.sysops.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300 certification-badge">
               <div className="w-24 h-24 flex items-center justify-center">
                 <img 
                   src={sysopsBadge} 
