@@ -19,7 +19,7 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-primary" />
-                <span className="text-gray-800">+1 (504) 369-9609</span>
+                <span className="text-gray-800">+15133024718</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-primary" />
@@ -27,7 +27,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-primary" />
-                <span className="text-gray-800">1235 East Blvd, Suite E PMB 5100, Charlotte, North Carolina, 28203, United States</span>
+                <span className="text-gray-800">Ohio City, USA</span>
               </div>
             </div>
             
