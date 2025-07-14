@@ -70,13 +70,7 @@ export default function ConsultationContact() {
                     Drop us a line! We are here to answer your questions 24/7.
                   </p>
                 </div>
-                <div className="hidden lg:block">
-                  <img 
-                    src={xconLogo} 
-                    alt="XCon Technologies" 
-                    className="h-12 object-contain"
-                  />
-                </div>
+
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -90,9 +84,7 @@ export default function ConsultationContact() {
                     className="w-full h-32 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
                     required
                   />
-                  <div className="flex items-center justify-between mt-2">
-                    <span className="text-sm text-gray-500">0</span>
-                  </div>
+
                 </div>
 
                 {/* File Upload */}
