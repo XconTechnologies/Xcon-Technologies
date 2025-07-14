@@ -41,17 +41,13 @@ body.modal-open {
   height: 100% !important;
 }
 
-/* Certification badges styling - Clean transparent badges */
+/* Certification badges styling */
 .certification-badge {
   background: transparent !important;
 }
 
 .certification-badge img {
   background: transparent !important;
-  /* Remove black background using screen blend mode */
-  mix-blend-mode: screen;
-  /* Enhanced visibility filters */
-  filter: brightness(1.1) contrast(1.05) saturate(1.1);
 }
 
 * {
