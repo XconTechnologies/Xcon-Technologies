@@ -1,11 +1,5 @@
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import XConLogo from "@assets/Xcon Logo_1752305014933.png";
-import SecurityBadge from "@assets/image_1752481490857.png";
-import CloudPractitionerBadge from "@assets/image_1752481487169.png";
-import DevOpsBadge from "@assets/image_1752481482616.png";
-import DeveloperBadge from "@assets/image_1752481477577.png";
-import SolutionArchitectBadge from "@assets/image_1752481473615.png";
-import SysOpsBadge from "@assets/image_1752481493690.png";
 
 export default function Footer() {
   return (
@@ -78,22 +72,74 @@ export default function Footer() {
             {/* Certification Badges */}
             <div className="grid grid-cols-3 gap-3 mt-6">
               <a href="https://www.security.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-                <img src={SecurityBadge} alt="Security Specialty" className="w-full h-auto" />
+                <div className="w-full h-20 flex items-center justify-center">
+                  <svg viewBox="0 0 120 120" className="w-full h-full">
+                    <polygon points="60,10 100,30 100,90 60,110 20,90 20,30" fill="#7C3AED" stroke="#9F7AEA" strokeWidth="2"/>
+                    <text x="60" y="35" fill="white" fontSize="8" textAnchor="middle" className="font-bold">AWS</text>
+                    <text x="60" y="45" fill="white" fontSize="6" textAnchor="middle">certified</text>
+                    <text x="60" y="65" fill="white" fontSize="12" textAnchor="middle" className="font-bold">Security</text>
+                    <text x="60" y="85" fill="white" fontSize="8" textAnchor="middle">SPECIALTY</text>
+                  </svg>
+                </div>
               </a>
               <a href="https://www.cloud-practitioner.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-                <img src={CloudPractitionerBadge} alt="Cloud Practitioner" className="w-full h-auto" />
+                <div className="w-full h-20 flex items-center justify-center">
+                  <svg viewBox="0 0 120 120" className="w-full h-full">
+                    <polygon points="60,10 100,30 100,90 60,110 20,90 20,30" fill="#4A5568" stroke="#718096" strokeWidth="2"/>
+                    <text x="60" y="35" fill="white" fontSize="8" textAnchor="middle" className="font-bold">AWS</text>
+                    <text x="60" y="45" fill="white" fontSize="6" textAnchor="middle">certified</text>
+                    <text x="60" y="60" fill="white" fontSize="10" textAnchor="middle" className="font-bold">Cloud</text>
+                    <text x="60" y="72" fill="white" fontSize="10" textAnchor="middle" className="font-bold">Practitioner</text>
+                    <text x="60" y="85" fill="white" fontSize="8" textAnchor="middle">FOUNDATIONAL</text>
+                  </svg>
+                </div>
               </a>
               <a href="https://devops.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-                <img src={DevOpsBadge} alt="DevOps Engineer" className="w-full h-auto" />
+                <div className="w-full h-20 flex items-center justify-center">
+                  <svg viewBox="0 0 120 120" className="w-full h-full">
+                    <polygon points="60,10 100,30 100,90 60,110 20,90 20,30" fill="#319795" stroke="#4FD1C7" strokeWidth="2"/>
+                    <text x="60" y="35" fill="white" fontSize="8" textAnchor="middle" className="font-bold">AWS</text>
+                    <text x="60" y="45" fill="white" fontSize="6" textAnchor="middle">certified</text>
+                    <text x="60" y="60" fill="white" fontSize="12" textAnchor="middle" className="font-bold">DevOps</text>
+                    <text x="60" y="72" fill="white" fontSize="12" textAnchor="middle" className="font-bold">Engineer</text>
+                    <text x="60" y="85" fill="white" fontSize="8" textAnchor="middle">PROFESSIONAL</text>
+                  </svg>
+                </div>
               </a>
               <a href="https://www.developer.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-                <img src={DeveloperBadge} alt="Developer Associate" className="w-full h-auto" />
+                <div className="w-full h-20 flex items-center justify-center">
+                  <svg viewBox="0 0 120 120" className="w-full h-full">
+                    <polygon points="60,10 100,30 100,90 60,110 20,90 20,30" fill="#3182CE" stroke="#63B3ED" strokeWidth="2"/>
+                    <text x="60" y="35" fill="white" fontSize="8" textAnchor="middle" className="font-bold">AWS</text>
+                    <text x="60" y="45" fill="white" fontSize="6" textAnchor="middle">certified</text>
+                    <text x="60" y="65" fill="white" fontSize="12" textAnchor="middle" className="font-bold">Developer</text>
+                    <text x="60" y="85" fill="white" fontSize="8" textAnchor="middle">ASSOCIATE</text>
+                  </svg>
+                </div>
               </a>
               <a href="https://www.solution-architect.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-                <img src={SolutionArchitectBadge} alt="Solutions Architect" className="w-full h-auto" />
+                <div className="w-full h-20 flex items-center justify-center">
+                  <svg viewBox="0 0 120 120" className="w-full h-full">
+                    <polygon points="60,10 100,30 100,90 60,110 20,90 20,30" fill="#319795" stroke="#4FD1C7" strokeWidth="2"/>
+                    <text x="60" y="35" fill="white" fontSize="8" textAnchor="middle" className="font-bold">AWS</text>
+                    <text x="60" y="45" fill="white" fontSize="6" textAnchor="middle">certified</text>
+                    <text x="60" y="60" fill="white" fontSize="10" textAnchor="middle" className="font-bold">Solutions</text>
+                    <text x="60" y="72" fill="white" fontSize="10" textAnchor="middle" className="font-bold">Architect</text>
+                    <text x="60" y="85" fill="white" fontSize="8" textAnchor="middle">PROFESSIONAL</text>
+                  </svg>
+                </div>
               </a>
               <a href="https://www.sysops.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-                <img src={SysOpsBadge} alt="SysOps Administrator" className="w-full h-auto" />
+                <div className="w-full h-20 flex items-center justify-center">
+                  <svg viewBox="0 0 120 120" className="w-full h-full">
+                    <polygon points="60,10 100,30 100,90 60,110 20,90 20,30" fill="#3182CE" stroke="#63B3ED" strokeWidth="2"/>
+                    <text x="60" y="35" fill="white" fontSize="8" textAnchor="middle" className="font-bold">AWS</text>
+                    <text x="60" y="45" fill="white" fontSize="6" textAnchor="middle">certified</text>
+                    <text x="60" y="60" fill="white" fontSize="10" textAnchor="middle" className="font-bold">SysOps</text>
+                    <text x="60" y="72" fill="white" fontSize="10" textAnchor="middle" className="font-bold">Administrator</text>
+                    <text x="60" y="85" fill="white" fontSize="8" textAnchor="middle">ASSOCIATE</text>
+                  </svg>
+                </div>
               </a>
             </div>
           </div>
