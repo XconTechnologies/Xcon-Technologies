@@ -74,7 +74,7 @@ export default function Footer() {
 
 
         {/* Newsletter Section */}
-        <div className="bg-white rounded-2xl p-8 shadow-sm">
+        <div className="p-8">
           <div className="text-center">
             <h3 className="text-2xl font-bold text-gray-800 mb-6">
               Subscribe To Our Newsletter

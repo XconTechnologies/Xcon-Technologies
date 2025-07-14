@@ -112,6 +112,7 @@ Preferred communication style: Simple, everyday language.
 - **Sora Font Implementation (January 2025)**: Implemented Sora font throughout entire website for all headings, text, buttons, and content elements
 - **Headings Green and Black Design (January 2025)**: Updated all section headings to use green and black color combination with specific words highlighted in green for visual emphasis
 - **Header Spacing Enhancement (January 2025)**: Added top spacing to header (h-24 mt-2) and adjusted hero section padding (pt-36) for better visual balance
+- **Newsletter Section Background Fix (January 2025)**: Removed white background box from newsletter subscription section in footer to match the gray footer background for consistent design
 - **Technology Logos Update (January 2025)**: Updated "Innovate with the Right Software Team" section with single comprehensive technology logos image without text labels for cleaner appearance while keeping original client logos section intact
 - **Services Button Styling (January 2025)**: Updated GET A QUOTE button in services section to match header button style with rounded-full, uppercase text, and consistent sizing
 - **Logo Revert (January 2025)**: Reverted back to original logo files in header and footer as requested
