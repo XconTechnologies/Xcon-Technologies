@@ -87,7 +87,7 @@ export default function ValuesProjects() {
         <div>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-              Launched Over <span className="text-primary">200 Projects</span> – For All-Sized Businesses
+              <span className="text-primary">200+</span> Projects Delivered
             </h2>
           </div>
           
