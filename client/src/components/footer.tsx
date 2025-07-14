@@ -9,8 +9,8 @@ export default function Footer() {
           {/* Left Column - Company Info */}
           <div className="space-y-6">
             <div className="flex items-center">
-              <div className="text-gray-800 font-bold text-2xl">
-                <span className="text-primary">X</span>CON
+              <div className="overflow-hidden h-12 w-24">
+                <img src={XConLogo} alt="XCon" className="h-12 w-auto object-left object-cover" />
               </div>
             </div>
             

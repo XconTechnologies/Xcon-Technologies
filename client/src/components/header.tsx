@@ -36,8 +36,8 @@ export default function Header() {
         <div className="flex items-center justify-between h-24 mt-2">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="text-white font-bold text-2xl">
-              <span className="text-primary">X</span>CON
+            <div className="overflow-hidden h-12 w-24">
+              <img src={XConLogo} alt="XCon" className="h-12 w-auto object-left object-cover" />
             </div>
           </div>
 
