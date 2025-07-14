@@ -41,20 +41,19 @@ body.modal-open {
   height: 100% !important;
 }
 
-/* Certification badges styling - Remove black background */
+/* Certification badges styling - Remove black background completely */
 .certification-badge {
   background: transparent !important;
+  position: relative;
+  overflow: hidden;
 }
 
 .certification-badge img {
   background: transparent !important;
-  /* Use CSS to make black background transparent */
-  filter: 
-    contrast(1.2) 
-    brightness(1.1) 
-    saturate(1.1);
-  /* Remove black background by making it transparent */
-  mix-blend-mode: multiply;
+  /* Remove black background using screen blend mode */
+  mix-blend-mode: screen;
+  /* Enhance visibility of the colored badge parts */
+  filter: brightness(1.2) contrast(1.1) saturate(1.1);
 }
 
 * {
