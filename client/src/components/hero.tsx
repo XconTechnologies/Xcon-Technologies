@@ -1,7 +1,24 @@
 import { Button } from "@/components/ui/button";
-import dunyaLogo from "@assets/DC-Blue-Logo-1536x360_1752475378358.png";
-import cloudChoiceLogo from "@assets/imgpsh_fullsize_anim_1752475378360.png";
-import renovexLogo from "@assets/Renovex-e1721133080773-1536x1031_1752476165118.webp";
+import harvestLogo from "@assets/HE-Logo-1 (1)_1752473995302.jpg";
+import accommodationLogo from "@assets/IMG-20240308-WA0130-removebg-preview_1752473995303.png";
+import cloudChoiceLogo from "@assets/imgpsh_fullsize_anim_1752473995303.png";
+import lawlessLogo from "@assets/jghih-1536x743_1752473995304.png";
+import knopeeLogo from "@assets/Knopee-Logo_1752473995304.webp";
+import usProLogo from "@assets/Logo uslisitingpro_1752473995305.png";
+import alfikrahLogo from "@assets/ALFIKRAH-UNITED-LOGO_1752474011378.png";
+import floProLogo from "@assets/cropped-FloPro-Logo-Update-01-1-e1732599710397_1752474011380.png";
+import dunyaLogo from "@assets/DC-Blue-Logo-1536x360_1752474011381.png";
+import velocityLogo from "@assets/logo_1752474237684.webp";
+import oliverLogo from "@assets/logo-1-removebg-preview_1752474237685.webp";
+import quinnieLogo from "@assets/logo-6WL3PW-1536x530_1752474237685.webp";
+import sutoTechLogo from "@assets/logo-new-white-1536x209_1752474237686.webp";
+import mskLogo from "@assets/MSK-logo-5k-by-5k-1-1-1024x410_1752474237687.png";
+import muslimHubLogo from "@assets/Muslim-Hub-revv-02-scaled-e1730651956666 (1)_1752474237687.jpg";
+import netGiantLogo from "@assets/Net-Giant-1024x336_1752474237688.png";
+import meetLogo from "@assets/New-2024-1536x565_1752474237689.png";
+import piLogo from "@assets/pi-1-1518x2048_1752474237689.webp";
+import renovexLogo from "@assets/Renovex-e1721133080773-1536x1031_1752474237690.webp";
+import motorMetricsLogo from "@assets/Screenshot_2024-03-25_040011-removebg-preview_1752474237691.png";
 
 export default function Hero() {
   const scrollToSection = (sectionId: string) => {
@@ -10,6 +27,32 @@ export default function Hero() {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const logos = [
+    { name: "Dunya Consultants", logo: dunyaLogo },
+    { name: "Harvest Energy", logo: harvestLogo },
+    { name: "Accommodation Solutions", logo: accommodationLogo },
+    { name: "Cloud Choice Technologies", logo: cloudChoiceLogo },
+    { name: "Lawless", logo: lawlessLogo },
+    { name: "Knopee", logo: knopeeLogo },
+    { name: "US Pro Listing", logo: usProLogo },
+    { name: "Alfikrah United", logo: alfikrahLogo },
+    { name: "FloPro", logo: floProLogo },
+    { name: "Velocity Tuning", logo: velocityLogo },
+    { name: "Oliver", logo: oliverLogo },
+    { name: "Quinnie Plastic Surgery", logo: quinnieLogo },
+    { name: "Suto Tech", logo: sutoTechLogo },
+    { name: "MSK Consultants", logo: mskLogo },
+    { name: "Muslim Hub", logo: muslimHubLogo },
+    { name: "Net Giant Technologies", logo: netGiantLogo },
+    { name: "Meet", logo: meetLogo },
+    { name: "Pi Systems", logo: piLogo },
+    { name: "Renovex", logo: renovexLogo },
+    { name: "Motor Metrics", logo: motorMetricsLogo },
+  ];
+
+  // Duplicate the logos array to create seamless scrolling
+  const duplicatedLogos = [...logos, ...logos];
 
   return (
     <section className="relative overflow-hidden pt-36 pb-20 min-h-screen">
@@ -61,22 +104,24 @@ export default function Hero() {
             {/* Trusted by Leading Companies section */}
             <div className="text-white">
               <p className="text-sm text-gray-400 mb-6">Trusted by Leading Companies</p>
-              <div className="flex items-center justify-center space-x-8 opacity-90 flex-wrap gap-y-4">
-                <img 
-                  src={dunyaLogo} 
-                  alt="Dunya Consultants" 
-                  className="h-8 object-contain filter brightness-0 invert"
-                />
-                <img 
-                  src={cloudChoiceLogo} 
-                  alt="Cloud Choice Technologies" 
-                  className="h-8 object-contain filter brightness-0 invert"
-                />
-                <img 
-                  src={renovexLogo} 
-                  alt="Renovex" 
-                  className="h-8 object-contain filter brightness-0 invert"
-                />
+              <div className="relative overflow-hidden">
+                {/* Scrolling container */}
+                <div className="flex animate-scroll-logos">
+                  {duplicatedLogos.map((logo, index) => (
+                    <div
+                      key={index}
+                      className="flex-shrink-0 mx-4 flex items-center justify-center"
+                      style={{ minWidth: '120px', height: '60px' }}
+                    >
+                      <img
+                        src={logo.logo}
+                        alt={logo.name}
+                        className="h-10 object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-all duration-300"
+                        style={{ maxWidth: '100px' }}
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

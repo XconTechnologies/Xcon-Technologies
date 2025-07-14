@@ -6,7 +6,7 @@ import WhyChoose from "@/components/why-choose";
 import EngagementModels from "@/components/engagement-models";
 import ValuesProjects from "@/components/values-projects";
 import Statistics from "@/components/statistics";
-import ClientLogos from "@/components/client-logos";
+
 import Footer from "@/components/footer";
 
 export default function Home() {
@@ -20,7 +20,6 @@ export default function Home() {
       <EngagementModels />
       <ValuesProjects />
       <Statistics />
-      <ClientLogos />
       <Footer />
     </div>
   );
