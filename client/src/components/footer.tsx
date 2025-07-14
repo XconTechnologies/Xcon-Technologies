@@ -1,5 +1,5 @@
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
-import XConLogo from "@assets/Xcon Logo_1752305014933.png";
+import XConLogo from "@assets/Xcon Logo cropped_1752479137104.png";
 
 export default function Footer() {
   return (
@@ -9,9 +9,7 @@ export default function Footer() {
           {/* Left Column - Company Info */}
           <div className="space-y-6">
             <div className="flex items-center">
-              <div className="overflow-hidden h-8 w-auto">
-                <img src={XConLogo} alt="XCon" className="h-16 w-auto object-top object-cover" />
-              </div>
+              <img src={XConLogo} alt="XCon" className="h-12 w-auto" />
             </div>
             
             <p className="text-gray-600 leading-relaxed">

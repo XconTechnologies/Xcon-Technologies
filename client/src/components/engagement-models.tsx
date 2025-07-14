@@ -62,69 +62,23 @@ export default function EngagementModels() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {engagementModels.map((model, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl hover:bg-primary transition-all duration-300 group">
-                {/* Diagram */}
+              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group">
+                {/* Video Animation */}
                 <div className="relative mb-8 h-48 flex items-center justify-center">
-                  {/* Center circle */}
-                  <div className="w-20 h-20 bg-white border-2 border-primary rounded-full flex items-center justify-center z-10 group-hover:bg-primary group-hover:border-white transition-all duration-300">
-                    <span className="text-gray-800 font-bold text-xs text-center leading-tight whitespace-pre-line group-hover:text-white">
-                      {model.centerText}
-                    </span>
-                  </div>
-                  
-                  {/* Surrounding circles */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="relative w-56 h-56">
-                      {[...Array(6)].map((_, i) => {
-                        const angle = (i * 60) * Math.PI / 180;
-                        const x = Math.cos(angle) * 90;
-                        const y = Math.sin(angle) * 90;
-                        return (
-                          <div
-                            key={i}
-                            className="absolute w-12 h-12 bg-white border-2 border-primary rounded-full flex items-center justify-center animate-pulse group-hover:bg-primary group-hover:border-white transition-all duration-300"
-                            style={{
-                              left: `calc(50% + ${x}px - 24px)`,
-                              top: `calc(50% + ${y}px - 24px)`,
-                              animationDelay: `${i * 0.2}s`,
-                            }}
-                          >
-                            <User className="h-4 w-4 text-primary group-hover:text-white" />
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                  
-                  {/* Connecting lines */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="relative w-56 h-56">
-                      {[...Array(6)].map((_, i) => {
-                        const angle = (i * 60) * Math.PI / 180;
-                        const x1 = Math.cos(angle) * 40;
-                        const y1 = Math.sin(angle) * 40;
-                        const x2 = Math.cos(angle) * 90;
-                        const y2 = Math.sin(angle) * 90;
-                        return (
-                          <div
-                            key={i}
-                            className="absolute border-t-2 border-dashed border-primary/30 animate-pulse group-hover:border-white/30 transition-all duration-300"
-                            style={{
-                              left: `calc(50% + ${x1}px)`,
-                              top: `calc(50% + ${y1}px)`,
-                              width: `${Math.sqrt((x2-x1)**2 + (y2-y1)**2)}px`,
-                              transformOrigin: '0 0',
-                              transform: `rotate(${Math.atan2(y2-y1, x2-x1)}rad)`,
-                              animationDelay: `${i * 0.1}s`,
-                            }}
-                          />
-                        );
-                      })}
-                    </div>
-                  </div>
+                  <video
+                    key={index}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-contain rounded-lg"
+                  >
+                    <source src={model.video} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
                 
-                <div className="text-center">
+                <div className="text-center p-4 rounded-lg hover:bg-primary transition-all duration-300 group">
                   <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-white transition-all duration-300">
                     {model.title}
                   </h3>

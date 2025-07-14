@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import XConLogo from "@assets/Light-Logo.5ba91110-2048x403_1752305014932.png";
+import XConLogo from "@assets/Xcon Logo cropped_1752479137104.png";
 import QuoteModal from "./quote-modal";
 
 export default function Header() {
@@ -36,9 +36,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-24 mt-2">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="overflow-hidden h-8 w-auto">
-              <img src={XConLogo} alt="XCon" className="h-16 w-auto object-top object-cover" />
-            </div>
+            <img src={XConLogo} alt="XCon" className="h-12 w-auto" />
           </div>
 
           {/* Desktop Navigation */}
