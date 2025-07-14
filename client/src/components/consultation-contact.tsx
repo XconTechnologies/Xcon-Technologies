@@ -9,7 +9,7 @@ export default function ConsultationContact() {
     fullName: "",
     company: "",
     email: "",
-    phone: "+92 "
+    phone: ""
   });
 
   const [file, setFile] = useState<File | null>(null);
@@ -139,25 +139,15 @@ export default function ConsultationContact() {
                     className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                     required
                   />
-                  <div className="relative">
-                    <div className="absolute left-3 top-3 flex items-center">
-                      <img 
-                        src="https://flagcdn.com/w20/pk.png" 
-                        alt="Pakistan flag" 
-                        className="w-5 h-3 mr-2"
-                      />
-                      <span className="text-gray-600">+92</span>
-                    </div>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      placeholder="000 0000000"
-                      className="pl-20 pr-4 py-3 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                      required
-                    />
-                  </div>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    placeholder="Phone number"
+                    className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    required
+                  />
                 </div>
 
                 {/* Submit Button */}
