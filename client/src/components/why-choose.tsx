@@ -1,31 +1,31 @@
 import { Star, Settings, Globe, Database, Zap, MessageCircle, ArrowRight } from "lucide-react";
+import nodeLogo from "@assets/image_1752480019266.png";
+import openaiLogo from "@assets/image_1752480026099.png";
+import vueLogo from "@assets/image_1752480028607.png";
+import gitLogo from "@assets/image_1752480031073.png";
+import flutterLogo from "@assets/image_1752480033784.png";
+import awsLogo from "@assets/image_1752480036762.png";
+import azureLogo from "@assets/image_1752480039668.png";
+import dotnetLogo from "@assets/image_1752480044886.png";
+import reactLogo from "@assets/image_1752480048249.png";
+import atlassianLogo from "@assets/image_1752480055553.png";
+import graphqlLogo from "@assets/image_1752480075430.png";
+import mongodbLogo from "@assets/image_1752480082277.png";
 
 export default function WhyChoose() {
   const technologies = [
-    { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-    { name: "OpenAI", logo: "https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" },
+    { name: "Node.js", logo: nodeLogo },
+    { name: "OpenAI", logo: openaiLogo },
     { name: "Laravel", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" },
-    { name: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-    { name: "GraphQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" },
-    { name: "Atlassian", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/atlassian/atlassian-original.svg" },
-    { name: "Flutter", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" },
-    { name: "AWS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" },
+    { name: "MongoDB", logo: mongodbLogo },
+    { name: "GraphQL", logo: graphqlLogo },
+    { name: "Atlassian", logo: atlassianLogo },
+    { name: "Flutter", logo: flutterLogo },
+    { name: "AWS", logo: awsLogo },
     { name: "Meta", logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" },
-    { name: ".NET", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" },
-    { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+    { name: ".NET", logo: dotnetLogo },
+    { name: "React", logo: reactLogo },
     { name: "Docker", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
-    { name: "TypeScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
-    { name: "Vue.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" },
-    { name: "ClusterAI", logo: "https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" },
-    { name: "DevOps", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
-    { name: "WordPress", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" },
-    { name: "PowerApps", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Microsoft_PowerApps_logo.svg" },
-    { name: "Express", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
-    { name: "Figma", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
-    { name: "Notion", logo: "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png" },
-    { name: "Blazor", logo: "https://upload.wikimedia.org/wikipedia/commons/d/d0/Blazor.png" },
-    { name: "TensorFlow", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" },
-    { name: "Java", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
   ];
 
   const features = [
@@ -84,7 +84,7 @@ export default function WhyChoose() {
                 <img 
                   src={tech.logo} 
                   alt={tech.name}
-                  className="w-8 h-8 mb-2 object-contain"
+                  className="w-12 h-12 mb-2 object-contain"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
