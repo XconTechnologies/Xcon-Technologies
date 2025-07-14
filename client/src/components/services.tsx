@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Code, Database, Cloud, Smartphone, Edit, Target, BarChart3, Repeat } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import QuoteModal from "./quote-modal";
 import softwareImg from "@assets/Xcon web - software_1752304457704.jpg";
 import mvpImg from "@assets/Xcon web - MVP development_1752304457706.jpg";
@@ -224,12 +225,12 @@ export default function Services() {
             </div>
             
             <div className="pt-2">
-              <button 
+              <Button
                 onClick={() => setIsQuoteModalOpen(true)}
-                className="bg-primary text-white px-8 py-3 rounded-lg text-base font-semibold hover:bg-primary/90 transition-colors"
+                className="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-full font-medium transition-colors uppercase text-sm"
               >
-                Get a Quote
-              </button>
+                GET A QUOTE
+              </Button>
             </div>
           </div>
 
