@@ -107,8 +107,8 @@ export default function Footer() {
                 <img 
                   src={securityBadge} 
                   alt="AWS Security Specialty Certification" 
-                  className="w-full h-full object-contain filter brightness-110 contrast-110"
-                  style={{ background: 'transparent', mixBlendMode: 'normal' }}
+                  className="w-full h-full object-contain"
+                  style={{ background: 'transparent' }}
                 />
               </div>
             </a>
@@ -117,8 +117,8 @@ export default function Footer() {
                 <img 
                   src={cloudPractitionerBadge} 
                   alt="AWS Cloud Practitioner Foundational Certification" 
-                  className="w-full h-full object-contain filter brightness-110 contrast-110"
-                  style={{ background: 'transparent', mixBlendMode: 'normal' }}
+                  className="w-full h-full object-contain"
+                  style={{ background: 'transparent' }}
                 />
               </div>
             </a>
@@ -127,8 +127,8 @@ export default function Footer() {
                 <img 
                   src={devopsBadge} 
                   alt="AWS DevOps Engineer Professional Certification" 
-                  className="w-full h-full object-contain filter brightness-110 contrast-110"
-                  style={{ background: 'transparent', mixBlendMode: 'normal' }}
+                  className="w-full h-full object-contain"
+                  style={{ background: 'transparent' }}
                 />
               </div>
             </a>
@@ -137,8 +137,8 @@ export default function Footer() {
                 <img 
                   src={developerBadge} 
                   alt="AWS Developer Associate Certification" 
-                  className="w-full h-full object-contain filter brightness-110 contrast-110"
-                  style={{ background: 'transparent', mixBlendMode: 'normal' }}
+                  className="w-full h-full object-contain"
+                  style={{ background: 'transparent' }}
                 />
               </div>
             </a>
@@ -147,8 +147,8 @@ export default function Footer() {
                 <img 
                   src={solutionsArchitectBadge} 
                   alt="AWS Solutions Architect Professional Certification" 
-                  className="w-full h-full object-contain filter brightness-110 contrast-110"
-                  style={{ background: 'transparent', mixBlendMode: 'normal' }}
+                  className="w-full h-full object-contain"
+                  style={{ background: 'transparent' }}
                 />
               </div>
             </a>
@@ -157,8 +157,8 @@ export default function Footer() {
                 <img 
                   src={sysopsBadge} 
                   alt="AWS SysOps Administrator Associate Certification" 
-                  className="w-full h-full object-contain filter brightness-110 contrast-110"
-                  style={{ background: 'transparent', mixBlendMode: 'normal' }}
+                  className="w-full h-full object-contain"
+                  style={{ background: 'transparent' }}
                 />
               </div>
             </a>
