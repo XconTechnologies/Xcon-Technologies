@@ -1,5 +1,32 @@
 import { Star, Settings, Globe, Database, Zap, MessageCircle, ArrowRight } from "lucide-react";
-import techLogos from "@assets/image_1752480531522.png";
+
+// Technology logos array
+const technologies = [
+  { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" },
+  { name: "OpenAI", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/openai/openai-original.svg" },
+  { name: "Redis", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg" },
+  { name: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" },
+  { name: "GraphQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain.svg" },
+  { name: "Azure", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" },
+  { name: "Flutter", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" },
+  { name: "AWS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" },
+  { name: "Meta", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/facebook/facebook-original.svg" },
+  { name: "DotNet", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg" },
+  { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
+  { name: "Docker", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
+  { name: "TypeScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" },
+  { name: "Vue", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" },
+  { name: "PostgreSQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
+  { name: "WordPress", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-original.svg" },
+  { name: "Microsoft Teams", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg" },
+  { name: "PowerApps", logo: "https://img.icons8.com/color/96/microsoft-power-apps.png" },
+  { name: "Express", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" },
+  { name: "Figma", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" },
+  { name: "Notion", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/notion/notion-original.svg" },
+  { name: "TensorFlow", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" },
+  { name: "Java", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" },
+  { name: "Python", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" }
+];
 
 export default function WhyChoose() {
 
@@ -51,12 +78,30 @@ export default function WhyChoose() {
             </p>
           </div>
           
-          <div className="flex justify-center">
-            <img 
-              src={techLogos} 
-              alt="Technology Stack"
-              className="max-w-full h-auto object-contain"
-            />
+          {/* Technology Logos Carousel */}
+          <div className="relative overflow-hidden">
+            <div className="flex animate-scroll-right gap-8 items-center">
+              {/* First set of logos */}
+              {technologies.map((tech, index) => (
+                <div key={index} className="flex-shrink-0 flex items-center justify-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 min-w-[120px] h-16">
+                  <img 
+                    src={tech.logo} 
+                    alt={tech.name}
+                    className="h-8 w-auto object-contain"
+                  />
+                </div>
+              ))}
+              {/* Duplicate set for seamless loop */}
+              {technologies.map((tech, index) => (
+                <div key={`duplicate-${index}`} className="flex-shrink-0 flex items-center justify-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 min-w-[120px] h-16">
+                  <img 
+                    src={tech.logo} 
+                    alt={tech.name}
+                    className="h-8 w-auto object-contain"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
