@@ -104,9 +104,9 @@ export default function Hero() {
             {/* Trusted by Leading Companies section */}
             <div className="text-white">
               <p className="text-sm text-gray-400 mb-6">Trusted by Leading Companies</p>
-              <div className="relative overflow-hidden">
+              <div className="relative overflow-hidden max-w-4xl mx-auto">
                 {/* Scrolling container */}
-                <div className="flex animate-scroll-logos">
+                <div className="flex animate-scroll-logos" style={{ width: 'calc(200% + 32px)' }}>
                   {duplicatedLogos.map((logo, index) => (
                     <div
                       key={index}
@@ -116,8 +116,11 @@ export default function Hero() {
                       <img
                         src={logo.logo}
                         alt={logo.name}
-                        className="h-10 object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-all duration-300"
+                        className="h-8 w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-all duration-300"
                         style={{ maxWidth: '100px' }}
+                        onError={(e) => {
+                          console.error(`Failed to load logo: ${logo.name}`, e);
+                        }}
                       />
                     </div>
                   ))}
