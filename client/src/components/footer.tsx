@@ -101,9 +101,9 @@ export default function Footer() {
           <div className="text-center mb-6">
             <h3 className="text-2xl font-bold text-gray-800">Our <span className="text-primary">Certifications</span></h3>
           </div>
-          <div className="flex justify-center items-center gap-8 flex-wrap">
+          <div className="flex justify-center items-center gap-8 flex-wrap" style={{ background: 'white' }}>
             <a href="https://www.security.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300 certification-badge">
-              <div className="w-24 h-24 flex items-center justify-center bg-gray-100 rounded-lg">
+              <div className="w-24 h-24 flex items-center justify-center">
                 <img 
                   src={securityBadge} 
                   alt="AWS Security Specialty Certification" 
@@ -112,7 +112,7 @@ export default function Footer() {
               </div>
             </a>
             <a href="https://www.cloud-practitioner.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300 certification-badge">
-              <div className="w-24 h-24 flex items-center justify-center bg-gray-100 rounded-lg">
+              <div className="w-24 h-24 flex items-center justify-center">
                 <img 
                   src={cloudPractitionerBadge} 
                   alt="AWS Cloud Practitioner Foundational Certification" 
@@ -121,7 +121,7 @@ export default function Footer() {
               </div>
             </a>
             <a href="https://devops.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300 certification-badge">
-              <div className="w-24 h-24 flex items-center justify-center bg-gray-100 rounded-lg">
+              <div className="w-24 h-24 flex items-center justify-center">
                 <img 
                   src={devopsBadge} 
                   alt="AWS DevOps Engineer Professional Certification" 
@@ -130,7 +130,7 @@ export default function Footer() {
               </div>
             </a>
             <a href="https://www.developer.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300 certification-badge">
-              <div className="w-24 h-24 flex items-center justify-center bg-gray-100 rounded-lg">
+              <div className="w-24 h-24 flex items-center justify-center">
                 <img 
                   src={developerBadge} 
                   alt="AWS Developer Associate Certification" 
@@ -139,7 +139,7 @@ export default function Footer() {
               </div>
             </a>
             <a href="https://www.solution-architect.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300 certification-badge">
-              <div className="w-24 h-24 flex items-center justify-center bg-gray-100 rounded-lg">
+              <div className="w-24 h-24 flex items-center justify-center">
                 <img 
                   src={solutionsArchitectBadge} 
                   alt="AWS Solutions Architect Professional Certification" 
@@ -148,7 +148,7 @@ export default function Footer() {
               </div>
             </a>
             <a href="https://www.sysops.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300 certification-badge">
-              <div className="w-24 h-24 flex items-center justify-center bg-gray-100 rounded-lg">
+              <div className="w-24 h-24 flex items-center justify-center">
                 <img 
                   src={sysopsBadge} 
                   alt="AWS SysOps Administrator Associate Certification" 
