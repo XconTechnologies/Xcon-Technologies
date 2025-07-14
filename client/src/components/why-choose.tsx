@@ -51,30 +51,12 @@ export default function WhyChoose() {
             </p>
           </div>
           
-          {/* Technology Logos Carousel */}
-          <div className="relative overflow-hidden">
-            <div className="flex animate-scroll-right gap-8 items-center">
-              {/* First set of logos */}
-              {technologies.map((tech, index) => (
-                <div key={index} className="flex-shrink-0 flex items-center justify-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 min-w-[120px] h-16">
-                  <img 
-                    src={tech.logo} 
-                    alt={tech.name}
-                    className="h-8 w-auto object-contain"
-                  />
-                </div>
-              ))}
-              {/* Duplicate set for seamless loop */}
-              {technologies.map((tech, index) => (
-                <div key={`duplicate-${index}`} className="flex-shrink-0 flex items-center justify-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 min-w-[120px] h-16">
-                  <img 
-                    src={tech.logo} 
-                    alt={tech.name}
-                    className="h-8 w-auto object-contain"
-                  />
-                </div>
-              ))}
-            </div>
+          <div className="flex justify-center">
+            <img 
+              src={techLogos} 
+              alt="Technology Stack"
+              className="max-w-full h-auto object-contain"
+            />
           </div>
         </div>
 

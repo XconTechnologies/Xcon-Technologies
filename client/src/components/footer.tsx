@@ -162,7 +162,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="text-center mt-8 pt-6">
           <p className="text-gray-500">
-            © 2025 XCON Technologies. All Rights Reserved.
+            © 2025 XCon Technologies. All Rights Reserved.
           </p>
         </div>
       </div>

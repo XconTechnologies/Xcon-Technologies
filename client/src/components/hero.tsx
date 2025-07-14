@@ -87,10 +87,10 @@ export default function Hero() {
           {/* Centered content */}
           <div className="text-white max-w-6xl mx-auto">
             <h1 className="text-4xl md:text-5xl lg:text-6xl mb-8 leading-tight">
-              Grow Your Business with <span className="font-bold">XCON Technologies!</span>
+              Grow Your Business with <span className="font-bold">XCon Technologies!</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
-              Welcome to XCON Technologies, where innovation meets digital expertise. Dive into our cutting-edge IT solutions, from advanced website and application development to seamless network integration. Let this IT software development company, XCON be your trusted partner in navigating the fast-changing technology landscape. Discover how we can take your digital journey to the next level.
+              Welcome to XCon Technologies, where innovation meets digital expertise. Dive into our cutting-edge IT solutions, from advanced website and application development to seamless network integration. Let this IT software development company, XCon be your trusted partner in navigating the fast-changing technology landscape. Discover how we can take your digital journey to the next level.
             </p>
             <div className="mb-12">
               <Button
