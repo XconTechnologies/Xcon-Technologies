@@ -78,11 +78,11 @@ export default function EngagementModels() {
                   </video>
                 </div>
                 
-                <div className="text-center p-4 rounded-lg hover:bg-primary transition-all duration-300 group">
-                  <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-white transition-all duration-300">
+                <div className="text-center p-4 rounded-lg hover:bg-primary transition-all duration-300 group/text">
+                  <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover/text:text-white transition-all duration-300">
                     {model.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed text-sm group-hover:text-white transition-all duration-300">
+                  <p className="text-gray-600 leading-relaxed text-sm group-hover/text:text-white transition-all duration-300">
                     {model.description}
                   </p>
                 </div>
