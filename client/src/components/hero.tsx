@@ -1,4 +1,9 @@
 import { Button } from "@/components/ui/button";
+import harvestLogo from "@assets/HE-Logo-1 (1)_1752473995302.jpg";
+import knopeeLogo from "@assets/Knopee-Logo_1752473995304.webp";
+import mskLogo from "@assets/MSK-logo-5k-by-5k-1-1-1024x410_1752474237687.png";
+import netGiantLogo from "@assets/Net-Giant-1024x336_1752474237688.png";
+import floProLogo from "@assets/cropped-FloPro-Logo-Update-01-1-e1732599710397_1752474011380.png";
 
 export default function Hero() {
   const scrollToSection = (sectionId: string) => {
@@ -39,36 +44,51 @@ export default function Hero() {
       <div className="max-w-[1440px] mx-auto px-4 lg:px-8 relative z-10 h-full">
         <div className="flex flex-col items-center justify-center min-h-[80vh] text-center">
           {/* Centered content */}
-          <div className="text-white max-w-4xl mx-auto">
-            <div className="mb-6">
-              <span className="text-primary text-sm font-semibold tracking-wide uppercase">
-                Digital Transformation Company
-              </span>
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Full-Stack Tech Enablement <br />
-              For Future-Ready Businesses
+          <div className="text-white max-w-6xl mx-auto">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+              Grow Your Business with XCON Technologies!
             </h1>
-            <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              From adaptation to expansion, we are your partners throughout the digital growth cycle.
+            <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+              Welcome to XCON Technologies, where innovation meets digital expertise. Dive into our cutting-edge IT solutions, from advanced website and application development to seamless network integration. Let this IT software development company, XCON be your trusted partner in navigating the fast-changing technology landscape. Discover how we can take your digital journey to the next level.
             </p>
             <div className="mb-12">
               <Button
                 onClick={() => scrollToSection("contact")}
                 className="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-full font-semibold text-lg transition-all transform hover:scale-105"
               >
-                Schedule a Call
+                Get Started Today
               </Button>
             </div>
             
-            {/* Featured in section */}
+            {/* Featured clients section */}
             <div className="text-white">
-              <p className="text-sm text-gray-400 mb-4">Featured in</p>
-              <div className="flex items-center justify-center space-x-8 opacity-60">
-                <div className="text-white font-bold text-lg">Inc.</div>
-                <div className="text-white font-bold text-lg">Forbes</div>
-                <div className="text-white font-bold text-lg">YEC</div>
-                <div className="text-white font-bold text-lg">Entrepreneur</div>
+              <p className="text-sm text-gray-400 mb-6">Trusted by Leading Companies</p>
+              <div className="flex items-center justify-center space-x-12 opacity-80">
+                <img 
+                  src={harvestLogo} 
+                  alt="Harvest Energy" 
+                  className="h-8 object-contain filter brightness-0 invert"
+                />
+                <img 
+                  src={knopeeLogo} 
+                  alt="Knopee" 
+                  className="h-8 object-contain filter brightness-0 invert"
+                />
+                <img 
+                  src={mskLogo} 
+                  alt="MSK Consultants" 
+                  className="h-8 object-contain filter brightness-0 invert"
+                />
+                <img 
+                  src={netGiantLogo} 
+                  alt="Net Giant Technologies" 
+                  className="h-8 object-contain filter brightness-0 invert"
+                />
+                <img 
+                  src={floProLogo} 
+                  alt="FloPro" 
+                  className="h-8 object-contain filter brightness-0 invert"
+                />
               </div>
             </div>
           </div>
