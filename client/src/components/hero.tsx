@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import dunyaLogo from "@assets/DC-Blue-Logo-1536x360_1752475378358.png";
 import cloudChoiceLogo from "@assets/imgpsh_fullsize_anim_1752475378360.png";
-import muslimHubLogo from "@assets/Muslim-Hub-revv-02-scaled-e1730651956666 (1)_1752475378362.jpg";
+import renovexLogo from "@assets/Renovex-e1721133080773-1536x1031_1752476165118.webp";
 
 export default function Hero() {
   const scrollToSection = (sectionId: string) => {
@@ -61,28 +61,22 @@ export default function Hero() {
             {/* Featured clients section */}
             <div className="text-white">
               <p className="text-sm text-gray-400 mb-6">Our Valued Partners</p>
-              <div className="flex items-center justify-center space-x-16 opacity-90">
-                <div className="flex items-center justify-center bg-white/10 rounded-lg p-3" style={{ width: '140px', height: '60px' }}>
-                  <img 
-                    src={dunyaLogo} 
-                    alt="Dunya Consultants" 
-                    className="max-h-8 max-w-full object-contain filter brightness-0 invert"
-                  />
-                </div>
-                <div className="flex items-center justify-center bg-white/10 rounded-lg p-3" style={{ width: '140px', height: '60px' }}>
-                  <img 
-                    src={cloudChoiceLogo} 
-                    alt="Cloud Choice Technologies" 
-                    className="max-h-8 max-w-full object-contain filter brightness-0 invert"
-                  />
-                </div>
-                <div className="flex items-center justify-center bg-white/10 rounded-lg p-3" style={{ width: '140px', height: '60px' }}>
-                  <img 
-                    src={muslimHubLogo} 
-                    alt="Muslim Hub" 
-                    className="max-h-8 max-w-full object-contain filter brightness-0 invert"
-                  />
-                </div>
+              <div className="flex items-center justify-center space-x-12 opacity-90">
+                <img 
+                  src={dunyaLogo} 
+                  alt="Dunya Consultants" 
+                  className="h-6 object-contain filter brightness-0 invert"
+                />
+                <img 
+                  src={cloudChoiceLogo} 
+                  alt="Cloud Choice Technologies" 
+                  className="h-6 object-contain filter brightness-0 invert"
+                />
+                <img 
+                  src={renovexLogo} 
+                  alt="Renovex" 
+                  className="h-6 object-contain filter brightness-0 invert"
+                />
               </div>
             </div>
           </div>

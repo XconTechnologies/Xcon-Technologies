@@ -110,7 +110,7 @@ Preferred communication style: Simple, everyday language.
 ## Recent Changes
 
 - **Logo Animation Speed Enhancement (January 2025)**: Improved client logos scrolling animation from 30s to 20s for faster, smoother movement with maintained hover pause functionality
-- **Hero Section Logo Enhancement (January 2025)**: Fixed partner logos sizing and visibility issues by adding equal-sized containers (140x60px) with subtle background, ensuring all 3 logos (Dunya Consultants, Cloud Choice Technologies, Muslim Hub) display consistently with proper white filter effects and improved contrast
+- **Hero Section Logo Enhancement (January 2025)**: Replaced Muslim Hub with Renovex logo, removed background containers, and reduced logo size to h-6 for cleaner appearance. All 3 partner logos (Dunya Consultants, Cloud Choice Technologies, Renovex) now display with equal sizing and consistent white filter effects
 - **Client Logos Update (January 2025)**: Expanded client logos section with 20 authentic company logos including Harvest Energy, Accommodation Solutions, Cloud Choice Technologies, Lawless, Knopee, US Pro Listing, Alfikrah United, FloPro, Dunya Consultants, Velocity Tuning, Oliver, Quinnie Plastic Surgery, Suto Tech, MSK Consultants, Muslim Hub, Net Giant Technologies, Meet, Pi Systems, Renovex, and Motor Metrics
 - **Hero Section Contact Form (January 2025)**: Removed award badges from footer and added professional contact form to hero section with transparent styling, form validation, and service selection dropdown
 - **Industries and Technologies Mega Menus (January 2025)**: Added comprehensive mega menus for Industries and Technologies sections matching TekRevol website structure with 3-column layouts, organized categories, and hover effects
