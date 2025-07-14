@@ -1,5 +1,5 @@
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
-import XConLogo from "@assets/Xcon Logo cropped_1752479137104.png";
+import XConLogo from "@assets/Xcon Logo_1752305014933.png";
 
 export default function Footer() {
   return (

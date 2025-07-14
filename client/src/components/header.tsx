@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import XConLogo from "@assets/Xcon Logo cropped_1752479137104.png";
+import XConLogo from "@assets/Light-Logo.5ba91110-2048x403_1752305014932.png";
 import QuoteModal from "./quote-modal";
 
 export default function Header() {
