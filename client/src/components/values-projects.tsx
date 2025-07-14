@@ -56,14 +56,14 @@ export default function ValuesProjects() {
       <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
         {/* Our Fundamental Values */}
         <div className="mb-20">
-          <div className="bg-black rounded-3xl p-8 text-white">
-            <div className="text-center mb-8">
+          <div className="bg-black rounded-3xl p-6 text-white">
+            <div className="text-center mb-6">
               <h2 className="text-3xl md:text-4xl font-bold text-white">
-                Core <span className="text-primary">Values</span> That Drive Us
+                Our <span className="text-primary">Fundamental</span> Values
               </h2>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {values.map((value, index) => (
                 <div key={index} className="text-center">
                   <div className="flex items-center justify-center mb-4">
@@ -87,7 +87,7 @@ export default function ValuesProjects() {
         <div>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-              Successful <span className="text-primary">Project Delivery</span> Across All Industries
+              Launched Over <span className="text-primary">200 Projects</span> – For All-Sized Businesses
             </h2>
           </div>
           

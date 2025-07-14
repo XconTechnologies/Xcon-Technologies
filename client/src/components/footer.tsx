@@ -99,7 +99,7 @@ export default function Footer() {
         {/* Certification Badges */}
         <div className="mt-8 pt-8 border-t border-gray-200">
           <div className="text-center mb-6">
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-800">Industry <span className="text-primary">Certifications</span></h3>
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-800">Our <span className="text-primary">Certifications</span></h3>
           </div>
           <div className="flex justify-center items-center gap-8 flex-wrap">
             <a href="https://www.security.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300">
