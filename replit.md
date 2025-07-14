@@ -113,7 +113,7 @@ Preferred communication style: Simple, everyday language.
 - **Headings Green and Black Design (January 2025)**: Updated all section headings to use green and black color combination with specific words highlighted in green for visual emphasis
 - **Header Spacing Enhancement (January 2025)**: Added top spacing to header (h-24 mt-2) and adjusted hero section padding (pt-36) for better visual balance
 - **Social Media Links Update (January 2025)**: Updated footer social media icons with authentic XCon Technologies URLs for Facebook, LinkedIn, and Instagram with proper target="_blank" attributes
-- **Footer Certification Badges Enhancement (January 2025)**: Redesigned certification badges with professional styling including gradients, drop shadows, improved typography using system fonts, larger size (w-28 h-28), enhanced readability, and smooth hover animations
+- **Footer Certification Badges Enhancement (January 2025)**: Replaced custom SVG badges with authentic AWS certification badge images (w-24 h-24) without backgrounds, using object-contain for proper scaling and smooth hover effects with shadow animations
 - **Footer Layout Reorganization (January 2025)**: Moved certification badges to center bottom section (horizontal line) and moved newsletter subscription to right column below company links for better layout organization
 - **Footer Spacing Fix (January 2025)**: Adjusted footer padding from px-4 to px-8 lg:px-16 to match reference design with proper left and right spacing
 - **Footer Contact Details Update (January 2025)**: Updated contact information with new phone number (+15133024718), kept same email (askforquote@xcontechnologies.com), and simplified address to "Ohio City, USA"
