@@ -33,10 +33,12 @@ export default function Header() {
   return (
     <header className="fixed w-full top-0 z-50 bg-black/80 backdrop-blur-sm">
       <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24 mt-2">
           {/* Logo */}
           <div className="flex items-center">
-            <img src={XConLogo} alt="XCon Technologies" className="h-12 w-auto" />
+            <div className="text-white font-bold text-2xl">
+              <span className="text-primary">X</span>CON
+            </div>
           </div>
 
           {/* Desktop Navigation */}

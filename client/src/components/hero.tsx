@@ -12,7 +12,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative overflow-hidden pt-32 pb-20 min-h-screen">
+    <section className="relative overflow-hidden pt-36 pb-20 min-h-screen">
       {/* Video Background */}
       <div className="absolute inset-0 w-full h-full">
         <video

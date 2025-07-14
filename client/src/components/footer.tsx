@@ -9,7 +9,9 @@ export default function Footer() {
           {/* Left Column - Company Info */}
           <div className="space-y-6">
             <div className="flex items-center">
-              <img src={XConLogo} alt="XCon Technologies" className="h-12 w-auto" />
+              <div className="text-gray-800 font-bold text-2xl">
+                <span className="text-primary">X</span>CON
+              </div>
             </div>
             
             <p className="text-gray-600 leading-relaxed">
