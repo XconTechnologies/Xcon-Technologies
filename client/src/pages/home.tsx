@@ -4,6 +4,7 @@ import Services from "@/components/services";
 import Expertise from "@/components/expertise";
 import WhyChoose from "@/components/why-choose";
 import EngagementModels from "@/components/engagement-models";
+import TechnologyTabs from "@/components/technology-tabs";
 import ValuesProjects from "@/components/values-projects";
 import Statistics from "@/components/statistics";
 import FAQs from "@/components/faqs";
@@ -19,6 +20,7 @@ export default function Home() {
       <Expertise />
       <WhyChoose />
       <EngagementModels />
+      <TechnologyTabs />
       <ValuesProjects />
       <Statistics />
       <FAQs />
