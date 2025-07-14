@@ -32,13 +32,13 @@ export default function Footer() {
             </div>
             
             <div className="flex space-x-4">
-              <a href="#" className="bg-gray-800 text-white p-2 rounded-full hover:bg-primary transition-colors">
+              <a href="https://www.facebook.com/xcontechnologies/" target="_blank" rel="noopener noreferrer" className="bg-gray-800 text-white p-2 rounded-full hover:bg-primary transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="bg-gray-800 text-white p-2 rounded-full hover:bg-primary transition-colors">
+              <a href="https://www.linkedin.com/company/xcon-technologies/" target="_blank" rel="noopener noreferrer" className="bg-gray-800 text-white p-2 rounded-full hover:bg-primary transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="bg-gray-800 text-white p-2 rounded-full hover:bg-primary transition-colors">
+              <a href="https://www.instagram.com/xcontech/" target="_blank" rel="noopener noreferrer" className="bg-gray-800 text-white p-2 rounded-full hover:bg-primary transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
@@ -95,131 +95,131 @@ export default function Footer() {
           <div className="text-center mb-6">
             <h3 className="text-2xl font-bold text-gray-800">Our <span className="text-primary">Certifications</span></h3>
           </div>
-          <div className="flex justify-center items-center gap-6">
-            <a href="https://www.security.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300">
-              <div className="w-24 h-24 flex items-center justify-center">
-                <svg viewBox="0 0 120 120" className="w-full h-full drop-shadow-lg">
+          <div className="flex justify-center items-center gap-8 flex-wrap">
+            <a href="https://www.security.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-all duration-300 hover:shadow-xl">
+              <div className="w-28 h-28 flex items-center justify-center">
+                <svg viewBox="0 0 140 140" className="w-full h-full">
                   <defs>
                     <linearGradient id="securityGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                       <stop offset="0%" stopColor="#8B5CF6" />
                       <stop offset="100%" stopColor="#6D28D9" />
                     </linearGradient>
-                    <filter id="shadow">
-                      <feDropShadow dx="0" dy="2" stdDeviation="3" floodOpacity="0.3"/>
+                    <filter id="dropShadow" x="-50%" y="-50%" width="200%" height="200%">
+                      <feDropShadow dx="0" dy="4" stdDeviation="6" floodColor="#000000" floodOpacity="0.25"/>
                     </filter>
                   </defs>
-                  <polygon points="60,8 105,28 105,92 60,112 15,92 15,28" fill="url(#securityGradient)" filter="url(#shadow)"/>
-                  <circle cx="60" cy="28" r="2" fill="#F59E0B"/>
-                  <text x="60" y="38" fill="white" fontSize="8" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="bold">AWS</text>
-                  <text x="60" y="46" fill="white" fontSize="6" textAnchor="middle" fontFamily="Arial, sans-serif">certified</text>
-                  <line x1="25" y1="50" x2="95" y2="50" stroke="white" strokeWidth="1"/>
-                  <text x="60" y="68" fill="white" fontSize="12" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="bold">Security</text>
-                  <line x1="25" y1="75" x2="95" y2="75" stroke="white" strokeWidth="1"/>
-                  <text x="60" y="90" fill="white" fontSize="8" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="bold">SPECIALTY</text>
+                  <polygon points="70,12 115,32 115,108 70,128 25,108 25,32" fill="url(#securityGradient)" filter="url(#dropShadow)" stroke="#A855F7" strokeWidth="1"/>
+                  <circle cx="70" cy="32" r="3" fill="#F59E0B"/>
+                  <text x="70" y="45" fill="white" fontSize="10" textAnchor="middle" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="700">AWS</text>
+                  <text x="70" y="54" fill="white" fontSize="7" textAnchor="middle" fontFamily="system-ui, -apple-system, sans-serif">certified</text>
+                  <line x1="35" y1="60" x2="105" y2="60" stroke="white" strokeWidth="1.5"/>
+                  <text x="70" y="80" fill="white" fontSize="14" textAnchor="middle" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="700">Security</text>
+                  <line x1="35" y1="88" x2="105" y2="88" stroke="white" strokeWidth="1.5"/>
+                  <text x="70" y="108" fill="white" fontSize="9" textAnchor="middle" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="600">SPECIALTY</text>
                 </svg>
               </div>
             </a>
-            <a href="https://www.cloud-practitioner.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300">
-              <div className="w-24 h-24 flex items-center justify-center">
-                <svg viewBox="0 0 120 120" className="w-full h-full drop-shadow-lg">
+            <a href="https://www.cloud-practitioner.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-all duration-300 hover:shadow-xl">
+              <div className="w-28 h-28 flex items-center justify-center">
+                <svg viewBox="0 0 140 140" className="w-full h-full">
                   <defs>
                     <linearGradient id="cloudGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                       <stop offset="0%" stopColor="#6B7280" />
                       <stop offset="100%" stopColor="#374151" />
                     </linearGradient>
                   </defs>
-                  <polygon points="60,8 105,28 105,92 60,112 15,92 15,28" fill="url(#cloudGradient)" filter="url(#shadow)"/>
-                  <circle cx="60" cy="28" r="2" fill="#F59E0B"/>
-                  <text x="60" y="38" fill="white" fontSize="8" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="bold">AWS</text>
-                  <text x="60" y="46" fill="white" fontSize="6" textAnchor="middle" fontFamily="Arial, sans-serif">certified</text>
-                  <line x1="25" y1="50" x2="95" y2="50" stroke="white" strokeWidth="1"/>
-                  <text x="60" y="62" fill="white" fontSize="10" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="bold">Cloud</text>
-                  <text x="60" y="74" fill="white" fontSize="10" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="bold">Practitioner</text>
-                  <line x1="25" y1="80" x2="95" y2="80" stroke="white" strokeWidth="1"/>
-                  <text x="60" y="94" fill="white" fontSize="8" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="bold">FOUNDATIONAL</text>
+                  <polygon points="70,12 115,32 115,108 70,128 25,108 25,32" fill="url(#cloudGradient)" filter="url(#dropShadow)" stroke="#9CA3AF" strokeWidth="1"/>
+                  <circle cx="70" cy="32" r="3" fill="#F59E0B"/>
+                  <text x="70" y="45" fill="white" fontSize="10" textAnchor="middle" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="700">AWS</text>
+                  <text x="70" y="54" fill="white" fontSize="7" textAnchor="middle" fontFamily="system-ui, -apple-system, sans-serif">certified</text>
+                  <line x1="35" y1="60" x2="105" y2="60" stroke="white" strokeWidth="1.5"/>
+                  <text x="70" y="74" fill="white" fontSize="12" textAnchor="middle" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="700">Cloud</text>
+                  <text x="70" y="86" fill="white" fontSize="12" textAnchor="middle" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="700">Practitioner</text>
+                  <line x1="35" y1="92" x2="105" y2="92" stroke="white" strokeWidth="1.5"/>
+                  <text x="70" y="108" fill="white" fontSize="9" textAnchor="middle" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="600">FOUNDATIONAL</text>
                 </svg>
               </div>
             </a>
-            <a href="https://devops.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300">
-              <div className="w-24 h-24 flex items-center justify-center">
-                <svg viewBox="0 0 120 120" className="w-full h-full drop-shadow-lg">
+            <a href="https://devops.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-all duration-300 hover:shadow-xl">
+              <div className="w-28 h-28 flex items-center justify-center">
+                <svg viewBox="0 0 140 140" className="w-full h-full">
                   <defs>
                     <linearGradient id="devopsGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                       <stop offset="0%" stopColor="#06B6D4" />
                       <stop offset="100%" stopColor="#0891B2" />
                     </linearGradient>
                   </defs>
-                  <polygon points="60,8 105,28 105,92 60,112 15,92 15,28" fill="url(#devopsGradient)" filter="url(#shadow)"/>
-                  <circle cx="60" cy="28" r="2" fill="#F59E0B"/>
-                  <text x="60" y="38" fill="white" fontSize="8" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="bold">AWS</text>
-                  <text x="60" y="46" fill="white" fontSize="6" textAnchor="middle" fontFamily="Arial, sans-serif">certified</text>
-                  <line x1="25" y1="50" x2="95" y2="50" stroke="white" strokeWidth="1"/>
-                  <text x="60" y="62" fill="white" fontSize="11" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="bold">DevOps</text>
-                  <text x="60" y="74" fill="white" fontSize="11" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="bold">Engineer</text>
-                  <line x1="25" y1="80" x2="95" y2="80" stroke="white" strokeWidth="1"/>
-                  <text x="60" y="94" fill="white" fontSize="8" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="bold">PROFESSIONAL</text>
+                  <polygon points="70,12 115,32 115,108 70,128 25,108 25,32" fill="url(#devopsGradient)" filter="url(#dropShadow)" stroke="#22D3EE" strokeWidth="1"/>
+                  <circle cx="70" cy="32" r="3" fill="#F59E0B"/>
+                  <text x="70" y="45" fill="white" fontSize="10" textAnchor="middle" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="700">AWS</text>
+                  <text x="70" y="54" fill="white" fontSize="7" textAnchor="middle" fontFamily="system-ui, -apple-system, sans-serif">certified</text>
+                  <line x1="35" y1="60" x2="105" y2="60" stroke="white" strokeWidth="1.5"/>
+                  <text x="70" y="74" fill="white" fontSize="13" textAnchor="middle" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="700">DevOps</text>
+                  <text x="70" y="86" fill="white" fontSize="13" textAnchor="middle" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="700">Engineer</text>
+                  <line x1="35" y1="92" x2="105" y2="92" stroke="white" strokeWidth="1.5"/>
+                  <text x="70" y="108" fill="white" fontSize="9" textAnchor="middle" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="600">PROFESSIONAL</text>
                 </svg>
               </div>
             </a>
-            <a href="https://www.developer.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300">
-              <div className="w-24 h-24 flex items-center justify-center">
-                <svg viewBox="0 0 120 120" className="w-full h-full drop-shadow-lg">
+            <a href="https://www.developer.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-all duration-300 hover:shadow-xl">
+              <div className="w-28 h-28 flex items-center justify-center">
+                <svg viewBox="0 0 140 140" className="w-full h-full">
                   <defs>
                     <linearGradient id="developerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                       <stop offset="0%" stopColor="#3B82F6" />
                       <stop offset="100%" stopColor="#1D4ED8" />
                     </linearGradient>
                   </defs>
-                  <polygon points="60,8 105,28 105,92 60,112 15,92 15,28" fill="url(#developerGradient)" filter="url(#shadow)"/>
-                  <circle cx="60" cy="28" r="2" fill="#F59E0B"/>
-                  <text x="60" y="38" fill="white" fontSize="8" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="bold">AWS</text>
-                  <text x="60" y="46" fill="white" fontSize="6" textAnchor="middle" fontFamily="Arial, sans-serif">certified</text>
-                  <line x1="25" y1="50" x2="95" y2="50" stroke="white" strokeWidth="1"/>
-                  <text x="60" y="68" fill="white" fontSize="12" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="bold">Developer</text>
-                  <line x1="25" y1="75" x2="95" y2="75" stroke="white" strokeWidth="1"/>
-                  <text x="60" y="90" fill="white" fontSize="8" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="bold">ASSOCIATE</text>
+                  <polygon points="70,12 115,32 115,108 70,128 25,108 25,32" fill="url(#developerGradient)" filter="url(#dropShadow)" stroke="#60A5FA" strokeWidth="1"/>
+                  <circle cx="70" cy="32" r="3" fill="#F59E0B"/>
+                  <text x="70" y="45" fill="white" fontSize="10" textAnchor="middle" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="700">AWS</text>
+                  <text x="70" y="54" fill="white" fontSize="7" textAnchor="middle" fontFamily="system-ui, -apple-system, sans-serif">certified</text>
+                  <line x1="35" y1="60" x2="105" y2="60" stroke="white" strokeWidth="1.5"/>
+                  <text x="70" y="80" fill="white" fontSize="14" textAnchor="middle" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="700">Developer</text>
+                  <line x1="35" y1="88" x2="105" y2="88" stroke="white" strokeWidth="1.5"/>
+                  <text x="70" y="108" fill="white" fontSize="9" textAnchor="middle" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="600">ASSOCIATE</text>
                 </svg>
               </div>
             </a>
-            <a href="https://www.solution-architect.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300">
-              <div className="w-24 h-24 flex items-center justify-center">
-                <svg viewBox="0 0 120 120" className="w-full h-full drop-shadow-lg">
+            <a href="https://www.solution-architect.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-all duration-300 hover:shadow-xl">
+              <div className="w-28 h-28 flex items-center justify-center">
+                <svg viewBox="0 0 140 140" className="w-full h-full">
                   <defs>
                     <linearGradient id="architectGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                       <stop offset="0%" stopColor="#10B981" />
                       <stop offset="100%" stopColor="#047857" />
                     </linearGradient>
                   </defs>
-                  <polygon points="60,8 105,28 105,92 60,112 15,92 15,28" fill="url(#architectGradient)" filter="url(#shadow)"/>
-                  <circle cx="60" cy="28" r="2" fill="#F59E0B"/>
-                  <text x="60" y="38" fill="white" fontSize="8" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="bold">AWS</text>
-                  <text x="60" y="46" fill="white" fontSize="6" textAnchor="middle" fontFamily="Arial, sans-serif">certified</text>
-                  <line x1="25" y1="50" x2="95" y2="50" stroke="white" strokeWidth="1"/>
-                  <text x="60" y="62" fill="white" fontSize="10" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="bold">Solutions</text>
-                  <text x="60" y="74" fill="white" fontSize="10" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="bold">Architect</text>
-                  <line x1="25" y1="80" x2="95" y2="80" stroke="white" strokeWidth="1"/>
-                  <text x="60" y="94" fill="white" fontSize="8" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="bold">PROFESSIONAL</text>
+                  <polygon points="70,12 115,32 115,108 70,128 25,108 25,32" fill="url(#architectGradient)" filter="url(#dropShadow)" stroke="#34D399" strokeWidth="1"/>
+                  <circle cx="70" cy="32" r="3" fill="#F59E0B"/>
+                  <text x="70" y="45" fill="white" fontSize="10" textAnchor="middle" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="700">AWS</text>
+                  <text x="70" y="54" fill="white" fontSize="7" textAnchor="middle" fontFamily="system-ui, -apple-system, sans-serif">certified</text>
+                  <line x1="35" y1="60" x2="105" y2="60" stroke="white" strokeWidth="1.5"/>
+                  <text x="70" y="74" fill="white" fontSize="12" textAnchor="middle" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="700">Solutions</text>
+                  <text x="70" y="86" fill="white" fontSize="12" textAnchor="middle" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="700">Architect</text>
+                  <line x1="35" y1="92" x2="105" y2="92" stroke="white" strokeWidth="1.5"/>
+                  <text x="70" y="108" fill="white" fontSize="9" textAnchor="middle" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="600">PROFESSIONAL</text>
                 </svg>
               </div>
             </a>
-            <a href="https://www.sysops.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300">
-              <div className="w-24 h-24 flex items-center justify-center">
-                <svg viewBox="0 0 120 120" className="w-full h-full drop-shadow-lg">
+            <a href="https://www.sysops.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-all duration-300 hover:shadow-xl">
+              <div className="w-28 h-28 flex items-center justify-center">
+                <svg viewBox="0 0 140 140" className="w-full h-full">
                   <defs>
                     <linearGradient id="sysopsGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                       <stop offset="0%" stopColor="#2563EB" />
                       <stop offset="100%" stopColor="#1E40AF" />
                     </linearGradient>
                   </defs>
-                  <polygon points="60,8 105,28 105,92 60,112 15,92 15,28" fill="url(#sysopsGradient)" filter="url(#shadow)"/>
-                  <circle cx="60" cy="28" r="2" fill="#F59E0B"/>
-                  <text x="60" y="38" fill="white" fontSize="8" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="bold">AWS</text>
-                  <text x="60" y="46" fill="white" fontSize="6" textAnchor="middle" fontFamily="Arial, sans-serif">certified</text>
-                  <line x1="25" y1="50" x2="95" y2="50" stroke="white" strokeWidth="1"/>
-                  <text x="60" y="62" fill="white" fontSize="10" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="bold">SysOps</text>
-                  <text x="60" y="74" fill="white" fontSize="10" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="bold">Administrator</text>
-                  <line x1="25" y1="80" x2="95" y2="80" stroke="white" strokeWidth="1"/>
-                  <text x="60" y="94" fill="white" fontSize="8" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="bold">ASSOCIATE</text>
+                  <polygon points="70,12 115,32 115,108 70,128 25,108 25,32" fill="url(#sysopsGradient)" filter="url(#dropShadow)" stroke="#3B82F6" strokeWidth="1"/>
+                  <circle cx="70" cy="32" r="3" fill="#F59E0B"/>
+                  <text x="70" y="45" fill="white" fontSize="10" textAnchor="middle" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="700">AWS</text>
+                  <text x="70" y="54" fill="white" fontSize="7" textAnchor="middle" fontFamily="system-ui, -apple-system, sans-serif">certified</text>
+                  <line x1="35" y1="60" x2="105" y2="60" stroke="white" strokeWidth="1.5"/>
+                  <text x="70" y="74" fill="white" fontSize="12" textAnchor="middle" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="700">SysOps</text>
+                  <text x="70" y="86" fill="white" fontSize="12" textAnchor="middle" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="700">Administrator</text>
+                  <line x1="35" y1="92" x2="105" y2="92" stroke="white" strokeWidth="1.5"/>
+                  <text x="70" y="108" fill="white" fontSize="9" textAnchor="middle" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="600">ASSOCIATE</text>
                 </svg>
               </div>
             </a>
