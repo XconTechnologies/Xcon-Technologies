@@ -44,7 +44,7 @@ export default function WhyChoose() {
         <div className="mb-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-              Emerging <span className="text-primary">Technologies</span> We Use
+              Cutting-Edge <span className="text-primary">Technology Stack</span> We Master
             </h2>
             <p className="text-gray-600 max-w-4xl mx-auto">
               We're committed to helping you stay ahead of the competition with state-of-the-art digital solutions, tailored to your unique needs.
@@ -64,7 +64,7 @@ export default function WhyChoose() {
         <div>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-              Why Choose <span className="text-primary">XCon Technologies</span>
+              Why Businesses <span className="text-primary">Trust</span> XCon Technologies
             </h2>
           </div>
           

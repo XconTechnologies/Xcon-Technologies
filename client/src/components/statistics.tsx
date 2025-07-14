@@ -7,9 +7,9 @@ export default function Statistics() {
   ];
 
   return (
-    <section className="py-12 gradient-overlay text-white">
+    <section className="py-8 gradient-overlay text-white">
       <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
               <div className="text-4xl md:text-5xl font-bold text-primary mb-2">{stat.number}</div>

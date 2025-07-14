@@ -180,7 +180,7 @@ export default function Services() {
       <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-            What <span className="text-primary">Services</span> We Offer
+            Comprehensive <span className="text-primary">Digital Solutions</span> for Your Business
           </h2>
           <p className="text-gray-600 text-lg">
             The complete work hub for professional services

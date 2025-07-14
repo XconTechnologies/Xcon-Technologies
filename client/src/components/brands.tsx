@@ -27,7 +27,7 @@ export default function Brands() {
     <section className="py-20 bg-white">
       <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8">Chosen by 500+ Brands Worldwide</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8">Trusted by <span className="text-primary">Global</span> Industry Leaders</h2>
           
           {/* Clutch Rating */}
           <div className="flex items-center justify-center space-x-4 mb-12">

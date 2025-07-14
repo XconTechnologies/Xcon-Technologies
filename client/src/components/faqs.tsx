@@ -40,7 +40,7 @@ export default function FAQs() {
       <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-            Frequently Asked <span className="text-primary">Questions</span>
+            Common <span className="text-primary">Questions</span> Answered
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Get answers to common questions about XCon Technologies' development services and processes.

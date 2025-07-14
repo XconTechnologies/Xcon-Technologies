@@ -56,7 +56,7 @@ export default function EngagementModels() {
         <div className="mb-20">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-              Our <span className="text-primary">Engagement</span> Models
+              Flexible <span className="text-primary">Partnership</span> Models
             </h2>
           </div>
           
