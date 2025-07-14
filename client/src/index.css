@@ -41,6 +41,17 @@ body.modal-open {
   height: 100% !important;
 }
 
+/* Certification badges styling */
+.certification-badge {
+  background: transparent !important;
+  mix-blend-mode: normal;
+}
+
+.certification-badge img {
+  background: transparent !important;
+  backdrop-filter: none !important;
+}
+
 * {
   font-family: 'Sora', sans-serif;
 }
