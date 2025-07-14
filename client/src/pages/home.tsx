@@ -1,7 +1,6 @@
 import Header from "@/components/header";
 import Hero from "@/components/hero";
 import Services from "@/components/services";
-import Solutions from "@/components/solutions";
 import Expertise from "@/components/expertise";
 import WhyChoose from "@/components/why-choose";
 import EngagementModels from "@/components/engagement-models";
@@ -16,7 +15,6 @@ export default function Home() {
       <Header />
       <Hero />
       <Services />
-      <Solutions />
       <Expertise />
       <WhyChoose />
       <EngagementModels />
