@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Phone, Mail, MessageCircle, MessageSquare, Upload, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import xconLogo from "@assets/Xcon Logo cropped_1752479137104.png";
 
 export default function ConsultationContact() {
   const [formData, setFormData] = useState({
@@ -70,11 +71,11 @@ export default function ConsultationContact() {
                   </p>
                 </div>
                 <div className="hidden lg:block">
-                  <div className="bg-primary p-3 rounded-lg">
-                    <div className="text-white font-semibold text-sm">
-                      PROJECT ESTIMATE
-                    </div>
-                  </div>
+                  <img 
+                    src={xconLogo} 
+                    alt="XCon Technologies" 
+                    className="h-12 object-contain"
+                  />
                 </div>
               </div>
 
@@ -171,7 +172,7 @@ export default function ConsultationContact() {
                 <div className="flex justify-center">
                   <Button
                     type="submit"
-                    className="bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-semibold px-8 py-3 rounded-lg transition-colors"
+                    className="bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
                   >
                     <Send className="h-4 w-4 mr-2" />
                     Send
@@ -202,20 +203,7 @@ export default function ConsultationContact() {
               </div>
             </div>
 
-            {/* Decorative illustration */}
-            <div className="mt-8 text-center">
-              <div className="inline-block">
-                <svg width="200" height="150" viewBox="0 0 200 150" className="text-orange-400">
-                  <path
-                    d="M100 20 L120 40 L140 30 L160 50 L180 40 L180 130 L20 130 L20 40 L40 50 L60 30 L80 40 L100 20 Z"
-                    fill="currentColor"
-                    opacity="0.1"
-                  />
-                  <circle cx="150" cy="100" r="30" fill="currentColor" opacity="0.2" />
-                  <circle cx="50" cy="80" r="20" fill="currentColor" opacity="0.3" />
-                </svg>
-              </div>
-            </div>
+
           </div>
         </div>
       </div>
