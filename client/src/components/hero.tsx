@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import harvestLogo from "@assets/HE-Logo-1 (1)_1752473995302.jpg";
 import accommodationLogo from "@assets/IMG-20240308-WA0130-removebg-preview_1752473995303.png";
-import cloudChoiceLogo from "@assets/imgpsh_fullsize_anim_1752473995303.png";
 import lawlessLogo from "@assets/jghih-1536x743_1752473995304.png";
 import knopeeLogo from "@assets/Knopee-Logo_1752473995304.webp";
 import usProLogo from "@assets/Logo uslisitingpro_1752473995305.png";
@@ -32,7 +31,6 @@ export default function Hero() {
     { name: "Dunya Consultants", logo: dunyaLogo },
     { name: "Harvest Energy", logo: harvestLogo },
     { name: "Accommodation Solutions", logo: accommodationLogo },
-    { name: "Cloud Choice Technologies", logo: cloudChoiceLogo },
     { name: "Lawless", logo: lawlessLogo },
     { name: "Knopee", logo: knopeeLogo },
     { name: "US Pro Listing", logo: usProLogo },

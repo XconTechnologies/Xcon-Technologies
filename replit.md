@@ -158,6 +158,8 @@ Preferred communication style: Simple, everyday language.
 - **Section Spacing Standardization (January 2025)**: Standardized all section spacing to py-16 across all components for consistent visual rhythm and balance
 - **Certifications Section Removal (January 2025)**: Completely removed "Our Certifications" heading, content box, and all AWS certification badges from consultation form section
 - **Hero Logo Display Fix (January 2025)**: Removed "Trusted by Leading Companies" text and converted logo display to proper grid layout showing all 20 client logos without scrolling animation
+- **Hero Logo Carousel Fix (January 2025)**: Removed problematic Cloud Choice Technologies logo and restored smooth right-to-left scrolling animation for 19 client logos
+- **Consultation Form Enhancement (January 2025)**: Replaced contact method buttons with informative process text including "Quick response", "Personalized approach", and "No pressure" sections with icons
 - **Layout Width Constraint (January 2025)**: Set website layout to maximum width of 1440px instead of full width for better design consistency across all sections
 - **Service Images Integration**: Integrated 8 professional service images that correspond to each service tab with dynamic content switching
 - **Services Section Enhancement**: Updated "What Services We Offer" section from vertical to horizontal tabs layout with 8 services (Web Development, Software Consulting, Cloud Engineering, Mobile Development, UI/UX Design, MVP Development, Digital Marketing, Data Engineering)

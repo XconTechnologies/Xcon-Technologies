@@ -166,19 +166,50 @@ export default function ConsultationContact() {
             </div>
           </div>
 
-          {/* Right Column - Contact Options */}
+          {/* Right Column - Process Information */}
           <div className="lg:col-span-1">
-            <div className="space-y-4">
-              {contactMethods.map((method, index) => (
-                <div key={index} className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
-                  <div className={`${method.color}`}>
-                    {method.icon}
-                  </div>
-                  <span className="text-gray-700 font-medium">
-                    {method.text}
-                  </span>
+            <div className="space-y-6">
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
                 </div>
-              ))}
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">Quick response</h3>
+                  <p className="text-gray-600">
+                    We usually reply within 1 hour on business days to sign an NDA and arrange a discussion.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                  <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">Personalized approach</h3>
+                  <p className="text-gray-600">
+                    You will engage directly with specialists who are experienced in your domain.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                  <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">No pressure</h3>
+                  <p className="text-gray-600">
+                    We're here to explore your needs and provide guidance — whenever you're ready to move forward.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
