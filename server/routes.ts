@@ -10,7 +10,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const { firstName, lastName, email, phone, message } = req.body;
       
       // Validate required fields
-      if (!firstName || !lastName || !email || !message) {
+      if (!firstName || !email || !message) {
         return res.status(400).json({ error: "Missing required fields" });
       }
       
