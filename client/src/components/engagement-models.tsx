@@ -54,17 +54,17 @@ export default function EngagementModels() {
       <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
         {/* Engagement Models */}
         <div className="mb-12">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">
               Our <span className="text-primary">Work</span> Models
             </h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {engagementModels.map((model, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group">
+              <div key={index} className="bg-white rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 group">
                 {/* Video Animation */}
-                <div className="relative mb-8 h-64 flex items-center justify-center">
+                <div className="relative mb-6 sm:mb-8 h-48 sm:h-56 md:h-64 flex items-center justify-center">
                   <video
                     key={index}
                     autoPlay
@@ -82,8 +82,8 @@ export default function EngagementModels() {
                   </video>
                 </div>
                 
-                <div className="text-center p-4 rounded-lg hover:bg-primary transition-all duration-300 group/text">
-                  <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover/text:text-white transition-all duration-300">
+                <div className="text-center p-3 sm:p-4 rounded-lg hover:bg-primary transition-all duration-300 group/text">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4 group-hover/text:text-white transition-all duration-300">
                     {model.title}
                   </h3>
                   <p className="text-gray-600 leading-relaxed text-sm group-hover/text:text-white transition-all duration-300">

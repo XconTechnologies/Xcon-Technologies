@@ -64,29 +64,29 @@ export default function WhyChoose() {
         {/* Advanced Technology Solutions */}
         <div className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4">
               Advanced <span className="text-primary">Technology</span> Solutions
             </h2>
-            <p className="text-gray-600 max-w-4xl mx-auto">
+            <p className="text-gray-600 max-w-4xl mx-auto text-sm sm:text-base">
               We're committed to helping you stay ahead of the competition with state-of-the-art digital solutions, tailored to your unique needs.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
             {technologies.slice(0, 15).map((tech, index) => (
               <div
                 key={index}
-                className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-md transition-shadow duration-200 flex flex-col items-center text-center"
+                className="bg-white rounded-lg border border-gray-200 p-4 sm:p-6 hover:shadow-md transition-shadow duration-200 flex flex-col items-center text-center"
               >
                 <img
                   src={tech.icon}
                   alt={tech.name}
-                  className="w-12 h-12 mb-3 object-contain"
+                  className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 mb-2 sm:mb-3 object-contain"
                   onError={(e) => {
                     e.currentTarget.style.display = 'none';
                   }}
                 />
-                <span className="text-sm font-medium text-gray-700">
+                <span className="text-xs sm:text-sm font-medium text-gray-700">
                   {tech.name}
                 </span>
               </div>
@@ -96,27 +96,27 @@ export default function WhyChoose() {
 
         {/* Why Choose Section */}
         <div>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">
               Why Choose <span className="text-primary">XCon Technologies</span>
             </h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {features.map((feature, index) => (
               <div 
                 key={index} 
-                className="bg-white border border-gray-200 rounded-2xl p-8 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 group"
+                className="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 group"
               >
-                <div className="mb-6">
+                <div className="mb-4 sm:mb-6">
                   <div className="text-gray-800 group-hover:text-white transition-colors">
                     {feature.icon}
                   </div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-white transition-colors">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4 group-hover:text-white transition-colors">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed group-hover:text-white/90 transition-colors">
+                <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed group-hover:text-white/90 transition-colors">
                   {feature.description}
                 </p>
                 <button className="text-gray-800 group-hover:text-white transition-colors">

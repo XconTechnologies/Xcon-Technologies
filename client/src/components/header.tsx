@@ -316,46 +316,46 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden border-t border-gray-600 bg-black/90 backdrop-blur-sm">
+          <div className="lg:hidden border-t border-gray-600 bg-black/95 backdrop-blur-sm">
             <nav className="flex flex-col space-y-4 px-4 py-6">
               <button
                 onClick={() => scrollToSection("home")}
-                className="text-white hover:text-primary transition-colors font-medium text-left"
+                className="text-white hover:text-primary transition-colors font-medium text-left py-2"
               >
                 Home
               </button>
               <button
                 onClick={() => scrollToSection("services")}
-                className="text-white hover:text-primary transition-colors font-medium text-left"
+                className="text-white hover:text-primary transition-colors font-medium text-left py-2"
               >
                 Services
               </button>
               <button
                 onClick={() => scrollToSection("portfolio")}
-                className="text-white hover:text-primary transition-colors font-medium text-left"
+                className="text-white hover:text-primary transition-colors font-medium text-left py-2"
               >
                 Portfolio
               </button>
               <Link href="/career">
-                <button className="text-white hover:text-primary transition-colors font-medium text-left">
+                <button className="text-white hover:text-primary transition-colors font-medium text-left py-2">
                   Career
                 </button>
               </Link>
               <button
                 onClick={() => scrollToSection("about")}
-                className="text-white hover:text-primary transition-colors font-medium text-left"
+                className="text-white hover:text-primary transition-colors font-medium text-left py-2"
               >
                 About
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
-                className="text-white hover:text-primary transition-colors font-medium text-left"
+                className="text-white hover:text-primary transition-colors font-medium text-left py-2"
               >
                 Contact
               </button>
               <Button
                 onClick={() => setIsQuoteModalOpen(true)}
-                className="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-full font-medium transition-colors mt-4 uppercase text-sm"
+                className="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-full font-medium transition-colors mt-4 uppercase text-sm w-full"
               >
                 GET A QUOTE
               </Button>

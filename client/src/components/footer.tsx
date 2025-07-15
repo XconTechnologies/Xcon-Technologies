@@ -10,8 +10,8 @@ import sysopsBadge from '@assets/aws-sysOps_1752489212508.png';
 export default function Footer() {
   return (
     <footer className="bg-gray-100 text-gray-800">
-      <div className="max-w-[1440px] mx-auto px-8 lg:px-16 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16 py-12 sm:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12">
           {/* Left Column - Company Info */}
           <div className="space-y-6">
             <div className="flex items-center">

@@ -119,29 +119,29 @@ export default function ConsultationContact() {
   return (
     <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100 relative overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-12 items-start">
           {/* Left Column - Form */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-2xl shadow-lg p-8 h-full flex flex-col">
+            <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 h-full flex flex-col">
               <div className="mb-6">
-                <h2 className="text-3xl font-bold text-gray-800 mb-2">
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">
                   Need a Consultation on Your Development Project?
                 </h2>
-                <p className="text-gray-600">
+                <p className="text-gray-600 text-sm sm:text-base">
                   Drop us a line! We are here to answer your questions 24/7.
                 </p>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6 flex-1 flex flex-col">
                 {/* Form Fields - First: Name, Company, Email, Phone */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <input
                     type="text"
                     name="fullName"
                     value={formData.fullName}
                     onChange={handleInputChange}
                     placeholder="Full name"
-                    className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm sm:text-base"
                     required
                   />
                   <input
@@ -150,18 +150,18 @@ export default function ConsultationContact() {
                     value={formData.company}
                     onChange={handleInputChange}
                     placeholder="Company"
-                    className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm sm:text-base"
                   />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
                     placeholder="Work email"
-                    className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm sm:text-base"
                     required
                   />
                   <input
@@ -170,13 +170,13 @@ export default function ConsultationContact() {
                     value={formData.phone}
                     onChange={handleInputChange}
                     placeholder="Phone number"
-                    className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm sm:text-base"
                     required
                   />
                 </div>
 
                 {/* File Upload */}
-                <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-primary transition-colors">
+                <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 sm:p-6 text-center hover:border-primary transition-colors">
                   <input
                     type="file"
                     onChange={handleFileUpload}
@@ -184,8 +184,8 @@ export default function ConsultationContact() {
                     id="file-upload"
                   />
                   <label htmlFor="file-upload" className="cursor-pointer">
-                    <Upload className="h-8 w-8 mx-auto mb-2 text-gray-400" />
-                    <p className="text-gray-600">
+                    <Upload className="h-6 w-6 sm:h-8 sm:w-8 mx-auto mb-2 text-gray-400" />
+                    <p className="text-gray-600 text-sm sm:text-base">
                       Drag and drop or <span className="text-primary font-semibold">browse</span> to upload your file(s)
                     </p>
                   </label>
@@ -203,7 +203,7 @@ export default function ConsultationContact() {
                     value={formData.message}
                     onChange={handleInputChange}
                     placeholder="How can we help you?"
-                    className="w-full h-32 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
+                    className="w-full h-32 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none text-sm sm:text-base"
                     required
                   />
                 </div>
@@ -213,7 +213,7 @@ export default function ConsultationContact() {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-3 rounded-lg transition-colors disabled:opacity-50"
+                    className="bg-primary hover:bg-primary/90 text-white font-semibold px-6 sm:px-8 py-3 rounded-lg transition-colors disabled:opacity-50 text-sm sm:text-base"
                   >
                     <Send className="h-4 w-4 mr-2" />
                     {isSubmitting ? 'Sending...' : 'Send'}
@@ -225,59 +225,59 @@ export default function ConsultationContact() {
 
           {/* Right Column - Process Information */}
           <div className="lg:col-span-1">
-            <div className="bg-primary rounded-2xl shadow-lg p-8 text-white h-full flex flex-col justify-center">
-              <div className="space-y-6">
+            <div className="bg-primary rounded-2xl shadow-lg p-6 sm:p-8 text-white h-full flex flex-col justify-center">
+              <div className="space-y-4 sm:space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-white/20 rounded-full flex items-center justify-center">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">Quick response</h3>
-                    <p className="text-white/90">
+                    <h3 className="text-base sm:text-lg font-semibold text-white mb-2">Quick response</h3>
+                    <p className="text-white/90 text-sm sm:text-base">
                       We usually reply within 1 hour on business days to sign an NDA and arrange a discussion.
                     </p>
                   </div>
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-white/20 rounded-full flex items-center justify-center">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">Personalized approach</h3>
-                    <p className="text-white/90">
+                    <h3 className="text-base sm:text-lg font-semibold text-white mb-2">Personalized approach</h3>
+                    <p className="text-white/90 text-sm sm:text-base">
                       You will engage directly with specialists who are experienced in your domain.
                     </p>
                   </div>
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-white/20 rounded-full flex items-center justify-center">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">No pressure</h3>
-                    <p className="text-white/90">
+                    <h3 className="text-base sm:text-lg font-semibold text-white mb-2">No pressure</h3>
+                    <p className="text-white/90 text-sm sm:text-base">
                       We're here to explore your needs and provide guidance — whenever you're ready to move forward.
                     </p>
                   </div>
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-white/20 rounded-full flex items-center justify-center">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">Proven expertise</h3>
-                    <p className="text-white/90">
+                    <h3 className="text-base sm:text-lg font-semibold text-white mb-2">Proven expertise</h3>
+                    <p className="text-white/90 text-sm sm:text-base">
                       With over 10 years of experience and 500+ successful projects, our team delivers cutting-edge solutions that drive business growth.
                     </p>
                   </div>

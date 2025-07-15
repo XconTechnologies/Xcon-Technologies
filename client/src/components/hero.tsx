@@ -78,40 +78,40 @@ export default function Hero() {
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/60"></div>
       
-      <div className="max-w-[1440px] mx-auto px-4 lg:px-8 relative z-10 h-full">
-        <div className="flex flex-col items-center justify-center min-h-[80vh] text-center">
+      <div className="max-w-[1440px] mx-auto px-2 sm:px-4 lg:px-8 relative z-10 h-full">
+        <div className="flex flex-col items-center justify-center min-h-[70vh] sm:min-h-[80vh] text-center">
           {/* Centered content */}
-          <div className="text-white max-w-6xl mx-auto">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl mb-8 leading-tight">
+          <div className="text-white max-w-6xl mx-auto w-full">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 sm:mb-8 leading-tight px-4 sm:px-0">
               Grow Your Business with <span className="font-bold">XCon Technologies!</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0">
               Welcome to XCon Technologies, where innovation meets digital expertise. Dive into our cutting-edge IT solutions, from advanced website and application development to seamless network integration. Let this IT software development company, XCon be your trusted partner in navigating the fast-changing technology landscape. Discover how we can take your digital journey to the next level.
             </p>
-            <div className="mb-12">
+            <div className="mb-8 sm:mb-12 px-4 sm:px-0">
               <Button
                 onClick={() => scrollToSection("contact")}
-                className="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-full font-semibold text-lg transition-all transform hover:scale-105"
+                className="bg-primary hover:bg-primary-dark text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all transform hover:scale-105 w-full sm:w-auto"
               >
                 Get Started Today
               </Button>
             </div>
             
             {/* Client Logos Scrolling */}
-            <div className="text-white">
+            <div className="text-white px-4 sm:px-0">
               <div className="relative overflow-hidden">
                 <div className="flex animate-scroll-right-to-left">
                   {duplicatedLogos.map((logo, index) => (
                     <div
                       key={index}
-                      className="flex items-center justify-center flex-shrink-0 mx-8"
-                      style={{ minWidth: '120px', height: '60px' }}
+                      className="flex items-center justify-center flex-shrink-0 mx-4 sm:mx-8"
+                      style={{ minWidth: '80px', height: '40px' }}
                     >
                       <img
                         src={logo.logo}
                         alt={logo.name}
-                        className="h-10 w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-all duration-300"
-                        style={{ maxWidth: '100px' }}
+                        className="h-6 sm:h-8 md:h-10 w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-all duration-300"
+                        style={{ maxWidth: '60px' }}
                       />
                     </div>
                   ))}

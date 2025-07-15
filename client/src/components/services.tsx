@@ -190,47 +190,47 @@ export default function Services() {
         {/* Professional Service Cards */}
         <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
           {/* Service Navigation */}
-          <div className="bg-gray-50 px-8 py-6 border-b border-gray-200">
+          <div className="bg-gray-50 px-4 sm:px-8 py-4 sm:py-6 border-b border-gray-200">
             <div className="flex flex-wrap justify-center gap-2">
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                  className={`flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ${
                     activeTab === tab.id
                       ? "bg-primary text-white shadow-lg"
                       : "bg-white text-gray-600 hover:bg-gray-100 shadow-sm"
                   }`}
                 >
-                  {tab.icon}
-                  <span className="hidden sm:inline">{tab.title}</span>
+                  <span className="flex-shrink-0">{tab.icon}</span>
+                  <span className="hidden xs:inline sm:inline">{tab.title}</span>
                 </button>
               ))}
             </div>
           </div>
 
           {/* Content Area */}
-          <div className="p-8 md:p-12">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="p-4 sm:p-8 md:p-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
               {/* Left side - Content */}
-              <div className="space-y-8">
+              <div className="space-y-6 sm:space-y-8 order-2 lg:order-1">
                 <div>
-                  <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-4">
-                    {activeTabData?.icon}
-                    <span className="font-semibold">{activeTabData?.title}</span>
+                  <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 sm:px-4 py-2 rounded-full mb-4">
+                    <span className="flex-shrink-0">{activeTabData?.icon}</span>
+                    <span className="font-semibold text-sm sm:text-base">{activeTabData?.title}</span>
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-4">
                     {activeTabData?.content.title}
                   </h3>
                 </div>
                 
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   {activeTabData?.content.bulletPoints.map((point, index) => (
                     <div key={index} className="flex items-start group">
-                      <div className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 bg-primary/10 rounded-full flex items-center justify-center mr-3 sm:mr-4 mt-1 flex-shrink-0 group-hover:bg-primary/20 transition-colors">
                         <div className="w-2 h-2 bg-primary rounded-full"></div>
                       </div>
-                      <p className="text-gray-700 leading-relaxed">
+                      <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
                         {point}
                       </p>
                     </div>
@@ -240,7 +240,7 @@ export default function Services() {
                 <div className="pt-4">
                   <Button
                     onClick={() => setIsQuoteModalOpen(true)}
-                    className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 uppercase text-sm shadow-lg hover:shadow-xl"
+                    className="bg-primary hover:bg-primary/90 text-white px-6 sm:px-8 py-3 rounded-full font-medium transition-all duration-300 uppercase text-sm shadow-lg hover:shadow-xl w-full sm:w-auto"
                   >
                     GET A QUOTE
                   </Button>
@@ -248,8 +248,8 @@ export default function Services() {
               </div>
 
               {/* Right side - Image */}
-              <div className="relative">
-                <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8 h-[450px] flex items-center justify-center">
+              <div className="relative order-1 lg:order-2">
+                <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-4 sm:p-8 h-[300px] sm:h-[350px] md:h-[450px] flex items-center justify-center">
                   <div className="w-full h-full rounded-xl overflow-hidden bg-white shadow-inner">
                     <img 
                       key={activeTab}
@@ -261,19 +261,19 @@ export default function Services() {
                 </div>
                 
                 {/* Decorative elements */}
-                <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/10 rounded-full"></div>
-                <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-primary/5 rounded-full"></div>
+                <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 w-12 h-12 sm:w-20 sm:h-20 bg-primary/10 rounded-full"></div>
+                <div className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 w-10 h-10 sm:w-16 sm:h-16 bg-primary/5 rounded-full"></div>
               </div>
             </div>
           </div>
 
           {/* Progress indicators */}
-          <div className="bg-gray-50 px-8 py-4 border-t border-gray-200">
+          <div className="bg-gray-50 px-4 sm:px-8 py-4 border-t border-gray-200">
             <div className="flex justify-center gap-2">
               {tabs.map((tab, index) => (
                 <div
                   key={index}
-                  className={`w-8 h-1 rounded-full transition-all duration-300 ${
+                  className={`w-6 sm:w-8 h-1 rounded-full transition-all duration-300 ${
                     tab.id === activeTab ? "bg-primary" : "bg-gray-300"
                   }`}
                 />

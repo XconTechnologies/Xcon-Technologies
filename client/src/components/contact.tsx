@@ -68,21 +68,21 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 gradient-overlay text-white">
+    <section id="contact" className="py-16 sm:py-20 gradient-overlay text-white">
       <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Get Started Today</h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Get Started Today</h2>
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
             Ready to transform your business with cutting-edge digital solutions? Let's discuss your project.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
           {/* Contact Form */}
-          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8">
-            <h3 className="text-2xl font-bold mb-6">Send us a message</h3>
+          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 sm:p-8">
+            <h3 className="text-xl sm:text-2xl font-bold mb-6">Send us a message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <Label htmlFor="firstName" className="text-white">First Name</Label>
                   <Input
@@ -159,35 +159,35 @@ export default function Contact() {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
+              <h3 className="text-xl sm:text-2xl font-bold mb-6">Contact Information</h3>
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                    <MapPin className="h-5 w-5 text-primary" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/20 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                    <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1">Address</h4>
-                    <p className="text-gray-300">123 Business Street, Suite 100<br />New York, NY 10001</p>
+                    <h4 className="font-semibold mb-1 text-sm sm:text-base">Address</h4>
+                    <p className="text-gray-300 text-sm sm:text-base">123 Business Street, Suite 100<br />New York, NY 10001</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                    <Phone className="h-5 w-5 text-primary" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/20 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                    <Phone className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1">Phone</h4>
-                    <p className="text-gray-300">+1 (555) 123-4567</p>
+                    <h4 className="font-semibold mb-1 text-sm sm:text-base">Phone</h4>
+                    <p className="text-gray-300 text-sm sm:text-base">+1 (555) 123-4567</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                    <Mail className="h-5 w-5 text-primary" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/20 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                    <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1">Email</h4>
-                    <p className="text-gray-300">askforquote@xcontechnologies.com</p>
-                    <p className="text-gray-400 text-sm mt-1">For business inquiries & project quotes</p>
-                    <p className="text-gray-400 text-sm mt-1">
+                    <h4 className="font-semibold mb-1 text-sm sm:text-base">Email</h4>
+                    <p className="text-gray-300 text-sm sm:text-base">askforquote@xcontechnologies.com</p>
+                    <p className="text-gray-400 text-xs sm:text-sm mt-1">For business inquiries & project quotes</p>
+                    <p className="text-gray-400 text-xs sm:text-sm mt-1">
                       <strong>HR & Jobs:</strong> nouman.ali@xcontechnologies.com
                     </p>
                   </div>
@@ -196,11 +196,11 @@ export default function Contact() {
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4 flex items-center">
-                <Clock className="h-5 w-5 mr-2" />
+              <h4 className="font-semibold mb-4 flex items-center text-sm sm:text-base">
+                <Clock className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
                 Business Hours
               </h4>
-              <div className="space-y-2 text-gray-300">
+              <div className="space-y-2 text-gray-300 text-sm sm:text-base">
                 <div className="flex justify-between">
                   <span>Monday - Friday</span>
                   <span>9:00 AM - 6:00 PM</span>
