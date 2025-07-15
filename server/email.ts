@@ -1,9 +1,4 @@
-import sgMail from '@sendgrid/mail';
-
-// Initialize SendGrid
-if (process.env.SENDGRID_API_KEY) {
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-}
+import nodemailer from 'nodemailer';
 
 interface ContactFormData {
   firstName: string;
@@ -13,17 +8,25 @@ interface ContactFormData {
   message: string;
 }
 
-export async function sendContactFormEmail(formData: ContactFormData): Promise<boolean> {
-  if (!process.env.SENDGRID_API_KEY) {
-    console.error('SendGrid API key is not configured');
-    throw new Error('Email service is not configured');
-  }
+// Create transporter with Gmail SMTP (you can use other providers too)
+const createTransporter = () => {
+  return nodemailer.createTransporter({
+    service: 'gmail',
+    auth: {
+      user: process.env.EMAIL_USER || 'askforquote@xcontechnologies.com',
+      pass: process.env.EMAIL_PASS || 'your-app-password-here'
+    }
+  });
+};
 
+export async function sendContactFormEmail(formData: ContactFormData): Promise<boolean> {
   try {
+    const transporter = createTransporter();
+
     // Email to you (the business owner)
     const emailToOwner = {
+      from: process.env.EMAIL_USER || 'askforquote@xcontechnologies.com',
       to: 'askforquote@xcontechnologies.com',
-      from: 'askforquote@xcontechnologies.com', // Must be verified sender
       subject: `New Contact Form Submission - ${formData.firstName} ${formData.lastName}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
@@ -53,8 +56,8 @@ export async function sendContactFormEmail(formData: ContactFormData): Promise<b
 
     // Auto-reply to the customer
     const autoReply = {
+      from: process.env.EMAIL_USER || 'askforquote@xcontechnologies.com',
       to: formData.email,
-      from: 'askforquote@xcontechnologies.com',
       subject: 'Thank you for contacting XCon Technologies',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
@@ -87,14 +90,14 @@ export async function sendContactFormEmail(formData: ContactFormData): Promise<b
     };
 
     // Send both emails
-    await sgMail.send(emailToOwner);
-    await sgMail.send(autoReply);
+    await transporter.sendMail(emailToOwner);
+    await transporter.sendMail(autoReply);
 
     console.log('Contact form emails sent successfully');
     return true;
 
   } catch (error) {
-    console.error('SendGrid email error:', error);
+    console.error('Email sending error:', error);
     throw error;
   }
 }
