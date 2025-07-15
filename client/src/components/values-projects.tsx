@@ -1,6 +1,8 @@
 import { Link, Lightbulb, Users, Shield, CheckCircle } from "lucide-react";
+import { useState } from "react";
 
 export default function ValuesProjects() {
+  const [selectedBusiness, setSelectedBusiness] = useState("For Startups");
   const values = [
     {
       icon: <Link className="h-6 w-6" />,
@@ -67,50 +69,76 @@ export default function ValuesProjects() {
             </p>
           </div>
           
-          <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-gray-100">
-            <div className="space-y-12">
-              {businessTypes.map((business, index) => (
-                <div 
-                  key={index} 
-                  className="group"
-                >
-                  {/* Business Type Card */}
-                  <div className="bg-primary/5 rounded-2xl p-8 border-l-4 border-primary">
-                    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
-                      <h3 className="text-2xl font-bold text-gray-800 mb-4 lg:mb-0">
-                        {business.title}
-                      </h3>
-                      <div className="flex items-center gap-4">
+          <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[400px]">
+              {/* Left Sidebar - Business Types */}
+              <div className="lg:col-span-4 bg-gray-50 p-8">
+                <h3 className="text-lg font-semibold text-gray-800 mb-6">Business Types</h3>
+                <div className="space-y-2">
+                  {businessTypes.map((business, index) => (
+                    <button
+                      key={index}
+                      onMouseEnter={() => setSelectedBusiness(business.title)}
+                      className={`w-full text-left px-6 py-4 rounded-xl transition-all duration-200 ${
+                        selectedBusiness === business.title
+                          ? "bg-primary text-white shadow-lg"
+                          : "bg-white text-gray-700 hover:bg-gray-100 shadow-sm"
+                      }`}
+                    >
+                      <span className="font-medium">{business.title}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right Content - Details */}
+              <div className="lg:col-span-8 p-8">
+                {businessTypes.map((business, index) => (
+                  <div
+                    key={index}
+                    className={`${
+                      selectedBusiness === business.title ? "block" : "hidden"
+                    }`}
+                  >
+                    <div className="h-full flex flex-col">
+                      <div className="mb-8">
+                        <h2 className="text-3xl font-bold text-gray-800 mb-4">
+                          {business.title}
+                        </h2>
+                        <p className="text-gray-600">
+                          {business.title === "For Startups" && "Accelerate your startup journey with rapid prototyping, MVP development, and proof-of-concept solutions designed to validate your ideas quickly and efficiently."}
+                          {business.title === "For SMBs" && "Scale your small to medium business with custom software development, digital marketing solutions, and ongoing maintenance to keep your systems running smoothly."}
+                          {business.title === "For Enterprises" && "Transform your enterprise operations with comprehensive software solutions, cloud implementation services, and DevOps practices for maximum efficiency and scalability."}
+                        </p>
+                      </div>
+
+                      <div className="flex-1">
+                        <h4 className="text-lg font-semibold text-gray-800 mb-4">Our Services</h4>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                          {business.services.map((service, serviceIndex) => (
+                            <div key={serviceIndex} className="bg-primary text-white rounded-xl p-4 flex items-center">
+                              <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" />
+                              <span className="text-sm font-medium">
+                                {service}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="flex items-center justify-between pt-6 border-t border-gray-200">
                         <div className="flex items-center">
-                          <span className="text-3xl font-bold text-primary">50+</span>
+                          <span className="text-4xl font-bold text-primary">50+</span>
                           <span className="text-gray-600 ml-2">Projects Completed</span>
                         </div>
-                        <button className="bg-primary text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">
+                        <button className="bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-primary/90 transition-colors">
                           View Portfolio
                         </button>
                       </div>
                     </div>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      {business.services.map((service, serviceIndex) => (
-                        <div key={serviceIndex} className="bg-primary text-white rounded-xl p-4 flex items-center">
-                          <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" />
-                          <span className="text-sm font-medium">
-                            {service}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
                   </div>
-                  
-                  {/* Divider (except for last item) */}
-                  {index < businessTypes.length - 1 && (
-                    <div className="flex justify-center my-8">
-                      <div className="w-24 h-0.5 bg-gray-200"></div>
-                    </div>
-                  )}
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
