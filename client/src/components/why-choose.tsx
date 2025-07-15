@@ -72,8 +72,8 @@ export default function WhyChoose() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {technologies.slice(0, 16).map((tech, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {technologies.slice(0, 15).map((tech, index) => (
               <div
                 key={index}
                 className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-md transition-shadow duration-200 flex flex-col items-center text-center"
