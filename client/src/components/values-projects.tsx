@@ -56,35 +56,50 @@ export default function ValuesProjects() {
       <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
 
 
-        {/* 200+ Projects Delivered */}
+        {/* Our Client Success Stories */}
         <div>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-              <span className="text-primary">200+</span> Projects Delivered
+              Our <span className="text-primary">Client Success</span> Stories
             </h2>
+            <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+              We've helped businesses of all sizes achieve their digital transformation goals through innovative technology solutions
+            </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {businessTypes.map((business, index) => (
               <div 
                 key={index} 
-                className="bg-white border border-gray-200 rounded-2xl p-8 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 group"
+                className="bg-gradient-to-br from-white to-gray-50 border-2 border-gray-100 rounded-3xl p-8 hover:shadow-xl hover:border-primary/20 transition-all duration-300 group relative overflow-hidden"
               >
-                <div className="mb-6">
-                  <h3 className="text-2xl font-bold text-gray-800 group-hover:text-white transition-colors">
-                    {business.title}
-                  </h3>
-                </div>
+                <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-bl-full"></div>
                 
-                <div className="space-y-4">
-                  {business.services.map((service, serviceIndex) => (
-                    <div key={serviceIndex} className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-primary group-hover:text-white transition-colors mr-3 flex-shrink-0" />
-                      <span className="text-gray-700 group-hover:text-white transition-colors">
-                        {service}
-                      </span>
+                <div className="relative z-10">
+                  <div className="mb-8">
+                    <h3 className="text-2xl font-bold text-gray-800 mb-2">
+                      {business.title}
+                    </h3>
+                    <div className="w-12 h-1 bg-primary rounded-full"></div>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    {business.services.map((service, serviceIndex) => (
+                      <div key={serviceIndex} className="flex items-start">
+                        <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                        <span className="text-gray-700 leading-relaxed">
+                          {service}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <div className="mt-8 pt-6 border-t border-gray-200">
+                    <div className="flex items-center text-sm text-gray-500">
+                      <span className="font-medium text-primary">50+</span>
+                      <span className="ml-2">Successful Projects</span>
                     </div>
-                  ))}
+                  </div>
                 </div>
               </div>
             ))}
