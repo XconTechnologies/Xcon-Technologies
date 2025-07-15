@@ -7,7 +7,7 @@ export default function Statistics() {
   ];
 
   return (
-    <section className="py-6 gradient-overlay text-white">
+    <section className="py-16 gradient-overlay text-white">
       <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {stats.map((stat, index) => (

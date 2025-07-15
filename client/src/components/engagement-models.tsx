@@ -50,7 +50,7 @@ export default function EngagementModels() {
   ];
 
   return (
-    <section className="py-20 pb-12 bg-gray-50">
+    <section className="py-16 bg-gray-50">
       <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
         {/* Engagement Models */}
         <div className="mb-12">

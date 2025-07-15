@@ -82,7 +82,7 @@ export default function TechnologyTabs() {
   const activeCategory = technologies.find(tech => tech.name === activeTab) || technologies[3];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-16 bg-white">
       <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">

@@ -2,6 +2,12 @@ import { useState } from "react";
 import { Phone, Mail, MessageCircle, MessageSquare, Upload, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import xconLogo from "@assets/Xcon Logo cropped_1752479137104.png";
+import securityBadge from "@assets/aws-security_1752489212506.png";
+import cloudPractitionerBadge from "@assets/aws-cloud-practitioner_1752489212501.png";
+import devopsBadge from "@assets/aws-devOps_1752489212505.png";
+import developerBadge from "@assets/aws-developer_1752489212504.png";
+import solutionsArchitectBadge from "@assets/aws-solution-architect_1752489212507.png";
+import sysopsBadge from "@assets/aws-sysOps_1752489212508.png";
 
 export default function ConsultationContact() {
   const [formData, setFormData] = useState({
@@ -55,60 +61,23 @@ export default function ConsultationContact() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100 relative overflow-hidden">
+    <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100 relative overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
           {/* Left Column - Form */}
           <div className="lg:col-span-2">
             <div className="bg-white rounded-2xl shadow-lg p-8">
-              <div className="flex items-center justify-between mb-6">
-                <div>
-                  <h2 className="text-3xl font-bold text-gray-800 mb-2">
-                    Need a Consultation on Your Development Project?
-                  </h2>
-                  <p className="text-gray-600">
-                    Drop us a line! We are here to answer your questions 24/7.
-                  </p>
-                </div>
-
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold text-gray-800 mb-2">
+                  Need a Consultation on Your Development Project?
+                </h2>
+                <p className="text-gray-600">
+                  Drop us a line! We are here to answer your questions 24/7.
+                </p>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Message Textarea */}
-                <div>
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    placeholder="How can we help you?"
-                    className="w-full h-32 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
-                    required
-                  />
-
-                </div>
-
-                {/* File Upload */}
-                <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-primary transition-colors">
-                  <input
-                    type="file"
-                    onChange={handleFileUpload}
-                    className="hidden"
-                    id="file-upload"
-                  />
-                  <label htmlFor="file-upload" className="cursor-pointer">
-                    <Upload className="h-8 w-8 mx-auto mb-2 text-gray-400" />
-                    <p className="text-gray-600">
-                      Drag and drop or <span className="text-primary font-semibold">browse</span> to upload your file(s)
-                    </p>
-                  </label>
-                  {file && (
-                    <p className="mt-2 text-sm text-green-600">
-                      File selected: {file.name}
-                    </p>
-                  )}
-                </div>
-
-                {/* Form Fields */}
+                {/* Form Fields - First: Name, Company, Email, Phone */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <input
                     type="text"
@@ -150,6 +119,39 @@ export default function ConsultationContact() {
                   />
                 </div>
 
+                {/* File Upload */}
+                <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-primary transition-colors">
+                  <input
+                    type="file"
+                    onChange={handleFileUpload}
+                    className="hidden"
+                    id="file-upload"
+                  />
+                  <label htmlFor="file-upload" className="cursor-pointer">
+                    <Upload className="h-8 w-8 mx-auto mb-2 text-gray-400" />
+                    <p className="text-gray-600">
+                      Drag and drop or <span className="text-primary font-semibold">browse</span> to upload your file(s)
+                    </p>
+                  </label>
+                  {file && (
+                    <p className="mt-2 text-sm text-green-600">
+                      File selected: {file.name}
+                    </p>
+                  )}
+                </div>
+
+                {/* Message Textarea */}
+                <div>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    placeholder="How can we help you?"
+                    className="w-full h-32 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
+                    required
+                  />
+                </div>
+
                 {/* Submit Button */}
                 <div className="flex justify-center">
                   <Button
@@ -186,6 +188,69 @@ export default function ConsultationContact() {
             </div>
 
 
+          </div>
+        </div>
+        
+        {/* Certification Badges */}
+        <div className="mt-16 pt-12 border-t border-gray-200">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-800">Our <span className="text-primary">Certifications</span></h3>
+          </div>
+          <div className="flex justify-center items-center gap-8 flex-wrap">
+            <a href="https://www.security.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300">
+              <div className="w-20 h-20 flex items-center justify-center">
+                <img 
+                  src={securityBadge} 
+                  alt="AWS Security Specialty Certification" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </a>
+            <a href="https://www.cloud-practitioner.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300">
+              <div className="w-20 h-20 flex items-center justify-center">
+                <img 
+                  src={cloudPractitionerBadge} 
+                  alt="AWS Cloud Practitioner Foundational Certification" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </a>
+            <a href="https://devops.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300">
+              <div className="w-20 h-20 flex items-center justify-center">
+                <img 
+                  src={devopsBadge} 
+                  alt="AWS DevOps Engineer Professional Certification" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </a>
+            <a href="https://www.developer.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300">
+              <div className="w-20 h-20 flex items-center justify-center">
+                <img 
+                  src={developerBadge} 
+                  alt="AWS Developer Associate Certification" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </a>
+            <a href="https://www.solution-architect.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300">
+              <div className="w-20 h-20 flex items-center justify-center">
+                <img 
+                  src={solutionsArchitectBadge} 
+                  alt="AWS Solutions Architect Professional Certification" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </a>
+            <a href="https://www.sysops.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300">
+              <div className="w-20 h-20 flex items-center justify-center">
+                <img 
+                  src={sysopsBadge} 
+                  alt="AWS SysOps Administrator Associate Certification" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </a>
           </div>
         </div>
       </div>
