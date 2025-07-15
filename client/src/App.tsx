@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/home";
 import Career from "@/pages/career";
+import Internship from "@/pages/internship";
 import NotFound from "@/pages/not-found";
 import MobileAppDevelopment from "@/pages/services/mobile-app-development";
 import WebDevelopment from "@/pages/services/web-development";
@@ -21,6 +22,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/career" component={Career} />
+      <Route path="/internship" component={Internship} />
       <Route path="/services/mobile-app-development" component={MobileAppDevelopment} />
       <Route path="/services/web-development" component={WebDevelopment} />
       <Route path="/services/custom-software-development" component={CustomSoftwareDevelopment} />
