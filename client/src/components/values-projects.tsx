@@ -56,48 +56,62 @@ export default function ValuesProjects() {
       <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
 
 
-        {/* Our Client Success Stories */}
+        {/* Tailored Solutions for Every Business */}
         <div>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-              Our <span className="text-primary">Client Success</span> Stories
+              Tailored <span className="text-primary">Solutions</span> for Every Business
             </h2>
-            <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-              We've helped businesses of all sizes achieve their digital transformation goals through innovative technology solutions
+            <p className="text-gray-600 mt-4 max-w-3xl mx-auto">
+              From rapid prototyping for startups to enterprise-scale solutions, we deliver the right technology services to accelerate your business growth at every stage
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="space-y-6">
             {businessTypes.map((business, index) => (
               <div 
                 key={index} 
-                className="bg-gradient-to-br from-white to-gray-50 border-2 border-gray-100 rounded-3xl p-8 hover:shadow-xl hover:border-primary/20 transition-all duration-300 group relative overflow-hidden"
+                className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-12 ${
+                  index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                }`}
               >
-                <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-bl-full"></div>
-                
-                <div className="relative z-10">
-                  <div className="mb-8">
-                    <h3 className="text-2xl font-bold text-gray-800 mb-2">
+                {/* Content */}
+                <div className="flex-1">
+                  <div className="bg-white rounded-2xl shadow-lg p-8 border-l-4 border-primary">
+                    <h3 className="text-2xl font-bold text-gray-800 mb-4">
                       {business.title}
                     </h3>
-                    <div className="w-12 h-1 bg-primary rounded-full"></div>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    {business.services.map((service, serviceIndex) => (
-                      <div key={serviceIndex} className="flex items-start">
-                        <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                        <span className="text-gray-700 leading-relaxed">
-                          {service}
-                        </span>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                      {business.services.map((service, serviceIndex) => (
+                        <div key={serviceIndex} className="flex items-center bg-gray-50 rounded-lg p-4">
+                          <CheckCircle className="h-5 w-5 text-primary mr-3 flex-shrink-0" />
+                          <span className="text-gray-700 text-sm font-medium">
+                            {service}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center">
+                        <span className="text-3xl font-bold text-primary">50+</span>
+                        <span className="text-gray-600 ml-2">Projects Completed</span>
                       </div>
-                    ))}
+                      <button className="bg-primary text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-primary/90 transition-colors">
+                        View Portfolio
+                      </button>
+                    </div>
                   </div>
-                  
-                  <div className="mt-8 pt-6 border-t border-gray-200">
-                    <div className="flex items-center text-sm text-gray-500">
-                      <span className="font-medium text-primary">50+</span>
-                      <span className="ml-2">Successful Projects</span>
+                </div>
+                
+                {/* Visual Element */}
+                <div className="flex-shrink-0">
+                  <div className="w-32 h-32 bg-gradient-to-br from-primary/10 to-primary/30 rounded-full flex items-center justify-center">
+                    <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center">
+                      <span className="text-2xl font-bold text-primary">
+                        {index === 0 ? '🚀' : index === 1 ? '🏢' : '🏭'}
+                      </span>
                     </div>
                   </div>
                 </div>
