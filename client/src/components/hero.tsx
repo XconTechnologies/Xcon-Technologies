@@ -101,21 +101,19 @@ export default function Hero() {
               </Button>
             </div>
             
-            {/* Trusted by Leading Companies section */}
+            {/* Client Logos Grid */}
             <div className="text-white">
-              <p className="text-sm text-gray-400 mb-6">Trusted by Leading Companies</p>
-              <div className="flex flex-wrap justify-center items-center gap-6 max-w-4xl mx-auto">
-                {logos.slice(0, 8).map((logo, index) => (
+              <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-5xl mx-auto">
+                {logos.map((logo, index) => (
                   <div
                     key={index}
-                    className="flex items-center justify-center"
-                    style={{ minWidth: '100px', height: '50px' }}
+                    className="flex items-center justify-center h-16"
                   >
                     <img
                       src={logo.logo}
                       alt={logo.name}
                       className="h-8 w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-all duration-300"
-                      style={{ maxWidth: '90px' }}
+                      style={{ maxWidth: '100px' }}
                     />
                   </div>
                 ))}
