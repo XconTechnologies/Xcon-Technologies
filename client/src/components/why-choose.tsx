@@ -1,5 +1,4 @@
 import { Star, Settings, Globe, Database, Zap, MessageCircle, ArrowRight } from "lucide-react";
-import techLogos from "@assets/image_1752480531522.png";
 
 export default function WhyChoose() {
 
@@ -49,14 +48,6 @@ export default function WhyChoose() {
             <p className="text-gray-600 max-w-4xl mx-auto">
               We're committed to helping you stay ahead of the competition with state-of-the-art digital solutions, tailored to your unique needs.
             </p>
-          </div>
-          
-          <div className="flex justify-center">
-            <img 
-              src={techLogos} 
-              alt="Technology Stack"
-              className="max-w-full h-auto object-contain"
-            />
           </div>
         </div>
 
