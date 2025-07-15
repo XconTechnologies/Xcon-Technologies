@@ -52,7 +52,7 @@ export default function Hero() {
   ];
 
   // Duplicate the logos array to create seamless scrolling
-  const duplicatedLogos = [...logos, ...logos];
+  const duplicatedLogos = [...logos, ...logos, ...logos];
 
   return (
     <section className="relative overflow-hidden pt-36 pb-20 min-h-screen">
@@ -101,22 +101,25 @@ export default function Hero() {
               </Button>
             </div>
             
-            {/* Client Logos Grid */}
+            {/* Client Logos Scrolling */}
             <div className="text-white">
-              <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-5xl mx-auto">
-                {logos.map((logo, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center justify-center h-16"
-                  >
-                    <img
-                      src={logo.logo}
-                      alt={logo.name}
-                      className="h-8 w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-all duration-300"
-                      style={{ maxWidth: '100px' }}
-                    />
-                  </div>
-                ))}
+              <div className="relative overflow-hidden">
+                <div className="flex animate-scroll-right-to-left">
+                  {duplicatedLogos.map((logo, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center justify-center flex-shrink-0 mx-8"
+                      style={{ minWidth: '120px', height: '60px' }}
+                    >
+                      <img
+                        src={logo.logo}
+                        alt={logo.name}
+                        className="h-10 w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-all duration-300"
+                        style={{ maxWidth: '100px' }}
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
