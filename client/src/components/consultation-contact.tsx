@@ -168,7 +168,7 @@ export default function ConsultationContact() {
 
           {/* Right Column - Process Information */}
           <div className="lg:col-span-1">
-            <div className="bg-primary rounded-2xl shadow-lg p-8 text-white h-full">
+            <div className="bg-primary rounded-2xl shadow-lg p-8 text-white">
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
@@ -179,7 +179,7 @@ export default function ConsultationContact() {
                   <div>
                     <h3 className="text-lg font-semibold text-white mb-2">Quick response</h3>
                     <p className="text-white/90">
-                      We usually reply within 1 hour on business days to sign an NDA and arrange a discussion. Our team is committed to providing rapid responses to all inquiries.
+                      We usually reply within 1 hour on business days to sign an NDA and arrange a discussion.
                     </p>
                   </div>
                 </div>
@@ -193,7 +193,7 @@ export default function ConsultationContact() {
                   <div>
                     <h3 className="text-lg font-semibold text-white mb-2">Personalized approach</h3>
                     <p className="text-white/90">
-                      You will engage directly with specialists who are experienced in your domain. We match you with the right experts based on your specific needs and industry requirements.
+                      You will engage directly with specialists who are experienced in your domain.
                     </p>
                   </div>
                 </div>
@@ -207,35 +207,7 @@ export default function ConsultationContact() {
                   <div>
                     <h3 className="text-lg font-semibold text-white mb-2">No pressure</h3>
                     <p className="text-white/90">
-                      We're here to explore your needs and provide guidance — whenever you're ready to move forward. Our consultation process is designed to be informative and helpful without any sales pressure.
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">Proven expertise</h3>
-                    <p className="text-white/90">
-                      With over 10 years of experience and 500+ successful projects, our team delivers cutting-edge solutions that drive business growth and digital transformation.
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">Secure & confidential</h3>
-                    <p className="text-white/90">
-                      Your project details and business information remain completely confidential. We follow strict security protocols and can sign NDAs before our initial discussion.
+                      We're here to explore your needs and provide guidance — whenever you're ready to move forward.
                     </p>
                   </div>
                 </div>
