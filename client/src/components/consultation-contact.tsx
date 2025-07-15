@@ -168,7 +168,7 @@ export default function ConsultationContact() {
 
           {/* Right Column - Process Information */}
           <div className="lg:col-span-1">
-            <div className="bg-primary rounded-2xl shadow-lg p-8 text-white">
+            <div className="bg-primary rounded-2xl shadow-lg p-8 text-white h-full flex flex-col justify-center">
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
@@ -207,7 +207,7 @@ export default function ConsultationContact() {
                   <div>
                     <h3 className="text-lg font-semibold text-white mb-2">No pressure</h3>
                     <p className="text-white/90">
-                      We're here to explore your needs and provide guidance — whenever you're ready to move forward. Our consultation process is designed to be informative and helpful without any sales pressure.
+                      We're here to explore your needs and provide guidance — whenever you're ready to move forward.
                     </p>
                   </div>
                 </div>
