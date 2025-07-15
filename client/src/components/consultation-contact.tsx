@@ -66,7 +66,7 @@ export default function ConsultationContact() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
           {/* Left Column - Form */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-2xl shadow-lg p-8">
+            <div className="bg-white rounded-2xl shadow-lg p-8 h-full flex flex-col">
               <div className="mb-6">
                 <h2 className="text-3xl font-bold text-gray-800 mb-2">
                   Need a Consultation on Your Development Project?
@@ -76,7 +76,7 @@ export default function ConsultationContact() {
                 </p>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6 flex-1 flex flex-col">
                 {/* Form Fields - First: Name, Company, Email, Phone */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <input
@@ -153,7 +153,7 @@ export default function ConsultationContact() {
                 </div>
 
                 {/* Submit Button */}
-                <div className="flex justify-center">
+                <div className="flex justify-center mt-auto">
                   <Button
                     type="submit"
                     className="bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-3 rounded-lg transition-colors"

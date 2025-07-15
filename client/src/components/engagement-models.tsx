@@ -72,6 +72,10 @@ export default function EngagementModels() {
                     muted
                     playsInline
                     className="w-full h-full object-contain rounded-lg"
+                    onLoadedMetadata={(e) => {
+                      const video = e.target as HTMLVideoElement;
+                      video.playbackRate = 1.8;
+                    }}
                   >
                     <source src={model.video} type="video/mp4" />
                     Your browser does not support the video tag.
