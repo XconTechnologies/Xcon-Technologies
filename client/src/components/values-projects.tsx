@@ -126,15 +126,7 @@ export default function ValuesProjects() {
                         </div>
                       </div>
 
-                      <div className="flex items-center justify-between pt-6 border-t border-gray-200">
-                        <div className="flex items-center">
-                          <span className="text-4xl font-bold text-primary">50+</span>
-                          <span className="text-gray-600 ml-2">Projects Completed</span>
-                        </div>
-                        <button className="bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-primary/90 transition-colors">
-                          View Portfolio
-                        </button>
-                      </div>
+
                     </div>
                   </div>
                 ))}
