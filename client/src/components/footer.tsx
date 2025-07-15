@@ -29,7 +29,17 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-primary" />
-                <span className="text-gray-800">askforquote@xcontechnologies.com</span>
+                <div className="flex flex-col">
+                  <span className="text-gray-800">askforquote@xcontechnologies.com</span>
+                  <span className="text-gray-600 text-sm">Business inquiries & quotes</span>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Mail className="h-5 w-5 text-primary" />
+                <div className="flex flex-col">
+                  <span className="text-gray-800">nouman.ali@xcontechnologies.com</span>
+                  <span className="text-gray-600 text-sm">HR & job applications</span>
+                </div>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-primary" />

@@ -186,6 +186,10 @@ export default function Contact() {
                   <div>
                     <h4 className="font-semibold mb-1">Email</h4>
                     <p className="text-gray-300">askforquote@xcontechnologies.com</p>
+                    <p className="text-gray-400 text-sm mt-1">For business inquiries & project quotes</p>
+                    <p className="text-gray-400 text-sm mt-1">
+                      <strong>HR & Jobs:</strong> nouman.ali@xcontechnologies.com
+                    </p>
                   </div>
                 </div>
               </div>

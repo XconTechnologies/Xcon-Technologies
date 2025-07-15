@@ -184,7 +184,10 @@ Internship Preferences:
 - Portfolio: ${formData.portfolio}
 
 Motivation:
-${formData.motivation}`
+${formData.motivation}
+
+---
+Note: This is an internship application. For direct HR contact, reach out to nouman.ali@xcontechnologies.com`
       };
       
       const response = await fetch('/api/contact', {
@@ -459,6 +462,14 @@ ${formData.motivation}`
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 🚀 Apply now and get started with industry-level learning!
               </p>
+              <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                <p className="text-sm text-blue-800">
+                  <strong>For direct HR contact:</strong> nouman.ali@xcontechnologies.com
+                </p>
+                <p className="text-sm text-blue-600 mt-1">
+                  Our HR team will review your internship application and respond within 2-3 business days.
+                </p>
+              </div>
             </div>
             
             <Card className="overflow-hidden">

@@ -174,7 +174,10 @@ Portfolio: ${formData.portfolioUrl}
 Cover Letter:
 ${formData.coverLetter}
 
-${file ? `Resume attached: ${file.name}` : 'No resume attached'}`
+${file ? `Resume attached: ${file.name}` : 'No resume attached'}
+
+---
+Note: This is a job application. For direct HR contact, reach out to nouman.ali@xcontechnologies.com`
       };
       
       const response = await fetch('/api/contact', {
@@ -507,6 +510,14 @@ ${file ? `Resume attached: ${file.name}` : 'No resume attached'}`
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Ready to join our team? Fill out the application form below and we'll get back to you within 3-5 business days.
               </p>
+              <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                <p className="text-sm text-blue-800">
+                  <strong>For direct HR contact:</strong> nouman.ali@xcontechnologies.com
+                </p>
+                <p className="text-sm text-blue-600 mt-1">
+                  Our HR team will review your application and respond within 3-5 business days.
+                </p>
+              </div>
             </div>
             
             <Card className="overflow-hidden">
