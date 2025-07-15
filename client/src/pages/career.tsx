@@ -428,18 +428,9 @@ ${file ? `Resume attached: ${file.name}` : 'No resume attached'}`
                 <Link href="/internship">
                   <Button 
                     size="lg" 
-                    className="bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-full uppercase font-medium mr-4"
+                    className="bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-full uppercase font-medium"
                   >
                     Learn More About Internships
-                  </Button>
-                </Link>
-                <Link href="/internship">
-                  <Button 
-                    size="lg" 
-                    variant="outline" 
-                    className="border-white text-white hover:bg-white hover:text-primary px-8 py-4 rounded-full uppercase font-medium"
-                  >
-                    Apply for Internship
                   </Button>
                 </Link>
               </div>
