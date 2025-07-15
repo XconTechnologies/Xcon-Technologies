@@ -7,8 +7,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { MapPin, Clock, Users, Target, Star, Trophy, Heart, Zap, Upload, CheckCircle, X } from "lucide-react";
+import { MapPin, Clock, Users, Target, Star, Trophy, Heart, Zap, Upload, CheckCircle, X, Globe, Award } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { Link } from "wouter";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
@@ -372,6 +373,75 @@ ${file ? `Resume attached: ${file.name}` : 'No resume attached'}`
               <div>
                 <h3 className="text-lg font-semibold mb-2">Team Events</h3>
                 <p className="text-gray-600">Regular team building activities, company retreats, and social events.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Internship Program */}
+      <section className="py-16 bg-white">
+        <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
+          <div className="bg-gradient-to-r from-primary to-green-600 rounded-2xl p-8 text-white">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                🌍 Remote Internships for U.S. Students
+              </h2>
+              <p className="text-xl mb-6 text-white/90">
+                Jumpstart your career with hands-on experience at XCon Technologies. 
+                100% remote, flexible, and real-world ready internship program for college students and fresh graduates.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Globe className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="font-semibold mb-2">100% Remote</h3>
+                  <p className="text-sm text-white/80">Work from anywhere with flexible timing</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Target className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="font-semibold mb-2">Real Projects</h3>
+                  <p className="text-sm text-white/80">Work on actual client projects, not dummy tasks</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Award className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="font-semibold mb-2">Certificate & Mentorship</h3>
+                  <p className="text-sm text-white/80">Get certified and learn from industry experts</p>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <p className="text-lg font-semibold">Available Tracks:</p>
+                <div className="flex flex-wrap justify-center gap-3">
+                  <Badge variant="secondary" className="bg-white/20 text-white hover:bg-white/30">Web Development</Badge>
+                  <Badge variant="secondary" className="bg-white/20 text-white hover:bg-white/30">SEO & Content Writing</Badge>
+                  <Badge variant="secondary" className="bg-white/20 text-white hover:bg-white/30">Graphic Design & UI/UX</Badge>
+                  <Badge variant="secondary" className="bg-white/20 text-white hover:bg-white/30">Digital Marketing</Badge>
+                  <Badge variant="secondary" className="bg-white/20 text-white hover:bg-white/30">AI Tools Integration</Badge>
+                </div>
+              </div>
+              <div className="mt-8">
+                <Link href="/internship">
+                  <Button 
+                    size="lg" 
+                    className="bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-full uppercase font-medium mr-4"
+                  >
+                    Learn More About Internships
+                  </Button>
+                </Link>
+                <Link href="/internship">
+                  <Button 
+                    size="lg" 
+                    variant="outline" 
+                    className="border-white text-white hover:bg-white hover:text-primary px-8 py-4 rounded-full uppercase font-medium"
+                  >
+                    Apply for Internship
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
