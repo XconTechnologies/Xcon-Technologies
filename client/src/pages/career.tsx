@@ -8,6 +8,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Clock, Users, Target, Star, Trophy, Heart, Zap, Upload, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 const jobListings = [
   {
@@ -194,8 +196,9 @@ ${file ? `Resume attached: ${file.name}` : 'No resume attached'}`
 
   return (
     <div className="min-h-screen bg-white">
+      <Header />
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-black to-gray-900 text-white py-20">
+      <section className="bg-gradient-to-r from-black to-gray-900 text-white py-20 pt-36">
         <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -631,6 +634,7 @@ ${file ? `Resume attached: ${file.name}` : 'No resume attached'}`
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
