@@ -6,7 +6,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Clock, Users, Target, Star, Trophy, Heart, Zap, Upload, CheckCircle } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { MapPin, Clock, Users, Target, Star, Trophy, Heart, Zap, Upload, CheckCircle, X } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -105,6 +106,9 @@ export default function Career() {
   });
   const [file, setFile] = useState<File | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedJob, setSelectedJob] = useState<typeof jobListings[0] | null>(null);
+  const [showDetailsModal, setShowDetailsModal] = useState(false);
+  const [showApplicationModal, setShowApplicationModal] = useState(false);
   const { toast } = useToast();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -176,6 +180,7 @@ ${file ? `Resume attached: ${file.name}` : 'No resume attached'}`
           portfolioUrl: ""
         });
         setFile(null);
+        setShowApplicationModal(false);
       } else {
         toast({
           title: "Error",
@@ -360,70 +365,54 @@ ${file ? `Resume attached: ${file.name}` : 'No resume attached'}`
             </p>
           </div>
           
-          <div className="space-y-8">
-            {jobListings.map((job) => (
-              <Card key={job.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                <CardContent className="p-8">
-                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">{job.title}</h3>
-                      <div className="flex flex-wrap gap-4 mb-4">
-                        <div className="flex items-center text-gray-600">
-                          <MapPin className="h-4 w-4 mr-2" />
+          <div className="overflow-hidden">
+            <div className="flex space-x-6 animate-scroll-rtl">
+              {[...jobListings, ...jobListings].map((job, index) => (
+                <Card key={`${job.id}-${index}`} className="flex-shrink-0 w-80 bg-gradient-to-br from-blue-50 to-indigo-100 border-l-4 border-primary hover:shadow-lg transition-shadow">
+                  <CardContent className="p-6">
+                    <div className="mb-4">
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">{job.title}</h3>
+                      <div className="flex flex-wrap gap-2 mb-3">
+                        <div className="flex items-center text-gray-600 text-sm">
+                          <MapPin className="h-3 w-3 mr-1" />
                           {job.location}
                         </div>
-                        <div className="flex items-center text-gray-600">
-                          <Clock className="h-4 w-4 mr-2" />
+                        <div className="flex items-center text-gray-600 text-sm">
+                          <Clock className="h-3 w-3 mr-1" />
                           {job.type}
                         </div>
-                        <div className="flex items-center text-gray-600">
-                          <Star className="h-4 w-4 mr-2" />
-                          {job.experience}
-                        </div>
                       </div>
-                      <Badge variant="outline" className="mb-4">{job.department}</Badge>
-                    </div>
-                    <Button 
-                      className="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-full uppercase font-medium"
-                      onClick={() => {
-                        setFormData(prev => ({ ...prev, position: job.title }));
-                        document.getElementById('application')?.scrollIntoView({ behavior: 'smooth' });
-                      }}
-                    >
-                      Apply Now
-                    </Button>
-                  </div>
-                  
-                  <p className="text-gray-600 mb-6 text-lg leading-relaxed">{job.description}</p>
-                  
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Requirements</h4>
-                      <ul className="space-y-2">
-                        {job.requirements.map((req, index) => (
-                          <li key={index} className="flex items-start text-gray-600">
-                            <CheckCircle className="h-4 w-4 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                            {req}
-                          </li>
-                        ))}
-                      </ul>
+                      <Badge variant="outline" className="mb-3">{job.department}</Badge>
                     </div>
                     
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Responsibilities</h4>
-                      <ul className="space-y-2">
-                        {job.responsibilities.map((resp, index) => (
-                          <li key={index} className="flex items-start text-gray-600">
-                            <Target className="h-4 w-4 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                            {resp}
-                          </li>
-                        ))}
-                      </ul>
+                    <p className="text-gray-600 mb-4 text-sm leading-relaxed line-clamp-3">{job.description}</p>
+                    
+                    <div className="space-y-2">
+                      <Button 
+                        variant="outline"
+                        className="w-full text-primary border-primary hover:bg-primary hover:text-white"
+                        onClick={() => {
+                          setSelectedJob(job);
+                          setShowDetailsModal(true);
+                        }}
+                      >
+                        View Details
+                      </Button>
+                      <Button 
+                        className="w-full bg-primary hover:bg-primary-dark text-white"
+                        onClick={() => {
+                          setSelectedJob(job);
+                          setFormData(prev => ({ ...prev, position: job.title }));
+                          setShowApplicationModal(true);
+                        }}
+                      >
+                        Apply Now
+                      </Button>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -634,6 +623,230 @@ ${file ? `Resume attached: ${file.name}` : 'No resume attached'}`
           </div>
         </div>
       </section>
+
+      {/* Job Details Modal */}
+      <Dialog open={showDetailsModal} onOpenChange={setShowDetailsModal}>
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+          {selectedJob && (
+            <>
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold text-gray-900">{selectedJob.title}</DialogTitle>
+              </DialogHeader>
+              <div className="space-y-6">
+                <div className="flex flex-wrap gap-4">
+                  <div className="flex items-center text-gray-600">
+                    <MapPin className="h-4 w-4 mr-2" />
+                    {selectedJob.location}
+                  </div>
+                  <div className="flex items-center text-gray-600">
+                    <Clock className="h-4 w-4 mr-2" />
+                    {selectedJob.type}
+                  </div>
+                  <div className="flex items-center text-gray-600">
+                    <Star className="h-4 w-4 mr-2" />
+                    {selectedJob.experience}
+                  </div>
+                </div>
+                <Badge variant="outline">{selectedJob.department}</Badge>
+                
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Job Description</h4>
+                  <p className="text-gray-600 text-lg leading-relaxed">{selectedJob.description}</p>
+                </div>
+                
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  <div>
+                    <h4 className="text-lg font-semibold text-gray-900 mb-3">Requirements</h4>
+                    <ul className="space-y-2">
+                      {selectedJob.requirements.map((req, index) => (
+                        <li key={index} className="flex items-start text-gray-600">
+                          <CheckCircle className="h-4 w-4 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                          {req}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-lg font-semibold text-gray-900 mb-3">Responsibilities</h4>
+                    <ul className="space-y-2">
+                      {selectedJob.responsibilities.map((resp, index) => (
+                        <li key={index} className="flex items-start text-gray-600">
+                          <Target className="h-4 w-4 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                          {resp}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                
+                <div className="flex gap-4 pt-6">
+                  <Button 
+                    className="flex-1 bg-primary hover:bg-primary-dark text-white"
+                    onClick={() => {
+                      setShowDetailsModal(false);
+                      setShowApplicationModal(true);
+                    }}
+                  >
+                    Apply Now
+                  </Button>
+                  <Button 
+                    variant="outline"
+                    onClick={() => setShowDetailsModal(false)}
+                  >
+                    Close
+                  </Button>
+                </div>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
+
+      {/* Application Form Modal */}
+      <Dialog open={showApplicationModal} onOpenChange={setShowApplicationModal}>
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold text-gray-900">
+              Apply for {selectedJob?.title}
+            </DialogTitle>
+          </DialogHeader>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <Label htmlFor="fullName" className="text-gray-700 font-medium">Full Name *</Label>
+                <Input
+                  id="fullName"
+                  name="fullName"
+                  value={formData.fullName}
+                  onChange={handleInputChange}
+                  className="mt-1"
+                  placeholder="John Doe"
+                  required
+                />
+              </div>
+              
+              <div>
+                <Label htmlFor="email" className="text-gray-700 font-medium">Email Address *</Label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  className="mt-1"
+                  placeholder="john@example.com"
+                  required
+                />
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <Label htmlFor="phone" className="text-gray-700 font-medium">Phone Number *</Label>
+                <Input
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  className="mt-1"
+                  placeholder="+1 (555) 123-4567"
+                  required
+                />
+              </div>
+              
+              <div>
+                <Label htmlFor="experience" className="text-gray-700 font-medium">Experience Level *</Label>
+                <Select value={formData.experience} onValueChange={(value) => handleSelectChange('experience', value)}>
+                  <SelectTrigger className="mt-1">
+                    <SelectValue placeholder="Select experience level" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="entry">Entry Level (0-1 years)</SelectItem>
+                    <SelectItem value="junior">Junior (1-3 years)</SelectItem>
+                    <SelectItem value="mid">Mid Level (3-5 years)</SelectItem>
+                    <SelectItem value="senior">Senior (5+ years)</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <Label htmlFor="currentCompany" className="text-gray-700 font-medium">Current Company</Label>
+                <Input
+                  id="currentCompany"
+                  name="currentCompany"
+                  value={formData.currentCompany}
+                  onChange={handleInputChange}
+                  className="mt-1"
+                  placeholder="Company Name"
+                />
+              </div>
+              
+              <div>
+                <Label htmlFor="portfolioUrl" className="text-gray-700 font-medium">Portfolio URL</Label>
+                <Input
+                  id="portfolioUrl"
+                  name="portfolioUrl"
+                  value={formData.portfolioUrl}
+                  onChange={handleInputChange}
+                  className="mt-1"
+                  placeholder="https://yourportfolio.com"
+                />
+              </div>
+            </div>
+            
+            <div>
+              <Label htmlFor="resume" className="text-gray-700 font-medium">Resume/CV *</Label>
+              <div className="mt-1 flex items-center space-x-4">
+                <Input
+                  id="resume"
+                  type="file"
+                  onChange={handleFileUpload}
+                  accept=".pdf,.doc,.docx"
+                  className="flex-1"
+                  required
+                />
+                <Upload className="h-5 w-5 text-gray-400" />
+              </div>
+              <p className="text-sm text-gray-500 mt-1">PDF, DOC, or DOCX files only. Max size: 5MB</p>
+            </div>
+            
+            <div>
+              <Label htmlFor="coverLetter" className="text-gray-700 font-medium">Cover Letter *</Label>
+              <Textarea
+                id="coverLetter"
+                name="coverLetter"
+                value={formData.coverLetter}
+                onChange={handleInputChange}
+                className="mt-1"
+                rows={6}
+                placeholder="Tell us why you're interested in this position and what makes you a great fit for our team..."
+                required
+              />
+            </div>
+            
+            <div className="flex gap-4 pt-6">
+              <Button 
+                type="submit"
+                disabled={isSubmitting}
+                className="flex-1 bg-primary hover:bg-primary-dark text-white"
+              >
+                {isSubmitting ? "Submitting..." : "Submit Application"}
+              </Button>
+              <Button 
+                type="button"
+                variant="outline"
+                onClick={() => setShowApplicationModal(false)}
+              >
+                Cancel
+              </Button>
+            </div>
+          </form>
+        </DialogContent>
+      </Dialog>
+
       <Footer />
     </div>
   );
