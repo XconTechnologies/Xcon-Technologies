@@ -176,90 +176,108 @@ export default function Services() {
   const activeTabData = tabs.find(tab => tab.id === activeTab);
 
   return (
-    <section id="services" className="py-16 bg-white">
+    <section id="services" className="py-16 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
             What <span className="text-primary">Services</span> We Offer
           </h2>
-          <p className="text-gray-600 text-lg">
-            The complete work hub for professional services
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            Comprehensive digital solutions designed to accelerate your business growth with cutting-edge technology
           </p>
         </div>
         
-        {/* Horizontal tabs */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12 max-w-4xl mx-auto">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center justify-center w-14 h-14 rounded-full border-2 transition-all duration-300 ${
-                activeTab === tab.id
-                  ? "bg-primary text-white border-primary"
-                  : "bg-white text-gray-600 border-gray-300 hover:border-primary hover:text-primary"
-              }`}
-            >
-              {tab.icon}
-            </button>
-          ))}
-        </div>
-
-        {/* Tab indicators */}
-        <div className="flex justify-center gap-2 mb-12">
-          {tabs.map((_, index) => (
-            <div
-              key={index}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                tabs[index].id === activeTab ? "bg-primary" : "bg-gray-300"
-              }`}
-            />
-          ))}
-        </div>
-
-        {/* Content area */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-          {/* Left side - Content */}
-          <div className="space-y-6">
-            <div className="bg-primary text-white px-6 py-2 rounded-full inline-block">
-              <h3 className="text-lg font-semibold">
-                {activeTabData?.content.title}
-              </h3>
-            </div>
-            
-            <div className="space-y-4">
-              {activeTabData?.content.bulletPoints.map((point, index) => (
-                <div key={index} className="flex items-start">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                  <p className="text-gray-700 leading-relaxed text-sm">
-                    {point}
-                  </p>
-                </div>
+        {/* Professional Service Cards */}
+        <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
+          {/* Service Navigation */}
+          <div className="bg-gray-50 px-8 py-6 border-b border-gray-200">
+            <div className="flex flex-wrap justify-center gap-2">
+              {tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                    activeTab === tab.id
+                      ? "bg-primary text-white shadow-lg"
+                      : "bg-white text-gray-600 hover:bg-gray-100 shadow-sm"
+                  }`}
+                >
+                  {tab.icon}
+                  <span className="hidden sm:inline">{tab.title}</span>
+                </button>
               ))}
-            </div>
-            
-            <div className="pt-2">
-              <Button
-                onClick={() => setIsQuoteModalOpen(true)}
-                className="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-full font-medium transition-colors uppercase text-sm"
-              >
-                GET A QUOTE
-              </Button>
             </div>
           </div>
 
-          {/* Right side - Image */}
-          <div className="lg:pl-8">
-            <div className="rounded-2xl overflow-hidden h-[400px] w-full bg-white">
-              <img 
-                key={activeTab}
-                src={activeTabData?.content.image} 
-                alt={activeTabData?.content.cardTitle}
-                className="w-full h-full object-contain transition-opacity duration-150"
-                style={{
-                  filter: 'brightness(1) contrast(1) saturate(1)',
-                  mixBlendMode: 'normal'
-                }}
-              />
+          {/* Content Area */}
+          <div className="p-8 md:p-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left side - Content */}
+              <div className="space-y-8">
+                <div>
+                  <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-4">
+                    {activeTabData?.icon}
+                    <span className="font-semibold">{activeTabData?.title}</span>
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+                    {activeTabData?.content.title}
+                  </h3>
+                </div>
+                
+                <div className="space-y-4">
+                  {activeTabData?.content.bulletPoints.map((point, index) => (
+                    <div key={index} className="flex items-start group">
+                      <div className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                        <div className="w-2 h-2 bg-primary rounded-full"></div>
+                      </div>
+                      <p className="text-gray-700 leading-relaxed">
+                        {point}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+                
+                <div className="pt-4">
+                  <Button
+                    onClick={() => setIsQuoteModalOpen(true)}
+                    className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 uppercase text-sm shadow-lg hover:shadow-xl"
+                  >
+                    GET A QUOTE
+                  </Button>
+                </div>
+              </div>
+
+              {/* Right side - Image */}
+              <div className="relative">
+                <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8 h-[450px] flex items-center justify-center">
+                  <div className="w-full h-full rounded-xl overflow-hidden bg-white shadow-inner">
+                    <img 
+                      key={activeTab}
+                      src={activeTabData?.content.image} 
+                      alt={activeTabData?.content.cardTitle}
+                      className="w-full h-full object-contain transition-all duration-500 transform hover:scale-105"
+                    />
+                  </div>
+                </div>
+                
+                {/* Decorative elements */}
+                <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/10 rounded-full"></div>
+                <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-primary/5 rounded-full"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Progress indicators */}
+          <div className="bg-gray-50 px-8 py-4 border-t border-gray-200">
+            <div className="flex justify-center gap-2">
+              {tabs.map((tab, index) => (
+                <div
+                  key={index}
+                  className={`w-8 h-1 rounded-full transition-all duration-300 ${
+                    tab.id === activeTab ? "bg-primary" : "bg-gray-300"
+                  }`}
+                />
+              ))}
             </div>
           </div>
         </div>
