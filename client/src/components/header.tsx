@@ -1,16 +1,14 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import XConLogo from "@assets/Light-Logo.5ba91110-2048x403_1752305014932.png";
-import QuoteModal from "./quote-modal";
+import QuoteModal from "@/components/quote-modal";
+import XConLogo from "@assets/Xcon Logo cropped_1752479137104.png";
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
-  const [isIndustriesMegaMenuOpen, setIsIndustriesMegaMenuOpen] = useState(false);
-  const [isTechnologiesMegaMenuOpen, setIsTechnologiesMegaMenuOpen] = useState(false);
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -145,12 +143,33 @@ export default function Header() {
                           </li>
                           <li>
                             <a href="/services/custom-software-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              CRM Solution
+                              CRM Software
                             </a>
                           </li>
                           <li>
                             <a href="/services/custom-software-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              CMS Solution
+                              Enterprise Software
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                      
+                      <div>
+                        <h3 className="text-lg font-bold text-gray-800 mb-3">Web Development</h3>
+                        <ul className="space-y-2">
+                          <li>
+                            <a href="/services/web-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                              Frontend Development
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/services/web-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                              Backend Development
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/services/web-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                              Full Stack Development
                             </a>
                           </li>
                         </ul>
@@ -161,7 +180,7 @@ export default function Header() {
                         <ul className="space-y-2">
                           <li>
                             <a href="/services/artificial-intelligence" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Generative AI
+                              Machine Learning
                             </a>
                           </li>
                           <li>
@@ -171,23 +190,7 @@ export default function Header() {
                           </li>
                           <li>
                             <a href="/services/artificial-intelligence" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              AI Agent Development
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                      
-                      <div>
-                        <h3 className="text-lg font-bold text-gray-800 mb-3">Blockchain Development</h3>
-                        <ul className="space-y-2">
-                          <li>
-                            <a href="/services/blockchain-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Metaverse Development
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/services/blockchain-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              NFT Development
+                              Computer Vision
                             </a>
                           </li>
                         </ul>
@@ -197,16 +200,21 @@ export default function Header() {
                     {/* Column 3 */}
                     <div className="space-y-6">
                       <div>
-                        <h3 className="text-lg font-bold text-gray-800 mb-3">Web Development</h3>
+                        <h3 className="text-lg font-bold text-gray-800 mb-3">Blockchain Development</h3>
                         <ul className="space-y-2">
                           <li>
-                            <a href="/services/web-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Ecommerce Website Development
+                            <a href="/services/blockchain-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                              Smart Contract Development
                             </a>
                           </li>
                           <li>
-                            <a href="/services/web-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Web Portals
+                            <a href="/services/blockchain-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                              DeFi Solutions
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/services/blockchain-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
+                              NFT Development
                             </a>
                           </li>
                         </ul>
@@ -259,304 +267,6 @@ export default function Header() {
               )}
             </div>
             
-            {/* Industries Mega Menu */}
-            <div className="relative">
-              <button
-                onMouseEnter={() => setIsIndustriesMegaMenuOpen(true)}
-                onMouseLeave={() => setIsIndustriesMegaMenuOpen(false)}
-                className="text-white hover:text-primary transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full flex items-center space-x-1"
-              >
-                <span>Industries</span>
-                <ChevronDown className="h-4 w-4" />
-              </button>
-              
-              {/* Industries Mega Menu Dropdown */}
-              {isIndustriesMegaMenuOpen && (
-                <div 
-                  className="absolute top-full left-[-300px] mt-2 w-[800px] bg-white rounded-lg shadow-2xl z-50 p-8"
-                  onMouseEnter={() => setIsIndustriesMegaMenuOpen(true)}
-                  onMouseLeave={() => setIsIndustriesMegaMenuOpen(false)}
-                >
-                  <div className="grid grid-cols-3 gap-8">
-                    {/* Column 1 */}
-                    <div className="space-y-6">
-                      <div>
-                        <h3 className="text-lg font-bold text-gray-800 mb-3">Healthcare</h3>
-                        <ul className="space-y-2">
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Telemedicine Apps
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Electronic Health Records
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Medical Device Integration
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                      
-                      <div>
-                        <h3 className="text-lg font-bold text-gray-800 mb-3">Finance</h3>
-                        <ul className="space-y-2">
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              FinTech Solutions
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Banking Apps
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Investment Platforms
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    
-                    {/* Column 2 */}
-                    <div className="space-y-6">
-                      <div>
-                        <h3 className="text-lg font-bold text-gray-800 mb-3">Education</h3>
-                        <ul className="space-y-2">
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              E-Learning Platforms
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Learning Management Systems
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Educational Apps
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                      
-                      <div>
-                        <h3 className="text-lg font-bold text-gray-800 mb-3">E-commerce</h3>
-                        <ul className="space-y-2">
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Online Marketplaces
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Shopping Cart Solutions
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Payment Gateways
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    
-                    {/* Column 3 */}
-                    <div className="space-y-6">
-                      <div>
-                        <h3 className="text-lg font-bold text-gray-800 mb-3">Real Estate</h3>
-                        <ul className="space-y-2">
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Property Management
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Real Estate CRM
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Virtual Tours
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                      
-                      <div>
-                        <h3 className="text-lg font-bold text-gray-800 mb-3">Logistics</h3>
-                        <ul className="space-y-2">
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Supply Chain Management
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Fleet Management
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Warehouse Solutions
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-            
-            {/* Technologies Mega Menu */}
-            <div className="relative">
-              <button
-                onMouseEnter={() => setIsTechnologiesMegaMenuOpen(true)}
-                onMouseLeave={() => setIsTechnologiesMegaMenuOpen(false)}
-                className="text-white hover:text-primary transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full flex items-center space-x-1"
-              >
-                <span>Technologies</span>
-                <ChevronDown className="h-4 w-4" />
-              </button>
-              
-              {/* Technologies Mega Menu Dropdown */}
-              {isTechnologiesMegaMenuOpen && (
-                <div 
-                  className="absolute top-full left-[-400px] mt-2 w-[800px] bg-white rounded-lg shadow-2xl z-50 p-8"
-                  onMouseEnter={() => setIsTechnologiesMegaMenuOpen(true)}
-                  onMouseLeave={() => setIsTechnologiesMegaMenuOpen(false)}
-                >
-                  <div className="grid grid-cols-3 gap-8">
-                    {/* Column 1 - Languages */}
-                    <div className="space-y-6">
-                      <div>
-                        <h3 className="text-lg font-bold text-gray-800 mb-3">Languages</h3>
-                        <ul className="space-y-2">
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              .Net
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              HTML5
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Java
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Node.js
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              PHP
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Python
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    
-                    {/* Column 2 - Frameworks */}
-                    <div className="space-y-6">
-                      <div>
-                        <h3 className="text-lg font-bold text-gray-800 mb-3">Frameworks</h3>
-                        <ul className="space-y-2">
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              React
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Angular
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Vue.js
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Laravel
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Django
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Spring Boot
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    
-                    {/* Column 3 - Platforms */}
-                    <div className="space-y-6">
-                      <div>
-                        <h3 className="text-lg font-bold text-gray-800 mb-3">Platforms</h3>
-                        <ul className="space-y-2">
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Azure
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              GCP
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Oracle
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              SAP
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              AWS
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Kubernetes
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-            
             <button
               onClick={() => scrollToSection("portfolio")}
               className="text-white hover:text-primary transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
@@ -564,10 +274,22 @@ export default function Header() {
               Portfolio
             </button>
             <button
+              onClick={() => scrollToSection("career")}
+              className="text-white hover:text-primary transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
+            >
+              Career
+            </button>
+            <button
               onClick={() => scrollToSection("about")}
               className="text-white hover:text-primary transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
             >
-              Insights
+              About
+            </button>
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="text-white hover:text-primary transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
+            >
+              Contact
             </button>
           </nav>
 
@@ -609,28 +331,28 @@ export default function Header() {
                 Services
               </button>
               <button
-                onClick={() => scrollToSection("industries")}
-                className="text-white hover:text-primary transition-colors font-medium text-left"
-              >
-                Industries
-              </button>
-              <button
                 onClick={() => scrollToSection("portfolio")}
                 className="text-white hover:text-primary transition-colors font-medium text-left"
               >
                 Portfolio
               </button>
               <button
+                onClick={() => scrollToSection("career")}
+                className="text-white hover:text-primary transition-colors font-medium text-left"
+              >
+                Career
+              </button>
+              <button
                 onClick={() => scrollToSection("about")}
                 className="text-white hover:text-primary transition-colors font-medium text-left"
               >
-                Insights
+                About
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
                 className="text-white hover:text-primary transition-colors font-medium text-left"
               >
-                Technologies
+                Contact
               </button>
               <Button
                 onClick={() => setIsQuoteModalOpen(true)}
