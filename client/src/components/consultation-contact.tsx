@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Phone, Mail, MessageCircle, MessageSquare, Upload, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 import xconLogo from "@assets/Xcon Logo cropped_1752479137104.png";
 import securityBadge from "@assets/aws-security_1752489212506.png";
 import cloudPractitionerBadge from "@assets/aws-cloud-practitioner_1752489212501.png";
@@ -19,6 +20,8 @@ export default function ConsultationContact() {
   });
 
   const [file, setFile] = useState<File | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -31,10 +34,63 @@ export default function ConsultationContact() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log("Form submitted:", formData, file);
+    setIsSubmitting(true);
+    
+    try {
+      // Split fullName into firstName and lastName for API compatibility
+      const nameParts = formData.fullName.trim().split(' ');
+      const firstName = nameParts[0] || '';
+      const lastName = nameParts.slice(1).join(' ') || '';
+      
+      const submitData = {
+        firstName,
+        lastName,
+        email: formData.email,
+        phone: formData.phone,
+        message: `Company: ${formData.company}\n\n${formData.message}${file ? `\n\nFile attached: ${file.name}` : ''}`
+      };
+      
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(submitData),
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok) {
+        toast({
+          title: "Message sent successfully!",
+          description: data.message || "We'll get back to you within 24 hours.",
+        });
+        setFormData({
+          message: "",
+          fullName: "",
+          company: "",
+          email: "",
+          phone: ""
+        });
+        setFile(null);
+      } else {
+        toast({
+          title: "Error",
+          description: data.error || "Failed to send message. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactMethods = [
@@ -156,10 +212,11 @@ export default function ConsultationContact() {
                 <div className="flex justify-center mt-auto">
                   <Button
                     type="submit"
-                    className="bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
+                    disabled={isSubmitting}
+                    className="bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-3 rounded-lg transition-colors disabled:opacity-50"
                   >
                     <Send className="h-4 w-4 mr-2" />
-                    Send
+                    {isSubmitting ? 'Sending...' : 'Send'}
                   </Button>
                 </div>
               </form>

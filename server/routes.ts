@@ -1,6 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
+import { sendContactFormEmail } from "./email";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form endpoint
@@ -13,8 +14,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(400).json({ error: "Missing required fields" });
       }
       
-      // TODO: Implement email sending logic with Nodemailer
-      // For now, just log the contact form submission
+      // Validate email format
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        return res.status(400).json({ error: "Invalid email format" });
+      }
+      
+      // Log the contact form submission
       console.log("Contact form submission:", {
         firstName,
         lastName,
@@ -24,7 +30,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
         timestamp: new Date().toISOString(),
       });
       
-      res.json({ success: true, message: "Contact form submitted successfully" });
+      // Send email notification
+      try {
+        await sendContactFormEmail({ firstName, lastName, email, phone, message });
+        res.json({ success: true, message: "Message sent successfully! We'll get back to you within 24 hours." });
+      } catch (emailError) {
+        console.error("Email sending failed:", emailError);
+        res.status(500).json({ error: "Failed to send email. Please try again or contact us directly." });
+      }
+      
     } catch (error) {
       console.error("Contact form error:", error);
       res.status(500).json({ error: "Internal server error" });
