@@ -167,7 +167,7 @@ Preferred communication style: Simple, everyday language.
 - **Hero Logo Removal (January 2025)**: Removed Harvest Energy logo from hero section carousel, now displaying 18 client logos
 - **Consultation Form Height Equalization (January 2025)**: Fixed both consultation form boxes to have equal height using h-full and flex column layout with mt-auto for button positioning
 - **Engagement Model Animation Speed (January 2025)**: Increased video playback rate to 1.8x for faster, more engaging animations in work models section
-- **Technology Section Redesign (January 2025)**: Completely redesigned "Technologies We Use" section to match provided design with left sidebar navigation and right grid layout of technology logos
+- **Technology Section Revert (January 2025)**: Reverted back to original "Emerging Technologies We Use" design with tabs and active content display
 - **Layout Width Constraint (January 2025)**: Set website layout to maximum width of 1440px instead of full width for better design consistency across all sections
 - **Service Images Integration**: Integrated 8 professional service images that correspond to each service tab with dynamic content switching
 - **Services Section Enhancement**: Updated "What Services We Offer" section from vertical to horizontal tabs layout with 8 services (Web Development, Software Consulting, Cloud Engineering, Mobile Development, UI/UX Design, MVP Development, Digital Marketing, Data Engineering)
