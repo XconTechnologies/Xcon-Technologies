@@ -17,7 +17,7 @@ const jobListings = [
     id: 1,
     title: "Business Developer",
     department: "Business Development",
-    location: "Ohio City, USA",
+    location: "Remote",
     type: "Full-time",
     experience: "2-4 years",
     description: "Join our dynamic business development team to drive growth and establish strategic partnerships. You'll identify new business opportunities, build client relationships, and contribute to our company's expansion goals.",
@@ -42,7 +42,7 @@ const jobListings = [
     id: 2,
     title: "Upwork Bidder",
     department: "Business Development",
-    location: "Ohio City, USA (Remote)",
+    location: "Remote",
     type: "Full-time",
     experience: "1-3 years",
     description: "We're seeking a skilled Upwork Bidder to help us secure new projects on freelancing platforms. You'll craft compelling proposals, manage client communications, and help grow our online presence.",
@@ -65,27 +65,52 @@ const jobListings = [
   },
   {
     id: 3,
-    title: "Internships for Students & Fresh Graduates",
-    department: "Multiple Departments",
-    location: "Ohio City, USA (Hybrid)",
-    type: "Internship",
-    experience: "Entry Level",
-    description: "Join our internship program designed for students and fresh graduates looking to improve their skills and gain real-world experience. We offer opportunities in web development, mobile development, UI/UX design, and digital marketing.",
+    title: "Cold Calling Specialist",
+    department: "Sales & Marketing",
+    location: "Remote",
+    type: "Full-time",
+    experience: "1-2 years",
+    description: "We're seeking a motivated Cold Calling Specialist to generate new business leads through strategic outbound calling campaigns. You'll be responsible for identifying prospects, initiating conversations, and setting up qualified meetings for our sales team.",
     requirements: [
-      "Currently pursuing or recently completed degree in relevant field",
-      "Basic knowledge of programming languages or design tools",
-      "Strong willingness to learn and adapt",
-      "Good communication and teamwork skills",
-      "Passion for technology and innovation",
-      "Ability to commit to 3-6 month internship period"
+      "1-2 years of experience in cold calling or telemarketing",
+      "Excellent verbal communication and persuasion skills",
+      "Strong resilience and ability to handle rejection",
+      "Experience with CRM systems and lead tracking",
+      "Goal-oriented mindset with proven track record",
+      "Knowledge of B2B sales processes and terminology"
     ],
     responsibilities: [
-      "Work on real projects under senior developer guidance",
-      "Participate in code reviews and learning sessions",
-      "Contribute to team projects and initiatives",
-      "Learn industry best practices and methodologies",
-      "Assist in testing and quality assurance",
-      "Document work and share learnings with team"
+      "Make outbound calls to prospective clients",
+      "Research and qualify potential leads",
+      "Schedule appointments for sales representatives",
+      "Maintain accurate records in CRM system",
+      "Follow up with prospects and nurture relationships",
+      "Achieve daily and monthly call targets"
+    ]
+  },
+  {
+    id: 4,
+    title: "Email Marketing Manager",
+    department: "Digital Marketing",
+    location: "Remote",
+    type: "Full-time",
+    experience: "2-4 years",
+    description: "Join our marketing team as an Email Marketing Manager to develop and execute comprehensive email marketing campaigns. You'll create engaging content, manage subscriber lists, and analyze campaign performance to drive customer engagement and conversions.",
+    requirements: [
+      "2-4 years of experience in email marketing",
+      "Proficiency in email marketing platforms (Mailchimp, SendGrid, etc.)",
+      "Strong copywriting and content creation skills",
+      "Knowledge of HTML/CSS for email templates",
+      "Experience with A/B testing and campaign optimization",
+      "Understanding of email deliverability and compliance"
+    ],
+    responsibilities: [
+      "Design and execute email marketing campaigns",
+      "Create compelling email content and subject lines",
+      "Segment audiences and personalize messaging",
+      "Monitor campaign performance and analytics",
+      "Optimize campaigns for better engagement rates",
+      "Ensure compliance with email marketing regulations"
     ]
   }
 ];
@@ -223,7 +248,7 @@ ${file ? `Resume attached: ${file.name}` : 'No resume attached'}`
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-white text-white hover:bg-white hover:text-black px-8 py-4 rounded-full uppercase font-medium"
+                className="border-white text-black bg-white hover:bg-primary hover:text-white px-8 py-4 rounded-full uppercase font-medium"
                 onClick={() => document.getElementById('application')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Apply Now
@@ -368,26 +393,19 @@ ${file ? `Resume attached: ${file.name}` : 'No resume attached'}`
           <div className="overflow-hidden">
             <div className="flex space-x-6 animate-scroll-rtl">
               {[...jobListings, ...jobListings].map((job, index) => (
-                <Card key={`${job.id}-${index}`} className="flex-shrink-0 w-80 bg-gradient-to-br from-blue-50 to-indigo-100 border-l-4 border-primary hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
-                    <div className="mb-4">
+                <Card key={`${job.id}-${index}`} className="flex-shrink-0 w-80 h-80 bg-gradient-to-br from-blue-50 to-indigo-100 border-l-4 border-primary hover:shadow-lg transition-shadow">
+                  <CardContent className="p-6 h-full flex flex-col">
+                    <div className="flex-grow">
                       <h3 className="text-xl font-bold text-gray-900 mb-2">{job.title}</h3>
-                      <div className="flex flex-wrap gap-2 mb-3">
-                        <div className="flex items-center text-gray-600 text-sm">
-                          <MapPin className="h-3 w-3 mr-1" />
-                          {job.location}
-                        </div>
-                        <div className="flex items-center text-gray-600 text-sm">
-                          <Clock className="h-3 w-3 mr-1" />
-                          {job.type}
-                        </div>
+                      <div className="flex items-center text-gray-600 text-sm mb-3">
+                        <Clock className="h-3 w-3 mr-1" />
+                        {job.type}
                       </div>
                       <Badge variant="outline" className="mb-3">{job.department}</Badge>
+                      <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">{job.description}</p>
                     </div>
                     
-                    <p className="text-gray-600 mb-4 text-sm leading-relaxed line-clamp-3">{job.description}</p>
-                    
-                    <div className="space-y-2">
+                    <div className="space-y-2 mt-4">
                       <Button 
                         variant="outline"
                         className="w-full text-primary border-primary hover:bg-primary hover:text-white"
@@ -635,12 +653,8 @@ ${file ? `Resume attached: ${file.name}` : 'No resume attached'}`
               <div className="space-y-6">
                 <div className="flex flex-wrap gap-4">
                   <div className="flex items-center text-gray-600">
-                    <MapPin className="h-4 w-4 mr-2" />
-                    {selectedJob.location}
-                  </div>
-                  <div className="flex items-center text-gray-600">
                     <Clock className="h-4 w-4 mr-2" />
-                    {selectedJob.type}
+                    {selectedJob.type} • Remote
                   </div>
                   <div className="flex items-center text-gray-600">
                     <Star className="h-4 w-4 mr-2" />
