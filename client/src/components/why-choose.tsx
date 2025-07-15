@@ -1,17 +1,6 @@
-import { Star, Settings, Globe, Database, Zap, MessageCircle, ArrowRight, ChevronRight } from "lucide-react";
-import { useState } from "react";
+import { Star, Settings, Globe, Database, Zap, MessageCircle, ArrowRight } from "lucide-react";
 
 export default function WhyChoose() {
-  const [selectedCategory, setSelectedCategory] = useState("Readability");
-
-  const techCategories = [
-    { name: "Readability", active: true },
-    { name: "Insight", active: false },
-    { name: "Kindling", active: false },
-    { name: "Krovel", active: false },
-    { name: "NextMark", active: false },
-    { name: "Readlists", active: false },
-  ];
 
   const technologies = [
     { name: "backbone.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/backbonejs/backbonejs-original.svg" },
@@ -74,60 +63,34 @@ export default function WhyChoose() {
       <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
         {/* Advanced Technology Solutions */}
         <div className="mb-20">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            {/* Left Sidebar */}
-            <div className="lg:col-span-4">
-              <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-                <h2 className="text-2xl font-bold text-gray-800 mb-2">
-                  Technologies We Use
-                </h2>
-                <p className="text-gray-600 text-sm mb-6">
-                  Our knowledge of web technologies empowers us to utilize the best tool for the problem at hand. Hover over a project's name to see which technologies we used.
-                </p>
-                
-                <div className="space-y-1">
-                  <div className="text-sm text-gray-500 mb-3">Select One:</div>
-                  {techCategories.map((category, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setSelectedCategory(category.name)}
-                      className={`w-full text-left px-4 py-3 rounded-lg flex items-center justify-between transition-all duration-200 ${
-                        selectedCategory === category.name
-                          ? "bg-gray-100 text-primary font-medium"
-                          : "text-gray-600 hover:bg-gray-50"
-                      }`}
-                    >
-                      <span>{category.name}</span>
-                      <ChevronRight className="h-4 w-4" />
-                    </button>
-                  ))}
-                </div>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              Advanced <span className="text-primary">Technology</span> Solutions
+            </h2>
+            <p className="text-gray-600 max-w-4xl mx-auto">
+              We're committed to helping you stay ahead of the competition with state-of-the-art digital solutions, tailored to your unique needs.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {technologies.slice(0, 16).map((tech, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-md transition-shadow duration-200 flex flex-col items-center text-center"
+              >
+                <img
+                  src={tech.icon}
+                  alt={tech.name}
+                  className="w-12 h-12 mb-3 object-contain"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+                <span className="text-sm font-medium text-gray-700">
+                  {tech.name}
+                </span>
               </div>
-            </div>
-
-            {/* Right Content */}
-            <div className="lg:col-span-8">
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-                {technologies.map((tech, index) => (
-                  <div
-                    key={index}
-                    className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-md transition-shadow duration-200 flex flex-col items-center text-center"
-                  >
-                    <img
-                      src={tech.icon}
-                      alt={tech.name}
-                      className="w-12 h-12 mb-3 object-contain"
-                      onError={(e) => {
-                        e.currentTarget.style.display = 'none';
-                      }}
-                    />
-                    <span className="text-sm font-medium text-gray-700">
-                      {tech.name}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
