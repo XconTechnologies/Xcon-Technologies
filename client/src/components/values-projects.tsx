@@ -67,56 +67,51 @@ export default function ValuesProjects() {
             </p>
           </div>
           
-          <div className="space-y-6">
-            {businessTypes.map((business, index) => (
-              <div 
-                key={index} 
-                className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-12 ${
-                  index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-                }`}
-              >
-                {/* Content */}
-                <div className="flex-1">
-                  <div className="bg-white rounded-2xl shadow-lg p-8 border-l-4 border-primary">
-                    <h3 className="text-2xl font-bold text-gray-800 mb-4">
-                      {business.title}
-                    </h3>
+          <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-gray-100">
+            <div className="space-y-12">
+              {businessTypes.map((business, index) => (
+                <div 
+                  key={index} 
+                  className="group"
+                >
+                  {/* Business Type Card */}
+                  <div className="bg-primary/5 rounded-2xl p-8 border-l-4 border-primary">
+                    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
+                      <h3 className="text-2xl font-bold text-gray-800 mb-4 lg:mb-0">
+                        {business.title}
+                      </h3>
+                      <div className="flex items-center gap-4">
+                        <div className="flex items-center">
+                          <span className="text-3xl font-bold text-primary">50+</span>
+                          <span className="text-gray-600 ml-2">Projects Completed</span>
+                        </div>
+                        <button className="bg-primary text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">
+                          View Portfolio
+                        </button>
+                      </div>
+                    </div>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       {business.services.map((service, serviceIndex) => (
-                        <div key={serviceIndex} className="flex items-center bg-gray-50 rounded-lg p-4">
-                          <CheckCircle className="h-5 w-5 text-primary mr-3 flex-shrink-0" />
-                          <span className="text-gray-700 text-sm font-medium">
+                        <div key={serviceIndex} className="bg-primary text-white rounded-xl p-4 flex items-center">
+                          <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" />
+                          <span className="text-sm font-medium">
                             {service}
                           </span>
                         </div>
                       ))}
                     </div>
-                    
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center">
-                        <span className="text-3xl font-bold text-primary">50+</span>
-                        <span className="text-gray-600 ml-2">Projects Completed</span>
-                      </div>
-                      <button className="bg-primary text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-primary/90 transition-colors">
-                        View Portfolio
-                      </button>
-                    </div>
                   </div>
-                </div>
-                
-                {/* Visual Element */}
-                <div className="flex-shrink-0">
-                  <div className="w-32 h-32 bg-gradient-to-br from-primary/10 to-primary/30 rounded-full flex items-center justify-center">
-                    <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center">
-                      <span className="text-2xl font-bold text-primary">
-                        {index === 0 ? '🚀' : index === 1 ? '🏢' : '🏭'}
-                      </span>
+                  
+                  {/* Divider (except for last item) */}
+                  {index < businessTypes.length - 1 && (
+                    <div className="flex justify-center my-8">
+                      <div className="w-24 h-0.5 bg-gray-200"></div>
                     </div>
-                  </div>
+                  )}
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
