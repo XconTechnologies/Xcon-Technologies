@@ -36,7 +36,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-24 mt-2">
           {/* Logo */}
           <div className="flex items-center">
-            <img src={XConLogo} alt="XCon" className="h-12 w-auto" />
+            <img src={XConLogo} alt="XCon" className="h-10 w-auto" />
           </div>
 
           {/* Desktop Navigation */}
