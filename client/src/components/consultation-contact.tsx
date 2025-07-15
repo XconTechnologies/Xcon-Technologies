@@ -207,7 +207,21 @@ export default function ConsultationContact() {
                   <div>
                     <h3 className="text-lg font-semibold text-white mb-2">No pressure</h3>
                     <p className="text-white/90">
-                      We're here to explore your needs and provide guidance — whenever you're ready to move forward.
+                      We're here to explore your needs and provide guidance — whenever you're ready to move forward. Our consultation process is designed to be informative and helpful without any sales pressure.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-2">Proven expertise</h3>
+                    <p className="text-white/90">
+                      With over 10 years of experience and 500+ successful projects, our team delivers cutting-edge solutions that drive business growth.
                     </p>
                   </div>
                 </div>
