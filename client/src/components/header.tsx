@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 import QuoteModal from "@/components/quote-modal";
 import XConLogo from "@assets/Light-Logo.5ba91110-2048x403_1752305014932.png";
 
@@ -273,12 +274,11 @@ export default function Header() {
             >
               Portfolio
             </button>
-            <button
-              onClick={() => scrollToSection("career")}
-              className="text-white hover:text-primary transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
-            >
-              Career
-            </button>
+            <Link href="/career">
+              <button className="text-white hover:text-primary transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">
+                Career
+              </button>
+            </Link>
             <button
               onClick={() => scrollToSection("about")}
               className="text-white hover:text-primary transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
@@ -336,12 +336,11 @@ export default function Header() {
               >
                 Portfolio
               </button>
-              <button
-                onClick={() => scrollToSection("career")}
-                className="text-white hover:text-primary transition-colors font-medium text-left"
-              >
-                Career
-              </button>
+              <Link href="/career">
+                <button className="text-white hover:text-primary transition-colors font-medium text-left">
+                  Career
+                </button>
+              </Link>
               <button
                 onClick={() => scrollToSection("about")}
                 className="text-white hover:text-primary transition-colors font-medium text-left"
