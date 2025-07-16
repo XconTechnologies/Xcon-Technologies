@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -192,6 +192,7 @@ export default function Internship() {
   const [showTrackDetailsModal, setShowTrackDetailsModal] = useState(false);
   const [selectedTrack, setSelectedTrack] = useState<any>(null);
   const [showApplicationModal, setShowApplicationModal] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -216,6 +217,17 @@ export default function Internship() {
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + Math.ceil(internshipTracks.length / 3)) % Math.ceil(internshipTracks.length / 3));
   };
+
+  // Auto-scroll functionality
+  useEffect(() => {
+    if (!isHovered) {
+      const interval = setInterval(() => {
+        setCurrentSlide((prev) => (prev + 1) % Math.ceil(internshipTracks.length / 3));
+      }, 4000); // Change slide every 4 seconds
+
+      return () => clearInterval(interval);
+    }
+  }, [isHovered, internshipTracks.length]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -430,7 +442,11 @@ Note: This is an internship application. For direct HR contact, reach out to nou
           </div>
 
           {/* Carousel Container */}
-          <div className="relative">
+          <div 
+            className="relative"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
             {/* Navigation Buttons */}
             <button
               onClick={prevSlide}

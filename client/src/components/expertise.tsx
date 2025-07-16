@@ -1,7 +1,11 @@
 import { Car, Heart, Smartphone, ShoppingCart, DollarSign } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { useEffect, useState } from "react";
 
 export default function Expertise() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
   const domains = [
     {
       icon: <Car className="h-6 w-6" />,
@@ -30,6 +34,17 @@ export default function Expertise() {
     },
   ];
 
+  // Auto-scroll functionality
+  useEffect(() => {
+    if (!isHovered) {
+      const interval = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % domains.length);
+      }, 3000); // Change slide every 3 seconds
+
+      return () => clearInterval(interval);
+    }
+  }, [isHovered, domains.length]);
+
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
@@ -37,10 +52,20 @@ export default function Expertise() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8">Our <span className="text-primary">Expertise</span></h2>
         </div>
         
-        <Carousel className="w-full" opts={{ align: "start", loop: true }}>
-          <CarouselContent className="-ml-4">
+        <div 
+          className="relative overflow-hidden"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <div 
+            className="flex transition-transform duration-700 ease-in-out"
+            style={{
+              transform: `translateX(-${currentIndex * (100 / domains.length)}%)`,
+              width: `${domains.length * 100}%`
+            }}
+          >
             {domains.map((domain, index) => (
-              <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+              <div key={index} className="w-full flex-shrink-0 px-4" style={{ width: `${100 / domains.length}%` }}>
                 <div className="h-full rounded-3xl p-8 transition-all duration-300 bg-white hover:bg-primary hover:text-white group hover:shadow-lg">
                   <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-6 bg-primary text-white group-hover:bg-white/20 group-hover:text-white">
                     {domain.icon}
@@ -52,12 +77,23 @@ export default function Expertise() {
                     {domain.description}
                   </p>
                 </div>
-              </CarouselItem>
+              </div>
             ))}
-          </CarouselContent>
-          <CarouselPrevious className="hidden md:flex" />
-          <CarouselNext className="hidden md:flex" />
-        </Carousel>
+          </div>
+          
+          {/* Indicators */}
+          <div className="flex justify-center mt-8 space-x-2">
+            {domains.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  currentIndex === index ? 'bg-primary' : 'bg-gray-300'
+                }`}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
