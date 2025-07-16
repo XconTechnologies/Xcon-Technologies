@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { 
   Globe, 
   Clock, 
@@ -188,6 +189,9 @@ const testimonials = [
 
 export default function Internship() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [showTrackDetailsModal, setShowTrackDetailsModal] = useState(false);
+  const [selectedTrack, setSelectedTrack] = useState<any>(null);
+  const [showApplicationModal, setShowApplicationModal] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -452,7 +456,7 @@ Note: This is an internship application. For direct HR contact, reach out to nou
                   <div key={slideIndex} className="w-full flex-shrink-0">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-8">
                       {internshipTracks.slice(slideIndex * 3, (slideIndex + 1) * 3).map((track) => (
-                        <Card key={track.id} className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
+                        <Card key={track.id} className="group hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col">
                           <div className={`h-32 bg-gradient-to-br ${track.color} flex items-center justify-center`}>
                             <div className="text-center">
                               {track.icon}
@@ -462,18 +466,18 @@ Note: This is an internship application. For direct HR contact, reach out to nou
                             </div>
                           </div>
                           
-                          <CardContent className="p-6">
-                            <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                          <CardContent className="p-6 flex flex-col flex-1">
+                            <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors min-h-[2.5rem]">
                               {track.title}
                             </h3>
                             
-                            <p className="text-gray-600 mb-4 line-clamp-3">
+                            <p className="text-gray-600 mb-4 flex-1 line-clamp-3">
                               {track.description}
                             </p>
                             
                             <div className="mb-4">
                               <h4 className="font-semibold text-gray-900 mb-2">Skills You'll Learn:</h4>
-                              <div className="flex flex-wrap gap-2">
+                              <div className="flex flex-wrap gap-2 min-h-[2.5rem]">
                                 {track.skills.slice(0, 3).map((skill) => (
                                   <span
                                     key={skill}
@@ -490,14 +494,14 @@ Note: This is an internship application. For direct HR contact, reach out to nou
                               </div>
                             </div>
                             
-                            <div className="flex gap-2">
+                            <div className="flex gap-2 mt-auto">
                               <Button
                                 variant="outline"
                                 size="sm"
                                 className="flex-1 border-primary text-primary hover:bg-primary hover:text-white transition-colors"
                                 onClick={() => {
-                                  setFormData(prev => ({ ...prev, track: track.title }));
-                                  document.getElementById('application')?.scrollIntoView({ behavior: 'smooth' });
+                                  setSelectedTrack(track);
+                                  setShowTrackDetailsModal(true);
                                 }}
                               >
                                 View Details
@@ -506,8 +510,9 @@ Note: This is an internship application. For direct HR contact, reach out to nou
                                 size="sm"
                                 className="flex-1 bg-primary hover:bg-primary/90 text-white"
                                 onClick={() => {
-                                  setFormData(prev => ({ ...prev, track: track.title }));
-                                  document.getElementById('application')?.scrollIntoView({ behavior: 'smooth' });
+                                  setSelectedTrack(track);
+                                  setFormData(prev => ({ ...prev, internshipTrack: track.title }));
+                                  setShowApplicationModal(true);
                                 }}
                               >
                                 Apply Now
@@ -805,6 +810,282 @@ Note: This is an internship application. For direct HR contact, reach out to nou
       </section>
 
       <Footer />
+
+      {/* Track Details Modal */}
+      <Dialog open={showTrackDetailsModal} onOpenChange={setShowTrackDetailsModal}>
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+          {selectedTrack && (
+            <>
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold text-gray-900">{selectedTrack.title}</DialogTitle>
+              </DialogHeader>
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className={`w-16 h-16 bg-gradient-to-br ${selectedTrack.color} rounded-lg flex items-center justify-center`}>
+                    {selectedTrack.icon}
+                  </div>
+                  <div>
+                    <Badge variant="outline" className="mb-2">Internship Track</Badge>
+                    <p className="text-gray-600">Remote • 10-15 hours/week</p>
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Track Overview</h4>
+                  <p className="text-gray-600 text-lg leading-relaxed">{selectedTrack.description}</p>
+                </div>
+                
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  <div>
+                    <h4 className="text-lg font-semibold text-gray-900 mb-3">Skills You'll Learn</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedTrack.skills.map((skill, index) => (
+                        <span
+                          key={index}
+                          className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-lg font-semibold text-gray-900 mb-3">What You'll Get</h4>
+                    <ul className="space-y-2">
+                      <li className="flex items-start text-gray-600">
+                        <CheckCircle className="h-4 w-4 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                        Real client project experience
+                      </li>
+                      <li className="flex items-start text-gray-600">
+                        <CheckCircle className="h-4 w-4 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                        Professional mentorship
+                      </li>
+                      <li className="flex items-start text-gray-600">
+                        <CheckCircle className="h-4 w-4 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                        Experience certificate
+                      </li>
+                      <li className="flex items-start text-gray-600">
+                        <CheckCircle className="h-4 w-4 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                        Letter of recommendation
+                      </li>
+                      <li className="flex items-start text-gray-600">
+                        <CheckCircle className="h-4 w-4 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                        Portfolio development
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div className="bg-gray-50 rounded-lg p-6">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Requirements</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary" />
+                      <span className="text-gray-700">Current student or fresh graduate</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary" />
+                      <span className="text-gray-700">Basic computer skills</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary" />
+                      <span className="text-gray-700">10-15 hours/week availability</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary" />
+                      <span className="text-gray-700">Eagerness to learn</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="flex gap-4 pt-6">
+                  <Button 
+                    className="flex-1 bg-primary hover:bg-primary/90 text-white"
+                    onClick={() => {
+                      setShowTrackDetailsModal(false);
+                      setFormData(prev => ({ ...prev, internshipTrack: selectedTrack.title }));
+                      setShowApplicationModal(true);
+                    }}
+                  >
+                    Apply Now
+                  </Button>
+                  <Button 
+                    variant="outline"
+                    onClick={() => setShowTrackDetailsModal(false)}
+                  >
+                    Close
+                  </Button>
+                </div>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
+
+      {/* Application Form Modal */}
+      <Dialog open={showApplicationModal} onOpenChange={setShowApplicationModal}>
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold text-gray-900">
+              Apply for {selectedTrack?.title}
+            </DialogTitle>
+          </DialogHeader>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <Label htmlFor="fullName" className="text-gray-700 font-medium">Full Name *</Label>
+                <Input
+                  id="fullName"
+                  name="fullName"
+                  value={formData.fullName}
+                  onChange={handleInputChange}
+                  className="mt-1"
+                  placeholder="John Doe"
+                  required
+                />
+              </div>
+              
+              <div>
+                <Label htmlFor="email" className="text-gray-700 font-medium">Email Address *</Label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  className="mt-1"
+                  placeholder="john@example.com"
+                  required
+                />
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <Label htmlFor="phone" className="text-gray-700 font-medium">Phone Number *</Label>
+                <Input
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  className="mt-1"
+                  placeholder="+1 (555) 123-4567"
+                  required
+                />
+              </div>
+              
+              <div>
+                <Label htmlFor="university" className="text-gray-700 font-medium">University *</Label>
+                <Input
+                  id="university"
+                  name="university"
+                  value={formData.university}
+                  onChange={handleInputChange}
+                  className="mt-1"
+                  placeholder="University of California"
+                  required
+                />
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <Label htmlFor="major" className="text-gray-700 font-medium">Major/Field of Study *</Label>
+                <Input
+                  id="major"
+                  name="major"
+                  value={formData.major}
+                  onChange={handleInputChange}
+                  className="mt-1"
+                  placeholder="Computer Science"
+                  required
+                />
+              </div>
+              
+              <div>
+                <Label htmlFor="graduationYear" className="text-gray-700 font-medium">Graduation Year *</Label>
+                <Select value={formData.graduationYear} onValueChange={(value) => handleSelectChange('graduationYear', value)}>
+                  <SelectTrigger className="mt-1">
+                    <SelectValue placeholder="Select graduation year" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="2024">2024</SelectItem>
+                    <SelectItem value="2025">2025</SelectItem>
+                    <SelectItem value="2026">2026</SelectItem>
+                    <SelectItem value="2027">2027</SelectItem>
+                    <SelectItem value="2028">2028</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+            
+            <div>
+              <Label htmlFor="experience" className="text-gray-700 font-medium">Previous Experience</Label>
+              <Textarea
+                id="experience"
+                name="experience"
+                value={formData.experience}
+                onChange={handleInputChange}
+                className="mt-1"
+                rows={3}
+                placeholder="Tell us about any relevant experience you have..."
+              />
+            </div>
+            
+            <div>
+              <Label htmlFor="portfolio" className="text-gray-700 font-medium">Portfolio/GitHub URL</Label>
+              <Input
+                id="portfolio"
+                name="portfolio"
+                value={formData.portfolio}
+                onChange={handleInputChange}
+                className="mt-1"
+                placeholder="https://github.com/yourusername or https://yourportfolio.com"
+              />
+            </div>
+            
+            <div>
+              <Label htmlFor="availability" className="text-gray-700 font-medium">Weekly Availability *</Label>
+              <Select value={formData.availability} onValueChange={(value) => handleSelectChange('availability', value)}>
+                <SelectTrigger className="mt-1">
+                  <SelectValue placeholder="Select your availability" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="10-15">10-15 hours/week</SelectItem>
+                  <SelectItem value="15-20">15-20 hours/week</SelectItem>
+                  <SelectItem value="20-25">20-25 hours/week</SelectItem>
+                  <SelectItem value="25+">25+ hours/week</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            
+            <div>
+              <Label htmlFor="motivation" className="text-gray-700 font-medium">Why do you want to join this internship? *</Label>
+              <Textarea
+                id="motivation"
+                name="motivation"
+                value={formData.motivation}
+                onChange={handleInputChange}
+                className="mt-1"
+                rows={4}
+                placeholder="Tell us about your motivation and what you hope to achieve..."
+                required
+              />
+            </div>
+            
+            <div className="text-center">
+              <Button 
+                type="submit"
+                disabled={isSubmitting}
+                className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full uppercase font-medium text-lg"
+              >
+                {isSubmitting ? "Submitting..." : "Submit Application"}
+              </Button>
+            </div>
+          </form>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

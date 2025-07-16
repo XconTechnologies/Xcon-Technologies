@@ -232,20 +232,9 @@ export default function Career() {
   const [file, setFile] = useState<File | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [selectedJob, setSelectedJob] = useState<typeof jobListings[0] | null>(null);
-  const [selectedPosition, setSelectedPosition] = useState<typeof openPositions[0] | null>(null);
   const [showDetailsModal, setShowDetailsModal] = useState(false);
   const [showApplicationModal, setShowApplicationModal] = useState(false);
-  const [showPositionDetailsModal, setShowPositionDetailsModal] = useState(false);
-  const [currentSlide, setCurrentSlide] = useState(0);
   const { toast } = useToast();
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % Math.ceil(openPositions.length / 3));
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + Math.ceil(openPositions.length / 3)) % Math.ceil(openPositions.length / 3));
-  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -487,132 +476,6 @@ Note: This is a job application. For direct HR contact, reach out to nouman.ali@
                 <h3 className="text-lg font-semibold mb-2">Team Events</h3>
                 <p className="text-gray-600">Regular team building activities, company retreats, and social events.</p>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Open Positions Carousel */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Open <span className="text-primary">Positions</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Join our expert team and work with cutting-edge technologies. We're looking for talented professionals to help us build the future.
-            </p>
-          </div>
-
-          {/* Carousel Container */}
-          <div className="relative">
-            {/* Navigation Buttons */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow"
-            >
-              <ChevronLeft className="h-6 w-6 text-gray-600" />
-            </button>
-            
-            <button
-              onClick={nextSlide}
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow"
-            >
-              <ChevronRight className="h-6 w-6 text-gray-600" />
-            </button>
-
-            {/* Carousel Content */}
-            <div className="overflow-hidden">
-              <div 
-                className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-              >
-                {Array.from({ length: Math.ceil(openPositions.length / 3) }).map((_, slideIndex) => (
-                  <div key={slideIndex} className="w-full flex-shrink-0">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-8">
-                      {openPositions.slice(slideIndex * 3, (slideIndex + 1) * 3).map((position) => (
-                        <Card key={position.id} className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
-                          <div className={`h-32 bg-gradient-to-br ${position.color} flex items-center justify-center`}>
-                            <div className="text-center">
-                              {position.icon}
-                              <Badge className="mt-2 bg-white/20 text-white border-white/30">
-                                {position.category}
-                              </Badge>
-                            </div>
-                          </div>
-                          
-                          <CardContent className="p-6">
-                            <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
-                              {position.title}
-                            </h3>
-                            
-                            <p className="text-gray-600 mb-4 line-clamp-3">
-                              {position.description}
-                            </p>
-                            
-                            <div className="mb-4">
-                              <h4 className="font-semibold text-gray-900 mb-2">Skills You'll Learn:</h4>
-                              <div className="flex flex-wrap gap-2">
-                                {position.skills.slice(0, 3).map((skill) => (
-                                  <span
-                                    key={skill}
-                                    className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full"
-                                  >
-                                    {skill}
-                                  </span>
-                                ))}
-                                {position.skills.length > 3 && (
-                                  <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
-                                    +{position.skills.length - 3} more
-                                  </span>
-                                )}
-                              </div>
-                            </div>
-                            
-                            <div className="flex gap-2">
-                              <Button
-                                onClick={() => {
-                                  setSelectedPosition(position);
-                                  setShowPositionDetailsModal(true);
-                                }}
-                                variant="outline"
-                                size="sm"
-                                className="flex-1 border-primary text-primary hover:bg-primary hover:text-white transition-colors"
-                              >
-                                View Details
-                              </Button>
-                              <Button
-                                onClick={() => {
-                                  setSelectedPosition(position);
-                                  setFormData(prev => ({ ...prev, position: position.title }));
-                                  setShowApplicationModal(true);
-                                }}
-                                size="sm"
-                                className="flex-1 bg-primary hover:bg-primary/90 text-white"
-                              >
-                                Apply Now
-                              </Button>
-                            </div>
-                          </CardContent>
-                        </Card>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Carousel Indicators */}
-            <div className="flex justify-center mt-8 space-x-2">
-              {Array.from({ length: Math.ceil(openPositions.length / 3) }).map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-colors ${
-                    index === currentSlide ? 'bg-primary' : 'bg-gray-300'
-                  }`}
-                />
-              ))}
             </div>
           </div>
         </div>
