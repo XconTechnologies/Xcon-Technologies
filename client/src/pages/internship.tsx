@@ -26,7 +26,13 @@ import {
   BookOpen,
   Lightbulb,
   Target,
-  Zap
+  Zap,
+  ChevronLeft,
+  ChevronRight,
+  Cloud,
+  Database,
+  Settings,
+  Cog
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/header";
@@ -36,7 +42,7 @@ const internshipTracks = [
   {
     id: 1,
     title: "Web Development",
-    icon: Code,
+    icon: <Code className="h-8 w-8 text-white" />,
     description: "Learn WordPress, React, PHP and build real websites for clients",
     skills: ["WordPress", "React", "PHP", "HTML/CSS", "JavaScript"],
     color: "from-blue-500 to-cyan-500"
@@ -44,7 +50,7 @@ const internshipTracks = [
   {
     id: 2,
     title: "SEO & Content Writing",
-    icon: Search,
+    icon: <Search className="h-8 w-8 text-white" />,
     description: "Master search engine optimization and create compelling content",
     skills: ["SEO Tools", "Content Strategy", "Keyword Research", "Analytics", "Writing"],
     color: "from-green-500 to-emerald-500"
@@ -52,7 +58,7 @@ const internshipTracks = [
   {
     id: 3,
     title: "Graphic Design & UI/UX",
-    icon: Palette,
+    icon: <Palette className="h-8 w-8 text-white" />,
     description: "Create stunning visuals and user-friendly interfaces",
     skills: ["Figma", "Adobe Creative Suite", "UI/UX Design", "Prototyping", "Brand Design"],
     color: "from-purple-500 to-pink-500"
@@ -60,7 +66,7 @@ const internshipTracks = [
   {
     id: 4,
     title: "Digital Marketing & Ads",
-    icon: Megaphone,
+    icon: <Megaphone className="h-8 w-8 text-white" />,
     description: "Run campaigns and learn digital marketing strategies",
     skills: ["Google Ads", "Facebook Ads", "Social Media", "Analytics", "Campaign Management"],
     color: "from-orange-500 to-red-500"
@@ -68,41 +74,89 @@ const internshipTracks = [
   {
     id: 5,
     title: "AI Tools Integration",
-    icon: Brain,
+    icon: <Brain className="h-8 w-8 text-white" />,
     description: "Work with modern AI tools and automation",
     skills: ["ChatGPT", "Replit", "AI Integration", "Automation", "Machine Learning"],
     color: "from-indigo-500 to-purple-500"
+  },
+  {
+    id: 6,
+    title: "AWS Cloud Engineer",
+    icon: <Cloud className="h-8 w-8 text-white" />,
+    description: "Design and implement scalable cloud solutions using Amazon Web Services",
+    skills: ["EC2", "S3", "Lambda", "RDS", "VPC", "CloudFormation"],
+    color: "from-orange-500 to-orange-600"
+  },
+  {
+    id: 7,
+    title: "Azure Developer",
+    icon: <Code className="h-8 w-8 text-white" />,
+    description: "Develop and deploy applications on Microsoft Azure platform",
+    skills: ["Azure App Service", "Azure Functions", "SQL Database", "Storage", "Active Directory"],
+    color: "from-blue-500 to-blue-600"
+  },
+  {
+    id: 8,
+    title: "Google Cloud Services",
+    icon: <Globe className="h-8 w-8 text-white" />,
+    description: "Implement Google Cloud Platform solutions and services",
+    skills: ["Compute Engine", "Cloud Storage", "BigQuery", "Kubernetes", "Firebase"],
+    color: "from-green-500 to-green-600"
+  },
+  {
+    id: 9,
+    title: "Oracle Database",
+    icon: <Database className="h-8 w-8 text-white" />,
+    description: "Manage and optimize Oracle database systems",
+    skills: ["Oracle DB", "PL/SQL", "RAC", "Data Guard", "Performance Tuning"],
+    color: "from-red-500 to-red-600"
+  },
+  {
+    id: 10,
+    title: "Odoo ERP",
+    icon: <Settings className="h-8 w-8 text-white" />,
+    description: "Develop and customize Odoo ERP solutions",
+    skills: ["Python", "PostgreSQL", "XML", "JavaScript", "Odoo Framework"],
+    color: "from-purple-500 to-purple-600"
+  },
+  {
+    id: 11,
+    title: "SAP Systems",
+    icon: <Cog className="h-8 w-8 text-white" />,
+    description: "Implement and configure SAP solutions for enterprises",
+    skills: ["SAP ABAP", "SAP HANA", "SAP Fiori", "SAP S/4HANA", "SAP BW"],
+    color: "from-indigo-500 to-indigo-600"
   }
 ];
 
 const benefits = [
   {
-    icon: Globe,
+    icon: <Globe className="h-8 w-8 text-primary" />,
     title: "100% Remote",
     description: "Work from anywhere in the USA with flexible timing"
   },
   {
-    icon: Target,
+    icon: <Target className="h-8 w-8 text-primary" />,
     title: "Real Client Projects",
     description: "Work on actual projects, not dummy tasks"
   },
   {
-    icon: Users,
+    icon: <Users className="h-8 w-8 text-primary" />,
     title: "Professional Mentorship",
     description: "Learn from industry experts and experienced professionals"
   },
   {
-    icon: Award,
+    icon: <Award className="h-8 w-8 text-primary" />,
     title: "Certificate & Recommendation",
     description: "Receive experience certificate and letter of recommendation"
   },
   {
-    icon: BookOpen,
+    icon: <BookOpen className="h-8 w-8 text-primary" />,
     title: "Learn Industry Tools",
     description: "Master tools like WordPress, Figma, SEO, Google Ads, etc."
   },
   {
-    icon: Lightbulb,
+    icon: <Lightbulb className="h-8 w-8 text-primary" />,
     title: "Build Strong Portfolio",
     description: "Create portfolio projects for jobs or freelancing"
   }
@@ -133,6 +187,7 @@ const testimonials = [
 ];
 
 export default function Internship() {
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -149,6 +204,14 @@ export default function Internship() {
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % Math.ceil(internshipTracks.length / 3));
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + Math.ceil(internshipTracks.length / 3)) % Math.ceil(internshipTracks.length / 3));
+  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -291,7 +354,7 @@ Note: This is an internship application. For direct HR contact, reach out to nou
             {benefits.map((benefit, index) => (
               <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <benefit.icon className="h-8 w-8 text-primary" />
+                  {benefit.icon}
                 </div>
                 <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
                 <p className="text-gray-600">{benefit.description}</p>
@@ -358,32 +421,119 @@ Note: This is an internship application. For direct HR contact, reach out to nou
               Available Internship <span className="text-primary">Tracks</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Choose your preferred area of interest and start building your expertise
+              Choose your preferred area of interest and start building your expertise with cutting-edge technologies
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {internshipTracks.map((track) => (
-              <Card key={track.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                <CardContent className="p-0">
-                  <div className={`bg-gradient-to-r ${track.color} p-6 text-white`}>
-                    <track.icon className="h-12 w-12 mb-4" />
-                    <h3 className="text-xl font-bold mb-2">{track.title}</h3>
-                    <p className="text-white/90">{track.description}</p>
-                  </div>
-                  <div className="p-6">
-                    <h4 className="font-semibold mb-3">Skills You'll Learn:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {track.skills.map((skill, index) => (
-                        <Badge key={index} variant="outline" className="text-xs">
-                          {skill}
-                        </Badge>
+          {/* Carousel Container */}
+          <div className="relative">
+            {/* Navigation Buttons */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow"
+            >
+              <ChevronLeft className="h-6 w-6 text-gray-600" />
+            </button>
+            
+            <button
+              onClick={nextSlide}
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow"
+            >
+              <ChevronRight className="h-6 w-6 text-gray-600" />
+            </button>
+
+            {/* Carousel Content */}
+            <div className="overflow-hidden">
+              <div 
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+              >
+                {Array.from({ length: Math.ceil(internshipTracks.length / 3) }).map((_, slideIndex) => (
+                  <div key={slideIndex} className="w-full flex-shrink-0">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-8">
+                      {internshipTracks.slice(slideIndex * 3, (slideIndex + 1) * 3).map((track) => (
+                        <Card key={track.id} className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
+                          <div className={`h-32 bg-gradient-to-br ${track.color} flex items-center justify-center`}>
+                            <div className="text-center">
+                              {track.icon}
+                              <Badge className="mt-2 bg-white/20 text-white border-white/30">
+                                Internship Track
+                              </Badge>
+                            </div>
+                          </div>
+                          
+                          <CardContent className="p-6">
+                            <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                              {track.title}
+                            </h3>
+                            
+                            <p className="text-gray-600 mb-4 line-clamp-3">
+                              {track.description}
+                            </p>
+                            
+                            <div className="mb-4">
+                              <h4 className="font-semibold text-gray-900 mb-2">Skills You'll Learn:</h4>
+                              <div className="flex flex-wrap gap-2">
+                                {track.skills.slice(0, 3).map((skill) => (
+                                  <span
+                                    key={skill}
+                                    className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full"
+                                  >
+                                    {skill}
+                                  </span>
+                                ))}
+                                {track.skills.length > 3 && (
+                                  <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
+                                    +{track.skills.length - 3} more
+                                  </span>
+                                )}
+                              </div>
+                            </div>
+                            
+                            <div className="flex gap-2">
+                              <Button
+                                variant="outline"
+                                size="sm"
+                                className="flex-1 border-primary text-primary hover:bg-primary hover:text-white transition-colors"
+                                onClick={() => {
+                                  setFormData(prev => ({ ...prev, track: track.title }));
+                                  document.getElementById('application')?.scrollIntoView({ behavior: 'smooth' });
+                                }}
+                              >
+                                View Details
+                              </Button>
+                              <Button
+                                size="sm"
+                                className="flex-1 bg-primary hover:bg-primary/90 text-white"
+                                onClick={() => {
+                                  setFormData(prev => ({ ...prev, track: track.title }));
+                                  document.getElementById('application')?.scrollIntoView({ behavior: 'smooth' });
+                                }}
+                              >
+                                Apply Now
+                              </Button>
+                            </div>
+                          </CardContent>
+                        </Card>
                       ))}
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
+                ))}
+              </div>
+            </div>
+
+            {/* Carousel Indicators */}
+            <div className="flex justify-center mt-8 space-x-2">
+              {Array.from({ length: Math.ceil(internshipTracks.length / 3) }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-colors ${
+                    index === currentSlide ? 'bg-primary' : 'bg-gray-300'
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
