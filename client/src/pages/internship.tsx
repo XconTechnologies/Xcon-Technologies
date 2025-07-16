@@ -834,10 +834,226 @@ Note: This is an internship application. For direct HR contact, reach out to nou
                   <h4 className="text-lg font-semibold text-gray-900 mb-3">Track Overview</h4>
                   <p className="text-gray-600 text-lg leading-relaxed">{selectedTrack.description}</p>
                 </div>
+
+                {/* Detailed Service Information */}
+                <div className="bg-gradient-to-r from-primary/5 to-green-50 rounded-lg p-6">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-4">What This Service Includes</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <h5 className="font-medium text-gray-900 mb-3">📚 Learning Modules</h5>
+                      <ul className="space-y-2 text-sm text-gray-600">
+                        {selectedTrack.id === 1 && (
+                          <>
+                            <li>• Azure fundamentals and cloud concepts</li>
+                            <li>• Virtual machines and networking setup</li>
+                            <li>• Azure Active Directory management</li>
+                            <li>• Storage solutions and databases</li>
+                            <li>• DevOps with Azure pipelines</li>
+                          </>
+                        )}
+                        {selectedTrack.id === 2 && (
+                          <>
+                            <li>• Google Cloud Platform fundamentals</li>
+                            <li>• Compute Engine and App Engine</li>
+                            <li>• Cloud storage and BigQuery</li>
+                            <li>• Kubernetes Engine management</li>
+                            <li>• Cloud security best practices</li>
+                          </>
+                        )}
+                        {selectedTrack.id === 3 && (
+                          <>
+                            <li>• Oracle database architecture</li>
+                            <li>• SQL and PL/SQL programming</li>
+                            <li>• Database administration tasks</li>
+                            <li>• Performance tuning techniques</li>
+                            <li>• Backup and recovery strategies</li>
+                          </>
+                        )}
+                        {selectedTrack.id === 4 && (
+                          <>
+                            <li>• AWS core services and architecture</li>
+                            <li>• EC2, S3, and RDS management</li>
+                            <li>• IAM and security configurations</li>
+                            <li>• Lambda and serverless computing</li>
+                            <li>• CloudFormation and infrastructure as code</li>
+                          </>
+                        )}
+                        {selectedTrack.id === 5 && (
+                          <>
+                            <li>• Odoo framework and architecture</li>
+                            <li>• Custom module development</li>
+                            <li>• Business process automation</li>
+                            <li>• Third-party integrations</li>
+                            <li>• Reporting and analytics</li>
+                          </>
+                        )}
+                        {selectedTrack.id === 6 && (
+                          <>
+                            <li>• SAP system architecture</li>
+                            <li>• ABAP programming language</li>
+                            <li>• SAP module configurations</li>
+                            <li>• Business process optimization</li>
+                            <li>• SAP Fiori development</li>
+                          </>
+                        )}
+                        {selectedTrack.id === 7 && (
+                          <>
+                            <li>• HTML5, CSS3, and JavaScript fundamentals</li>
+                            <li>• React.js component development</li>
+                            <li>• Backend API development</li>
+                            <li>• Database integration</li>
+                            <li>• Responsive design principles</li>
+                          </>
+                        )}
+                        {selectedTrack.id === 8 && (
+                          <>
+                            <li>• Keyword research and analysis</li>
+                            <li>• On-page optimization techniques</li>
+                            <li>• Content strategy development</li>
+                            <li>• Link building strategies</li>
+                            <li>• SEO tools and analytics</li>
+                          </>
+                        )}
+                        {selectedTrack.id === 9 && (
+                          <>
+                            <li>• Design thinking and user research</li>
+                            <li>• Adobe Creative Suite mastery</li>
+                            <li>• Brand identity development</li>
+                            <li>• UI/UX design principles</li>
+                            <li>• Prototyping and wireframing</li>
+                          </>
+                        )}
+                        {selectedTrack.id === 10 && (
+                          <>
+                            <li>• Digital marketing strategy</li>
+                            <li>• Social media management</li>
+                            <li>• PPC advertising campaigns</li>
+                            <li>• Email marketing automation</li>
+                            <li>• Analytics and reporting</li>
+                          </>
+                        )}
+                        {selectedTrack.id === 11 && (
+                          <>
+                            <li>• AI tool integration strategies</li>
+                            <li>• ChatGPT and AI assistant usage</li>
+                            <li>• Automation workflow design</li>
+                            <li>• AI-powered content creation</li>
+                            <li>• Machine learning basics</li>
+                          </>
+                        )}
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h5 className="font-medium text-gray-900 mb-3">🎯 Practical Experience</h5>
+                      <ul className="space-y-2 text-sm text-gray-600">
+                        {selectedTrack.id === 1 && (
+                          <>
+                            <li>• Deploy scalable web applications</li>
+                            <li>• Configure cloud infrastructure</li>
+                            <li>• Monitor and optimize performance</li>
+                            <li>• Implement security best practices</li>
+                            <li>• Cost optimization strategies</li>
+                          </>
+                        )}
+                        {selectedTrack.id === 2 && (
+                          <>
+                            <li>• Build and deploy applications</li>
+                            <li>• Manage containerized workloads</li>
+                            <li>• Implement CI/CD pipelines</li>
+                            <li>• Configure monitoring solutions</li>
+                            <li>• Optimize cloud costs</li>
+                          </>
+                        )}
+                        {selectedTrack.id === 3 && (
+                          <>
+                            <li>• Design and implement databases</li>
+                            <li>• Write complex SQL queries</li>
+                            <li>• Perform database migrations</li>
+                            <li>• Monitor database performance</li>
+                            <li>• Implement backup strategies</li>
+                          </>
+                        )}
+                        {selectedTrack.id === 4 && (
+                          <>
+                            <li>• Build serverless applications</li>
+                            <li>• Design cloud architectures</li>
+                            <li>• Implement auto-scaling solutions</li>
+                            <li>• Configure disaster recovery</li>
+                            <li>• Optimize application performance</li>
+                          </>
+                        )}
+                        {selectedTrack.id === 5 && (
+                          <>
+                            <li>• Develop custom business modules</li>
+                            <li>• Configure ERP workflows</li>
+                            <li>• Integrate third-party systems</li>
+                            <li>• Create custom reports</li>
+                            <li>• Implement user permissions</li>
+                          </>
+                        )}
+                        {selectedTrack.id === 6 && (
+                          <>
+                            <li>• Configure SAP modules</li>
+                            <li>• Develop ABAP programs</li>
+                            <li>• Implement business processes</li>
+                            <li>• Create custom transactions</li>
+                            <li>• Build Fiori applications</li>
+                          </>
+                        )}
+                        {selectedTrack.id === 7 && (
+                          <>
+                            <li>• Build full-stack applications</li>
+                            <li>• Implement user authentication</li>
+                            <li>• Create RESTful APIs</li>
+                            <li>• Deploy to cloud platforms</li>
+                            <li>• Optimize for performance</li>
+                          </>
+                        )}
+                        {selectedTrack.id === 8 && (
+                          <>
+                            <li>• Conduct website audits</li>
+                            <li>• Optimize content for search</li>
+                            <li>• Build quality backlinks</li>
+                            <li>• Track and analyze performance</li>
+                            <li>• Implement technical SEO</li>
+                          </>
+                        )}
+                        {selectedTrack.id === 9 && (
+                          <>
+                            <li>• Create brand identity systems</li>
+                            <li>• Design user interfaces</li>
+                            <li>• Develop marketing materials</li>
+                            <li>• Build interactive prototypes</li>
+                            <li>• Conduct user testing</li>
+                          </>
+                        )}
+                        {selectedTrack.id === 10 && (
+                          <>
+                            <li>• Launch marketing campaigns</li>
+                            <li>• Manage social media accounts</li>
+                            <li>• Create content calendars</li>
+                            <li>• Analyze campaign performance</li>
+                            <li>• Optimize conversion rates</li>
+                          </>
+                        )}
+                        {selectedTrack.id === 11 && (
+                          <>
+                            <li>• Implement AI workflows</li>
+                            <li>• Create automated processes</li>
+                            <li>• Build AI-powered applications</li>
+                            <li>• Integrate multiple AI tools</li>
+                            <li>• Optimize AI performance</li>
+                          </>
+                        )}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
                 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-3">Skills You'll Learn</h4>
+                    <h4 className="text-lg font-semibold text-gray-900 mb-3">🛠️ Skills You'll Master</h4>
                     <div className="flex flex-wrap gap-2">
                       {selectedTrack.skills.map((skill, index) => (
                         <span
@@ -851,7 +1067,7 @@ Note: This is an internship application. For direct HR contact, reach out to nou
                   </div>
                   
                   <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-3">What You'll Get</h4>
+                    <h4 className="text-lg font-semibold text-gray-900 mb-3">🎁 What You'll Receive</h4>
                     <ul className="space-y-2">
                       <li className="flex items-start text-gray-600">
                         <CheckCircle className="h-4 w-4 text-primary mr-3 mt-0.5 flex-shrink-0" />
@@ -859,11 +1075,11 @@ Note: This is an internship application. For direct HR contact, reach out to nou
                       </li>
                       <li className="flex items-start text-gray-600">
                         <CheckCircle className="h-4 w-4 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                        Professional mentorship
+                        Professional mentorship & guidance
                       </li>
                       <li className="flex items-start text-gray-600">
                         <CheckCircle className="h-4 w-4 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                        Experience certificate
+                        Industry-recognized certificate
                       </li>
                       <li className="flex items-start text-gray-600">
                         <CheckCircle className="h-4 w-4 text-primary mr-3 mt-0.5 flex-shrink-0" />
@@ -871,14 +1087,49 @@ Note: This is an internship application. For direct HR contact, reach out to nou
                       </li>
                       <li className="flex items-start text-gray-600">
                         <CheckCircle className="h-4 w-4 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                        Portfolio development
+                        Portfolio development support
+                      </li>
+                      <li className="flex items-start text-gray-600">
+                        <CheckCircle className="h-4 w-4 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                        Networking opportunities
                       </li>
                     </ul>
                   </div>
                 </div>
                 
+                {/* Internship Program Timeline */}
                 <div className="bg-gray-50 rounded-lg p-6">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Requirements</h4>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-4">📅 Program Timeline & Structure</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="text-center">
+                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <span className="text-primary font-bold">1</span>
+                      </div>
+                      <h5 className="font-medium text-gray-900 mb-2">Weeks 1-2</h5>
+                      <p className="text-sm text-gray-600">Orientation & Setup</p>
+                      <p className="text-xs text-gray-500 mt-1">Get familiar with tools, team, and project requirements</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <span className="text-primary font-bold">2</span>
+                      </div>
+                      <h5 className="font-medium text-gray-900 mb-2">Weeks 3-8</h5>
+                      <p className="text-sm text-gray-600">Core Learning</p>
+                      <p className="text-xs text-gray-500 mt-1">Hands-on training with real projects and mentorship</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <span className="text-primary font-bold">3</span>
+                      </div>
+                      <h5 className="font-medium text-gray-900 mb-2">Weeks 9-12</h5>
+                      <p className="text-sm text-gray-600">Project Implementation</p>
+                      <p className="text-xs text-gray-500 mt-1">Independent work on client projects with guidance</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-gray-50 rounded-lg p-6">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-3">✅ Requirements</h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="flex items-center gap-3">
                       <CheckCircle className="h-5 w-5 text-primary" />
@@ -895,6 +1146,14 @@ Note: This is an internship application. For direct HR contact, reach out to nou
                     <div className="flex items-center gap-3">
                       <CheckCircle className="h-5 w-5 text-primary" />
                       <span className="text-gray-700">Eagerness to learn</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary" />
+                      <span className="text-gray-700">Strong communication skills</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary" />
+                      <span className="text-gray-700">Commitment to 3-month program</span>
                     </div>
                   </div>
                 </div>
