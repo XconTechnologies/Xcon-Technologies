@@ -1,62 +1,79 @@
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import { Users, Target, Award, Zap, Globe, Code, Shield, Lightbulb } from "lucide-react";
+import { Users, Target, Award, Zap, Globe, Code, Shield, Lightbulb, Eye, Heart, CheckCircle, TrendingUp, Clock, Star } from "lucide-react";
 
 export default function About() {
   const stats = [
-    { number: "200+", label: "Projects Completed", icon: <Code className="h-6 w-6" /> },
-    { number: "50+", label: "Happy Clients", icon: <Users className="h-6 w-6" /> },
-    { number: "5+", label: "Years Experience", icon: <Award className="h-6 w-6" /> },
-    { number: "24/7", label: "Support Available", icon: <Shield className="h-6 w-6" /> }
+    { number: "500+", label: "Projects Completed", description: "Successfully delivered projects across various industries" },
+    { number: "50+", label: "Happy Clients", description: "Trusted by leading companies worldwide" },
+    { number: "4.7%", label: "Client Satisfaction", description: "Consistently high client satisfaction ratings" },
+    { number: "67", label: "Team Members", description: "Skilled professionals dedicated to excellence" }
   ];
 
   const values = [
     {
+      icon: <Shield className="h-8 w-8 text-primary" />,
+      title: "Integrity",
+      description: "We maintain the highest standards of integrity in all our actions and decisions, ensuring transparency and trust in every client relationship."
+    },
+    {
+      icon: <Users className="h-8 w-8 text-primary" />,
+      title: "Transparency",
+      description: "Open communication and honest feedback are at the core of our operations, fostering trust and long-term partnerships."
+    },
+    {
       icon: <Target className="h-8 w-8 text-primary" />,
-      title: "Mission-Driven",
-      description: "To empower businesses with cutting-edge technology solutions that drive growth and success in the digital age."
+      title: "Client-Centric Approach",
+      description: "Every decision we make is centered around delivering exceptional value and exceeding our clients' expectations."
     },
     {
-      icon: <Lightbulb className="h-8 w-8 text-primary" />,
-      title: "Innovation First",
-      description: "We stay ahead of technology trends to deliver innovative solutions that give our clients a competitive edge."
+      icon: <TrendingUp className="h-8 w-8 text-primary" />,
+      title: "Innovation",
+      description: "We embrace cutting-edge technologies and creative solutions to drive continuous improvement and innovation."
     },
     {
-      icon: <Globe className="h-8 w-8 text-primary" />,
-      title: "Global Reach",
-      description: "Serving clients worldwide with remote-first approach and 24/7 support to ensure seamless collaboration."
-    },
-    {
-      icon: <Zap className="h-8 w-8 text-primary" />,
-      title: "Agile Delivery",
-      description: "Fast, efficient project delivery using agile methodologies to ensure quality and timely completion."
+      icon: <Heart className="h-8 w-8 text-primary" />,
+      title: "Commitment",
+      description: "Unwavering dedication to project success and client satisfaction drives everything we do at XCon Technologies."
     }
   ];
 
-  const team = [
+  const factsAndFigures = [
     {
-      name: "John Smith",
-      role: "CEO & Founder",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
-      bio: "Tech visionary with 10+ years of experience leading digital transformation projects."
+      icon: <Code className="h-12 w-12 text-primary" />,
+      number: "5",
+      label: "Years of Excellence",
+      description: "Delivering quality solutions since 2019"
     },
     {
-      name: "Sarah Johnson",
-      role: "CTO",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b332ab86?w=400&h=400&fit=crop&crop=face",
-      bio: "Full-stack developer and architect specializing in scalable cloud solutions."
+      icon: <Users className="h-12 w-12 text-primary" />,
+      number: "100+",
+      label: "Expert Team",
+      description: "Skilled professionals across technologies"
     },
     {
-      name: "Mike Chen",
-      role: "Lead Developer",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-      bio: "Expert in modern web technologies and mobile app development."
+      icon: <Globe className="h-12 w-12 text-primary" />,
+      number: "1000+",
+      label: "Global Reach",
+      description: "Serving clients worldwide"
     },
     {
-      name: "Emily Davis",
-      role: "Project Manager",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
-      bio: "Agile project management expert ensuring seamless client collaboration."
+      icon: <Clock className="h-12 w-12 text-primary" />,
+      number: "24/7",
+      label: "Support",
+      description: "Round-the-clock assistance"
+    },
+    {
+      icon: <CheckCircle className="h-12 w-12 text-primary" />,
+      number: "99%",
+      label: "Success Rate",
+      description: "Project delivery excellence"
+    },
+    {
+      icon: <Star className="h-12 w-12 text-primary" />,
+      number: "4.9",
+      label: "Client Rating",
+      description: "Average satisfaction score"
     }
   ];
 
@@ -65,16 +82,120 @@ export default function About() {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-gray-50 to-white">
+      <section className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="w-full h-full bg-gradient-to-br from-primary/10 via-transparent to-primary/5"></div>
+        </div>
+        
+        {/* Animated Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+          <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-primary rounded-full animate-ping"></div>
+          <div className="absolute bottom-1/4 left-1/2 w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></div>
+          <div className="absolute top-1/2 right-1/4 w-1 h-1 bg-primary rounded-full animate-ping"></div>
+        </div>
+        
+        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            About Us
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-2xl mx-auto">
+            Delivering Advanced Software with the Best IT Company in USA
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#mission" className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
+              Our Mission
+            </a>
+            <a href="#values" className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 rounded-full font-semibold transition-all duration-300">
+              Our Values
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Company Introduction */}
+      <section className="py-16 bg-white">
         <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-              About <span className="text-primary">XCon Technologies</span>
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              We are a leading digital transformation company specializing in cutting-edge technology solutions 
-              that help businesses thrive in the modern digital landscape.
+          <div className="text-center mb-12">
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              XCon Technologies is a leading IT company in the USA that specializes in delivering innovative software solutions. 
+              We are committed to providing cutting-edge technology services that empower businesses to achieve their digital transformation goals. 
+              Our team of skilled professionals works tirelessly to deliver exceptional results and exceed client expectations.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission Section */}
+      <section id="mission" className="py-16 bg-gray-50">
+        <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <img 
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop" 
+                alt="Our Mission" 
+                className="rounded-2xl shadow-lg w-full"
+              />
+            </div>
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+                Our <span className="text-primary">Mission</span>
+              </h2>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                At XCon Technologies, our mission is to empower businesses through innovative software solutions. 
+                We specialize in creating exceptional digital experiences that drive growth and success for our clients.
+              </p>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                We are dedicated to helping businesses achieve their digital transformation goals through cutting-edge technology, 
+                expert guidance, and unwavering commitment to excellence.
+              </p>
+              <p className="text-gray-600 leading-relaxed">
+                By delivering tailored solutions that meet unique business needs, we help organizations optimize their operations, 
+                enhance customer experiences, and achieve sustainable growth in today's competitive digital landscape.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Vision Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="order-2 lg:order-1">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+                Our <span className="text-primary">Vision</span>
+              </h2>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                We are committed to shaping the future of technology by delivering innovative solutions that transform businesses and drive success.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0" />
+                  <span className="text-gray-700">Global Digital Innovation</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0" />
+                  <span className="text-gray-700">Sustainable Technology Solutions</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0" />
+                  <span className="text-gray-700">Empowering Business Growth</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0" />
+                  <span className="text-gray-700">Leading Edge Technology</span>
+                </div>
+              </div>
+            </div>
+            <div className="order-1 lg:order-2">
+              <img 
+                src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop" 
+                alt="Our Vision" 
+                className="rounded-2xl shadow-lg w-full"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -82,14 +203,17 @@ export default function About() {
       {/* Stats Section */}
       <section className="py-16 bg-primary">
         <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Driving Innovation, Delivering <span className="text-white">Excellence</span>
+            </h2>
+          </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center text-white">
-                <div className="flex justify-center mb-4">
-                  {stat.icon}
-                </div>
-                <div className="text-3xl md:text-4xl font-bold mb-2">{stat.number}</div>
-                <div className="text-sm md:text-base opacity-90">{stat.label}</div>
+                <div className="text-4xl md:text-5xl font-bold mb-2">{stat.number}</div>
+                <div className="text-lg md:text-xl font-semibold mb-2">{stat.label}</div>
+                <div className="text-sm opacity-90">{stat.description}</div>
               </div>
             ))}
           </div>
@@ -142,86 +266,75 @@ export default function About() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <div key={index} className="bg-white p-6 rounded-2xl shadow-lg text-center">
+          <div className="bg-black text-white p-8 rounded-2xl">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold mb-4">
+                <span className="text-primary">VALUES</span>
+              </h3>
+              <p className="text-gray-300">
+                Core values are fundamental to the working spirit of XCon Technologies
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+              {values.map((value, index) => (
+                <div key={index} className="text-center">
+                  <div className="flex justify-center mb-4">
+                    {value.icon}
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-3">{value.title}</h3>
+                  <p className="text-gray-300 text-sm">{value.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Facts and Figures Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              <span className="text-primary">FACTS AND FIGURES</span>
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Numbers that reflect our commitment to excellence and client success.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+            {factsAndFigures.map((fact, index) => (
+              <div key={index} className="text-center">
                 <div className="flex justify-center mb-4">
-                  {value.icon}
+                  {fact.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-3">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
+                <div className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">{fact.number}</div>
+                <div className="text-lg font-semibold text-gray-800 mb-1">{fact.label}</div>
+                <div className="text-sm text-gray-600">{fact.description}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-16">
+      {/* Ready to Transform Section */}
+      <section className="py-16 bg-black text-white">
         <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-              Meet Our <span className="text-primary">Team</span>
+          <div className="text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Ready to transform your vision into reality?
             </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Talented professionals dedicated to delivering exceptional results and driving innovation.
+            <p className="text-xl mb-8 text-gray-300 max-w-2xl mx-auto">
+              Let's create something amazing together. Our team is ready to bring your ideas to life with innovative solutions and exceptional service.
             </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
-              <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden">
-                <img 
-                  src={member.image} 
-                  alt={member.name} 
-                  className="w-full h-64 object-cover"
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-800 mb-1">{member.name}</h3>
-                  <p className="text-primary font-medium mb-3">{member.role}</p>
-                  <p className="text-gray-600 text-sm">{member.bio}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-              Why Choose <span className="text-primary">XCon Technologies</span>
-            </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              We combine technical expertise with business acumen to deliver solutions that drive real results.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
-              <div className="text-primary text-4xl font-bold mb-4">01</div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">Expert Team</h3>
-              <p className="text-gray-600">
-                Our team consists of certified professionals with extensive experience in cutting-edge technologies.
-              </p>
-            </div>
-            
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
-              <div className="text-primary text-4xl font-bold mb-4">02</div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">Proven Process</h3>
-              <p className="text-gray-600">
-                We follow industry best practices and agile methodologies to ensure project success and timely delivery.
-              </p>
-            </div>
-            
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
-              <div className="text-primary text-4xl font-bold mb-4">03</div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">24/7 Support</h3>
-              <p className="text-gray-600">
-                Round-the-clock support ensures your business operations run smoothly without interruption.
-              </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
+                Get Started
+              </button>
+              <button className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full font-semibold transition-all duration-300">
+                Learn More
+              </button>
             </div>
           </div>
         </div>
