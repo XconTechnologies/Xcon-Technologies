@@ -14,6 +14,7 @@ import uiuxImg from "@assets/Xcon UI UX service 2_1752304457712.jpg";
 export default function Services() {
   const [activeTab, setActiveTab] = useState("web-development");
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState<{ [key: string]: boolean }>({});
 
   const tabs = [
     {
@@ -160,6 +161,15 @@ export default function Services() {
     }
   ];
 
+  // Preload images for better performance
+  useEffect(() => {
+    tabs.forEach(tab => {
+      const img = new Image();
+      img.src = tab.content.image;
+      img.onload = () => setImageLoaded(prev => ({ ...prev, [tab.id]: true }));
+    });
+  }, [tabs]);
+
   // Auto-cycle through tabs every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
@@ -189,21 +199,21 @@ export default function Services() {
         
         {/* Professional Service Cards */}
         <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
-          {/* Service Navigation */}
+          {/* Service Navigation - Icons Only */}
           <div className="bg-gray-50 px-4 sm:px-8 py-4 sm:py-6 border-b border-gray-200">
-            <div className="flex flex-wrap justify-center gap-2">
+            <div className="flex justify-center gap-2 sm:gap-4">
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ${
+                  title={tab.title}
+                  className={`flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full font-medium transition-all duration-300 ${
                     activeTab === tab.id
-                      ? "bg-primary text-white shadow-lg"
-                      : "bg-white text-gray-600 hover:bg-gray-100 shadow-sm"
+                      ? "bg-primary text-white shadow-lg scale-110"
+                      : "bg-white text-gray-600 hover:bg-gray-100 shadow-sm hover:scale-105"
                   }`}
                 >
                   <span className="flex-shrink-0">{tab.icon}</span>
-                  <span className="hidden xs:inline sm:inline">{tab.title}</span>
                 </button>
               ))}
             </div>
@@ -249,15 +259,21 @@ export default function Services() {
 
               {/* Right side - Image */}
               <div className="relative order-1 lg:order-2">
-                <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-4 sm:p-8 h-[300px] sm:h-[350px] md:h-[450px] flex items-center justify-center">
-                  <div className="w-full h-full rounded-xl overflow-hidden bg-white shadow-inner">
-                    <img 
-                      key={activeTab}
-                      src={activeTabData?.content.image} 
-                      alt={activeTabData?.content.cardTitle}
-                      className="w-full h-full object-contain transition-all duration-500 transform hover:scale-105"
-                    />
-                  </div>
+                <div className="h-[300px] sm:h-[350px] md:h-[450px] rounded-2xl overflow-hidden bg-white shadow-lg relative">
+                  {!imageLoaded[activeTab] && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+                      <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+                    </div>
+                  )}
+                  <img 
+                    key={activeTab}
+                    src={activeTabData?.content.image} 
+                    alt={activeTabData?.content.cardTitle}
+                    className="w-full h-full object-cover transition-all duration-300"
+                    loading="eager"
+                    decoding="async"
+                    onLoad={() => setImageLoaded(prev => ({ ...prev, [activeTab]: true }))}
+                  />
                 </div>
                 
                 {/* Decorative elements */}
