@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 export default function Expertise() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const domains = [
     {
@@ -34,23 +35,29 @@ export default function Expertise() {
     },
   ];
 
-  // Auto-scroll functionality for infinite scroll
+  // Auto-scroll functionality
   useEffect(() => {
-    if (!isHovered) {
+    if (!isHovered && !isTransitioning) {
       const interval = setInterval(() => {
+        setIsTransitioning(true);
         setCurrentIndex((prev) => {
           const nextIndex = prev + 1;
-          // Reset to 0 when we reach the end of first set (for seamless loop)
+          // Reset to 0 when we reach the end for seamless loop
           if (nextIndex >= domains.length) {
-            return 0;
+            setTimeout(() => {
+              setCurrentIndex(0);
+              setIsTransitioning(false);
+            }, 1000);
+            return nextIndex;
           }
+          setTimeout(() => setIsTransitioning(false), 1000);
           return nextIndex;
         });
-      }, 3000); // Change slide every 3 seconds
+      }, 4000); // Change slide every 4 seconds
 
       return () => clearInterval(interval);
     }
-  }, [isHovered, domains.length]);
+  }, [isHovered, isTransitioning, domains.length]);
 
   return (
     <section className="py-20 bg-gray-50">
@@ -65,15 +72,15 @@ export default function Expertise() {
           onMouseLeave={() => setIsHovered(false)}
         >
           <div 
-            className="flex transition-transform duration-1000 ease-linear"
+            className="flex transition-transform duration-1000 ease-in-out"
             style={{
-              transform: `translateX(-${currentIndex * 25}%)`,
-              width: `${domains.length * 50}%`
+              transform: `translateX(-${(currentIndex % domains.length) * (100 / 4)}%)`,
+              width: `${domains.length * (100 / 4)}%`
             }}
           >
-            {/* Duplicate domains for infinite scroll */}
-            {[...domains, ...domains].map((domain, index) => (
-              <div key={index} className="flex-shrink-0 px-4" style={{ width: `${100 / (domains.length * 2)}%` }}>
+            {/* Create extended array for infinite scroll */}
+            {[...domains, ...domains.slice(0, 4)].map((domain, index) => (
+              <div key={index} className="flex-shrink-0 px-4" style={{ width: `${100 / 4}%` }}>
                 <div className="h-full rounded-3xl p-8 transition-all duration-300 bg-white hover:bg-primary hover:text-white group hover:shadow-lg">
                   <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-6 bg-primary text-white group-hover:bg-white/20 group-hover:text-white">
                     {domain.icon}
@@ -86,6 +93,19 @@ export default function Expertise() {
                   </p>
                 </div>
               </div>
+            ))}
+          </div>
+          
+          {/* Indicators */}
+          <div className="flex justify-center mt-8 space-x-2">
+            {domains.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  (currentIndex % domains.length) === index ? 'bg-primary' : 'bg-gray-300'
+                }`}
+              />
             ))}
           </div>
         </div>
