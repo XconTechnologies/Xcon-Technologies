@@ -7,7 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { MapPin, Clock, Users, Target, Star, Trophy, Heart, Zap, Upload, CheckCircle, X, Globe, Award, ChevronLeft, ChevronRight, Code, Database, Cloud, Settings, Cog, Search } from "lucide-react";
+import { MapPin, Clock, Users, Target, Star, Trophy, Heart, Zap, Upload, CheckCircle, X, Globe, Award, Search } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "wouter";
 import Header from "@/components/header";
@@ -112,105 +112,6 @@ const jobListings = [
       "Monitor campaign performance and analytics",
       "Optimize campaigns for better engagement rates",
       "Ensure compliance with email marketing regulations"
-    ]
-  }
-];
-
-const openPositions = [
-  {
-    id: 1,
-    title: "AWS Cloud Engineer",
-    category: "Cloud Services",
-    description: "Design and implement scalable cloud solutions using Amazon Web Services. Build secure, reliable infrastructure for enterprise applications.",
-    icon: <Cloud className="h-8 w-8 text-white" />,
-    color: "from-orange-500 to-orange-600",
-    skills: ["EC2", "S3", "Lambda", "RDS", "VPC", "CloudFormation"],
-    requirements: [
-      "3+ years of AWS experience",
-      "AWS certifications preferred",
-      "Strong in Python/Java",
-      "Experience with Infrastructure as Code",
-      "Knowledge of DevOps practices"
-    ]
-  },
-  {
-    id: 2,
-    title: "Azure Developer",
-    category: "Cloud Services",
-    description: "Develop and deploy applications on Microsoft Azure platform. Work with Azure services to build modern cloud-native solutions.",
-    icon: <Code className="h-8 w-8 text-white" />,
-    color: "from-blue-500 to-blue-600",
-    skills: ["Azure App Service", "Azure Functions", "SQL Database", "Storage", "Active Directory"],
-    requirements: [
-      "2+ years of Azure development",
-      "Proficiency in C# or .NET",
-      "Experience with Azure DevOps",
-      "Knowledge of microservices architecture",
-      "Understanding of containerization"
-    ]
-  },
-  {
-    id: 3,
-    title: "Google Cloud Specialist",
-    category: "Cloud Services",
-    description: "Implement Google Cloud Platform solutions and services. Build scalable applications using GCP tools and technologies.",
-    icon: <Globe className="h-8 w-8 text-white" />,
-    color: "from-green-500 to-green-600",
-    skills: ["Compute Engine", "Cloud Storage", "BigQuery", "Kubernetes", "Firebase"],
-    requirements: [
-      "2+ years of GCP experience",
-      "Google Cloud certifications",
-      "Strong in Python/Go",
-      "Experience with container orchestration",
-      "Knowledge of data analytics"
-    ]
-  },
-  {
-    id: 4,
-    title: "Oracle Database Administrator",
-    category: "Database Management",
-    description: "Manage and optimize Oracle database systems. Ensure high availability, performance, and security of enterprise databases.",
-    icon: <Database className="h-8 w-8 text-white" />,
-    color: "from-red-500 to-red-600",
-    skills: ["Oracle DB", "PL/SQL", "RAC", "Data Guard", "Performance Tuning"],
-    requirements: [
-      "3+ years of Oracle DBA experience",
-      "Oracle certifications preferred",
-      "Strong SQL and PL/SQL skills",
-      "Experience with backup and recovery",
-      "Knowledge of Linux/Unix systems"
-    ]
-  },
-  {
-    id: 5,
-    title: "Odoo ERP Developer",
-    category: "ERP Systems",
-    description: "Develop and customize Odoo ERP solutions. Implement business processes and integrate third-party systems with Odoo.",
-    icon: <Settings className="h-8 w-8 text-white" />,
-    color: "from-purple-500 to-purple-600",
-    skills: ["Python", "PostgreSQL", "XML", "JavaScript", "Odoo Framework"],
-    requirements: [
-      "2+ years of Odoo development",
-      "Strong Python programming skills",
-      "Experience with PostgreSQL",
-      "Knowledge of business processes",
-      "Understanding of MVC architecture"
-    ]
-  },
-  {
-    id: 6,
-    title: "SAP Consultant",
-    category: "Enterprise Software",
-    description: "Implement and configure SAP solutions for enterprise clients. Provide technical expertise and support for SAP modules.",
-    icon: <Cog className="h-8 w-8 text-white" />,
-    color: "from-indigo-500 to-indigo-600",
-    skills: ["SAP ABAP", "SAP HANA", "SAP Fiori", "SAP S/4HANA", "SAP BW"],
-    requirements: [
-      "3+ years of SAP experience",
-      "SAP certifications required",
-      "Strong ABAP programming",
-      "Experience with SAP modules",
-      "Knowledge of business processes"
     ]
   }
 ];
@@ -815,7 +716,7 @@ Note: This is a job application. For direct HR contact, reach out to nouman.ali@
 
       {/* Job Details Modal */}
       <Dialog open={showDetailsModal} onOpenChange={setShowDetailsModal}>
-        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto" aria-describedby="job-details-description">
           {selectedJob && (
             <>
               <DialogHeader>
@@ -888,118 +789,12 @@ Note: This is a job application. For direct HR contact, reach out to nouman.ali@
         </DialogContent>
       </Dialog>
 
-      {/* Position Details Modal */}
-      <Dialog open={showPositionDetailsModal} onOpenChange={setShowPositionDetailsModal}>
-        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
-          {selectedPosition && (
-            <>
-              <DialogHeader>
-                <DialogTitle className="text-2xl font-bold text-gray-900">{selectedPosition.title}</DialogTitle>
-              </DialogHeader>
-              <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${selectedPosition.color} rounded-lg flex items-center justify-center`}>
-                    {selectedPosition.icon}
-                  </div>
-                  <div>
-                    <Badge variant="outline" className="mb-2">{selectedPosition.category}</Badge>
-                    <p className="text-gray-600">Full-time • Remote</p>
-                  </div>
-                </div>
-                
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Position Overview</h4>
-                  <p className="text-gray-600 text-lg leading-relaxed">{selectedPosition.description}</p>
-                </div>
-                
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-3">Required Skills & Experience</h4>
-                    <ul className="space-y-2">
-                      {selectedPosition.requirements.map((req, index) => (
-                        <li key={index} className="flex items-start text-gray-600">
-                          <CheckCircle className="h-4 w-4 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                          {req}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-3">Technologies You'll Work With</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {selectedPosition.skills.map((skill, index) => (
-                        <span
-                          key={index}
-                          className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="bg-gray-50 rounded-lg p-6">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3">What We Offer</h4>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-primary" />
-                      <span className="text-gray-700">Competitive salary & benefits</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-primary" />
-                      <span className="text-gray-700">100% remote work</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-primary" />
-                      <span className="text-gray-700">Professional development</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-primary" />
-                      <span className="text-gray-700">Flexible working hours</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-primary" />
-                      <span className="text-gray-700">Health insurance</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-primary" />
-                      <span className="text-gray-700">Certification support</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="flex gap-4 pt-6">
-                  <Button 
-                    className="flex-1 bg-primary hover:bg-primary-dark text-white"
-                    onClick={() => {
-                      setShowPositionDetailsModal(false);
-                      setFormData(prev => ({ ...prev, position: selectedPosition.title }));
-                      setShowApplicationModal(true);
-                    }}
-                  >
-                    Apply Now
-                  </Button>
-                  <Button 
-                    variant="outline"
-                    onClick={() => setShowPositionDetailsModal(false)}
-                  >
-                    Close
-                  </Button>
-                </div>
-              </div>
-            </>
-          )}
-        </DialogContent>
-      </Dialog>
-
       {/* Application Form Modal */}
       <Dialog open={showApplicationModal} onOpenChange={setShowApplicationModal}>
-        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto" aria-describedby="application-form-description">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold text-gray-900">
-              Apply for {selectedJob?.title || selectedPosition?.title}
+              Apply for {selectedJob?.title || "Position"}
             </DialogTitle>
           </DialogHeader>
           <form onSubmit={handleSubmit} className="space-y-6">

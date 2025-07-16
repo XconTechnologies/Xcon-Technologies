@@ -813,7 +813,7 @@ Note: This is an internship application. For direct HR contact, reach out to nou
 
       {/* Track Details Modal */}
       <Dialog open={showTrackDetailsModal} onOpenChange={setShowTrackDetailsModal}>
-        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto" aria-describedby="track-details-description">
           {selectedTrack && (
             <>
               <DialogHeader>
@@ -1184,7 +1184,7 @@ Note: This is an internship application. For direct HR contact, reach out to nou
 
       {/* Application Form Modal */}
       <Dialog open={showApplicationModal} onOpenChange={setShowApplicationModal}>
-        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto" aria-describedby="application-form-description">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold text-gray-900">
               Apply for {selectedTrack?.title}
