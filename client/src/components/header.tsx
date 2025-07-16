@@ -269,12 +269,11 @@ export default function Header() {
               )}
             </div>
             
-            <button
-              onClick={() => scrollToSection("portfolio")}
-              className="text-white hover:text-primary transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
-            >
-              Portfolio
-            </button>
+            <Link href="/portfolio">
+              <button className="text-white hover:text-primary transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">
+                Portfolio
+              </button>
+            </Link>
             <Link href="/career">
               <button className="text-white hover:text-primary transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">
                 Career
@@ -328,12 +327,11 @@ export default function Header() {
               >
                 Services
               </button>
-              <button
-                onClick={() => scrollToSection("portfolio")}
-                className="text-white hover:text-primary transition-colors font-medium text-left py-2"
-              >
-                Portfolio
-              </button>
+              <Link href="/portfolio">
+                <button className="text-white hover:text-primary transition-colors font-medium text-left py-2">
+                  Portfolio
+                </button>
+              </Link>
               <Link href="/career">
                 <button className="text-white hover:text-primary transition-colors font-medium text-left py-2">
                   Career
