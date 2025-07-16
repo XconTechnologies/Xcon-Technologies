@@ -283,19 +283,7 @@ export default function Services() {
             </div>
           </div>
 
-          {/* Progress indicators */}
-          <div className="bg-gray-50 px-4 sm:px-8 py-4 border-t border-gray-200">
-            <div className="flex justify-center gap-2">
-              {tabs.map((tab, index) => (
-                <div
-                  key={index}
-                  className={`w-6 sm:w-8 h-1 rounded-full transition-all duration-300 ${
-                    tab.id === activeTab ? "bg-primary" : "bg-gray-300"
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
+
         </div>
       </div>
       

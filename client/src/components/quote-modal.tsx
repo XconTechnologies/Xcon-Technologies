@@ -6,6 +6,7 @@ import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Textarea } from './ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
+import XConLogo from "@assets/Light-Logo.5ba91110-2048x403_1752305014932.png";
 
 interface QuoteModalProps {
   isOpen: boolean;

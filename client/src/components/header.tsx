@@ -35,17 +35,18 @@ export default function Header() {
         <div className="flex items-center justify-between h-24 mt-2">
           {/* Logo */}
           <div className="flex items-center">
-            <img src={XConLogo} alt="XCon" className="h-10 w-auto" />
+            <Link href="/">
+              <img src={XConLogo} alt="XCon" className="h-10 w-auto cursor-pointer" />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <button
-              onClick={() => scrollToSection("home")}
-              className="text-white hover:text-primary transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
-            >
-              Home
-            </button>
+            <Link href="/">
+              <button className="text-white hover:text-primary transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">
+                Home
+              </button>
+            </Link>
             
             {/* Services Mega Menu */}
             <div className="relative">
@@ -279,18 +280,16 @@ export default function Header() {
                 Career
               </button>
             </Link>
-            <button
-              onClick={() => scrollToSection("about")}
-              className="text-white hover:text-primary transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
-            >
-              About
-            </button>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="text-white hover:text-primary transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
-            >
-              Contact
-            </button>
+            <Link href="/about">
+              <button className="text-white hover:text-primary transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">
+                About
+              </button>
+            </Link>
+            <Link href="/contact">
+              <button className="text-white hover:text-primary transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">
+                Contact
+              </button>
+            </Link>
           </nav>
 
           {/* Desktop CTA */}
@@ -318,12 +317,11 @@ export default function Header() {
         {isMenuOpen && (
           <div className="lg:hidden border-t border-gray-600 bg-black/95 backdrop-blur-sm">
             <nav className="flex flex-col space-y-4 px-4 py-6">
-              <button
-                onClick={() => scrollToSection("home")}
-                className="text-white hover:text-primary transition-colors font-medium text-left py-2"
-              >
-                Home
-              </button>
+              <Link href="/">
+                <button className="text-white hover:text-primary transition-colors font-medium text-left py-2">
+                  Home
+                </button>
+              </Link>
               <button
                 onClick={() => scrollToSection("services")}
                 className="text-white hover:text-primary transition-colors font-medium text-left py-2"
@@ -341,18 +339,16 @@ export default function Header() {
                   Career
                 </button>
               </Link>
-              <button
-                onClick={() => scrollToSection("about")}
-                className="text-white hover:text-primary transition-colors font-medium text-left py-2"
-              >
-                About
-              </button>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="text-white hover:text-primary transition-colors font-medium text-left py-2"
-              >
-                Contact
-              </button>
+              <Link href="/about">
+                <button className="text-white hover:text-primary transition-colors font-medium text-left py-2">
+                  About
+                </button>
+              </Link>
+              <Link href="/contact">
+                <button className="text-white hover:text-primary transition-colors font-medium text-left py-2">
+                  Contact
+                </button>
+              </Link>
               <Button
                 onClick={() => setIsQuoteModalOpen(true)}
                 className="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-full font-medium transition-colors mt-4 uppercase text-sm w-full"
