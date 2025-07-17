@@ -76,12 +76,12 @@ const SoftwareDevelopment = () => {
               <div className="flex flex-wrap gap-4">
                 <button 
                   onClick={() => setIsQuoteModalOpen(true)}
-                  className="bg-primary text-white px-8 py-3 rounded-full hover:bg-primary/90 transition-colors"
+                  className="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors"
                 >
                   GET A QUOTE
                 </button>
-                <button className="border border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-gray-900 transition-colors">
-                  View Portfolio
+                <button className="border border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-gray-900 transition-colors">
+                  View Our Portfolio
                 </button>
               </div>
             </div>
@@ -310,7 +310,118 @@ const SoftwareDevelopment = () => {
         </div>
       </section>
 
+      {/* Tech Stack We Use Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-[1440px] mx-auto px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <span className="text-primary">Tech Stack</span> We Use
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Our software development solutions use the latest technologies for development according to your business. With a dedicated team of expert developers, we deliver innovative solutions.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8">
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">JavaScript</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">Python</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">Java</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">C#</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">Node.js</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">React</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">Angular</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">Vue.js</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">Spring</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" alt=".NET" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">.NET</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">MySQL</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">PostgreSQL</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">MongoDB</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">Redis</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">Docker</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">AWS</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Our Achievements Section */}
+      <section className="py-16 bg-primary">
+        <div className="max-w-[1440px] mx-auto px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+              Our Achievements
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center text-white">
+              <div className="text-4xl md:text-5xl font-bold mb-2">60+</div>
+              <p className="text-lg">Software Experts</p>
+            </div>
+            <div className="text-center text-white">
+              <div className="text-4xl md:text-5xl font-bold mb-2">200+</div>
+              <p className="text-lg">Successful Projects</p>
+            </div>
+            <div className="text-center text-white">
+              <div className="text-4xl md:text-5xl font-bold mb-2 flex items-center justify-center">4.8 <span className="text-yellow-400 ml-2">★</span></div>
+              <p className="text-lg">GoodFirms Rating</p>
+            </div>
+            <div className="text-center text-white">
+              <div className="text-4xl md:text-5xl font-bold mb-2 flex items-center justify-center">4.9 <span className="text-yellow-400 ml-2">★</span></div>
+              <p className="text-lg">Clutch Rating</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Expertise Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-[1440px] mx-auto px-8">
           <div className="text-center mb-12">

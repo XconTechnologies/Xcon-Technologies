@@ -76,12 +76,12 @@ const DevOps = () => {
               <div className="flex flex-wrap gap-4">
                 <button 
                   onClick={() => setIsQuoteModalOpen(true)}
-                  className="bg-primary text-white px-8 py-3 rounded-full hover:bg-primary/90 transition-colors"
+                  className="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors"
                 >
                   GET A QUOTE
                 </button>
-                <button className="border border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-gray-900 transition-colors">
-                  View Portfolio
+                <button className="border border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-gray-900 transition-colors">
+                  View Our Portfolio
                 </button>
               </div>
             </div>

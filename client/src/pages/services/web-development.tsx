@@ -78,7 +78,7 @@ export default function WebDevelopment() {
                 <Button 
                   size="lg"
                   onClick={() => setIsQuoteModalOpen(true)}
-                  className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg"
+                  className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg rounded-lg"
                 >
                   Get A Quote
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -86,7 +86,7 @@ export default function WebDevelopment() {
                 <Button 
                   size="lg"
                   variant="outline"
-                  className="border-white text-white bg-transparent hover:bg-white hover:text-black px-8 py-3 text-lg"
+                  className="border-white text-white bg-transparent hover:bg-white hover:text-black px-8 py-3 text-lg rounded-lg"
                 >
                   View Our Portfolio
                 </Button>
@@ -237,6 +237,215 @@ export default function WebDevelopment() {
               <h3 className="text-xl font-semibold mb-4">CMS</h3>
               <p className="text-gray-600">Content management systems for easy website updates and maintenance</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Process Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-[1440px] mx-auto px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <span className="text-primary">Web Development</span> Our Process
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Our custom web development solutions leverage cutting-edge technologies to deliver innovative and effective software for high-end websites.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 relative">
+                <Search className="w-10 h-10 text-primary" />
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">01</div>
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Discovery & Planning</h3>
+              <p className="text-gray-600">We analyze your requirements, research target audience, and create a comprehensive project roadmap.</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 relative">
+                <Eye className="w-10 h-10 text-primary" />
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">02</div>
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Research & Analysis</h3>
+              <p className="text-gray-600">Thorough market research and competitive analysis to ensure your website stands out.</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 relative">
+                <Palette className="w-10 h-10 text-primary" />
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">03</div>
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Design & Prototyping</h3>
+              <p className="text-gray-600">Creating wireframes, mockups, and interactive prototypes for user experience optimization.</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 relative">
+                <Code className="w-10 h-10 text-primary" />
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">04</div>
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Development</h3>
+              <p className="text-gray-600">Clean, efficient code implementation using modern frameworks and best practices.</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 relative">
+                <Shield className="w-10 h-10 text-primary" />
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">05</div>
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Quality Assurance</h3>
+              <p className="text-gray-600">Comprehensive testing across devices and browsers to ensure flawless performance.</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 relative">
+                <Globe className="w-10 h-10 text-primary" />
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">06</div>
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Launch Strategy</h3>
+              <p className="text-gray-600">Strategic deployment and post-launch optimization for maximum impact and performance.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Tech Stack We Use Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-[1440px] mx-auto px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <span className="text-primary">Tech Stack</span> We Use
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Our Web development solutions use the latest technologies for development according to your business. With a dedicated team of expert developers, we deliver innovative solutions.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8">
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">HTML5</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">CSS3</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">JavaScript</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">React</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">Node.js</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">Python</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">PHP</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" alt="WordPress" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">WordPress</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">Angular</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">Vue.js</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" alt="Laravel" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">Laravel</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">Django</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">MongoDB</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">MySQL</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">PostgreSQL</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS" className="w-12 h-12 mx-auto mb-4" />
+              <p className="text-sm font-medium">AWS</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Achievements Section */}
+      <section className="py-16 bg-primary">
+        <div className="max-w-[1440px] mx-auto px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+              Our Achievements
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center text-white">
+              <div className="text-4xl md:text-5xl font-bold mb-2">60+</div>
+              <p className="text-lg">Web Experts</p>
+            </div>
+            <div className="text-center text-white">
+              <div className="text-4xl md:text-5xl font-bold mb-2">200+</div>
+              <p className="text-lg">Successful Projects</p>
+            </div>
+            <div className="text-center text-white">
+              <div className="text-4xl md:text-5xl font-bold mb-2 flex items-center justify-center">4.8 <span className="text-yellow-400 ml-2">★</span></div>
+              <p className="text-lg">GoodFirms Rating</p>
+            </div>
+            <div className="text-center text-white">
+              <div className="text-4xl md:text-5xl font-bold mb-2 flex items-center justify-center">4.9 <span className="text-yellow-400 ml-2">★</span></div>
+              <p className="text-lg">Clutch Rating</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Ready to Transform Section */}
+      <section className="py-16 bg-primary">
+        <div className="max-w-[1440px] mx-auto px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+            Ready to Transform Your Online Presence?
+          </h2>
+          <p className="text-lg text-gray-200 mb-8 max-w-2xl mx-auto">
+            Join our satisfied clients and let's create something amazing together. Professional web development services tailored to your business needs.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button 
+              size="lg"
+              onClick={() => setIsQuoteModalOpen(true)}
+              className="bg-white text-primary hover:bg-gray-100 px-8 py-3 text-lg rounded-lg"
+            >
+              Get A Quote →
+            </Button>
+            <Button 
+              size="lg"
+              variant="outline"
+              className="border-white text-white bg-transparent hover:bg-white hover:text-primary px-8 py-3 text-lg rounded-lg"
+            >
+              Schedule Consultation
+            </Button>
           </div>
         </div>
       </section>
