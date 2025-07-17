@@ -62,206 +62,186 @@ export default function Header() {
               {/* Mega Menu Dropdown */}
               {isMegaMenuOpen && (
                 <div 
-                  className="absolute top-full left-[-200px] mt-2 w-[1000px] bg-white rounded-lg shadow-2xl z-50 p-8"
+                  className="fixed top-[104px] left-0 w-full bg-white shadow-2xl z-50 border-t border-gray-200"
                   onMouseEnter={() => setIsMegaMenuOpen(true)}
                   onMouseLeave={() => setIsMegaMenuOpen(false)}
                 >
-                  <div className="grid grid-cols-3 gap-8">
-                    {/* Column 1 */}
-                    <div className="space-y-6">
-                      <div>
-                        <h3 className="text-lg font-bold text-gray-800 mb-3">Mobile App Development</h3>
-                        <ul className="space-y-2">
-                          <li>
-                            <a href="/services/mobile-app-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              iOS App Development
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/services/mobile-app-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Android App Development
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/services/mobile-app-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Cross Platform App Development
-                            </a>
-                          </li>
-                        </ul>
+                  <div className="max-w-[1440px] mx-auto px-8 py-12">
+                    <div className="grid grid-cols-4 gap-8">
+                      {/* Column 1 - Core Services */}
+                      <div className="space-y-6">
+                        <div className="bg-blue-50 p-6 rounded-lg border border-blue-100">
+                          <div className="flex items-center mb-4">
+                            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
+                              <span className="text-white font-bold text-sm">CS</span>
+                            </div>
+                            <h3 className="text-lg font-bold text-gray-800">Core Services</h3>
+                          </div>
+                          <div className="space-y-3">
+                            <div>
+                              <a href="/services/mobile-app-development" target="_blank" className="block text-gray-700 hover:text-primary transition-colors font-medium">
+                                ➤ Mobile App Development
+                              </a>
+                              <p className="text-sm text-gray-500 mt-1">iOS, Android & Cross-platform apps</p>
+                            </div>
+                            <div>
+                              <a href="/services/web-development" target="_blank" className="block text-gray-700 hover:text-primary transition-colors font-medium">
+                                ➤ Web Development
+                              </a>
+                              <p className="text-sm text-gray-500 mt-1">Frontend, Backend & Full-stack solutions</p>
+                            </div>
+                            <div>
+                              <a href="/services/custom-software-development" target="_blank" className="block text-gray-700 hover:text-primary transition-colors font-medium">
+                                ➤ Custom Software Development
+                              </a>
+                              <p className="text-sm text-gray-500 mt-1">Enterprise & SaaS solutions</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                       
-                      <div>
-                        <h3 className="text-lg font-bold text-gray-800 mb-3">Game Development</h3>
-                        <ul className="space-y-2">
-                          <li>
-                            <a href="/services/game-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              2D Game Development
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/services/game-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              3D Game Development
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/services/game-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Web3 Game Development
-                            </a>
-                          </li>
-                        </ul>
+                      {/* Column 2 - Specialized Support */}
+                      <div className="space-y-6">
+                        <div className="bg-green-50 p-6 rounded-lg border border-green-100">
+                          <div className="flex items-center mb-4">
+                            <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center mr-3">
+                              <span className="text-white font-bold text-sm">SS</span>
+                            </div>
+                            <h3 className="text-lg font-bold text-gray-800">Specialized Support</h3>
+                          </div>
+                          <div className="space-y-3">
+                            <div>
+                              <a href="/services/cloud-services" target="_blank" className="block text-gray-700 hover:text-primary transition-colors font-medium">
+                                ➤ Cloud Services
+                              </a>
+                              <p className="text-sm text-gray-500 mt-1">AWS, Azure & Google Cloud solutions</p>
+                            </div>
+                            <div>
+                              <a href="/services/artificial-intelligence" target="_blank" className="block text-gray-700 hover:text-primary transition-colors font-medium">
+                                ➤ AI & Machine Learning
+                              </a>
+                              <p className="text-sm text-gray-500 mt-1">ML models & AI-powered solutions</p>
+                            </div>
+                            <div>
+                              <a href="/services/blockchain-development" target="_blank" className="block text-gray-700 hover:text-primary transition-colors font-medium">
+                                ➤ Blockchain Development
+                              </a>
+                              <p className="text-sm text-gray-500 mt-1">Smart contracts & DeFi solutions</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                       
-                      <div>
-                        <h3 className="text-lg font-bold text-gray-800 mb-3">Staff Augmentation</h3>
-                        <ul className="space-y-2">
-                          <li>
-                            <a href="/services/staff-augmentation" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Hire Android App Developer
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/services/staff-augmentation" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Hire iOS App Developer
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/services/staff-augmentation" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Hire Node.js Developer
-                            </a>
-                          </li>
-                        </ul>
+                      {/* Column 3 - Additional Services */}
+                      <div className="space-y-6">
+                        <div className="bg-purple-50 p-6 rounded-lg border border-purple-100">
+                          <div className="flex items-center mb-4">
+                            <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center mr-3">
+                              <span className="text-white font-bold text-sm">AS</span>
+                            </div>
+                            <h3 className="text-lg font-bold text-gray-800">Additional Services</h3>
+                          </div>
+                          <div className="space-y-3">
+                            <div>
+                              <a href="/services/game-development" target="_blank" className="block text-gray-700 hover:text-primary transition-colors font-medium">
+                                ➤ Game Development
+                              </a>
+                              <p className="text-sm text-gray-500 mt-1">Mobile, Web & AR/VR games</p>
+                            </div>
+                            <div>
+                              <a href="/services/digital-marketing" target="_blank" className="block text-gray-700 hover:text-primary transition-colors font-medium">
+                                ➤ Digital Marketing
+                              </a>
+                              <p className="text-sm text-gray-500 mt-1">SEO, SEM & Social media marketing</p>
+                            </div>
+                            <div>
+                              <a href="/services/staff-augmentation" target="_blank" className="block text-gray-700 hover:text-primary transition-colors font-medium">
+                                ➤ Staff Augmentation
+                              </a>
+                              <p className="text-sm text-gray-500 mt-1">Dedicated teams & consultancy</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Column 4 - Image Section */}
+                      <div className="space-y-6">
+                        <div className="bg-gradient-to-br from-primary to-primary/80 p-6 rounded-lg text-white">
+                          <div className="flex items-center mb-4">
+                            <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mr-3">
+                              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                              </svg>
+                            </div>
+                            <h3 className="text-lg font-bold">End-to-End Support</h3>
+                          </div>
+                          <p className="text-white/90 mb-4">
+                            From consultation to deployment, we provide comprehensive technology solutions
+                          </p>
+                          <div className="space-y-2 text-sm">
+                            <div className="flex items-center">
+                              <div className="w-4 h-4 bg-white/20 rounded-full mr-2"></div>
+                              <span>✓ 24/7 Technical Support</span>
+                            </div>
+                            <div className="flex items-center">
+                              <div className="w-4 h-4 bg-white/20 rounded-full mr-2"></div>
+                              <span>✓ Agile Development Process</span>
+                            </div>
+                            <div className="flex items-center">
+                              <div className="w-4 h-4 bg-white/20 rounded-full mr-2"></div>
+                              <span>✓ Quality Assurance</span>
+                            </div>
+                          </div>
+                          <div className="mt-6">
+                            <button 
+                              onClick={() => setIsQuoteModalOpen(true)}
+                              className="bg-white text-primary px-6 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors"
+                            >
+                              Get Started →
+                            </button>
+                          </div>
+                        </div>
+                        
+                        {/* Contact Info */}
+                        <div className="bg-gray-50 p-4 rounded-lg border">
+                          <h4 className="font-semibold text-gray-800 mb-2">💬 Need Help?</h4>
+                          <div className="space-y-2 text-sm">
+                            <div className="flex items-center text-gray-600">
+                              <span className="w-4 h-4 mr-2">📞</span>
+                              <span>+1 (513) 302-4718</span>
+                            </div>
+                            <div className="flex items-center text-gray-600">
+                              <span className="w-4 h-4 mr-2">✉️</span>
+                              <span>askforquote@xcontechnologies.com</span>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                     
-                    {/* Column 2 */}
-                    <div className="space-y-6">
-                      <div>
-                        <h3 className="text-lg font-bold text-gray-800 mb-3">Custom Software Development</h3>
-                        <ul className="space-y-2">
-                          <li>
-                            <a href="/services/custom-software-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              ERP Solution
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/services/custom-software-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              CRM Software
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/services/custom-software-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Enterprise Software
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                      
-                      <div>
-                        <h3 className="text-lg font-bold text-gray-800 mb-3">Web Development</h3>
-                        <ul className="space-y-2">
-                          <li>
-                            <a href="/services/web-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Frontend Development
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/services/web-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Backend Development
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/services/web-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Full Stack Development
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                      
-                      <div>
-                        <h3 className="text-lg font-bold text-gray-800 mb-3">Artificial Intelligence</h3>
-                        <ul className="space-y-2">
-                          <li>
-                            <a href="/services/artificial-intelligence" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Machine Learning
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/services/artificial-intelligence" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Natural Language Processing
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/services/artificial-intelligence" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Computer Vision
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    
-                    {/* Column 3 */}
-                    <div className="space-y-6">
-                      <div>
-                        <h3 className="text-lg font-bold text-gray-800 mb-3">Blockchain Development</h3>
-                        <ul className="space-y-2">
-                          <li>
-                            <a href="/services/blockchain-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Smart Contract Development
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/services/blockchain-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              DeFi Solutions
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/services/blockchain-development" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              NFT Development
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                      
-                      <div>
-                        <h3 className="text-lg font-bold text-gray-800 mb-3">Cloud Services</h3>
-                        <ul className="space-y-2">
-                          <li>
-                            <a href="/services/cloud-services" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Cloud Application Development
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/services/cloud-services" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Cloud Migration
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/services/cloud-services" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Cloud Support & Maintenance
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                      
-                      <div>
-                        <h3 className="text-lg font-bold text-gray-800 mb-3">Digital Marketing Services</h3>
-                        <ul className="space-y-2">
-                          <li>
-                            <a href="/services/digital-marketing" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Social Media Marketing
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/services/digital-marketing" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Search Engine Marketing
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/services/digital-marketing" target="_blank" className="text-gray-600 hover:text-primary transition-colors text-sm">
-                              Search Engine Optimization
-                            </a>
-                          </li>
-                        </ul>
+                    {/* Bottom Statistics */}
+                    <div className="mt-8 pt-6 border-t border-gray-200">
+                      <div className="grid grid-cols-5 gap-8 text-center">
+                        <div>
+                          <div className="text-2xl font-bold text-primary">200+</div>
+                          <div className="text-sm text-gray-600">Projects Completed</div>
+                        </div>
+                        <div>
+                          <div className="text-2xl font-bold text-primary">50+</div>
+                          <div className="text-sm text-gray-600">Expert Developers</div>
+                        </div>
+                        <div>
+                          <div className="text-2xl font-bold text-primary">15+</div>
+                          <div className="text-sm text-gray-600">Countries Served</div>
+                        </div>
+                        <div>
+                          <div className="text-2xl font-bold text-primary">99%</div>
+                          <div className="text-sm text-gray-600">Success Rate</div>
+                        </div>
+                        <div>
+                          <div className="text-2xl font-bold text-primary">24/7</div>
+                          <div className="text-sm text-gray-600">Support Available</div>
+                        </div>
                       </div>
                     </div>
                   </div>
