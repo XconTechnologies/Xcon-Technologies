@@ -88,101 +88,77 @@ export default function WebDevelopment() {
       </section>
 
       {/* Services Offered Section */}
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-[1440px] mx-auto px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
               What <span className="text-primary">Custom Web Development</span> Services We Offer?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Custom Website Development for Maximum Reach
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="p-6 hover:shadow-lg transition-shadow border-l-4 border-l-primary">
-              <CardHeader className="pb-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Palette className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle className="text-xl">UI/UX Web Design</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Our team creates visually engaging, user-focused designs that enhance engagement and brand alignment. Using tools like Figma and Adobe Creative Cloud, our developers deliver interfaces that are pixel-perfect and accessible across all devices.
-                </p>
-              </CardContent>
-            </Card>
+            <div className="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <Palette className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">UI/UX Web Design</h3>
+              <p className="text-gray-600">
+                Our team creates visually engaging, user-focused designs that enhance engagement and brand alignment. Using tools like Figma and Adobe Creative Cloud, our developers deliver interfaces that are pixel-perfect and accessible across all devices.
+              </p>
+            </div>
 
-            <Card className="p-6 hover:shadow-lg transition-shadow border-l-4 border-l-primary">
-              <CardHeader className="pb-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Monitor className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle className="text-xl">Frontend Development</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Our developers create fast, SEO-optimized interfaces with modern technologies to ensure seamless experience across all devices. Our flexible approach improves performance and scalability for higher conversion rates.
-                </p>
-              </CardContent>
-            </Card>
+            <div className="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <Monitor className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Frontend Development</h3>
+              <p className="text-gray-600">
+                Our developers create fast, SEO-optimized interfaces with modern technologies to ensure seamless experience across all devices. Our flexible approach improves performance and scalability for higher conversion rates.
+              </p>
+            </div>
 
-            <Card className="p-6 hover:shadow-lg transition-shadow border-l-4 border-l-primary">
-              <CardHeader className="pb-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Server className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle className="text-xl">Backend Development</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  With expertise in server-side frameworks like Node.js and Python, our custom website development company develops scalable backend systems that power reliable web applications with seamless API functionality.
-                </p>
-              </CardContent>
-            </Card>
+            <div className="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <Server className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Backend Development</h3>
+              <p className="text-gray-600">
+                With expertise in server-side frameworks like Node.js and Python, our custom website development company develops scalable backend systems that power reliable web applications with seamless API functionality.
+              </p>
+            </div>
 
-            <Card className="p-6 hover:shadow-lg transition-shadow border-l-4 border-l-primary">
-              <CardHeader className="pb-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Code className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle className="text-xl">Full Stack Development</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Our full-stack developers offer end-to-end solutions that connect all web application components. We build dynamic, scalable applications designed to provide cohesive user experience and support long-term growth.
-                </p>
-              </CardContent>
-            </Card>
+            <div className="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <Code className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Full Stack Development</h3>
+              <p className="text-gray-600">
+                Our full-stack developers offer end-to-end solutions that connect all web application components. We build dynamic, scalable applications designed to provide cohesive user experience and support long-term growth.
+              </p>
+            </div>
 
-            <Card className="p-6 hover:shadow-lg transition-shadow border-l-4 border-l-primary">
-              <CardHeader className="pb-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Settings className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle className="text-xl">No/Low Code Development</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Rapid development solutions using modern no-code and low-code platforms to accelerate your project timeline while maintaining quality and functionality for your business needs.
-                </p>
-              </CardContent>
-            </Card>
+            <div className="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <Settings className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">No/Low Code Development</h3>
+              <p className="text-gray-600">
+                Rapid development solutions using modern no-code and low-code platforms to accelerate your project timeline while maintaining quality and functionality for your business needs.
+              </p>
+            </div>
 
-            <Card className="p-6 hover:shadow-lg transition-shadow border-l-4 border-l-primary">
-              <CardHeader className="pb-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Globe className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle className="text-xl">Cloud Development</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Modern cloud-based solutions that provide scalability, security, and performance optimization. Our cloud development services ensure your web applications can handle growth and traffic spikes effectively.
-                </p>
-              </CardContent>
-            </Card>
+            <div className="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <Globe className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Cloud Development</h3>
+              <p className="text-gray-600">
+                Modern cloud-based solutions that provide scalability, security, and performance optimization. Our cloud development services ensure your web applications can handle growth and traffic spikes effectively.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -242,31 +218,31 @@ export default function WebDevelopment() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Shield className="w-10 h-10 text-primary" />
+            <div className="bg-white p-8 rounded-xl border border-gray-200 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Shield className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-2xl font-semibold mb-4">Security Measures</h3>
+              <h3 className="text-xl font-semibold mb-4">Security Measures</h3>
               <p className="text-gray-600">
                 Implement secure data handling, encryption, and ongoing monitoring to safeguard both websites and users from potential threats.
               </p>
             </div>
             
-            <div className="text-center">
-              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Zap className="w-10 h-10 text-primary" />
+            <div className="bg-white p-8 rounded-xl border border-gray-200 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Zap className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-2xl font-semibold mb-4">Enhanced Performance</h3>
+              <h3 className="text-xl font-semibold mb-4">Enhanced Performance</h3>
               <p className="text-gray-600">
                 Optimized code, fast loading times, and efficient database queries ensure your website performs at its best under all conditions.
               </p>
             </div>
             
-            <div className="text-center">
-              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Settings className="w-10 h-10 text-primary" />
+            <div className="bg-white p-8 rounded-xl border border-gray-200 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Settings className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-2xl font-semibold mb-4">Flexible Architecture</h3>
+              <h3 className="text-xl font-semibold mb-4">Flexible Architecture</h3>
               <p className="text-gray-600">
                 Scalable and modular architecture that grows with your business needs and adapts to changing requirements.
               </p>
@@ -483,7 +459,7 @@ export default function WebDevelopment() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+            <div className="bg-white p-6 rounded-xl border border-gray-200 text-center hover:shadow-lg transition-shadow">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Eye className="w-8 h-8 text-primary" />
               </div>
@@ -491,7 +467,7 @@ export default function WebDevelopment() {
               <p className="text-gray-600">Increase your online presence and reach more customers</p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+            <div className="bg-white p-6 rounded-xl border border-gray-200 text-center hover:shadow-lg transition-shadow">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <TrendingUp className="w-8 h-8 text-primary" />
               </div>
@@ -499,7 +475,7 @@ export default function WebDevelopment() {
               <p className="text-gray-600">Scale your website as your business grows</p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+            <div className="bg-white p-6 rounded-xl border border-gray-200 text-center hover:shadow-lg transition-shadow">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Globe className="w-8 h-8 text-primary" />
               </div>
@@ -507,7 +483,7 @@ export default function WebDevelopment() {
               <p className="text-gray-600">Reach customers worldwide with responsive design</p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+            <div className="bg-white p-6 rounded-xl border border-gray-200 text-center hover:shadow-lg transition-shadow">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="w-8 h-8 text-primary" />
               </div>
@@ -525,13 +501,13 @@ export default function WebDevelopment() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Get Custom <span className="text-primary">Web Development Expertise</span> at XCon!
             </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
               We don't proclaim to be the best custom website development company, but we take pride in our expertise. Our professional, full-service in-house team follows a modern web development process to deliver efficient, secure, and scalable products that businesses trust and appreciate.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
+            <div className="bg-white p-6 rounded-xl border border-gray-200 text-center hover:shadow-lg transition-shadow">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Code className="w-8 h-8 text-primary" />
               </div>
@@ -539,7 +515,7 @@ export default function WebDevelopment() {
               <p className="text-gray-600">Latest technologies and frameworks</p>
             </div>
             
-            <div className="text-center">
+            <div className="bg-white p-6 rounded-xl border border-gray-200 text-center hover:shadow-lg transition-shadow">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="w-8 h-8 text-primary" />
               </div>
@@ -547,7 +523,7 @@ export default function WebDevelopment() {
               <p className="text-gray-600">Deep understanding of various industries</p>
             </div>
             
-            <div className="text-center">
+            <div className="bg-white p-6 rounded-xl border border-gray-200 text-center hover:shadow-lg transition-shadow">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Zap className="w-8 h-8 text-primary" />
               </div>
@@ -555,7 +531,7 @@ export default function WebDevelopment() {
               <p className="text-gray-600">Efficient development process</p>
             </div>
             
-            <div className="text-center">
+            <div className="bg-white p-6 rounded-xl border border-gray-200 text-center hover:shadow-lg transition-shadow">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Settings className="w-8 h-8 text-primary" />
               </div>
