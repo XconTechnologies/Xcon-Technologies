@@ -6,6 +6,13 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import QuoteModal from "@/components/quote-modal";
 import { useState } from "react";
+import xconLogo from '@assets/Xcon Logo cropped_1752479137104.png';
+import bathroomImage from '@assets/image_1752740036498.png';
+import door2doorImage from '@assets/image_1752740044305.png';
+import constructionImage from '@assets/image_1752740028753.png';
+import carpetsImage from '@assets/image_1752740010452.png';
+import ecommerceImage from '@assets/image_1752740052597.png';
+import businessImage from '@assets/image_1752740078132.png';
 
 export default function WebDevelopment() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
@@ -476,19 +483,16 @@ export default function WebDevelopment() {
               {/* Project Cards */}
               <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-6 w-[400px] hover:shadow-xl transition-shadow">
                 <div className="flex items-center mb-4">
-                  <div className="text-xl font-bold text-primary">XCon</div>
+                  <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
                   <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
                 </div>
                 <div className="mb-4">
-                  <div className="bg-blue-600 rounded-lg h-40 flex items-center justify-center mb-3 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-700"></div>
-                    <div className="relative z-10 text-white text-center">
-                      <div className="w-8 h-8 bg-white rounded mx-auto mb-2 flex items-center justify-center">
-                        <div className="w-4 h-4 bg-blue-600 rounded"></div>
-                      </div>
-                      <div className="text-xs font-semibold">Beautiful Bathrooms</div>
-                      <div className="text-xs opacity-75">In Dublin</div>
-                    </div>
+                  <div className="rounded-lg h-40 mb-3 relative overflow-hidden">
+                    <img 
+                      src={bathroomImage} 
+                      alt="Beautiful Bathrooms In Dublin" 
+                      className="w-full h-full object-cover rounded-lg"
+                    />
                   </div>
                   <h3 className="text-lg font-semibold mb-2">Beautiful Bathrooms In Dublin</h3>
                   <p className="text-gray-600 text-sm">
@@ -499,17 +503,16 @@ export default function WebDevelopment() {
 
               <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-6 w-[400px] hover:shadow-xl transition-shadow">
                 <div className="flex items-center mb-4">
-                  <div className="text-xl font-bold text-primary">XCon</div>
+                  <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
                   <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
                 </div>
                 <div className="mb-4">
-                  <div className="bg-green-600 rounded-lg h-40 flex items-center justify-center mb-3 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-green-700"></div>
-                    <div className="relative z-10 text-white text-center">
-                      <Globe className="w-8 h-8 mx-auto mb-2" />
-                      <div className="text-xs font-semibold">Door 2 Door House</div>
-                      <div className="text-xs opacity-75">Removal Services</div>
-                    </div>
+                  <div className="rounded-lg h-40 mb-3 relative overflow-hidden">
+                    <img 
+                      src={door2doorImage} 
+                      alt="Door 2 Door House Removal Services" 
+                      className="w-full h-full object-cover rounded-lg"
+                    />
                   </div>
                   <h3 className="text-lg font-semibold mb-2">Door 2 Door House Removal Services</h3>
                   <p className="text-gray-600 text-sm">
@@ -520,17 +523,16 @@ export default function WebDevelopment() {
 
               <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-6 w-[400px] hover:shadow-xl transition-shadow">
                 <div className="flex items-center mb-4">
-                  <div className="text-xl font-bold text-primary">XCon</div>
+                  <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
                   <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
                 </div>
                 <div className="mb-4">
-                  <div className="bg-purple-600 rounded-lg h-40 flex items-center justify-center mb-3 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-purple-700"></div>
-                    <div className="relative z-10 text-white text-center">
-                      <Settings className="w-8 h-8 mx-auto mb-2" />
-                      <div className="text-xs font-semibold">We construct your</div>
-                      <div className="text-xs opacity-75">dream projects</div>
-                    </div>
+                  <div className="rounded-lg h-40 mb-3 relative overflow-hidden">
+                    <img 
+                      src={constructionImage} 
+                      alt="We construct your dream projects" 
+                      className="w-full h-full object-cover rounded-lg"
+                    />
                   </div>
                   <h3 className="text-lg font-semibold mb-2">We construct your dream projects</h3>
                   <p className="text-gray-600 text-sm">
@@ -541,17 +543,16 @@ export default function WebDevelopment() {
 
               <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-6 w-[400px] hover:shadow-xl transition-shadow">
                 <div className="flex items-center mb-4">
-                  <div className="text-xl font-bold text-primary">XCon</div>
+                  <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
                   <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
                 </div>
                 <div className="mb-4">
-                  <div className="bg-orange-600 rounded-lg h-40 flex items-center justify-center mb-3 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-orange-700"></div>
-                    <div className="relative z-10 text-white text-center">
-                      <Palette className="w-8 h-8 mx-auto mb-2" />
-                      <div className="text-xs font-semibold">Carpets & Flooring</div>
-                      <div className="text-xs opacity-75">Specialists</div>
-                    </div>
+                  <div className="rounded-lg h-40 mb-3 relative overflow-hidden">
+                    <img 
+                      src={carpetsImage} 
+                      alt="Carpets & Flooring Specialists" 
+                      className="w-full h-full object-cover rounded-lg"
+                    />
                   </div>
                   <h3 className="text-lg font-semibold mb-2">Carpets & Flooring Specialists</h3>
                   <p className="text-gray-600 text-sm">
@@ -562,17 +563,16 @@ export default function WebDevelopment() {
 
               <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-6 w-[400px] hover:shadow-xl transition-shadow">
                 <div className="flex items-center mb-4">
-                  <div className="text-xl font-bold text-primary">XCon</div>
+                  <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
                   <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
                 </div>
                 <div className="mb-4">
-                  <div className="bg-teal-600 rounded-lg h-40 flex items-center justify-center mb-3 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-teal-500 to-teal-700"></div>
-                    <div className="relative z-10 text-white text-center">
-                      <Monitor className="w-8 h-8 mx-auto mb-2" />
-                      <div className="text-xs font-semibold">E-Commerce</div>
-                      <div className="text-xs opacity-75">Platform</div>
-                    </div>
+                  <div className="rounded-lg h-40 mb-3 relative overflow-hidden">
+                    <img 
+                      src={ecommerceImage} 
+                      alt="E-Commerce Platform" 
+                      className="w-full h-full object-cover rounded-lg"
+                    />
                   </div>
                   <h3 className="text-lg font-semibold mb-2">E-Commerce Platform</h3>
                   <p className="text-gray-600 text-sm">
@@ -583,17 +583,16 @@ export default function WebDevelopment() {
 
               <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-6 w-[400px] hover:shadow-xl transition-shadow">
                 <div className="flex items-center mb-4">
-                  <div className="text-xl font-bold text-primary">XCon</div>
+                  <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
                   <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
                 </div>
                 <div className="mb-4">
-                  <div className="bg-red-600 rounded-lg h-40 flex items-center justify-center mb-3 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-red-500 to-red-700"></div>
-                    <div className="relative z-10 text-white text-center">
-                      <Database className="w-8 h-8 mx-auto mb-2" />
-                      <div className="text-xs font-semibold">Business Management</div>
-                      <div className="text-xs opacity-75">System</div>
-                    </div>
+                  <div className="rounded-lg h-40 mb-3 relative overflow-hidden">
+                    <img 
+                      src={businessImage} 
+                      alt="Business Management System" 
+                      className="w-full h-full object-cover rounded-lg"
+                    />
                   </div>
                   <h3 className="text-lg font-semibold mb-2">Business Management System</h3>
                   <p className="text-gray-600 text-sm">
@@ -605,19 +604,16 @@ export default function WebDevelopment() {
               {/* Duplicate cards for seamless loop */}
               <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-6 w-[400px] hover:shadow-xl transition-shadow">
                 <div className="flex items-center mb-4">
-                  <div className="text-xl font-bold text-primary">XCon</div>
+                  <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
                   <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
                 </div>
                 <div className="mb-4">
-                  <div className="bg-blue-600 rounded-lg h-40 flex items-center justify-center mb-3 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-700"></div>
-                    <div className="relative z-10 text-white text-center">
-                      <div className="w-8 h-8 bg-white rounded mx-auto mb-2 flex items-center justify-center">
-                        <div className="w-4 h-4 bg-blue-600 rounded"></div>
-                      </div>
-                      <div className="text-xs font-semibold">Beautiful Bathrooms</div>
-                      <div className="text-xs opacity-75">In Dublin</div>
-                    </div>
+                  <div className="rounded-lg h-40 mb-3 relative overflow-hidden">
+                    <img 
+                      src={bathroomImage} 
+                      alt="Beautiful Bathrooms In Dublin" 
+                      className="w-full h-full object-cover rounded-lg"
+                    />
                   </div>
                   <h3 className="text-lg font-semibold mb-2">Beautiful Bathrooms In Dublin</h3>
                   <p className="text-gray-600 text-sm">
@@ -628,17 +624,16 @@ export default function WebDevelopment() {
 
               <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-6 w-[400px] hover:shadow-xl transition-shadow">
                 <div className="flex items-center mb-4">
-                  <div className="text-xl font-bold text-primary">XCon</div>
+                  <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
                   <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
                 </div>
                 <div className="mb-4">
-                  <div className="bg-green-600 rounded-lg h-40 flex items-center justify-center mb-3 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-green-700"></div>
-                    <div className="relative z-10 text-white text-center">
-                      <Globe className="w-8 h-8 mx-auto mb-2" />
-                      <div className="text-xs font-semibold">Door 2 Door House</div>
-                      <div className="text-xs opacity-75">Removal Services</div>
-                    </div>
+                  <div className="rounded-lg h-40 mb-3 relative overflow-hidden">
+                    <img 
+                      src={door2doorImage} 
+                      alt="Door 2 Door House Removal Services" 
+                      className="w-full h-full object-cover rounded-lg"
+                    />
                   </div>
                   <h3 className="text-lg font-semibold mb-2">Door 2 Door House Removal Services</h3>
                   <p className="text-gray-600 text-sm">
