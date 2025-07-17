@@ -55,12 +55,10 @@ export default function Header() {
               onMouseLeave={() => setIsMegaMenuOpen(false)}
             >
               <Link href="/services">
-                <button
-                  className="text-white hover:text-primary transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full flex items-center space-x-1"
-                >
+                <span className="text-white hover:text-primary transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full flex items-center space-x-1 cursor-pointer">
                   <span>Services</span>
                   <ChevronDown className="h-4 w-4" />
-                </button>
+                </span>
               </Link>
               
               {/* Mega Menu Dropdown */}
