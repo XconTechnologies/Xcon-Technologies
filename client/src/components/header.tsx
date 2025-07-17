@@ -150,7 +150,7 @@ export default function Header() {
                             <p className="text-sm text-gray-500 mt-1">Comprehensive testing solutions</p>
                           </div>
                           <div>
-                            <a href="/services/it-consultation" target="_blank" className="block text-primary hover:text-primary/80 transition-colors font-medium">
+                            <a href="/services/it-consulting" target="_blank" className="block text-primary hover:text-primary/80 transition-colors font-medium">
                               ▶ IT Consultation
                             </a>
                             <p className="text-sm text-gray-500 mt-1">Strategic technology guidance</p>

@@ -167,7 +167,7 @@ const services = [
     timeline: "1-2 months"
   },
   {
-    id: "it-consultation",
+    id: "it-consulting",
     title: "IT Consultation",
     description: "Strategic technology guidance",
     icon: <MessageSquare className="w-8 h-8" />,

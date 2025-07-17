@@ -40,6 +40,7 @@ function Router() {
       <Route path="/services/devops" component={DevOps} />
       <Route path="/services/qa-testing" component={QaTesting} />
       <Route path="/services/it-consulting" component={ItConsulting} />
+      <Route path="/services/it-consultation" component={ItConsulting} />
       <Route component={NotFound} />
     </Switch>
   );
