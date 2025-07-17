@@ -188,10 +188,10 @@ export default function WebDevelopment() {
       </section>
 
       {/* Solutions Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 bg-gray-50">
         <div className="max-w-[1440px] mx-auto px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
               <span className="text-primary">Web Development Solutions</span> to Expand Your Business
             </h2>
           </div>
@@ -233,10 +233,10 @@ export default function WebDevelopment() {
       </section>
 
       {/* Why Choose XCon Section */}
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-[1440px] mx-auto px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Why Choose <span className="text-primary">XCon</span> for Custom Website Development?
             </h2>
           </div>
@@ -276,13 +276,13 @@ export default function WebDevelopment() {
       </section>
 
       {/* Our Process Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 bg-gray-50">
         <div className="max-w-[1440px] mx-auto px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
               <span className="text-primary">Web Development</span> Our Process
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-lg text-gray-600">
               Our custom web development solutions leverage cutting-edge technologies to deliver innovative and effective software for high-end websites.
             </p>
           </div>
@@ -311,38 +311,138 @@ export default function WebDevelopment() {
       </section>
 
       {/* Tech Stack Section */}
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-[1440px] mx-auto px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
               <span className="text-primary">Tech Stack</span> We Use
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-lg text-gray-600">
               Our Web development solutions use the latest technologies for development according to your business. With a dedicated team of expert developers, we deliver innovative solutions.
             </p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
-            {[
-              "HTML", "CSS", "JavaScript", "React", "Node.js", "Python", "PHP", "WordPress",
-              "Angular", "Vue.js", "Laravel", "Django", "MongoDB", "MySQL", "PostgreSQL", "AWS"
-            ].map((tech, index) => (
-              <div key={index} className="bg-gray-50 p-4 rounded-lg text-center hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <Code className="w-6 h-6 text-primary" />
-                </div>
-                <span className="text-sm font-medium">{tech}</span>
+            <div className="bg-gray-50 p-4 rounded-lg text-center hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" className="w-8 h-8" />
               </div>
-            ))}
+              <span className="text-sm font-medium">HTML5</span>
+            </div>
+            
+            <div className="bg-gray-50 p-4 rounded-lg text-center hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" className="w-8 h-8" />
+              </div>
+              <span className="text-sm font-medium">CSS3</span>
+            </div>
+            
+            <div className="bg-gray-50 p-4 rounded-lg text-center hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" className="w-8 h-8" />
+              </div>
+              <span className="text-sm font-medium">JavaScript</span>
+            </div>
+            
+            <div className="bg-gray-50 p-4 rounded-lg text-center hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" className="w-8 h-8" />
+              </div>
+              <span className="text-sm font-medium">React</span>
+            </div>
+            
+            <div className="bg-gray-50 p-4 rounded-lg text-center hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" className="w-8 h-8" />
+              </div>
+              <span className="text-sm font-medium">Node.js</span>
+            </div>
+            
+            <div className="bg-gray-50 p-4 rounded-lg text-center hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" className="w-8 h-8" />
+              </div>
+              <span className="text-sm font-medium">Python</span>
+            </div>
+            
+            <div className="bg-gray-50 p-4 rounded-lg text-center hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" className="w-8 h-8" />
+              </div>
+              <span className="text-sm font-medium">PHP</span>
+            </div>
+            
+            <div className="bg-gray-50 p-4 rounded-lg text-center hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" alt="WordPress" className="w-8 h-8" />
+              </div>
+              <span className="text-sm font-medium">WordPress</span>
+            </div>
+            
+            <div className="bg-gray-50 p-4 rounded-lg text-center hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular" className="w-8 h-8" />
+              </div>
+              <span className="text-sm font-medium">Angular</span>
+            </div>
+            
+            <div className="bg-gray-50 p-4 rounded-lg text-center hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js" className="w-8 h-8" />
+              </div>
+              <span className="text-sm font-medium">Vue.js</span>
+            </div>
+            
+            <div className="bg-gray-50 p-4 rounded-lg text-center hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" alt="Laravel" className="w-8 h-8" />
+              </div>
+              <span className="text-sm font-medium">Laravel</span>
+            </div>
+            
+            <div className="bg-gray-50 p-4 rounded-lg text-center hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" className="w-8 h-8" />
+              </div>
+              <span className="text-sm font-medium">Django</span>
+            </div>
+            
+            <div className="bg-gray-50 p-4 rounded-lg text-center hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" className="w-8 h-8" />
+              </div>
+              <span className="text-sm font-medium">MongoDB</span>
+            </div>
+            
+            <div className="bg-gray-50 p-4 rounded-lg text-center hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" className="w-8 h-8" />
+              </div>
+              <span className="text-sm font-medium">MySQL</span>
+            </div>
+            
+            <div className="bg-gray-50 p-4 rounded-lg text-center hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" className="w-8 h-8" />
+              </div>
+              <span className="text-sm font-medium">PostgreSQL</span>
+            </div>
+            
+            <div className="bg-gray-50 p-4 rounded-lg text-center hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS" className="w-8 h-8" />
+              </div>
+              <span className="text-sm font-medium">AWS</span>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Achievements Section */}
-      <section className="py-20 bg-primary text-white">
+      <section className="py-16 bg-primary text-white">
         <div className="max-w-[1440px] mx-auto px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Achievements</h2>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Achievements</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -371,13 +471,13 @@ export default function WebDevelopment() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 bg-gray-50">
         <div className="max-w-[1440px] mx-auto px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Grow Your Brand with Exceptional <span className="text-primary">Web Development</span>
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-lg text-gray-600">
               Accelerate growth and expansion with improved visibility and user engagement.
             </p>
           </div>
@@ -419,10 +519,10 @@ export default function WebDevelopment() {
       </section>
 
       {/* Expertise Section */}
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-[1440px] mx-auto px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Get Custom <span className="text-primary">Web Development Expertise</span> at XCon!
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
@@ -467,13 +567,13 @@ export default function WebDevelopment() {
       </section>
 
       {/* Portfolio Showcase Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 bg-gray-50">
         <div className="max-w-[1440px] mx-auto px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Complete <span className="text-primary">Web Development</span> - From Launch to Redesigns
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-lg text-gray-600">
               Showcasing our expertise in delivering comprehensive web solutions
             </p>
           </div>
