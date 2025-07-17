@@ -49,10 +49,12 @@ export default function Header() {
             </Link>
             
             {/* Services Mega Menu */}
-            <div className="relative">
+            <div 
+              className="relative"
+              onMouseEnter={() => setIsMegaMenuOpen(true)}
+              onMouseLeave={() => setIsMegaMenuOpen(false)}
+            >
               <button
-                onMouseEnter={() => setIsMegaMenuOpen(true)}
-                onMouseLeave={() => setIsMegaMenuOpen(false)}
                 className="text-white hover:text-primary transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full flex items-center space-x-1"
               >
                 <span>Services</span>
@@ -63,8 +65,6 @@ export default function Header() {
               {isMegaMenuOpen && (
                 <div 
                   className="fixed top-[104px] left-0 w-full bg-white shadow-2xl z-50 border-t border-gray-200"
-                  onMouseEnter={() => setIsMegaMenuOpen(true)}
-                  onMouseLeave={() => setIsMegaMenuOpen(false)}
                 >
                   <div className="max-w-[1440px] mx-auto px-8 py-12">
                     <div className="grid grid-cols-4 gap-8">
@@ -208,42 +208,18 @@ export default function Header() {
                           <div className="space-y-2 text-sm">
                             <div className="flex items-center text-gray-600">
                               <span className="w-4 h-4 mr-2">📞</span>
-                              <span>+1 (513) 302-4718</span>
+                              <a href="tel:+15133024718" className="hover:text-primary transition-colors">+1 (513) 302-4718</a>
                             </div>
                             <div className="flex items-center text-gray-600">
                               <span className="w-4 h-4 mr-2">✉️</span>
-                              <span>askforquote@xcontechnologies.com</span>
+                              <a href="mailto:askforquote@xcontechnologies.com" className="hover:text-primary transition-colors">askforquote@xcontechnologies.com</a>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                     
-                    {/* Bottom Statistics */}
-                    <div className="mt-8 pt-6 border-t border-gray-200">
-                      <div className="grid grid-cols-5 gap-8 text-center">
-                        <div>
-                          <div className="text-2xl font-bold text-primary">200+</div>
-                          <div className="text-sm text-gray-600">Projects Completed</div>
-                        </div>
-                        <div>
-                          <div className="text-2xl font-bold text-primary">50+</div>
-                          <div className="text-sm text-gray-600">Expert Developers</div>
-                        </div>
-                        <div>
-                          <div className="text-2xl font-bold text-primary">15+</div>
-                          <div className="text-sm text-gray-600">Countries Served</div>
-                        </div>
-                        <div>
-                          <div className="text-2xl font-bold text-primary">99%</div>
-                          <div className="text-sm text-gray-600">Success Rate</div>
-                        </div>
-                        <div>
-                          <div className="text-2xl font-bold text-primary">24/7</div>
-                          <div className="text-sm text-gray-600">Support Available</div>
-                        </div>
-                      </div>
-                    </div>
+
                   </div>
                 </div>
               )}
