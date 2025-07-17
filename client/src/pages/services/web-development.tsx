@@ -561,7 +561,7 @@ export default function WebDevelopment() {
                 <div className="flex items-start gap-6">
                   <div className="flex-1">
                     <div className="mb-4">
-                      <img src={xconLogo} alt="XCon Technologies" className="h-6 w-auto" />
+                      <img src={xconLogo} alt="XCon Technologies" className="h-4 w-auto" />
                     </div>
                     <h3 className="text-xl font-bold mb-3 text-gray-800">Beautiful Bathrooms In Dublin</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
@@ -569,7 +569,7 @@ export default function WebDevelopment() {
                     </p>
                   </div>
                   <div className="flex-shrink-0 w-64">
-                    <div className="bg-black rounded-lg p-2">
+                    <div className="bg-gray-100 rounded-lg p-2 flex items-center justify-center">
                       <img 
                         src={bathroomImage} 
                         alt="Beautiful Bathrooms In Dublin" 
@@ -584,7 +584,7 @@ export default function WebDevelopment() {
                 <div className="flex items-start gap-6">
                   <div className="flex-1">
                     <div className="mb-4">
-                      <img src={xconLogo} alt="XCon Technologies" className="h-6 w-auto" />
+                      <img src={xconLogo} alt="XCon Technologies" className="h-4 w-auto" />
                     </div>
                     <h3 className="text-xl font-bold mb-3 text-gray-800">Door 2 Door House Removal Services</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
@@ -592,7 +592,7 @@ export default function WebDevelopment() {
                     </p>
                   </div>
                   <div className="flex-shrink-0 w-64">
-                    <div className="bg-black rounded-lg p-2">
+                    <div className="bg-gray-100 rounded-lg p-2 flex items-center justify-center">
                       <img 
                         src={door2doorImage} 
                         alt="Door 2 Door House Removal Services" 
@@ -607,7 +607,7 @@ export default function WebDevelopment() {
                 <div className="flex items-start gap-6">
                   <div className="flex-1">
                     <div className="mb-4">
-                      <img src={xconLogo} alt="XCon Technologies" className="h-6 w-auto" />
+                      <img src={xconLogo} alt="XCon Technologies" className="h-4 w-auto" />
                     </div>
                     <h3 className="text-xl font-bold mb-3 text-gray-800">We construct your dream projects</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
@@ -615,7 +615,7 @@ export default function WebDevelopment() {
                     </p>
                   </div>
                   <div className="flex-shrink-0 w-64">
-                    <div className="bg-black rounded-lg p-2">
+                    <div className="bg-gray-100 rounded-lg p-2 flex items-center justify-center">
                       <img 
                         src={constructionImage} 
                         alt="We construct your dream projects" 
@@ -630,7 +630,7 @@ export default function WebDevelopment() {
                 <div className="flex items-start gap-6">
                   <div className="flex-1">
                     <div className="mb-4">
-                      <img src={xconLogo} alt="XCon Technologies" className="h-6 w-auto" />
+                      <img src={xconLogo} alt="XCon Technologies" className="h-4 w-auto" />
                     </div>
                     <h3 className="text-xl font-bold mb-3 text-gray-800">Carpets & Flooring Specialists</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
@@ -638,7 +638,7 @@ export default function WebDevelopment() {
                     </p>
                   </div>
                   <div className="flex-shrink-0 w-64">
-                    <div className="bg-black rounded-lg p-2">
+                    <div className="bg-gray-100 rounded-lg p-2 flex items-center justify-center">
                       <img 
                         src={carpetsImage} 
                         alt="Carpets & Flooring Specialists" 
@@ -653,7 +653,7 @@ export default function WebDevelopment() {
                 <div className="flex items-start gap-6">
                   <div className="flex-1">
                     <div className="mb-4">
-                      <img src={xconLogo} alt="XCon Technologies" className="h-6 w-auto" />
+                      <img src={xconLogo} alt="XCon Technologies" className="h-4 w-auto" />
                     </div>
                     <h3 className="text-xl font-bold mb-3 text-gray-800">E-Commerce Platform</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
@@ -661,7 +661,7 @@ export default function WebDevelopment() {
                     </p>
                   </div>
                   <div className="flex-shrink-0 w-64">
-                    <div className="bg-black rounded-lg p-2">
+                    <div className="bg-gray-100 rounded-lg p-2 flex items-center justify-center">
                       <img 
                         src={ecommerceImage} 
                         alt="E-Commerce Platform" 
@@ -676,7 +676,7 @@ export default function WebDevelopment() {
                 <div className="flex items-start gap-6">
                   <div className="flex-1">
                     <div className="mb-4">
-                      <img src={xconLogo} alt="XCon Technologies" className="h-6 w-auto" />
+                      <img src={xconLogo} alt="XCon Technologies" className="h-4 w-auto" />
                     </div>
                     <h3 className="text-xl font-bold mb-3 text-gray-800">Business Management System</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
@@ -684,7 +684,7 @@ export default function WebDevelopment() {
                     </p>
                   </div>
                   <div className="flex-shrink-0 w-64">
-                    <div className="bg-black rounded-lg p-2">
+                    <div className="bg-gray-100 rounded-lg p-2 flex items-center justify-center">
                       <img 
                         src={businessImage} 
                         alt="Business Management System" 
@@ -700,7 +700,7 @@ export default function WebDevelopment() {
                 <div className="flex items-start gap-6">
                   <div className="flex-1">
                     <div className="mb-4">
-                      <img src={xconLogo} alt="XCon Technologies" className="h-6 w-auto" />
+                      <img src={xconLogo} alt="XCon Technologies" className="h-4 w-auto" />
                     </div>
                     <h3 className="text-xl font-bold mb-3 text-gray-800">Beautiful Bathrooms In Dublin</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
@@ -708,7 +708,7 @@ export default function WebDevelopment() {
                     </p>
                   </div>
                   <div className="flex-shrink-0 w-64">
-                    <div className="bg-black rounded-lg p-2">
+                    <div className="bg-gray-100 rounded-lg p-2 flex items-center justify-center">
                       <img 
                         src={bathroomImage} 
                         alt="Beautiful Bathrooms In Dublin" 
@@ -723,7 +723,7 @@ export default function WebDevelopment() {
                 <div className="flex items-start gap-6">
                   <div className="flex-1">
                     <div className="mb-4">
-                      <img src={xconLogo} alt="XCon Technologies" className="h-6 w-auto" />
+                      <img src={xconLogo} alt="XCon Technologies" className="h-4 w-auto" />
                     </div>
                     <h3 className="text-xl font-bold mb-3 text-gray-800">Door 2 Door House Removal Services</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
@@ -731,7 +731,7 @@ export default function WebDevelopment() {
                     </p>
                   </div>
                   <div className="flex-shrink-0 w-64">
-                    <div className="bg-black rounded-lg p-2">
+                    <div className="bg-gray-100 rounded-lg p-2 flex items-center justify-center">
                       <img 
                         src={door2doorImage} 
                         alt="Door 2 Door House Removal Services" 
