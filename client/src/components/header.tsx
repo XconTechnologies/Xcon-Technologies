@@ -71,27 +71,27 @@ export default function Header() {
                       {/* Column 1 - Core Services */}
                       <div>
                         <div className="flex items-center mb-6">
-                          <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
+                          <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center mr-3">
                             <span className="text-white font-bold text-sm">CS</span>
                           </div>
                           <h3 className="text-lg font-bold text-gray-800">Core Services</h3>
                         </div>
                         <div className="space-y-4">
                           <div>
-                            <a href="/services/mobile-app-development" target="_blank" className="block text-blue-600 hover:text-primary transition-colors font-medium">
-                              ➤ Mobile App Development
+                            <a href="/services/mobile-app-development" target="_blank" className="block text-blue-500 hover:text-primary transition-colors font-medium">
+                              ▶ Mobile App Development
                             </a>
                             <p className="text-sm text-gray-500 mt-1">iOS, Android & Cross-platform apps</p>
                           </div>
                           <div>
-                            <a href="/services/web-development" target="_blank" className="block text-blue-600 hover:text-primary transition-colors font-medium">
-                              ➤ Web Development
+                            <a href="/services/web-development" target="_blank" className="block text-blue-500 hover:text-primary transition-colors font-medium">
+                              ▶ Web Development
                             </a>
                             <p className="text-sm text-gray-500 mt-1">Frontend, Backend & Full-stack solutions</p>
                           </div>
                           <div>
-                            <a href="/services/custom-software-development" target="_blank" className="block text-blue-600 hover:text-primary transition-colors font-medium">
-                              ➤ Custom Software Development
+                            <a href="/services/custom-software-development" target="_blank" className="block text-blue-500 hover:text-primary transition-colors font-medium">
+                              ▶ Custom Software Development
                             </a>
                             <p className="text-sm text-gray-500 mt-1">Enterprise & SaaS solutions</p>
                           </div>
@@ -101,27 +101,27 @@ export default function Header() {
                       {/* Column 2 - Specialized Support */}
                       <div>
                         <div className="flex items-center mb-6">
-                          <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center mr-3">
+                          <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center mr-3">
                             <span className="text-white font-bold text-sm">SS</span>
                           </div>
                           <h3 className="text-lg font-bold text-gray-800">Specialized Support</h3>
                         </div>
                         <div className="space-y-4">
                           <div>
-                            <a href="/services/cloud-services" target="_blank" className="block text-green-600 hover:text-primary transition-colors font-medium">
-                              ➤ Cloud Services
+                            <a href="/services/cloud-services" target="_blank" className="block text-green-500 hover:text-primary transition-colors font-medium">
+                              ▶ Cloud Services
                             </a>
                             <p className="text-sm text-gray-500 mt-1">AWS, Azure & Google Cloud solutions</p>
                           </div>
                           <div>
-                            <a href="/services/artificial-intelligence" target="_blank" className="block text-green-600 hover:text-primary transition-colors font-medium">
-                              ➤ AI & Machine Learning
+                            <a href="/services/artificial-intelligence" target="_blank" className="block text-green-500 hover:text-primary transition-colors font-medium">
+                              ▶ AI & Machine Learning
                             </a>
                             <p className="text-sm text-gray-500 mt-1">ML models & AI-powered solutions</p>
                           </div>
                           <div>
-                            <a href="/services/blockchain-development" target="_blank" className="block text-green-600 hover:text-primary transition-colors font-medium">
-                              ➤ Blockchain Development
+                            <a href="/services/blockchain-development" target="_blank" className="block text-green-500 hover:text-primary transition-colors font-medium">
+                              ▶ Blockchain Development
                             </a>
                             <p className="text-sm text-gray-500 mt-1">Smart contracts & DeFi solutions</p>
                           </div>

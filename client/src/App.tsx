@@ -9,6 +9,7 @@ import Internship from "@/pages/internship";
 import About from "@/pages/about";
 import Contact from "@/pages/contact";
 import Portfolio from "@/pages/portfolio";
+import Services from "@/pages/services";
 import NotFound from "@/pages/not-found";
 import MobileAppDevelopment from "@/pages/services/mobile-app-development";
 import WebDevelopment from "@/pages/services/web-development";
@@ -29,6 +30,7 @@ function Router() {
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/portfolio" component={Portfolio} />
+      <Route path="/services" component={Services} />
       <Route path="/services/mobile-app-development" component={MobileAppDevelopment} />
       <Route path="/services/web-development" component={WebDevelopment} />
       <Route path="/services/custom-software-development" component={CustomSoftwareDevelopment} />
