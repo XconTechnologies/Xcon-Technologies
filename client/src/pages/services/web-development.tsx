@@ -474,108 +474,128 @@ export default function WebDevelopment() {
           <div className="relative overflow-hidden">
             <div className="flex animate-scroll-left space-x-8 hover:pause-animation">
               {/* Project Cards */}
-              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[500px] hover:shadow-xl transition-shadow">
-                <div className="flex items-center mb-6">
-                  <div className="text-2xl font-bold text-primary">XCon</div>
-                  <div className="text-sm text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-6 w-[400px] hover:shadow-xl transition-shadow">
+                <div className="flex items-center mb-4">
+                  <div className="text-xl font-bold text-primary">XCon</div>
+                  <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
                 </div>
-                <div className="mb-6">
-                  <div className="bg-gray-100 rounded-lg p-4 mb-4">
-                    <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg h-32 flex items-center justify-center">
-                      <Monitor className="w-12 h-12 text-white" />
+                <div className="mb-4">
+                  <div className="bg-blue-600 rounded-lg h-40 flex items-center justify-center mb-3 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-700"></div>
+                    <div className="relative z-10 text-white text-center">
+                      <div className="w-8 h-8 bg-white rounded mx-auto mb-2 flex items-center justify-center">
+                        <div className="w-4 h-4 bg-blue-600 rounded"></div>
+                      </div>
+                      <div className="text-xs font-semibold">Beautiful Bathrooms</div>
+                      <div className="text-xs opacity-75">In Dublin</div>
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">Beautiful Bathrooms In Dublin</h3>
+                  <h3 className="text-lg font-semibold mb-2">Beautiful Bathrooms In Dublin</h3>
                   <p className="text-gray-600 text-sm">
                     Your ultimate source for innovative and high-quality bathroom solutions, expertly tailored to meet your needs
                   </p>
                 </div>
               </div>
 
-              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[500px] hover:shadow-xl transition-shadow">
-                <div className="flex items-center mb-6">
-                  <div className="text-2xl font-bold text-primary">XCon</div>
-                  <div className="text-sm text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-6 w-[400px] hover:shadow-xl transition-shadow">
+                <div className="flex items-center mb-4">
+                  <div className="text-xl font-bold text-primary">XCon</div>
+                  <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
                 </div>
-                <div className="mb-6">
-                  <div className="bg-gray-100 rounded-lg p-4 mb-4">
-                    <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-lg h-32 flex items-center justify-center">
-                      <Globe className="w-12 h-12 text-white" />
+                <div className="mb-4">
+                  <div className="bg-green-600 rounded-lg h-40 flex items-center justify-center mb-3 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-green-700"></div>
+                    <div className="relative z-10 text-white text-center">
+                      <Globe className="w-8 h-8 mx-auto mb-2" />
+                      <div className="text-xs font-semibold">Door 2 Door House</div>
+                      <div className="text-xs opacity-75">Removal Services</div>
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">Door 2 Door House Removal Services</h3>
+                  <h3 className="text-lg font-semibold mb-2">Door 2 Door House Removal Services</h3>
                   <p className="text-gray-600 text-sm">
                     Delivering affordability without compromise - explore our array of services at budget-friendly rates.
                   </p>
                 </div>
               </div>
 
-              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[500px] hover:shadow-xl transition-shadow">
-                <div className="flex items-center mb-6">
-                  <div className="text-2xl font-bold text-primary">XCon</div>
-                  <div className="text-sm text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-6 w-[400px] hover:shadow-xl transition-shadow">
+                <div className="flex items-center mb-4">
+                  <div className="text-xl font-bold text-primary">XCon</div>
+                  <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
                 </div>
-                <div className="mb-6">
-                  <div className="bg-gray-100 rounded-lg p-4 mb-4">
-                    <div className="bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg h-32 flex items-center justify-center">
-                      <Settings className="w-12 h-12 text-white" />
+                <div className="mb-4">
+                  <div className="bg-purple-600 rounded-lg h-40 flex items-center justify-center mb-3 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-purple-700"></div>
+                    <div className="relative z-10 text-white text-center">
+                      <Settings className="w-8 h-8 mx-auto mb-2" />
+                      <div className="text-xs font-semibold">We construct your</div>
+                      <div className="text-xs opacity-75">dream projects</div>
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">We construct your dream projects</h3>
+                  <h3 className="text-lg font-semibold mb-2">We construct your dream projects</h3>
                   <p className="text-gray-600 text-sm">
                     We specialize in all aspects of construction from home extensions, home renovations & new home builds.
                   </p>
                 </div>
               </div>
 
-              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[500px] hover:shadow-xl transition-shadow">
-                <div className="flex items-center mb-6">
-                  <div className="text-2xl font-bold text-primary">XCon</div>
-                  <div className="text-sm text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-6 w-[400px] hover:shadow-xl transition-shadow">
+                <div className="flex items-center mb-4">
+                  <div className="text-xl font-bold text-primary">XCon</div>
+                  <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
                 </div>
-                <div className="mb-6">
-                  <div className="bg-gray-100 rounded-lg p-4 mb-4">
-                    <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg h-32 flex items-center justify-center">
-                      <Palette className="w-12 h-12 text-white" />
+                <div className="mb-4">
+                  <div className="bg-orange-600 rounded-lg h-40 flex items-center justify-center mb-3 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-orange-700"></div>
+                    <div className="relative z-10 text-white text-center">
+                      <Palette className="w-8 h-8 mx-auto mb-2" />
+                      <div className="text-xs font-semibold">Carpets & Flooring</div>
+                      <div className="text-xs opacity-75">Specialists</div>
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">Carpets & Flooring Specialists</h3>
+                  <h3 className="text-lg font-semibold mb-2">Carpets & Flooring Specialists</h3>
                   <p className="text-gray-600 text-sm">
                     Work with a professional Interior Designer anywhere in Ireland from the comfort of your own home.
                   </p>
                 </div>
               </div>
 
-              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[500px] hover:shadow-xl transition-shadow">
-                <div className="flex items-center mb-6">
-                  <div className="text-2xl font-bold text-primary">XCon</div>
-                  <div className="text-sm text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-6 w-[400px] hover:shadow-xl transition-shadow">
+                <div className="flex items-center mb-4">
+                  <div className="text-xl font-bold text-primary">XCon</div>
+                  <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
                 </div>
-                <div className="mb-6">
-                  <div className="bg-gray-100 rounded-lg p-4 mb-4">
-                    <div className="bg-gradient-to-r from-teal-500 to-teal-600 rounded-lg h-32 flex items-center justify-center">
-                      <Code className="w-12 h-12 text-white" />
+                <div className="mb-4">
+                  <div className="bg-teal-600 rounded-lg h-40 flex items-center justify-center mb-3 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-teal-500 to-teal-700"></div>
+                    <div className="relative z-10 text-white text-center">
+                      <Monitor className="w-8 h-8 mx-auto mb-2" />
+                      <div className="text-xs font-semibold">E-Commerce</div>
+                      <div className="text-xs opacity-75">Platform</div>
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">E-Commerce Platform</h3>
+                  <h3 className="text-lg font-semibold mb-2">E-Commerce Platform</h3>
                   <p className="text-gray-600 text-sm">
                     Modern e-commerce solution with advanced features, secure payment processing, and seamless user experience.
                   </p>
                 </div>
               </div>
 
-              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[500px] hover:shadow-xl transition-shadow">
-                <div className="flex items-center mb-6">
-                  <div className="text-2xl font-bold text-primary">XCon</div>
-                  <div className="text-sm text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-6 w-[400px] hover:shadow-xl transition-shadow">
+                <div className="flex items-center mb-4">
+                  <div className="text-xl font-bold text-primary">XCon</div>
+                  <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
                 </div>
-                <div className="mb-6">
-                  <div className="bg-gray-100 rounded-lg p-4 mb-4">
-                    <div className="bg-gradient-to-r from-red-500 to-red-600 rounded-lg h-32 flex items-center justify-center">
-                      <Database className="w-12 h-12 text-white" />
+                <div className="mb-4">
+                  <div className="bg-red-600 rounded-lg h-40 flex items-center justify-center mb-3 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-red-500 to-red-700"></div>
+                    <div className="relative z-10 text-white text-center">
+                      <Database className="w-8 h-8 mx-auto mb-2" />
+                      <div className="text-xs font-semibold">Business Management</div>
+                      <div className="text-xs opacity-75">System</div>
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">Business Management System</h3>
+                  <h3 className="text-lg font-semibold mb-2">Business Management System</h3>
                   <p className="text-gray-600 text-sm">
                     Comprehensive business management platform with CRM, inventory management, and analytics dashboard.
                   </p>
@@ -583,36 +603,44 @@ export default function WebDevelopment() {
               </div>
 
               {/* Duplicate cards for seamless loop */}
-              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[500px] hover:shadow-xl transition-shadow">
-                <div className="flex items-center mb-6">
-                  <div className="text-2xl font-bold text-primary">XCon</div>
-                  <div className="text-sm text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-6 w-[400px] hover:shadow-xl transition-shadow">
+                <div className="flex items-center mb-4">
+                  <div className="text-xl font-bold text-primary">XCon</div>
+                  <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
                 </div>
-                <div className="mb-6">
-                  <div className="bg-gray-100 rounded-lg p-4 mb-4">
-                    <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg h-32 flex items-center justify-center">
-                      <Monitor className="w-12 h-12 text-white" />
+                <div className="mb-4">
+                  <div className="bg-blue-600 rounded-lg h-40 flex items-center justify-center mb-3 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-700"></div>
+                    <div className="relative z-10 text-white text-center">
+                      <div className="w-8 h-8 bg-white rounded mx-auto mb-2 flex items-center justify-center">
+                        <div className="w-4 h-4 bg-blue-600 rounded"></div>
+                      </div>
+                      <div className="text-xs font-semibold">Beautiful Bathrooms</div>
+                      <div className="text-xs opacity-75">In Dublin</div>
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">Beautiful Bathrooms In Dublin</h3>
+                  <h3 className="text-lg font-semibold mb-2">Beautiful Bathrooms In Dublin</h3>
                   <p className="text-gray-600 text-sm">
                     Your ultimate source for innovative and high-quality bathroom solutions, expertly tailored to meet your needs
                   </p>
                 </div>
               </div>
 
-              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[500px] hover:shadow-xl transition-shadow">
-                <div className="flex items-center mb-6">
-                  <div className="text-2xl font-bold text-primary">XCon</div>
-                  <div className="text-sm text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-6 w-[400px] hover:shadow-xl transition-shadow">
+                <div className="flex items-center mb-4">
+                  <div className="text-xl font-bold text-primary">XCon</div>
+                  <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
                 </div>
-                <div className="mb-6">
-                  <div className="bg-gray-100 rounded-lg p-4 mb-4">
-                    <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-lg h-32 flex items-center justify-center">
-                      <Globe className="w-12 h-12 text-white" />
+                <div className="mb-4">
+                  <div className="bg-green-600 rounded-lg h-40 flex items-center justify-center mb-3 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-green-700"></div>
+                    <div className="relative z-10 text-white text-center">
+                      <Globe className="w-8 h-8 mx-auto mb-2" />
+                      <div className="text-xs font-semibold">Door 2 Door House</div>
+                      <div className="text-xs opacity-75">Removal Services</div>
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">Door 2 Door House Removal Services</h3>
+                  <h3 className="text-lg font-semibold mb-2">Door 2 Door House Removal Services</h3>
                   <p className="text-gray-600 text-sm">
                     Delivering affordability without compromise - explore our array of services at budget-friendly rates.
                   </p>
@@ -624,7 +652,7 @@ export default function WebDevelopment() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary to-primary/80 text-white">
+      <section className="py-20 bg-primary text-white">
         <div className="max-w-[1440px] mx-auto px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Ready to Transform Your Online Presence?
