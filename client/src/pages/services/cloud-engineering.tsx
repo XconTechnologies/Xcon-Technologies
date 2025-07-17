@@ -1,13 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, ArrowRight, Globe, Users, Code, Zap } from "lucide-react";
+import { CheckCircle, ArrowRight, Cloud, Server, Shield, Zap } from "lucide-react";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import QuoteModal from "@/components/quote-modal";
 import { useState } from "react";
 
-export default function WebDevelopment() {
+export default function CloudEngineering() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
 
   return (
@@ -15,18 +15,18 @@ export default function WebDevelopment() {
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-black to-gray-900 text-white py-20 pt-32">
+      <section className="bg-gradient-to-r from-sky-900 to-indigo-900 text-white py-20 pt-32">
         <div className="max-w-[1440px] mx-auto px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <Badge className="bg-primary/20 text-primary border-primary/30 mb-4">
-                Core Service
+                Specialized Service
               </Badge>
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                <span className="text-primary">Web Development</span> Services
+                <span className="text-primary">Cloud Engineering</span> Excellence
               </h1>
               <p className="text-xl text-gray-300 mb-8">
-                Create responsive and scalable web applications that drive business growth and enhance user experience
+                Architect, deploy, and optimize cloud infrastructure that scales with your business. Modern cloud solutions for maximum performance and cost efficiency.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
@@ -42,13 +42,22 @@ export default function WebDevelopment() {
                   variant="outline"
                   className="border-white text-black bg-white hover:bg-gray-100"
                 >
-                  View Portfolio
+                  View Cloud Projects
                 </Button>
               </div>
             </div>
             <div className="relative">
-              <div className="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center mx-auto">
-                <Globe className="w-8 h-8 text-primary" />
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+                  <Cloud className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <h3 className="font-semibold mb-1">Cloud Migration</h3>
+                  <p className="text-sm text-gray-300">Seamless transition</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+                  <Server className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <h3 className="font-semibold mb-1">Infrastructure</h3>
+                  <p className="text-sm text-gray-300">Scalable architecture</p>
+                </div>
               </div>
             </div>
           </div>
@@ -61,39 +70,39 @@ export default function WebDevelopment() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
               <h2 className="text-3xl font-bold mb-6">
-                Professional <span className="text-primary">Web Development</span>
+                Modern <span className="text-primary">Cloud Solutions</span>
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                Our web development services cover everything from simple websites to complex web applications. 
-                We use modern technologies and frameworks to build scalable, secure, and user-friendly solutions.
+                We design and implement cloud architectures that provide scalability, reliability, and security. 
+                Our cloud engineering services help businesses leverage the full power of cloud computing.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex items-start">
                   <CheckCircle className="h-6 w-6 text-primary mr-3 mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold mb-2">Frontend Development</h3>
-                    <p className="text-gray-600">Modern, responsive user interfaces using React, Vue.js, and Angular</p>
+                    <h3 className="font-semibold mb-2">Cloud Migration</h3>
+                    <p className="text-gray-600">Seamless transition from on-premises to cloud</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-6 w-6 text-primary mr-3 mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold mb-2">Backend Development</h3>
-                    <p className="text-gray-600">Robust server-side solutions with Node.js, Python, and PHP</p>
+                    <h3 className="font-semibold mb-2">Infrastructure as Code</h3>
+                    <p className="text-gray-600">Automated infrastructure provisioning and management</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-6 w-6 text-primary mr-3 mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold mb-2">Full-stack Solutions</h3>
-                    <p className="text-gray-600">End-to-end development with integrated frontend and backend</p>
+                    <h3 className="font-semibold mb-2">Auto-scaling Solutions</h3>
+                    <p className="text-gray-600">Dynamic resource allocation based on demand</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-6 w-6 text-primary mr-3 mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold mb-2">E-commerce Platforms</h3>
-                    <p className="text-gray-600">Custom online stores with payment integration and inventory management</p>
+                    <h3 className="font-semibold mb-2">Cost Optimization</h3>
+                    <p className="text-gray-600">Reduce cloud costs while maintaining performance</p>
                   </div>
                 </div>
               </div>
@@ -105,20 +114,20 @@ export default function WebDevelopment() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Projects Completed</span>
-                    <span className="font-semibold">100+</span>
+                    <span className="text-gray-600">Cloud Deployments</span>
+                    <span className="font-semibold">60+</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Average Timeline</span>
-                    <span className="font-semibold">2-4 months</span>
+                    <span className="font-semibold">1-3 months</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Team Size</span>
-                    <span className="font-semibold">5-8 developers</span>
+                    <span className="text-gray-600">Cost Savings</span>
+                    <span className="font-semibold">40%</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Success Rate</span>
-                    <span className="font-semibold">98%</span>
+                    <span className="text-gray-600">Uptime</span>
+                    <span className="font-semibold">99.9%</span>
                   </div>
                 </CardContent>
               </Card>
@@ -132,21 +141,21 @@ export default function WebDevelopment() {
         <div className="max-w-[1440px] mx-auto px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Technologies We <span className="text-primary">Use</span>
+              Cloud <span className="text-primary">Platforms</span>
             </h2>
             <p className="text-lg text-gray-600">
-              We leverage cutting-edge technologies to deliver modern web solutions
+              We work with leading cloud platforms and modern DevOps tools
             </p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {[
-              "React", "Node.js", "Next.js", "Vue.js", "Angular", "Python",
-              "Django", "Flask", "Express", "MongoDB", "PostgreSQL", "MySQL"
+              "AWS", "Azure", "Google Cloud", "Docker", "Kubernetes", "Terraform",
+              "Jenkins", "GitLab CI", "Ansible", "CloudFormation", "Helm", "Prometheus"
             ].map((tech, index) => (
               <div key={index} className="bg-white p-4 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <Code className="w-6 h-6 text-primary" />
+                  <Cloud className="w-6 h-6 text-primary" />
                 </div>
                 <span className="text-sm font-medium">{tech}</span>
               </div>
@@ -160,39 +169,39 @@ export default function WebDevelopment() {
         <div className="max-w-[1440px] mx-auto px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Our <span className="text-primary">Development Process</span>
+              Cloud <span className="text-primary">Engineering Process</span>
             </h2>
             <p className="text-lg text-gray-600">
-              A proven methodology that ensures quality and timely delivery
+              Systematic approach to cloud transformation and optimization
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
               {
-                step: "01",
-                title: "Planning & Analysis",
-                description: "Understand requirements and create project roadmap"
+                icon: <Shield className="w-8 h-8" />,
+                title: "Assessment & Planning",
+                description: "Evaluate current infrastructure and define cloud strategy"
               },
               {
-                step: "02", 
-                title: "Design & Prototype",
-                description: "Create wireframes and interactive prototypes"
+                icon: <Server className="w-8 h-8" />,
+                title: "Architecture Design",
+                description: "Design scalable and secure cloud architecture"
               },
               {
-                step: "03",
-                title: "Development",
-                description: "Build the application with regular updates"
+                icon: <Cloud className="w-8 h-8" />,
+                title: "Migration & Deployment",
+                description: "Execute migration and deploy cloud infrastructure"
               },
               {
-                step: "04",
-                title: "Testing & Launch",
-                description: "Quality assurance and deployment"
+                icon: <Zap className="w-8 h-8" />,
+                title: "Optimization & Monitoring",
+                description: "Optimize performance and monitor cloud resources"
               }
             ].map((phase, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold text-lg">{phase.step}</span>
+                <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <div className="text-primary">{phase.icon}</div>
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{phase.title}</h3>
                 <p className="text-gray-600">{phase.description}</p>
@@ -206,10 +215,10 @@ export default function WebDevelopment() {
       <section className="py-16 bg-gradient-to-r from-primary to-primary/80 text-white">
         <div className="max-w-[1440px] mx-auto px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Build Your Web Application?
+            Ready to Move to the Cloud?
           </h2>
           <p className="text-xl mb-8 text-white/90">
-            Let's discuss your project and create something amazing together
+            Transform your infrastructure with our expert cloud engineering services
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
