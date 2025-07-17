@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, ArrowRight, Globe, Users, Code, Zap } from "lucide-react";
+import { CheckCircle, ArrowRight, Globe, Code, Smartphone, Monitor, Database, Shield, Zap, Users, Star, TrendingUp, Search, Palette, Server, Settings, Eye } from "lucide-react";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import QuoteModal from "@/components/quote-modal";
@@ -15,136 +15,312 @@ export default function WebDevelopment() {
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-black to-gray-900 text-white py-20 pt-32">
-        <div className="max-w-[1440px] mx-auto px-8">
+      <section className="bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white py-20 pt-32 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-50" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+        }}></div>
+        <div className="max-w-[1440px] mx-auto px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <Badge className="bg-primary/20 text-primary border-primary/30 mb-4">
                 Core Service
               </Badge>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                <span className="text-primary">Web Development</span> Services
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                <span className="text-primary">Custom Web Development</span> Services
               </h1>
-              <p className="text-xl text-gray-300 mb-8">
-                Create responsive and scalable web applications that drive business growth and enhance user experience
+              <p className="text-xl md:text-2xl text-gray-300 mb-4">
+                Built for User-Focused, Scalable Web Solutions!
+              </p>
+              <p className="text-lg text-gray-400 mb-8">
+                Looking for website designers for small business? We design websites to maximize user interaction and engagement. Our web design development services provide scalable, high-performance digital platforms with streamlined UI/UX.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg"
                   onClick={() => setIsQuoteModalOpen(true)}
-                  className="bg-primary hover:bg-primary/90 text-white"
+                  className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg"
                 >
                   Get A Quote
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button 
                   size="lg"
                   variant="outline"
-                  className="border-white text-black bg-white hover:bg-gray-100"
+                  className="border-white text-white bg-transparent hover:bg-white hover:text-black px-8 py-3 text-lg"
                 >
-                  View Portfolio
+                  View Our Portfolio
                 </Button>
               </div>
             </div>
             <div className="relative">
-              <div className="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center mx-auto">
-                <Globe className="w-8 h-8 text-primary" />
+              <div className="grid grid-cols-2 gap-6">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/20 transition-colors">
+                  <Monitor className="w-12 h-12 text-primary mx-auto mb-4" />
+                  <h3 className="font-semibold mb-2 text-lg">Responsive Design</h3>
+                  <p className="text-sm text-gray-300">Mobile-first approach</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/20 transition-colors">
+                  <Zap className="w-12 h-12 text-primary mx-auto mb-4" />
+                  <h3 className="font-semibold mb-2 text-lg">Fast Performance</h3>
+                  <p className="text-sm text-gray-300">Optimized loading</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/20 transition-colors">
+                  <Shield className="w-12 h-12 text-primary mx-auto mb-4" />
+                  <h3 className="font-semibold mb-2 text-lg">Secure Solutions</h3>
+                  <p className="text-sm text-gray-300">Data protection</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/20 transition-colors">
+                  <Search className="w-12 h-12 text-primary mx-auto mb-4" />
+                  <h3 className="font-semibold mb-2 text-lg">SEO Optimized</h3>
+                  <p className="text-sm text-gray-300">Search visibility</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Service Overview */}
-      <section className="py-16 bg-white">
+      {/* Services Offered Section */}
+      <section className="py-20 bg-white">
         <div className="max-w-[1440px] mx-auto px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="lg:col-span-2">
-              <h2 className="text-3xl font-bold mb-6">
-                Professional <span className="text-primary">Web Development</span>
-              </h2>
-              <p className="text-lg text-gray-600 mb-6">
-                Our web development services cover everything from simple websites to complex web applications. 
-                We use modern technologies and frameworks to build scalable, secure, and user-friendly solutions.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="flex items-start">
-                  <CheckCircle className="h-6 w-6 text-primary mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold mb-2">Frontend Development</h3>
-                    <p className="text-gray-600">Modern, responsive user interfaces using React, Vue.js, and Angular</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle className="h-6 w-6 text-primary mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold mb-2">Backend Development</h3>
-                    <p className="text-gray-600">Robust server-side solutions with Node.js, Python, and PHP</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle className="h-6 w-6 text-primary mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold mb-2">Full-stack Solutions</h3>
-                    <p className="text-gray-600">End-to-end development with integrated frontend and backend</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle className="h-6 w-6 text-primary mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold mb-2">E-commerce Platforms</h3>
-                    <p className="text-gray-600">Custom online stores with payment integration and inventory management</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Service Highlights</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Projects Completed</span>
-                    <span className="font-semibold">100+</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Average Timeline</span>
-                    <span className="font-semibold">2-4 months</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Team Size</span>
-                    <span className="font-semibold">5-8 developers</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Success Rate</span>
-                    <span className="font-semibold">98%</span>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Technologies */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-[1440px] mx-auto px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Technologies We <span className="text-primary">Use</span>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              What <span className="text-primary">Custom Web Development</span> Services We Offer?
             </h2>
-            <p className="text-lg text-gray-600">
-              We leverage cutting-edge technologies to deliver modern web solutions
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Custom Website Development for Maximum Reach
             </p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="p-6 hover:shadow-lg transition-shadow border-l-4 border-l-primary">
+              <CardHeader className="pb-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <Palette className="w-6 h-6 text-primary" />
+                </div>
+                <CardTitle className="text-xl">UI/UX Web Design</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Our team creates visually engaging, user-focused designs that enhance engagement and brand alignment. Using tools like Figma and Adobe Creative Cloud, our developers deliver interfaces that are pixel-perfect and accessible across all devices.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="p-6 hover:shadow-lg transition-shadow border-l-4 border-l-primary">
+              <CardHeader className="pb-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <Monitor className="w-6 h-6 text-primary" />
+                </div>
+                <CardTitle className="text-xl">Frontend Development</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Our developers create fast, SEO-optimized interfaces with modern technologies to ensure seamless experience across all devices. Our flexible approach improves performance and scalability for higher conversion rates.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="p-6 hover:shadow-lg transition-shadow border-l-4 border-l-primary">
+              <CardHeader className="pb-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <Server className="w-6 h-6 text-primary" />
+                </div>
+                <CardTitle className="text-xl">Backend Development</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  With expertise in server-side frameworks like Node.js and Python, our custom website development company develops scalable backend systems that power reliable web applications with seamless API functionality.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="p-6 hover:shadow-lg transition-shadow border-l-4 border-l-primary">
+              <CardHeader className="pb-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <Code className="w-6 h-6 text-primary" />
+                </div>
+                <CardTitle className="text-xl">Full Stack Development</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Our full-stack developers offer end-to-end solutions that connect all web application components. We build dynamic, scalable applications designed to provide cohesive user experience and support long-term growth.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="p-6 hover:shadow-lg transition-shadow border-l-4 border-l-primary">
+              <CardHeader className="pb-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <Settings className="w-6 h-6 text-primary" />
+                </div>
+                <CardTitle className="text-xl">No/Low Code Development</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Rapid development solutions using modern no-code and low-code platforms to accelerate your project timeline while maintaining quality and functionality for your business needs.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="p-6 hover:shadow-lg transition-shadow border-l-4 border-l-primary">
+              <CardHeader className="pb-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <Globe className="w-6 h-6 text-primary" />
+                </div>
+                <CardTitle className="text-xl">Cloud Development</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Modern cloud-based solutions that provide scalability, security, and performance optimization. Our cloud development services ensure your web applications can handle growth and traffic spikes effectively.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Solutions Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-[1440px] mx-auto px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="text-primary">Web Development Solutions</span> to Expand Your Business
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="bg-white rounded-xl p-8 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Globe className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Websites</h3>
+              <p className="text-gray-600">Professional business websites with modern design and functionality</p>
+            </div>
+            
+            <div className="bg-white rounded-xl p-8 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Monitor className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">E-Commerce</h3>
+              <p className="text-gray-600">Complete online stores with payment integration and inventory management</p>
+            </div>
+            
+            <div className="bg-white rounded-xl p-8 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Code className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Web Applications</h3>
+              <p className="text-gray-600">Custom web applications tailored to your business processes</p>
+            </div>
+            
+            <div className="bg-white rounded-xl p-8 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Database className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">CMS</h3>
+              <p className="text-gray-600">Content management systems for easy website updates and maintenance</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose XCon Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-[1440px] mx-auto px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Why Choose <span className="text-primary">XCon</span> for Custom Website Development?
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Shield className="w-10 h-10 text-primary" />
+              </div>
+              <h3 className="text-2xl font-semibold mb-4">Security Measures</h3>
+              <p className="text-gray-600">
+                Implement secure data handling, encryption, and ongoing monitoring to safeguard both websites and users from potential threats.
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Zap className="w-10 h-10 text-primary" />
+              </div>
+              <h3 className="text-2xl font-semibold mb-4">Enhanced Performance</h3>
+              <p className="text-gray-600">
+                Optimized code, fast loading times, and efficient database queries ensure your website performs at its best under all conditions.
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Settings className="w-10 h-10 text-primary" />
+              </div>
+              <h3 className="text-2xl font-semibold mb-4">Flexible Architecture</h3>
+              <p className="text-gray-600">
+                Scalable and modular architecture that grows with your business needs and adapts to changing requirements.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Process Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-[1440px] mx-auto px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="text-primary">Web Development</span> Our Process
+            </h2>
+            <p className="text-xl text-gray-600">
+              Our custom web development solutions leverage cutting-edge technologies to deliver innovative and effective software for high-end websites.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8">
             {[
-              "React", "Node.js", "Next.js", "Vue.js", "Angular", "Python",
-              "Django", "Flask", "Express", "MongoDB", "PostgreSQL", "MySQL"
+              { icon: <Search className="w-8 h-8" />, title: "Discovery & Planning", step: "01" },
+              { icon: <Eye className="w-8 h-8" />, title: "Research & Analysis", step: "02" },
+              { icon: <Palette className="w-8 h-8" />, title: "Design & Prototyping", step: "03" },
+              { icon: <Code className="w-8 h-8" />, title: "Development", step: "04" },
+              { icon: <Shield className="w-8 h-8" />, title: "Quality Assurance", step: "05" },
+              { icon: <Globe className="w-8 h-8" />, title: "Launch Strategy", step: "06" }
+            ].map((phase, index) => (
+              <div key={index} className="text-center">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 relative">
+                  <div className="text-white">{phase.icon}</div>
+                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-white rounded-full flex items-center justify-center text-xs font-bold text-primary">
+                    {phase.step}
+                  </div>
+                </div>
+                <h3 className="text-lg font-semibold mb-2">{phase.title}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Tech Stack Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-[1440px] mx-auto px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="text-primary">Tech Stack</span> We Use
+            </h2>
+            <p className="text-xl text-gray-600">
+              Our Web development solutions use the latest technologies for development according to your business. With a dedicated team of expert developers, we deliver innovative solutions.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
+            {[
+              "HTML", "CSS", "JavaScript", "React", "Node.js", "Python", "PHP", "WordPress",
+              "Angular", "Vue.js", "Laravel", "Django", "MongoDB", "MySQL", "PostgreSQL", "AWS"
             ].map((tech, index) => (
-              <div key={index} className="bg-white p-4 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+              <div key={index} className="bg-gray-50 p-4 rounded-lg text-center hover:shadow-md transition-shadow">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
                   <Code className="w-6 h-6 text-primary" />
                 </div>
@@ -155,75 +331,156 @@ export default function WebDevelopment() {
         </div>
       </section>
 
-      {/* Process */}
-      <section className="py-16 bg-white">
+      {/* Achievements Section */}
+      <section className="py-20 bg-primary text-white">
         <div className="max-w-[1440px] mx-auto px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Our <span className="text-primary">Development Process</span>
-            </h2>
-            <p className="text-lg text-gray-600">
-              A proven methodology that ensures quality and timely delivery
-            </p>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Achievements</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[
-              {
-                step: "01",
-                title: "Planning & Analysis",
-                description: "Understand requirements and create project roadmap"
-              },
-              {
-                step: "02", 
-                title: "Design & Prototype",
-                description: "Create wireframes and interactive prototypes"
-              },
-              {
-                step: "03",
-                title: "Development",
-                description: "Build the application with regular updates"
-              },
-              {
-                step: "04",
-                title: "Testing & Launch",
-                description: "Quality assurance and deployment"
-              }
-            ].map((phase, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold text-lg">{phase.step}</span>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">{phase.title}</h3>
-                <p className="text-gray-600">{phase.description}</p>
+            <div className="text-center">
+              <div className="text-5xl font-bold mb-2">60+</div>
+              <div className="text-xl">Web Experts</div>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl font-bold mb-2">200+</div>
+              <div className="text-xl">Successful Projects</div>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl font-bold mb-2 flex items-center justify-center">
+                4.8 <Star className="w-8 h-8 text-yellow-400 ml-2" />
               </div>
-            ))}
+              <div className="text-xl">GoodFirms Rating</div>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl font-bold mb-2 flex items-center justify-center">
+                4.9 <Star className="w-8 h-8 text-yellow-400 ml-2" />
+              </div>
+              <div className="text-xl">Clutch Rating</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-[1440px] mx-auto px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Grow Your Brand with Exceptional <span className="text-primary">Web Development</span>
+            </h2>
+            <p className="text-xl text-gray-600">
+              Accelerate growth and expansion with improved visibility and user engagement.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Eye className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Enhanced Brand Visibility</h3>
+              <p className="text-gray-600">Increase your online presence and reach more customers</p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <TrendingUp className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Flexible Growth Solutions</h3>
+              <p className="text-gray-600">Scale your website as your business grows</p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Globe className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Global Access</h3>
+              <p className="text-gray-600">Reach customers worldwide with responsive design</p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Valuable User Insights</h3>
+              <p className="text-gray-600">Analytics and data to understand your audience</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Expertise Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-[1440px] mx-auto px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Get Custom <span className="text-primary">Web Development Expertise</span> at XCon!
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+              We don't proclaim to be the best custom website development company, but we take pride in our expertise. Our professional, full-service in-house team follows a modern web development process to deliver efficient, secure, and scalable products that businesses trust and appreciate.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Code className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Modern Tech Expertise</h3>
+              <p className="text-gray-600">Latest technologies and frameworks</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Industry Expertise</h3>
+              <p className="text-gray-600">Deep understanding of various industries</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Zap className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Faster Launch Times</h3>
+              <p className="text-gray-600">Efficient development process</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Settings className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Efficient Workflow</h3>
+              <p className="text-gray-600">Streamlined development process</p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-primary to-primary/80 text-white">
+      <section className="py-20 bg-gradient-to-r from-primary to-primary/80 text-white">
         <div className="max-w-[1440px] mx-auto px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Build Your Web Application?
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Web Development Complete - From Launch to Redesigns
           </h2>
-          <p className="text-xl mb-8 text-white/90">
-            Let's discuss your project and create something amazing together
+          <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
+            Ready to transform your online presence with professional web development? Let's create something amazing together.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg"
               onClick={() => setIsQuoteModalOpen(true)}
-              className="bg-white text-primary hover:bg-gray-100"
+              className="bg-white text-primary hover:bg-gray-100 px-8 py-3 text-lg"
             >
               Get A Quote
-              <ArrowRight className="ml-2 h-4 w-4" />
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button 
               size="lg"
               variant="outline"
-              className="border-white text-white bg-transparent hover:bg-white hover:text-primary"
+              className="border-white text-white bg-transparent hover:bg-white hover:text-primary px-8 py-3 text-lg"
             >
               Schedule Consultation
             </Button>
