@@ -459,14 +459,178 @@ export default function WebDevelopment() {
         </div>
       </section>
 
+      {/* Portfolio Showcase Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-[1440px] mx-auto px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Complete <span className="text-primary">Web Development</span> - From Launch to Redesigns
+            </h2>
+            <p className="text-xl text-gray-600">
+              Showcasing our expertise in delivering comprehensive web solutions
+            </p>
+          </div>
+          
+          <div className="relative overflow-hidden">
+            <div className="flex animate-scroll-left space-x-8 hover:pause-animation">
+              {/* Project Cards */}
+              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[500px] hover:shadow-xl transition-shadow">
+                <div className="flex items-center mb-6">
+                  <div className="text-2xl font-bold text-primary">XCon</div>
+                  <div className="text-sm text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+                </div>
+                <div className="mb-6">
+                  <div className="bg-gray-100 rounded-lg p-4 mb-4">
+                    <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg h-32 flex items-center justify-center">
+                      <Monitor className="w-12 h-12 text-white" />
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">Beautiful Bathrooms In Dublin</h3>
+                  <p className="text-gray-600 text-sm">
+                    Your ultimate source for innovative and high-quality bathroom solutions, expertly tailored to meet your needs
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[500px] hover:shadow-xl transition-shadow">
+                <div className="flex items-center mb-6">
+                  <div className="text-2xl font-bold text-primary">XCon</div>
+                  <div className="text-sm text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+                </div>
+                <div className="mb-6">
+                  <div className="bg-gray-100 rounded-lg p-4 mb-4">
+                    <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-lg h-32 flex items-center justify-center">
+                      <Globe className="w-12 h-12 text-white" />
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">Door 2 Door House Removal Services</h3>
+                  <p className="text-gray-600 text-sm">
+                    Delivering affordability without compromise - explore our array of services at budget-friendly rates.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[500px] hover:shadow-xl transition-shadow">
+                <div className="flex items-center mb-6">
+                  <div className="text-2xl font-bold text-primary">XCon</div>
+                  <div className="text-sm text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+                </div>
+                <div className="mb-6">
+                  <div className="bg-gray-100 rounded-lg p-4 mb-4">
+                    <div className="bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg h-32 flex items-center justify-center">
+                      <Settings className="w-12 h-12 text-white" />
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">We construct your dream projects</h3>
+                  <p className="text-gray-600 text-sm">
+                    We specialize in all aspects of construction from home extensions, home renovations & new home builds.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[500px] hover:shadow-xl transition-shadow">
+                <div className="flex items-center mb-6">
+                  <div className="text-2xl font-bold text-primary">XCon</div>
+                  <div className="text-sm text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+                </div>
+                <div className="mb-6">
+                  <div className="bg-gray-100 rounded-lg p-4 mb-4">
+                    <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg h-32 flex items-center justify-center">
+                      <Palette className="w-12 h-12 text-white" />
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">Carpets & Flooring Specialists</h3>
+                  <p className="text-gray-600 text-sm">
+                    Work with a professional Interior Designer anywhere in Ireland from the comfort of your own home.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[500px] hover:shadow-xl transition-shadow">
+                <div className="flex items-center mb-6">
+                  <div className="text-2xl font-bold text-primary">XCon</div>
+                  <div className="text-sm text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+                </div>
+                <div className="mb-6">
+                  <div className="bg-gray-100 rounded-lg p-4 mb-4">
+                    <div className="bg-gradient-to-r from-teal-500 to-teal-600 rounded-lg h-32 flex items-center justify-center">
+                      <Code className="w-12 h-12 text-white" />
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">E-Commerce Platform</h3>
+                  <p className="text-gray-600 text-sm">
+                    Modern e-commerce solution with advanced features, secure payment processing, and seamless user experience.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[500px] hover:shadow-xl transition-shadow">
+                <div className="flex items-center mb-6">
+                  <div className="text-2xl font-bold text-primary">XCon</div>
+                  <div className="text-sm text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+                </div>
+                <div className="mb-6">
+                  <div className="bg-gray-100 rounded-lg p-4 mb-4">
+                    <div className="bg-gradient-to-r from-red-500 to-red-600 rounded-lg h-32 flex items-center justify-center">
+                      <Database className="w-12 h-12 text-white" />
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">Business Management System</h3>
+                  <p className="text-gray-600 text-sm">
+                    Comprehensive business management platform with CRM, inventory management, and analytics dashboard.
+                  </p>
+                </div>
+              </div>
+
+              {/* Duplicate cards for seamless loop */}
+              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[500px] hover:shadow-xl transition-shadow">
+                <div className="flex items-center mb-6">
+                  <div className="text-2xl font-bold text-primary">XCon</div>
+                  <div className="text-sm text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+                </div>
+                <div className="mb-6">
+                  <div className="bg-gray-100 rounded-lg p-4 mb-4">
+                    <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg h-32 flex items-center justify-center">
+                      <Monitor className="w-12 h-12 text-white" />
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">Beautiful Bathrooms In Dublin</h3>
+                  <p className="text-gray-600 text-sm">
+                    Your ultimate source for innovative and high-quality bathroom solutions, expertly tailored to meet your needs
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[500px] hover:shadow-xl transition-shadow">
+                <div className="flex items-center mb-6">
+                  <div className="text-2xl font-bold text-primary">XCon</div>
+                  <div className="text-sm text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+                </div>
+                <div className="mb-6">
+                  <div className="bg-gray-100 rounded-lg p-4 mb-4">
+                    <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-lg h-32 flex items-center justify-center">
+                      <Globe className="w-12 h-12 text-white" />
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">Door 2 Door House Removal Services</h3>
+                  <p className="text-gray-600 text-sm">
+                    Delivering affordability without compromise - explore our array of services at budget-friendly rates.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-primary to-primary/80 text-white">
         <div className="max-w-[1440px] mx-auto px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Web Development Complete - From Launch to Redesigns
+            Ready to Transform Your Online Presence?
           </h2>
           <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
-            Ready to transform your online presence with professional web development? Let's create something amazing together.
+            Join our satisfied clients and let's create something amazing together. Professional web development services tailored to your business needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
