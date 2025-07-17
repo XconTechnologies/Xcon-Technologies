@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -9,10 +8,11 @@ import {
   Smartphone, 
   Globe, 
   Cloud, 
-  Database, 
-  Settings, 
-  Shield,
-  MessageSquare,
+  Brain, 
+  Gamepad2, 
+  TrendingUp, 
+  Users,
+  Blocks,
   ArrowRight,
   CheckCircle,
   Star
@@ -22,6 +22,24 @@ import Footer from "@/components/footer";
 import QuoteModal from "@/components/quote-modal";
 
 const services = [
+  {
+    id: "mobile-app-development",
+    title: "Mobile App Development",
+    description: "Build native and cross-platform mobile applications",
+    icon: <Smartphone className="w-8 h-8" />,
+    category: "core",
+    features: [
+      "Native iOS Development",
+      "Native Android Development", 
+      "Cross-platform Development",
+      "UI/UX Design",
+      "App Store Optimization",
+      "Maintenance & Support"
+    ],
+    technologies: ["React Native", "Flutter", "Swift", "Kotlin", "Xamarin"],
+    projects: "50+ Mobile Apps",
+    timeline: "3-6 months"
+  },
   {
     id: "web-development",
     title: "Web Development",
@@ -41,9 +59,9 @@ const services = [
     timeline: "2-4 months"
   },
   {
-    id: "software-development",
-    title: "Software Development",
-    description: "Custom enterprise software solutions tailored to your needs",
+    id: "custom-software-development",
+    title: "Custom Software Development",
+    description: "Enterprise-grade software solutions tailored to your needs",
     icon: <Code className="w-8 h-8" />,
     category: "core",
     features: [
@@ -55,133 +73,115 @@ const services = [
       "System Integration"
     ],
     technologies: ["Java", "C#", ".NET", "Python", "PostgreSQL"],
-    projects: "50+ Enterprise Apps",
+    projects: "30+ Enterprise Apps",
     timeline: "4-8 months"
   },
   {
-    id: "app-development",
-    title: "App Development",
-    description: "Build native and cross-platform mobile applications",
-    icon: <Smartphone className="w-8 h-8" />,
-    category: "core",
-    features: [
-      "Native iOS Development",
-      "Native Android Development", 
-      "Cross-platform Development",
-      "UI/UX Design",
-      "App Store Optimization",
-      "Maintenance & Support"
-    ],
-    technologies: ["React Native", "Flutter", "Swift", "Kotlin", "Xamarin"],
-    projects: "75+ Mobile Apps",
-    timeline: "3-6 months"
-  },
-  {
-    id: "data-engineering",
-    title: "Data Engineering",
-    description: "Data pipelines and analytics solutions",
-    icon: <Database className="w-8 h-8" />,
-    category: "specialized",
-    features: [
-      "Data Pipeline Development",
-      "ETL/ELT Processes",
-      "Data Warehousing",
-      "Real-time Analytics",
-      "Big Data Solutions",
-      "Data Migration"
-    ],
-    technologies: ["Apache Spark", "Kafka", "Hadoop", "Python", "SQL"],
-    projects: "30+ Data Solutions",
-    timeline: "2-5 months"
-  },
-  {
-    id: "cloud-engineering",
-    title: "Cloud Engineering",
-    description: "Cloud infrastructure and deployment solutions",
+    id: "cloud-services",
+    title: "Cloud Services",
+    description: "Scalable cloud solutions and infrastructure management",
     icon: <Cloud className="w-8 h-8" />,
     category: "specialized",
     features: [
       "Cloud Migration",
-      "Infrastructure as Code",
-      "Serverless Architecture",
-      "Container Orchestration",
+      "Infrastructure Setup",
+      "DevOps Services",
       "Auto-scaling Solutions",
-      "Cost Optimization"
+      "Security & Compliance",
+      "24/7 Monitoring"
     ],
     technologies: ["AWS", "Azure", "Google Cloud", "Docker", "Kubernetes"],
-    projects: "60+ Cloud Deployments",
+    projects: "40+ Cloud Deployments",
     timeline: "1-3 months"
   },
   {
-    id: "mvp-development",
-    title: "MVP Development",
-    description: "Minimum viable product solutions for startups",
-    icon: <Settings className="w-8 h-8" />,
+    id: "artificial-intelligence",
+    title: "AI & Machine Learning",
+    description: "Intelligent solutions powered by AI and machine learning",
+    icon: <Brain className="w-8 h-8" />,
     category: "specialized",
     features: [
-      "Rapid Prototyping",
-      "Feature Prioritization",
-      "User Testing",
-      "Iterative Development",
-      "Market Validation",
-      "Scalable Architecture"
+      "Machine Learning Models",
+      "Natural Language Processing",
+      "Computer Vision",
+      "Predictive Analytics",
+      "Chatbots & Virtual Assistants",
+      "AI Integration"
     ],
-    technologies: ["React", "Node.js", "Firebase", "MongoDB", "Stripe"],
-    projects: "40+ MVPs Launched",
+    technologies: ["Python", "TensorFlow", "PyTorch", "OpenAI", "scikit-learn"],
+    projects: "20+ AI Solutions",
+    timeline: "3-6 months"
+  },
+  {
+    id: "blockchain-development",
+    title: "Blockchain Development",
+    description: "Secure and transparent blockchain solutions",
+    icon: <Blocks className="w-8 h-8" />,
+    category: "specialized",
+    features: [
+      "Smart Contracts",
+      "DeFi Applications",
+      "NFT Marketplaces",
+      "Cryptocurrency Wallets",
+      "Blockchain Integration",
+      "Security Audits"
+    ],
+    technologies: ["Solidity", "Web3.js", "Ethereum", "Polygon", "Hardhat"],
+    projects: "15+ Blockchain Apps",
+    timeline: "4-7 months"
+  },
+  {
+    id: "game-development",
+    title: "Game Development",
+    description: "Engaging games for mobile, web, and desktop platforms",
+    icon: <Gamepad2 className="w-8 h-8" />,
+    category: "additional",
+    features: [
+      "Mobile Games",
+      "Web Games",
+      "AR/VR Experiences",
+      "Multiplayer Games",
+      "Game Design",
+      "Game Testing"
+    ],
+    technologies: ["Unity", "Unreal Engine", "C#", "JavaScript", "WebGL"],
+    projects: "25+ Games",
+    timeline: "3-8 months"
+  },
+  {
+    id: "digital-marketing",
+    title: "Digital Marketing",
+    description: "Comprehensive digital marketing strategies and campaigns",
+    icon: <TrendingUp className="w-8 h-8" />,
+    category: "additional",
+    features: [
+      "SEO Optimization",
+      "Social Media Marketing",
+      "Pay-per-Click Advertising",
+      "Content Marketing",
+      "Email Marketing",
+      "Analytics & Reporting"
+    ],
+    technologies: ["Google Ads", "Facebook Ads", "Google Analytics", "SEMrush"],
+    projects: "60+ Marketing Campaigns",
     timeline: "1-3 months"
   },
   {
-    id: "devops",
-    title: "DevOps",
-    description: "CI/CD and infrastructure automation",
-    icon: <Settings className="w-8 h-8" />,
+    id: "staff-augmentation",
+    title: "Staff Augmentation",
+    description: "Skilled developers and technical experts for your team",
+    icon: <Users className="w-8 h-8" />,
     category: "additional",
     features: [
-      "Continuous Integration",
-      "Continuous Deployment",
-      "Infrastructure Automation",
-      "Monitoring & Logging",
-      "Security Integration",
-      "Performance Optimization"
-    ],
-    technologies: ["Jenkins", "GitLab CI", "Docker", "Terraform", "Ansible"],
-    projects: "80+ DevOps Implementations",
-    timeline: "2-4 months"
-  },
-  {
-    id: "qa-testing",
-    title: "QA (Quality Assurance) Testing",
-    description: "Comprehensive testing solutions",
-    icon: <Shield className="w-8 h-8" />,
-    category: "additional",
-    features: [
-      "Manual Testing",
-      "Automated Testing",
-      "Performance Testing",
-      "Security Testing",
-      "API Testing",
-      "Mobile Testing"
-    ],
-    technologies: ["Selenium", "Jest", "Cypress", "Postman", "JMeter"],
-    projects: "200+ Testing Projects",
-    timeline: "1-2 months"
-  },
-  {
-    id: "it-consultation",
-    title: "IT Consultation",
-    description: "Strategic technology guidance",
-    icon: <MessageSquare className="w-8 h-8" />,
-    category: "additional",
-    features: [
-      "Technology Strategy",
-      "System Architecture",
-      "Digital Transformation",
-      "Security Assessment",
-      "Technology Roadmap",
-      "Process Optimization"
+      "Dedicated Developers",
+      "Technical Consultancy",
+      "Project Management",
+      "Quality Assurance",
+      "Code Review",
+      "Knowledge Transfer"
     ],
     technologies: ["Various based on requirements"],
-    projects: "150+ Consultations",
+    projects: "100+ Developer Placements",
     timeline: "Flexible"
   }
 ];
@@ -220,7 +220,7 @@ export default function Services() {
               <Button 
                 size="lg"
                 variant="outline"
-                className="border-white text-black bg-white hover:bg-gray-100"
+                className="border-white text-black bg-white hover:bg-gray-100 hover:text-black"
               >
                 View Portfolio
               </Button>
@@ -294,14 +294,13 @@ export default function Services() {
                       </div>
 
                       <div className="pt-4 border-t mt-auto">
-                        <Link href={`/services/${service.id}`}>
-                          <Button 
-                            className="w-full bg-primary hover:bg-primary/90 text-white"
-                          >
-                            View Service
-                            <ArrowRight className="ml-2 h-4 w-4" />
-                          </Button>
-                        </Link>
+                        <Button 
+                          className="w-full bg-primary hover:bg-primary/90 text-white"
+                          onClick={() => setIsQuoteModalOpen(true)}
+                        >
+                          Get Quote
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
                       </div>
                     </CardContent>
                   </Card>
@@ -343,7 +342,7 @@ export default function Services() {
             
             <div className="text-center">
               <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Settings className="h-8 w-8 text-primary" />
+                <Users className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-xl font-semibold mb-2">24/7 Support</h3>
               <p className="text-gray-600">Round-the-clock technical support and maintenance</p>
@@ -373,7 +372,7 @@ export default function Services() {
             <Button 
               size="lg"
               variant="outline"
-              className="border-white text-white bg-transparent hover:bg-white hover:text-primary"
+              className="border-white text-white hover:bg-white hover:text-primary"
             >
               Schedule Consultation
             </Button>

@@ -78,22 +78,22 @@ export default function Header() {
                         </div>
                         <div className="space-y-4">
                           <div>
-                            <a href="/services/mobile-app-development" target="_blank" className="block text-primary hover:text-primary/80 transition-colors font-medium">
-                              ▶ Mobile App Development
-                            </a>
-                            <p className="text-sm text-gray-500 mt-1">iOS, Android & Cross-platform apps</p>
-                          </div>
-                          <div>
                             <a href="/services/web-development" target="_blank" className="block text-primary hover:text-primary/80 transition-colors font-medium">
                               ▶ Web Development
                             </a>
                             <p className="text-sm text-gray-500 mt-1">Frontend, Backend & Full-stack solutions</p>
                           </div>
                           <div>
-                            <a href="/services/custom-software-development" target="_blank" className="block text-primary hover:text-primary/80 transition-colors font-medium">
-                              ▶ Custom Software Development
+                            <a href="/services/software-development" target="_blank" className="block text-primary hover:text-primary/80 transition-colors font-medium">
+                              ▶ Software Development
                             </a>
-                            <p className="text-sm text-gray-500 mt-1">Enterprise & SaaS solutions</p>
+                            <p className="text-sm text-gray-500 mt-1">Custom enterprise solutions</p>
+                          </div>
+                          <div>
+                            <a href="/services/app-development" target="_blank" className="block text-primary hover:text-primary/80 transition-colors font-medium">
+                              ▶ App Development
+                            </a>
+                            <p className="text-sm text-gray-500 mt-1">Mobile & web applications</p>
                           </div>
                         </div>
                       </div>
@@ -108,62 +108,52 @@ export default function Header() {
                         </div>
                         <div className="space-y-4">
                           <div>
-                            <a href="/services/cloud-services" target="_blank" className="block text-primary hover:text-primary/80 transition-colors font-medium">
-                              ▶ Cloud Services
+                            <a href="/services/data-engineering" target="_blank" className="block text-primary hover:text-primary/80 transition-colors font-medium">
+                              ▶ Data Engineering
                             </a>
-                            <p className="text-sm text-gray-500 mt-1">AWS, Azure & Google Cloud solutions</p>
+                            <p className="text-sm text-gray-500 mt-1">Data pipelines & analytics solutions</p>
                           </div>
                           <div>
-                            <a href="/services/artificial-intelligence" target="_blank" className="block text-primary hover:text-primary/80 transition-colors font-medium">
-                              ▶ AI & Machine Learning
+                            <a href="/services/cloud-engineering" target="_blank" className="block text-primary hover:text-primary/80 transition-colors font-medium">
+                              ▶ Cloud Engineering
                             </a>
-                            <p className="text-sm text-gray-500 mt-1">ML models & AI-powered solutions</p>
+                            <p className="text-sm text-gray-500 mt-1">Cloud infrastructure & deployment</p>
                           </div>
                           <div>
-                            <a href="/services/blockchain-development" target="_blank" className="block text-primary hover:text-primary/80 transition-colors font-medium">
-                              ▶ Blockchain Development
+                            <a href="/services/mvp-development" target="_blank" className="block text-primary hover:text-primary/80 transition-colors font-medium">
+                              ▶ MVP Development
                             </a>
-                            <p className="text-sm text-gray-500 mt-1">Smart contracts & DeFi solutions</p>
+                            <p className="text-sm text-gray-500 mt-1">Minimum viable product solutions</p>
                           </div>
                         </div>
                       </div>
                       
-                      {/* Column 3 - End-to-End Support */}
+                      {/* Column 3 - Additional Services */}
                       <div>
-                        <div className="bg-gradient-to-br from-primary to-primary/80 p-6 rounded-lg text-white h-fit">
-                          <div className="flex items-center mb-4">
-                            <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mr-3">
-                              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                              </svg>
-                            </div>
-                            <h3 className="text-lg font-bold">End-to-End Support</h3>
+                        <div className="flex items-center mb-6">
+                          <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center mr-3">
+                            <span className="text-white font-bold text-sm">AS</span>
                           </div>
-                          <p className="text-white/90 mb-4">
-                            From consultation to deployment, we provide comprehensive technology solutions
-                          </p>
-                          <div className="mb-6">
-                            <button 
-                              onClick={() => setIsQuoteModalOpen(true)}
-                              className="bg-white text-primary px-6 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors"
-                            >
-                              Get Started →
-                            </button>
-                          </div>
+                          <h3 className="text-lg font-bold text-gray-800">Additional Services</h3>
                         </div>
-                        
-                        {/* Contact Info */}
-                        <div className="mt-4">
-                          <h4 className="font-semibold text-gray-800 mb-2">💬 Need Help?</h4>
-                          <div className="space-y-2 text-sm">
-                            <div className="flex items-center text-gray-600">
-                              <span className="w-4 h-4 mr-2">📞</span>
-                              <a href="tel:+15133024718" className="hover:text-primary transition-colors">+1 (513) 302-4718</a>
-                            </div>
-                            <div className="flex items-center text-gray-600">
-                              <span className="w-4 h-4 mr-2">✉️</span>
-                              <a href="mailto:askforquote@xcontechnologies.com" className="hover:text-primary transition-colors">askforquote@xcontechnologies.com</a>
-                            </div>
+                        <div className="space-y-4">
+                          <div>
+                            <a href="/services/devops" target="_blank" className="block text-primary hover:text-primary/80 transition-colors font-medium">
+                              ▶ DevOps
+                            </a>
+                            <p className="text-sm text-gray-500 mt-1">CI/CD & infrastructure automation</p>
+                          </div>
+                          <div>
+                            <a href="/services/qa-testing" target="_blank" className="block text-primary hover:text-primary/80 transition-colors font-medium">
+                              ▶ QA (Quality Assurance) Testing
+                            </a>
+                            <p className="text-sm text-gray-500 mt-1">Comprehensive testing solutions</p>
+                          </div>
+                          <div>
+                            <a href="/services/it-consultation" target="_blank" className="block text-primary hover:text-primary/80 transition-colors font-medium">
+                              ▶ IT Consultation
+                            </a>
+                            <p className="text-sm text-gray-500 mt-1">Strategic technology guidance</p>
                           </div>
                         </div>
                       </div>

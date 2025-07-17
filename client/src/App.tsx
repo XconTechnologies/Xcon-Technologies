@@ -11,15 +11,15 @@ import Contact from "@/pages/contact";
 import Portfolio from "@/pages/portfolio";
 import Services from "@/pages/services";
 import NotFound from "@/pages/not-found";
-import MobileAppDevelopment from "@/pages/services/mobile-app-development";
 import WebDevelopment from "@/pages/services/web-development";
-import CustomSoftwareDevelopment from "@/pages/services/custom-software-development";
-import CloudServices from "@/pages/services/cloud-services";
-import DigitalMarketing from "@/pages/services/digital-marketing";
-import GameDevelopment from "@/pages/services/game-development";
-import ArtificialIntelligence from "@/pages/services/artificial-intelligence";
-import BlockchainDevelopment from "@/pages/services/blockchain-development";
-import StaffAugmentation from "@/pages/services/staff-augmentation";
+import SoftwareDevelopment from "@/pages/services/software-development";
+import AppDevelopment from "@/pages/services/app-development";
+import DataEngineering from "@/pages/services/data-engineering";
+import CloudEngineering from "@/pages/services/cloud-engineering";
+import MvpDevelopment from "@/pages/services/mvp-development";
+import DevOps from "@/pages/services/devops";
+import QaTesting from "@/pages/services/qa-testing";
+import ItConsultation from "@/pages/services/it-consultation";
 
 function Router() {
   return (
@@ -31,15 +31,15 @@ function Router() {
       <Route path="/contact" component={Contact} />
       <Route path="/portfolio" component={Portfolio} />
       <Route path="/services" component={Services} />
-      <Route path="/services/mobile-app-development" component={MobileAppDevelopment} />
       <Route path="/services/web-development" component={WebDevelopment} />
-      <Route path="/services/custom-software-development" component={CustomSoftwareDevelopment} />
-      <Route path="/services/cloud-services" component={CloudServices} />
-      <Route path="/services/digital-marketing" component={DigitalMarketing} />
-      <Route path="/services/game-development" component={GameDevelopment} />
-      <Route path="/services/artificial-intelligence" component={ArtificialIntelligence} />
-      <Route path="/services/blockchain-development" component={BlockchainDevelopment} />
-      <Route path="/services/staff-augmentation" component={StaffAugmentation} />
+      <Route path="/services/software-development" component={SoftwareDevelopment} />
+      <Route path="/services/app-development" component={AppDevelopment} />
+      <Route path="/services/data-engineering" component={DataEngineering} />
+      <Route path="/services/cloud-engineering" component={CloudEngineering} />
+      <Route path="/services/mvp-development" component={MvpDevelopment} />
+      <Route path="/services/devops" component={DevOps} />
+      <Route path="/services/qa-testing" component={QaTesting} />
+      <Route path="/services/it-consultation" component={ItConsultation} />
       <Route component={NotFound} />
     </Switch>
   );
