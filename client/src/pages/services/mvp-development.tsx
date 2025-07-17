@@ -15,8 +15,10 @@ import {
   ChevronUp,
   Rocket,
   BarChart3,
-  Clock
+  Clock,
+  ArrowRight
 } from 'lucide-react';
+import { Button } from "@/components/ui/button";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import QuoteModal from "@/components/quote-modal";
