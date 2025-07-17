@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, ArrowRight, Globe, Code, Smartphone, Monitor, Database, Shield, Zap, Users, Star, TrendingUp, Search, Palette, Server, Settings, Eye } from "lucide-react";
+import { CheckCircle, ArrowRight, Globe, Code, Smartphone, Monitor, Database, Shield, Zap, Users, Star, TrendingUp, Search, Palette, Server, Settings, Eye, ChevronDown, ChevronUp } from "lucide-react";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import QuoteModal from "@/components/quote-modal";
@@ -14,8 +14,41 @@ import carpetsImage from '@assets/image_1752740010452.png';
 import ecommerceImage from '@assets/image_1752740052597.png';
 import businessImage from '@assets/image_1752740078132.png';
 
+// FAQ Data
+const faqData = [
+  {
+    question: "What is custom web development?",
+    answer: "Custom web development involves creating websites and web applications specifically designed for your business needs. Unlike template-based solutions, custom development provides unique functionality, design, and features tailored to your requirements."
+  },
+  {
+    question: "How long does web development take?",
+    answer: "The timeline depends on the project complexity. Simple websites take 2-6 weeks, while complex web applications can take 3-6 months. We provide detailed timelines during the planning phase."
+  },
+  {
+    question: "Do you provide responsive web design?",
+    answer: "Yes, all our websites are built with responsive design principles, ensuring optimal viewing and functionality across all devices - desktop, tablet, and mobile."
+  },
+  {
+    question: "What technologies do you use for web development?",
+    answer: "We use modern technologies including React, Node.js, Python, databases like PostgreSQL and MongoDB, and cloud platforms like AWS. We choose the best technology stack for each project."
+  },
+  {
+    question: "Do you provide ongoing website maintenance?",
+    answer: "Yes, we offer comprehensive post-launch support including security updates, performance optimization, content updates, and technical support to keep your website running smoothly."
+  },
+  {
+    question: "Can you help with SEO and digital marketing?",
+    answer: "Absolutely! We provide SEO optimization, digital marketing strategies, and analytics setup to help your website rank better in search engines and reach more customers."
+  }
+];
+
 export default function WebDevelopment() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+
+  const toggleFAQ = (index: number) => {
+    setOpenFAQ(openFAQ === index ? null : index);
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -771,6 +804,45 @@ export default function WebDevelopment() {
             >
               Schedule Consultation
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-[1440px] mx-auto px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Frequently Asked <span className="text-primary">Questions</span>
+            </h2>
+            <p className="text-lg text-gray-600">
+              Get answers to common questions about our web development services
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            {faqData.map((faq, index) => (
+              <div key={index} className="mb-4">
+                <button
+                  onClick={() => toggleFAQ(index)}
+                  className="w-full bg-white rounded-xl p-6 text-left hover:shadow-lg transition-shadow border border-gray-200"
+                >
+                  <div className="flex justify-between items-center">
+                    <h3 className="text-xl font-semibold text-gray-800">{faq.question}</h3>
+                    {openFAQ === index ? (
+                      <ChevronUp className="w-6 h-6 text-primary" />
+                    ) : (
+                      <ChevronDown className="w-6 h-6 text-primary" />
+                    )}
+                  </div>
+                  {openFAQ === index && (
+                    <div className="mt-4 text-gray-600">
+                      <p>{faq.answer}</p>
+                    </div>
+                  )}
+                </button>
+              </div>
+            ))}
           </div>
         </div>
       </section>

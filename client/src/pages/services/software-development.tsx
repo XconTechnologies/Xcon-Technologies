@@ -19,6 +19,9 @@ import {
   Server,
   ShoppingCart
 } from 'lucide-react';
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+import QuoteModal from "@/components/quote-modal";
 
 // FAQ Data
 const faqData = [
@@ -50,6 +53,7 @@ const faqData = [
 
 const SoftwareDevelopment = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
 
   const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index);
@@ -57,6 +61,7 @@ const SoftwareDevelopment = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Header />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-gray-900 to-gray-800 text-white pt-20 pb-16">
         <div className="max-w-[1440px] mx-auto px-8">
@@ -69,7 +74,10 @@ const SoftwareDevelopment = () => {
                 Get the Best Customer Software Development Services! Selecting the right custom software development services company for your business project is key to success. Our custom software developer delivers the best custom software design that support a smooth, multi-channel presence and help you connect with customers wherever they are.
               </p>
               <div className="flex flex-wrap gap-4">
-                <button className="bg-primary text-white px-8 py-3 rounded-full hover:bg-primary/90 transition-colors">
+                <button 
+                  onClick={() => setIsQuoteModalOpen(true)}
+                  className="bg-primary text-white px-8 py-3 rounded-full hover:bg-primary/90 transition-colors"
+                >
                   GET A QUOTE
                 </button>
                 <button className="border border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-gray-900 transition-colors">
@@ -433,6 +441,12 @@ const SoftwareDevelopment = () => {
           </div>
         </div>
       </section>
+
+      <Footer />
+      <QuoteModal 
+        isOpen={isQuoteModalOpen} 
+        onClose={() => setIsQuoteModalOpen(false)} 
+      />
     </div>
   );
 };

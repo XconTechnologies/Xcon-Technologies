@@ -19,7 +19,7 @@ import CloudEngineering from "@/pages/services/cloud-engineering";
 import MvpDevelopment from "@/pages/services/mvp-development";
 import DevOps from "@/pages/services/devops";
 import QaTesting from "@/pages/services/qa-testing";
-import ItConsultation from "@/pages/services/it-consultation";
+import ItConsulting from "@/pages/services/it-consulting";
 
 function Router() {
   return (
@@ -39,7 +39,7 @@ function Router() {
       <Route path="/services/mvp-development" component={MvpDevelopment} />
       <Route path="/services/devops" component={DevOps} />
       <Route path="/services/qa-testing" component={QaTesting} />
-      <Route path="/services/it-consultation" component={ItConsultation} />
+      <Route path="/services/it-consulting" component={ItConsulting} />
       <Route component={NotFound} />
     </Switch>
   );

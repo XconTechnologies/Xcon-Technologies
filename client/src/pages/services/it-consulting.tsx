@@ -1,22 +1,21 @@
 import React, { useState } from 'react';
 import { 
-  CheckCircle, 
-  Bug, 
-  Shield, 
+  Users, 
+  Code, 
   Target, 
+  Shield, 
   Zap, 
   Globe, 
-  Smartphone, 
+  Lightbulb, 
   Settings, 
   Search,
   Eye,
   TrendingUp,
-  Users,
   ChevronDown,
   ChevronUp,
   Monitor,
-  TestTube,
-  FileCheck
+  CheckCircle,
+  BarChart3
 } from 'lucide-react';
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -25,32 +24,32 @@ import QuoteModal from "@/components/quote-modal";
 // FAQ Data
 const faqData = [
   {
-    question: "What is QA testing?",
-    answer: "QA (Quality Assurance) testing is the process of systematically checking software applications to ensure they meet specified requirements, function correctly, and provide a good user experience before release."
+    question: "What is IT consulting?",
+    answer: "IT consulting involves providing expert advice and guidance on technology strategy, implementation, and optimization to help businesses leverage technology effectively for growth and competitive advantage."
   },
   {
-    question: "What types of testing do you offer?",
-    answer: "We offer comprehensive testing including functional testing, performance testing, security testing, usability testing, automated testing, mobile testing, and API testing."
+    question: "What areas do you cover in IT consulting?",
+    answer: "We cover digital transformation, technology strategy, system integration, cybersecurity, cloud migration, infrastructure optimization, and IT governance to support your business objectives."
   },
   {
-    question: "How long does QA testing take?",
-    answer: "Testing timelines depend on project complexity and scope. Simple applications take 1-2 weeks, while complex systems may require 4-8 weeks of comprehensive testing."
+    question: "How long does an IT consulting engagement take?",
+    answer: "Consulting engagements vary based on scope. Strategy assessments take 2-4 weeks, while comprehensive transformation projects can span 3-12 months with ongoing support."
   },
   {
-    question: "Do you provide automated testing?",
-    answer: "Yes, we implement automated testing frameworks using tools like Selenium, Cypress, and Jest to ensure consistent, repeatable testing and faster feedback cycles."
+    question: "Do you provide ongoing IT support?",
+    answer: "Yes, we offer continuous IT support including system monitoring, maintenance, strategic guidance, and technology roadmap updates to ensure your IT infrastructure remains optimized."
   },
   {
-    question: "Can you test mobile applications?",
-    answer: "Absolutely! We provide comprehensive mobile testing across iOS and Android platforms, including functional, performance, and usability testing on real devices."
+    question: "Can you help with digital transformation?",
+    answer: "Absolutely! We specialize in digital transformation strategies, helping businesses modernize their operations, adopt new technologies, and improve efficiency through technology innovation."
   },
   {
-    question: "Do you provide ongoing testing support?",
-    answer: "Yes, we offer continuous testing services including regression testing, performance monitoring, and quality assurance support throughout your software development lifecycle."
+    question: "Do you work with small businesses?",
+    answer: "Yes, we work with businesses of all sizes, from startups to enterprises, providing scalable IT consulting solutions tailored to your specific needs and budget."
   }
 ];
 
-const QATesting = () => {
+const ITConsulting = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
 
@@ -68,10 +67,10 @@ const QATesting = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Professional <span className="text-primary">QA Testing</span> Services
+                Professional <span className="text-primary">IT Consulting</span> Services
               </h1>
               <p className="text-lg mb-8">
-                Ensure Software Excellence! Our QA testing services help businesses deliver high-quality software by identifying bugs, ensuring performance, and providing comprehensive testing solutions that guarantee user satisfaction.
+                Transform Your Business with Expert IT Strategy! Our IT consulting services help businesses leverage technology effectively, optimize operations, and achieve digital transformation goals with strategic guidance and technical expertise.
               </p>
               <div className="flex flex-wrap gap-4">
                 <button 
@@ -89,24 +88,24 @@ const QATesting = () => {
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
                 <div className="grid grid-cols-2 gap-6">
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/20 transition-colors">
-                    <Bug className="w-12 h-12 text-primary mx-auto mb-4" />
-                    <h3 className="font-semibold mb-2 text-lg">Bug Detection</h3>
-                    <p className="text-sm text-gray-300">Early identification</p>
+                    <Lightbulb className="w-12 h-12 text-primary mx-auto mb-4" />
+                    <h3 className="font-semibold mb-2 text-lg">Strategy</h3>
+                    <p className="text-sm text-gray-300">Technology roadmap</p>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/20 transition-colors">
-                    <TestTube className="w-12 h-12 text-primary mx-auto mb-4" />
-                    <h3 className="font-semibold mb-2 text-lg">Automated Testing</h3>
-                    <p className="text-sm text-gray-300">Efficient processes</p>
+                    <Target className="w-12 h-12 text-primary mx-auto mb-4" />
+                    <h3 className="font-semibold mb-2 text-lg">Digital Transformation</h3>
+                    <p className="text-sm text-gray-300">Modern solutions</p>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/20 transition-colors">
                     <Shield className="w-12 h-12 text-primary mx-auto mb-4" />
-                    <h3 className="font-semibold mb-2 text-lg">Security Testing</h3>
-                    <p className="text-sm text-gray-300">Protected applications</p>
+                    <h3 className="font-semibold mb-2 text-lg">Security</h3>
+                    <p className="text-sm text-gray-300">Protected systems</p>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/20 transition-colors">
-                    <CheckCircle className="w-12 h-12 text-primary mx-auto mb-4" />
-                    <h3 className="font-semibold mb-2 text-lg">Quality Assurance</h3>
-                    <p className="text-sm text-gray-300">Reliable software</p>
+                    <TrendingUp className="w-12 h-12 text-primary mx-auto mb-4" />
+                    <h3 className="font-semibold mb-2 text-lg">Growth</h3>
+                    <p className="text-sm text-gray-300">Business optimization</p>
                   </div>
                 </div>
               </div>
@@ -120,41 +119,41 @@ const QATesting = () => {
         <div className="max-w-[1440px] mx-auto px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              What <span className="text-primary">QA Testing Services</span> We Offer?
+              What <span className="text-primary">IT Consulting Services</span> We Offer?
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Comprehensive Testing Solutions for Software Quality
+              Strategic Technology Solutions for Business Success
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                <CheckCircle className="w-6 h-6 text-primary" />
+                <Lightbulb className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-4">Functional Testing</h3>
+              <h3 className="text-xl font-semibold mb-4">Technology Strategy</h3>
               <p className="text-gray-600">
-                Verify that your software functions according to specifications and meets business requirements.
+                Develop comprehensive technology strategies aligned with your business goals and market requirements.
               </p>
             </div>
 
             <div className="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                <TestTube className="w-6 h-6 text-primary" />
+                <Target className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-4">Automated Testing</h3>
+              <h3 className="text-xl font-semibold mb-4">Digital Transformation</h3>
               <p className="text-gray-600">
-                Implement automated testing frameworks for faster, more consistent testing and continuous integration.
+                Guide your organization through digital transformation with modern technologies and optimized processes.
               </p>
             </div>
 
             <div className="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                <Zap className="w-6 h-6 text-primary" />
+                <Settings className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-4">Performance Testing</h3>
+              <h3 className="text-xl font-semibold mb-4">System Integration</h3>
               <p className="text-gray-600">
-                Test your application's performance under various load conditions to ensure scalability and reliability.
+                Integrate disparate systems and applications to create unified, efficient technology ecosystems.
               </p>
             </div>
 
@@ -162,29 +161,29 @@ const QATesting = () => {
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                 <Shield className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-4">Security Testing</h3>
+              <h3 className="text-xl font-semibold mb-4">Cybersecurity Consulting</h3>
               <p className="text-gray-600">
-                Identify vulnerabilities and security flaws to protect your application from potential threats.
+                Assess and strengthen your security posture with comprehensive cybersecurity strategies and solutions.
               </p>
             </div>
 
             <div className="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                <Smartphone className="w-6 h-6 text-primary" />
+                <BarChart3 className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-4">Mobile Testing</h3>
+              <h3 className="text-xl font-semibold mb-4">IT Governance</h3>
               <p className="text-gray-600">
-                Comprehensive mobile app testing across iOS and Android platforms for optimal user experience.
+                Establish IT governance frameworks to ensure technology investments align with business objectives.
               </p>
             </div>
 
             <div className="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                <Eye className="w-6 h-6 text-primary" />
+                <Monitor className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-4">Usability Testing</h3>
+              <h3 className="text-xl font-semibold mb-4">Infrastructure Optimization</h3>
               <p className="text-gray-600">
-                Evaluate user experience and interface design to ensure intuitive and user-friendly applications.
+                Optimize your IT infrastructure for performance, scalability, and cost-effectiveness.
               </p>
             </div>
           </div>
@@ -196,38 +195,38 @@ const QATesting = () => {
         <div className="max-w-[1440px] mx-auto px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why Choose <span className="text-primary">XCon</span> for QA Testing?
+              Why Choose <span className="text-primary">XCon</span> for IT Consulting?
             </h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white p-8 rounded-xl border border-gray-200 text-center hover:shadow-lg transition-shadow">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Users className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Expert Team</h3>
+              <p className="text-gray-600">
+                XCon's experienced consultants bring deep technical expertise and industry knowledge to every project.
+              </p>
+            </div>
+            
+            <div className="bg-white p-8 rounded-xl border border-gray-200 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Target className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-4">Comprehensive Testing</h3>
+              <h3 className="text-xl font-semibold mb-4">Business-Focused</h3>
               <p className="text-gray-600">
-                XCon provides end-to-end testing solutions covering all aspects of software quality assurance.
+                We align technology solutions with your business objectives to drive measurable results and growth.
               </p>
             </div>
             
             <div className="bg-white p-8 rounded-xl border border-gray-200 text-center hover:shadow-lg transition-shadow">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <TestTube className="w-8 h-8 text-primary" />
+                <CheckCircle className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-4">Advanced Tools</h3>
+              <h3 className="text-xl font-semibold mb-4">Proven Results</h3>
               <p className="text-gray-600">
-                We use cutting-edge testing tools and frameworks to deliver accurate and efficient testing results.
-              </p>
-            </div>
-            
-            <div className="bg-white p-8 rounded-xl border border-gray-200 text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <FileCheck className="w-8 h-8 text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold mb-4">Detailed Reporting</h3>
-              <p className="text-gray-600">
-                Receive comprehensive test reports with detailed analysis and recommendations for improvement.
+                Track record of successful IT transformations and strategic implementations across various industries.
               </p>
             </div>
           </div>
@@ -242,7 +241,7 @@ const QATesting = () => {
               Frequently Asked <span className="text-primary">Questions</span>
             </h2>
             <p className="text-lg text-gray-600">
-              Get answers to common questions about our QA testing services
+              Get answers to common questions about our IT consulting services
             </p>
           </div>
           
@@ -282,4 +281,4 @@ const QATesting = () => {
   );
 };
 
-export default QATesting;
+export default ITConsulting;

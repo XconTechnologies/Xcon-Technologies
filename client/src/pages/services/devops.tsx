@@ -1,62 +1,113 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { CheckCircle, ArrowRight, GitBranch, Zap, Shield, Settings } from "lucide-react";
+import React, { useState } from 'react';
+import { 
+  GitBranch, 
+  Code, 
+  Server, 
+  Shield, 
+  Zap, 
+  Globe, 
+  Cloud, 
+  Settings, 
+  Search,
+  Eye,
+  TrendingUp,
+  Users,
+  ChevronDown,
+  ChevronUp,
+  Monitor,
+  Cog,
+  RefreshCw
+} from 'lucide-react';
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import QuoteModal from "@/components/quote-modal";
-import { useState } from "react";
 
-export default function DevOps() {
+// FAQ Data
+const faqData = [
+  {
+    question: "What is DevOps?",
+    answer: "DevOps is a cultural and technical approach that combines software development (Dev) and IT operations (Ops) to improve collaboration, automate processes, and deliver software faster and more reliably."
+  },
+  {
+    question: "How long does DevOps implementation take?",
+    answer: "DevOps implementation timelines vary based on current infrastructure and goals. Initial setup takes 2-4 weeks, while full transformation can take 3-6 months with ongoing optimization."
+  },
+  {
+    question: "What tools do you use for DevOps?",
+    answer: "We use industry-standard tools including Docker, Kubernetes, Jenkins, GitLab CI/CD, AWS/Azure DevOps services, Terraform, Ansible, and monitoring tools like Prometheus and Grafana."
+  },
+  {
+    question: "Can you help with existing infrastructure?",
+    answer: "Yes, we can assess and optimize your existing infrastructure, implement CI/CD pipelines, containerization, and migrate to modern DevOps practices with minimal disruption."
+  },
+  {
+    question: "Do you provide 24/7 monitoring and support?",
+    answer: "Absolutely! We provide continuous monitoring, alerting, and support to ensure your applications and infrastructure run smoothly with minimal downtime."
+  },
+  {
+    question: "How do you ensure security in DevOps?",
+    answer: "We implement DevSecOps practices, integrating security into every stage of the development pipeline, including automated security testing, vulnerability scanning, and compliance monitoring."
+  }
+];
+
+const DevOps = () => {
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
 
+  const toggleFAQ = (index: number) => {
+    setOpenFAQ(openFAQ === index ? null : index);
+  };
+
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-slate-900 to-gray-900 text-white py-20 pt-32">
+      <section className="relative bg-gradient-to-r from-gray-900 to-gray-800 text-white pt-20 pb-16">
         <div className="max-w-[1440px] mx-auto px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <Badge className="bg-primary/20 text-primary border-primary/30 mb-4">
-                Additional Service
-              </Badge>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                <span className="text-primary">DevOps</span> Excellence
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                Professional <span className="text-primary">DevOps</span> Services
               </h1>
-              <p className="text-xl text-gray-300 mb-8">
-                Streamline your development pipeline with automated CI/CD, infrastructure as code, and monitoring solutions. Accelerate delivery while maintaining quality.
+              <p className="text-lg mb-8">
+                Streamline Your Development Pipeline! Our DevOps services help businesses automate workflows, improve collaboration, and deliver software faster with continuous integration, deployment, and monitoring solutions.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  size="lg"
+              <div className="flex flex-wrap gap-4">
+                <button 
                   onClick={() => setIsQuoteModalOpen(true)}
-                  className="bg-primary hover:bg-primary/90 text-white"
+                  className="bg-primary text-white px-8 py-3 rounded-full hover:bg-primary/90 transition-colors"
                 >
-                  Get A Quote
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Button 
-                  size="lg"
-                  variant="outline"
-                  className="border-white text-black bg-white hover:bg-gray-100"
-                >
-                  View DevOps Case Studies
-                </Button>
+                  GET A QUOTE
+                </button>
+                <button className="border border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-gray-900 transition-colors">
+                  View Portfolio
+                </button>
               </div>
             </div>
             <div className="relative">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
-                  <GitBranch className="w-8 h-8 text-primary mx-auto mb-2" />
-                  <h3 className="font-semibold mb-1">CI/CD Pipelines</h3>
-                  <p className="text-sm text-gray-300">Automated deployment</p>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
-                  <Settings className="w-8 h-8 text-primary mx-auto mb-2" />
-                  <h3 className="font-semibold mb-1">Infrastructure</h3>
-                  <p className="text-sm text-gray-300">As code automation</p>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/20 transition-colors">
+                    <GitBranch className="w-12 h-12 text-primary mx-auto mb-4" />
+                    <h3 className="font-semibold mb-2 text-lg">CI/CD Pipelines</h3>
+                    <p className="text-sm text-gray-300">Automated deployment</p>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/20 transition-colors">
+                    <Server className="w-12 h-12 text-primary mx-auto mb-4" />
+                    <h3 className="font-semibold mb-2 text-lg">Infrastructure</h3>
+                    <p className="text-sm text-gray-300">Scalable systems</p>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/20 transition-colors">
+                    <Monitor className="w-12 h-12 text-primary mx-auto mb-4" />
+                    <h3 className="font-semibold mb-2 text-lg">Monitoring</h3>
+                    <p className="text-sm text-gray-300">Real-time insights</p>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/20 transition-colors">
+                    <Zap className="w-12 h-12 text-primary mx-auto mb-4" />
+                    <h3 className="font-semibold mb-2 text-lg">Automation</h3>
+                    <p className="text-sm text-gray-300">Streamlined processes</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -64,109 +115,171 @@ export default function DevOps() {
         </div>
       </section>
 
-      {/* Service Overview */}
+      {/* Services Offered Section */}
       <section className="py-16 bg-white">
         <div className="max-w-[1440px] mx-auto px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="lg:col-span-2">
-              <h2 className="text-3xl font-bold mb-6">
-                Modern <span className="text-primary">DevOps Solutions</span>
-              </h2>
-              <p className="text-lg text-gray-600 mb-6">
-                We implement DevOps practices that bridge the gap between development and operations teams. 
-                Our solutions automate workflows, improve collaboration, and accelerate time-to-market.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="flex items-start">
-                  <CheckCircle className="h-6 w-6 text-primary mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold mb-2">CI/CD Pipelines</h3>
-                    <p className="text-gray-600">Automated testing and deployment workflows</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle className="h-6 w-6 text-primary mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold mb-2">Infrastructure Automation</h3>
-                    <p className="text-gray-600">Infrastructure as code with version control</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle className="h-6 w-6 text-primary mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold mb-2">Monitoring & Logging</h3>
-                    <p className="text-gray-600">Real-time system monitoring and alerting</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle className="h-6 w-6 text-primary mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold mb-2">Security Integration</h3>
-                    <p className="text-gray-600">DevSecOps practices for secure deployments</p>
-                  </div>
-                </div>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              What <span className="text-primary">DevOps Services</span> We Offer?
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Comprehensive DevOps Solutions for Modern Development
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <GitBranch className="w-6 h-6 text-primary" />
               </div>
+              <h3 className="text-xl font-semibold mb-4">CI/CD Implementation</h3>
+              <p className="text-gray-600">
+                Set up continuous integration and deployment pipelines to automate code testing, building, and deployment processes.
+              </p>
             </div>
-            <div>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Service Highlights</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Implementations</span>
-                    <span className="font-semibold">80+</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Average Timeline</span>
-                    <span className="font-semibold">2-4 months</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Deployment Speed</span>
-                    <span className="font-semibold">10x faster</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Error Reduction</span>
-                    <span className="font-semibold">75%</span>
-                  </div>
-                </CardContent>
-              </Card>
+
+            <div className="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <Server className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Infrastructure as Code</h3>
+              <p className="text-gray-600">
+                Implement infrastructure as code using tools like Terraform and Ansible for consistent, repeatable deployments.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <Cloud className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Container Orchestration</h3>
+              <p className="text-gray-600">
+                Deploy and manage containerized applications using Docker and Kubernetes for scalable, portable solutions.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <Monitor className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Monitoring & Logging</h3>
+              <p className="text-gray-600">
+                Implement comprehensive monitoring, logging, and alerting systems for proactive issue detection and resolution.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <Shield className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Security Integration</h3>
+              <p className="text-gray-600">
+                Integrate security practices into DevOps workflows with automated security testing and compliance monitoring.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <Cog className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Process Automation</h3>
+              <p className="text-gray-600">
+                Automate repetitive tasks and workflows to improve efficiency and reduce manual errors in your development process.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-primary to-primary/80 text-white">
-        <div className="max-w-[1440px] mx-auto px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Accelerate Your Development?
-          </h2>
-          <p className="text-xl mb-8 text-white/90">
-            Let's implement DevOps practices that transform your development workflow
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg"
-              onClick={() => setIsQuoteModalOpen(true)}
-              className="bg-white text-primary hover:bg-gray-100"
-            >
-              Get A Quote
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-            <Button 
-              size="lg"
-              variant="outline"
-              className="border-white text-white bg-transparent hover:bg-white hover:text-primary"
-            >
-              Schedule Consultation
-            </Button>
+      {/* Why Choose XCon Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-[1440px] mx-auto px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Why Choose <span className="text-primary">XCon</span> for DevOps Solutions?
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-xl border border-gray-200 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Zap className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Accelerated Delivery</h3>
+              <p className="text-gray-600">
+                XCon helps you deliver software faster with automated CI/CD pipelines and streamlined development workflows.
+              </p>
+            </div>
+            
+            <div className="bg-white p-8 rounded-xl border border-gray-200 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Shield className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Enhanced Security</h3>
+              <p className="text-gray-600">
+                Implement DevSecOps practices with automated security testing and compliance monitoring throughout the pipeline.
+              </p>
+            </div>
+            
+            <div className="bg-white p-8 rounded-xl border border-gray-200 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <TrendingUp className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Improved Reliability</h3>
+              <p className="text-gray-600">
+                Reduce downtime and improve system reliability through automated testing, monitoring, and rapid issue resolution.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-[1440px] mx-auto px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Frequently Asked <span className="text-primary">Questions</span>
+            </h2>
+            <p className="text-lg text-gray-600">
+              Get answers to common questions about our DevOps services
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            {faqData.map((faq, index) => (
+              <div key={index} className="mb-4">
+                <button
+                  onClick={() => toggleFAQ(index)}
+                  className="w-full bg-white rounded-xl p-6 text-left hover:shadow-lg transition-shadow border border-gray-200"
+                >
+                  <div className="flex justify-between items-center">
+                    <h3 className="text-xl font-semibold text-gray-800">{faq.question}</h3>
+                    {openFAQ === index ? (
+                      <ChevronUp className="w-6 h-6 text-primary" />
+                    ) : (
+                      <ChevronDown className="w-6 h-6 text-primary" />
+                    )}
+                  </div>
+                  {openFAQ === index && (
+                    <div className="mt-4 text-gray-600">
+                      <p>{faq.answer}</p>
+                    </div>
+                  )}
+                </button>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       <Footer />
-      <QuoteModal isOpen={isQuoteModalOpen} onClose={() => setIsQuoteModalOpen(false)} />
+      <QuoteModal 
+        isOpen={isQuoteModalOpen} 
+        onClose={() => setIsQuoteModalOpen(false)} 
+      />
     </div>
   );
-}
+};
+
+export default DevOps;
