@@ -28,6 +28,7 @@ const services = [
     description: "Build native and cross-platform mobile applications",
     icon: <Smartphone className="w-8 h-8" />,
     category: "core",
+    color: "primary",
     features: [
       "Native iOS Development",
       "Native Android Development", 
@@ -38,7 +39,8 @@ const services = [
     ],
     technologies: ["React Native", "Flutter", "Swift", "Kotlin", "Xamarin"],
     projects: "50+ Mobile Apps",
-    timeline: "3-6 months"
+    timeline: "3-6 months",
+    price: "Starting from $15,000"
   },
   {
     id: "web-development",
@@ -46,6 +48,7 @@ const services = [
     description: "Create responsive and scalable web applications",
     icon: <Globe className="w-8 h-8" />,
     category: "core",
+    color: "primary",
     features: [
       "Frontend Development",
       "Backend Development",
@@ -56,7 +59,8 @@ const services = [
     ],
     technologies: ["React", "Node.js", "Next.js", "Python", "PHP"],
     projects: "100+ Websites",
-    timeline: "2-4 months"
+    timeline: "2-4 months",
+    price: "Starting from $8,000"
   },
   {
     id: "custom-software-development",
@@ -64,6 +68,7 @@ const services = [
     description: "Enterprise-grade software solutions tailored to your needs",
     icon: <Code className="w-8 h-8" />,
     category: "core",
+    color: "primary",
     features: [
       "Enterprise Software",
       "SaaS Applications",
@@ -74,7 +79,8 @@ const services = [
     ],
     technologies: ["Java", "C#", ".NET", "Python", "PostgreSQL"],
     projects: "30+ Enterprise Apps",
-    timeline: "4-8 months"
+    timeline: "4-8 months",
+    price: "Starting from $25,000"
   },
   {
     id: "cloud-services",
@@ -82,6 +88,7 @@ const services = [
     description: "Scalable cloud solutions and infrastructure management",
     icon: <Cloud className="w-8 h-8" />,
     category: "specialized",
+    color: "green",
     features: [
       "Cloud Migration",
       "Infrastructure Setup",
@@ -92,7 +99,8 @@ const services = [
     ],
     technologies: ["AWS", "Azure", "Google Cloud", "Docker", "Kubernetes"],
     projects: "40+ Cloud Deployments",
-    timeline: "1-3 months"
+    timeline: "1-3 months",
+    price: "Starting from $10,000"
   },
   {
     id: "artificial-intelligence",
@@ -100,6 +108,7 @@ const services = [
     description: "Intelligent solutions powered by AI and machine learning",
     icon: <Brain className="w-8 h-8" />,
     category: "specialized",
+    color: "green",
     features: [
       "Machine Learning Models",
       "Natural Language Processing",
@@ -110,7 +119,8 @@ const services = [
     ],
     technologies: ["Python", "TensorFlow", "PyTorch", "OpenAI", "scikit-learn"],
     projects: "20+ AI Solutions",
-    timeline: "3-6 months"
+    timeline: "3-6 months",
+    price: "Starting from $20,000"
   },
   {
     id: "blockchain-development",
@@ -118,6 +128,7 @@ const services = [
     description: "Secure and transparent blockchain solutions",
     icon: <Blocks className="w-8 h-8" />,
     category: "specialized",
+    color: "green",
     features: [
       "Smart Contracts",
       "DeFi Applications",
@@ -128,7 +139,8 @@ const services = [
     ],
     technologies: ["Solidity", "Web3.js", "Ethereum", "Polygon", "Hardhat"],
     projects: "15+ Blockchain Apps",
-    timeline: "4-7 months"
+    timeline: "4-7 months",
+    price: "Starting from $30,000"
   },
   {
     id: "game-development",
@@ -136,6 +148,7 @@ const services = [
     description: "Engaging games for mobile, web, and desktop platforms",
     icon: <Gamepad2 className="w-8 h-8" />,
     category: "additional",
+    color: "purple",
     features: [
       "Mobile Games",
       "Web Games",
@@ -146,7 +159,8 @@ const services = [
     ],
     technologies: ["Unity", "Unreal Engine", "C#", "JavaScript", "WebGL"],
     projects: "25+ Games",
-    timeline: "3-8 months"
+    timeline: "3-8 months",
+    price: "Starting from $18,000"
   },
   {
     id: "digital-marketing",
@@ -154,6 +168,7 @@ const services = [
     description: "Comprehensive digital marketing strategies and campaigns",
     icon: <TrendingUp className="w-8 h-8" />,
     category: "additional",
+    color: "purple",
     features: [
       "SEO Optimization",
       "Social Media Marketing",
@@ -164,7 +179,8 @@ const services = [
     ],
     technologies: ["Google Ads", "Facebook Ads", "Google Analytics", "SEMrush"],
     projects: "60+ Marketing Campaigns",
-    timeline: "1-3 months"
+    timeline: "1-3 months",
+    price: "Starting from $5,000"
   },
   {
     id: "staff-augmentation",
@@ -172,6 +188,7 @@ const services = [
     description: "Skilled developers and technical experts for your team",
     icon: <Users className="w-8 h-8" />,
     category: "additional",
+    color: "purple",
     features: [
       "Dedicated Developers",
       "Technical Consultancy",
@@ -182,7 +199,8 @@ const services = [
     ],
     technologies: ["Various based on requirements"],
     projects: "100+ Developer Placements",
-    timeline: "Flexible"
+    timeline: "Flexible",
+    price: "Starting from $3,000/month"
   }
 ];
 
@@ -194,10 +212,37 @@ export default function Services() {
     ? services 
     : services.filter(service => service.category === selectedCategory);
 
+  const getColorClasses = (color: string) => {
+    switch (color) {
+      case "blue":
+        return {
+          badge: "bg-blue-100 text-blue-800",
+          icon: "text-blue-600",
+          button: "bg-blue-600 hover:bg-blue-700"
+        };
+      case "green":
+        return {
+          badge: "bg-green-100 text-green-800",
+          icon: "text-green-600",
+          button: "bg-green-600 hover:bg-green-700"
+        };
+      case "purple":
+        return {
+          badge: "bg-purple-100 text-purple-800",
+          icon: "text-purple-600",
+          button: "bg-purple-600 hover:bg-purple-700"
+        };
+      default:
+        return {
+          badge: "bg-gray-100 text-gray-800",
+          icon: "text-gray-600",
+          button: "bg-gray-600 hover:bg-gray-700"
+        };
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
-      
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-black to-gray-900 text-white py-20 pt-32">
         <div className="max-w-[1440px] mx-auto px-8">
@@ -220,7 +265,7 @@ export default function Services() {
               <Button 
                 size="lg"
                 variant="outline"
-                className="border-white text-black bg-white hover:bg-gray-100 hover:text-black"
+                className="border-white text-white hover:bg-white hover:text-black"
               >
                 View Portfolio
               </Button>
@@ -242,28 +287,30 @@ export default function Services() {
 
             <TabsContent value={selectedCategory} className="mt-12">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filteredServices.map((service) => (
-                  <Card key={service.id} className="h-full hover:shadow-lg transition-shadow flex flex-col">
-                    <CardHeader className="flex-shrink-0">
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="p-3 rounded-lg bg-gray-100 text-primary">
-                          {service.icon}
+                {filteredServices.map((service) => {
+                  const colorClasses = getColorClasses(service.color);
+                  
+                  return (
+                    <Card key={service.id} className="h-full hover:shadow-lg transition-shadow">
+                      <CardHeader>
+                        <div className="flex items-center justify-between mb-4">
+                          <div className={`p-3 rounded-lg bg-gray-100 ${colorClasses.icon}`}>
+                            {service.icon}
+                          </div>
+                          <Badge className={colorClasses.badge}>
+                            {service.category}
+                          </Badge>
                         </div>
-                        <Badge className="bg-primary/10 text-primary">
-                          {service.category}
-                        </Badge>
-                      </div>
-                      <CardTitle className="text-xl">{service.title}</CardTitle>
-                      <CardDescription>{service.description}</CardDescription>
-                    </CardHeader>
-                    <CardContent className="flex-1 flex flex-col justify-between space-y-6">
-                      <div className="space-y-4">
+                        <CardTitle className="text-xl">{service.title}</CardTitle>
+                        <CardDescription>{service.description}</CardDescription>
+                      </CardHeader>
+                      <CardContent className="space-y-6">
                         <div>
                           <h4 className="font-semibold mb-3">Key Features:</h4>
                           <ul className="space-y-2">
                             {service.features.slice(0, 4).map((feature, index) => (
                               <li key={index} className="flex items-center text-sm text-gray-600">
-                                <CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
+                                <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
                                 {feature}
                               </li>
                             ))}
@@ -291,20 +338,21 @@ export default function Services() {
                             ))}
                           </div>
                         </div>
-                      </div>
 
-                      <div className="pt-4 border-t mt-auto">
-                        <Button 
-                          className="w-full bg-primary hover:bg-primary/90 text-white"
-                          onClick={() => setIsQuoteModalOpen(true)}
-                        >
-                          Get Quote
-                          <ArrowRight className="ml-2 h-4 w-4" />
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
+                        <div className="pt-4 border-t">
+                          <p className="font-bold text-lg text-gray-800 mb-4">{service.price}</p>
+                          <Button 
+                            className={`w-full ${colorClasses.button} text-white`}
+                            onClick={() => setIsQuoteModalOpen(true)}
+                          >
+                            Get Quote
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  );
+                })}
               </div>
             </TabsContent>
           </Tabs>
@@ -325,24 +373,24 @@ export default function Services() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Star className="h-8 w-8 text-primary" />
+              <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <Star className="h-8 w-8 text-blue-600" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Expert Team</h3>
               <p className="text-gray-600">50+ skilled developers and technical experts</p>
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <CheckCircle className="h-8 w-8 text-primary" />
+              <div className="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <CheckCircle className="h-8 w-8 text-green-600" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Quality Assurance</h3>
               <p className="text-gray-600">Rigorous testing and quality control processes</p>
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Users className="h-8 w-8 text-primary" />
+              <div className="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <Users className="h-8 w-8 text-purple-600" />
               </div>
               <h3 className="text-xl font-semibold mb-2">24/7 Support</h3>
               <p className="text-gray-600">Round-the-clock technical support and maintenance</p>
@@ -380,7 +428,6 @@ export default function Services() {
         </div>
       </section>
 
-      <Footer />
       <QuoteModal isOpen={isQuoteModalOpen} onClose={() => setIsQuoteModalOpen(false)} />
     </div>
   );
