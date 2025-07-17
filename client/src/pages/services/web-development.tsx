@@ -481,164 +481,180 @@ export default function WebDevelopment() {
           <div className="relative overflow-hidden">
             <div className="flex animate-scroll-left space-x-8 hover:pause-animation">
               {/* Project Cards */}
-              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-6 w-[400px] hover:shadow-xl transition-shadow">
-                <div className="flex items-center mb-4">
-                  <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
-                  <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
-                </div>
-                <div className="mb-4">
-                  <div className="rounded-lg h-40 mb-3 relative overflow-hidden">
+              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[600px] hover:shadow-xl transition-shadow">
+                <div className="flex items-start gap-6">
+                  <div className="flex-1">
+                    <div className="flex items-center mb-4">
+                      <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
+                      <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 text-gray-800">Beautiful Bathrooms In Dublin</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      Your ultimate source for innovative and high-quality bathroom solutions, expertly tailored to meet your needs
+                    </p>
+                  </div>
+                  <div className="flex-shrink-0 w-64">
                     <img 
                       src={bathroomImage} 
                       alt="Beautiful Bathrooms In Dublin" 
-                      className="w-full h-full object-cover rounded-lg"
+                      className="w-full h-48 object-cover rounded-lg shadow-md"
                     />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">Beautiful Bathrooms In Dublin</h3>
-                  <p className="text-gray-600 text-sm">
-                    Your ultimate source for innovative and high-quality bathroom solutions, expertly tailored to meet your needs
-                  </p>
                 </div>
               </div>
 
-              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-6 w-[400px] hover:shadow-xl transition-shadow">
-                <div className="flex items-center mb-4">
-                  <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
-                  <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
-                </div>
-                <div className="mb-4">
-                  <div className="rounded-lg h-40 mb-3 relative overflow-hidden">
+              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[600px] hover:shadow-xl transition-shadow">
+                <div className="flex items-start gap-6">
+                  <div className="flex-1">
+                    <div className="flex items-center mb-4">
+                      <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
+                      <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 text-gray-800">Door 2 Door House Removal Services</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      Delivering affordability without compromise - explore our array of services at budget-friendly rates.
+                    </p>
+                  </div>
+                  <div className="flex-shrink-0 w-64">
                     <img 
                       src={door2doorImage} 
                       alt="Door 2 Door House Removal Services" 
-                      className="w-full h-full object-cover rounded-lg"
+                      className="w-full h-48 object-cover rounded-lg shadow-md"
                     />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">Door 2 Door House Removal Services</h3>
-                  <p className="text-gray-600 text-sm">
-                    Delivering affordability without compromise - explore our array of services at budget-friendly rates.
-                  </p>
                 </div>
               </div>
 
-              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-6 w-[400px] hover:shadow-xl transition-shadow">
-                <div className="flex items-center mb-4">
-                  <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
-                  <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
-                </div>
-                <div className="mb-4">
-                  <div className="rounded-lg h-40 mb-3 relative overflow-hidden">
+              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[600px] hover:shadow-xl transition-shadow">
+                <div className="flex items-start gap-6">
+                  <div className="flex-1">
+                    <div className="flex items-center mb-4">
+                      <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
+                      <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 text-gray-800">We construct your dream projects</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      We specialize in all aspects of construction from home extensions, home renovations & new home builds.
+                    </p>
+                  </div>
+                  <div className="flex-shrink-0 w-64">
                     <img 
                       src={constructionImage} 
                       alt="We construct your dream projects" 
-                      className="w-full h-full object-cover rounded-lg"
+                      className="w-full h-48 object-cover rounded-lg shadow-md"
                     />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">We construct your dream projects</h3>
-                  <p className="text-gray-600 text-sm">
-                    We specialize in all aspects of construction from home extensions, home renovations & new home builds.
-                  </p>
                 </div>
               </div>
 
-              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-6 w-[400px] hover:shadow-xl transition-shadow">
-                <div className="flex items-center mb-4">
-                  <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
-                  <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
-                </div>
-                <div className="mb-4">
-                  <div className="rounded-lg h-40 mb-3 relative overflow-hidden">
+              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[600px] hover:shadow-xl transition-shadow">
+                <div className="flex items-start gap-6">
+                  <div className="flex-1">
+                    <div className="flex items-center mb-4">
+                      <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
+                      <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 text-gray-800">Carpets & Flooring Specialists</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      Work with a professional Interior Designer anywhere in Ireland from the comfort of your own home.
+                    </p>
+                  </div>
+                  <div className="flex-shrink-0 w-64">
                     <img 
                       src={carpetsImage} 
                       alt="Carpets & Flooring Specialists" 
-                      className="w-full h-full object-cover rounded-lg"
+                      className="w-full h-48 object-cover rounded-lg shadow-md"
                     />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">Carpets & Flooring Specialists</h3>
-                  <p className="text-gray-600 text-sm">
-                    Work with a professional Interior Designer anywhere in Ireland from the comfort of your own home.
-                  </p>
                 </div>
               </div>
 
-              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-6 w-[400px] hover:shadow-xl transition-shadow">
-                <div className="flex items-center mb-4">
-                  <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
-                  <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
-                </div>
-                <div className="mb-4">
-                  <div className="rounded-lg h-40 mb-3 relative overflow-hidden">
+              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[600px] hover:shadow-xl transition-shadow">
+                <div className="flex items-start gap-6">
+                  <div className="flex-1">
+                    <div className="flex items-center mb-4">
+                      <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
+                      <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 text-gray-800">E-Commerce Platform</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      Modern e-commerce solution with advanced features, secure payment processing, and seamless user experience.
+                    </p>
+                  </div>
+                  <div className="flex-shrink-0 w-64">
                     <img 
                       src={ecommerceImage} 
                       alt="E-Commerce Platform" 
-                      className="w-full h-full object-cover rounded-lg"
+                      className="w-full h-48 object-cover rounded-lg shadow-md"
                     />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">E-Commerce Platform</h3>
-                  <p className="text-gray-600 text-sm">
-                    Modern e-commerce solution with advanced features, secure payment processing, and seamless user experience.
-                  </p>
                 </div>
               </div>
 
-              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-6 w-[400px] hover:shadow-xl transition-shadow">
-                <div className="flex items-center mb-4">
-                  <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
-                  <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
-                </div>
-                <div className="mb-4">
-                  <div className="rounded-lg h-40 mb-3 relative overflow-hidden">
+              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[600px] hover:shadow-xl transition-shadow">
+                <div className="flex items-start gap-6">
+                  <div className="flex-1">
+                    <div className="flex items-center mb-4">
+                      <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
+                      <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 text-gray-800">Business Management System</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      Comprehensive business management platform with CRM, inventory management, and analytics dashboard.
+                    </p>
+                  </div>
+                  <div className="flex-shrink-0 w-64">
                     <img 
                       src={businessImage} 
                       alt="Business Management System" 
-                      className="w-full h-full object-cover rounded-lg"
+                      className="w-full h-48 object-cover rounded-lg shadow-md"
                     />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">Business Management System</h3>
-                  <p className="text-gray-600 text-sm">
-                    Comprehensive business management platform with CRM, inventory management, and analytics dashboard.
-                  </p>
                 </div>
               </div>
 
               {/* Duplicate cards for seamless loop */}
-              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-6 w-[400px] hover:shadow-xl transition-shadow">
-                <div className="flex items-center mb-4">
-                  <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
-                  <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
-                </div>
-                <div className="mb-4">
-                  <div className="rounded-lg h-40 mb-3 relative overflow-hidden">
+              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[600px] hover:shadow-xl transition-shadow">
+                <div className="flex items-start gap-6">
+                  <div className="flex-1">
+                    <div className="flex items-center mb-4">
+                      <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
+                      <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 text-gray-800">Beautiful Bathrooms In Dublin</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      Your ultimate source for innovative and high-quality bathroom solutions, expertly tailored to meet your needs
+                    </p>
+                  </div>
+                  <div className="flex-shrink-0 w-64">
                     <img 
                       src={bathroomImage} 
                       alt="Beautiful Bathrooms In Dublin" 
-                      className="w-full h-full object-cover rounded-lg"
+                      className="w-full h-48 object-cover rounded-lg shadow-md"
                     />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">Beautiful Bathrooms In Dublin</h3>
-                  <p className="text-gray-600 text-sm">
-                    Your ultimate source for innovative and high-quality bathroom solutions, expertly tailored to meet your needs
-                  </p>
                 </div>
               </div>
 
-              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-6 w-[400px] hover:shadow-xl transition-shadow">
-                <div className="flex items-center mb-4">
-                  <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
-                  <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
-                </div>
-                <div className="mb-4">
-                  <div className="rounded-lg h-40 mb-3 relative overflow-hidden">
+              <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[600px] hover:shadow-xl transition-shadow">
+                <div className="flex items-start gap-6">
+                  <div className="flex-1">
+                    <div className="flex items-center mb-4">
+                      <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
+                      <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 text-gray-800">Door 2 Door House Removal Services</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      Delivering affordability without compromise - explore our array of services at budget-friendly rates.
+                    </p>
+                  </div>
+                  <div className="flex-shrink-0 w-64">
                     <img 
                       src={door2doorImage} 
                       alt="Door 2 Door House Removal Services" 
-                      className="w-full h-full object-cover rounded-lg"
+                      className="w-full h-48 object-cover rounded-lg shadow-md"
                     />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">Door 2 Door House Removal Services</h3>
-                  <p className="text-gray-600 text-sm">
-                    Delivering affordability without compromise - explore our array of services at budget-friendly rates.
-                  </p>
                 </div>
               </div>
             </div>
