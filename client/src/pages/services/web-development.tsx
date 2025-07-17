@@ -484,9 +484,8 @@ export default function WebDevelopment() {
               <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[600px] hover:shadow-xl transition-shadow">
                 <div className="flex items-start gap-6">
                   <div className="flex-1">
-                    <div className="flex items-center mb-4">
-                      <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
-                      <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+                    <div className="mb-4">
+                      <img src={xconLogo} alt="XCon Technologies" className="h-6 w-auto" />
                     </div>
                     <h3 className="text-xl font-bold mb-3 text-gray-800">Beautiful Bathrooms In Dublin</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
@@ -494,11 +493,13 @@ export default function WebDevelopment() {
                     </p>
                   </div>
                   <div className="flex-shrink-0 w-64">
-                    <img 
-                      src={bathroomImage} 
-                      alt="Beautiful Bathrooms In Dublin" 
-                      className="w-full h-48 object-cover rounded-lg shadow-md"
-                    />
+                    <div className="bg-black rounded-lg p-2">
+                      <img 
+                        src={bathroomImage} 
+                        alt="Beautiful Bathrooms In Dublin" 
+                        className="w-full h-44 object-contain rounded"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -506,9 +507,8 @@ export default function WebDevelopment() {
               <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[600px] hover:shadow-xl transition-shadow">
                 <div className="flex items-start gap-6">
                   <div className="flex-1">
-                    <div className="flex items-center mb-4">
-                      <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
-                      <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+                    <div className="mb-4">
+                      <img src={xconLogo} alt="XCon Technologies" className="h-6 w-auto" />
                     </div>
                     <h3 className="text-xl font-bold mb-3 text-gray-800">Door 2 Door House Removal Services</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
@@ -516,11 +516,13 @@ export default function WebDevelopment() {
                     </p>
                   </div>
                   <div className="flex-shrink-0 w-64">
-                    <img 
-                      src={door2doorImage} 
-                      alt="Door 2 Door House Removal Services" 
-                      className="w-full h-48 object-cover rounded-lg shadow-md"
-                    />
+                    <div className="bg-black rounded-lg p-2">
+                      <img 
+                        src={door2doorImage} 
+                        alt="Door 2 Door House Removal Services" 
+                        className="w-full h-44 object-contain rounded"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -528,9 +530,8 @@ export default function WebDevelopment() {
               <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[600px] hover:shadow-xl transition-shadow">
                 <div className="flex items-start gap-6">
                   <div className="flex-1">
-                    <div className="flex items-center mb-4">
-                      <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
-                      <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+                    <div className="mb-4">
+                      <img src={xconLogo} alt="XCon Technologies" className="h-6 w-auto" />
                     </div>
                     <h3 className="text-xl font-bold mb-3 text-gray-800">We construct your dream projects</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
@@ -538,11 +539,13 @@ export default function WebDevelopment() {
                     </p>
                   </div>
                   <div className="flex-shrink-0 w-64">
-                    <img 
-                      src={constructionImage} 
-                      alt="We construct your dream projects" 
-                      className="w-full h-48 object-cover rounded-lg shadow-md"
-                    />
+                    <div className="bg-black rounded-lg p-2">
+                      <img 
+                        src={constructionImage} 
+                        alt="We construct your dream projects" 
+                        className="w-full h-44 object-contain rounded"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -550,9 +553,8 @@ export default function WebDevelopment() {
               <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[600px] hover:shadow-xl transition-shadow">
                 <div className="flex items-start gap-6">
                   <div className="flex-1">
-                    <div className="flex items-center mb-4">
-                      <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
-                      <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+                    <div className="mb-4">
+                      <img src={xconLogo} alt="XCon Technologies" className="h-6 w-auto" />
                     </div>
                     <h3 className="text-xl font-bold mb-3 text-gray-800">Carpets & Flooring Specialists</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
@@ -560,11 +562,13 @@ export default function WebDevelopment() {
                     </p>
                   </div>
                   <div className="flex-shrink-0 w-64">
-                    <img 
-                      src={carpetsImage} 
-                      alt="Carpets & Flooring Specialists" 
-                      className="w-full h-48 object-cover rounded-lg shadow-md"
-                    />
+                    <div className="bg-black rounded-lg p-2">
+                      <img 
+                        src={carpetsImage} 
+                        alt="Carpets & Flooring Specialists" 
+                        className="w-full h-44 object-contain rounded"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -572,9 +576,8 @@ export default function WebDevelopment() {
               <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[600px] hover:shadow-xl transition-shadow">
                 <div className="flex items-start gap-6">
                   <div className="flex-1">
-                    <div className="flex items-center mb-4">
-                      <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
-                      <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+                    <div className="mb-4">
+                      <img src={xconLogo} alt="XCon Technologies" className="h-6 w-auto" />
                     </div>
                     <h3 className="text-xl font-bold mb-3 text-gray-800">E-Commerce Platform</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
@@ -582,11 +585,13 @@ export default function WebDevelopment() {
                     </p>
                   </div>
                   <div className="flex-shrink-0 w-64">
-                    <img 
-                      src={ecommerceImage} 
-                      alt="E-Commerce Platform" 
-                      className="w-full h-48 object-cover rounded-lg shadow-md"
-                    />
+                    <div className="bg-black rounded-lg p-2">
+                      <img 
+                        src={ecommerceImage} 
+                        alt="E-Commerce Platform" 
+                        className="w-full h-44 object-contain rounded"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -594,9 +599,8 @@ export default function WebDevelopment() {
               <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[600px] hover:shadow-xl transition-shadow">
                 <div className="flex items-start gap-6">
                   <div className="flex-1">
-                    <div className="flex items-center mb-4">
-                      <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
-                      <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+                    <div className="mb-4">
+                      <img src={xconLogo} alt="XCon Technologies" className="h-6 w-auto" />
                     </div>
                     <h3 className="text-xl font-bold mb-3 text-gray-800">Business Management System</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
@@ -604,11 +608,13 @@ export default function WebDevelopment() {
                     </p>
                   </div>
                   <div className="flex-shrink-0 w-64">
-                    <img 
-                      src={businessImage} 
-                      alt="Business Management System" 
-                      className="w-full h-48 object-cover rounded-lg shadow-md"
-                    />
+                    <div className="bg-black rounded-lg p-2">
+                      <img 
+                        src={businessImage} 
+                        alt="Business Management System" 
+                        className="w-full h-44 object-contain rounded"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -617,9 +623,8 @@ export default function WebDevelopment() {
               <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[600px] hover:shadow-xl transition-shadow">
                 <div className="flex items-start gap-6">
                   <div className="flex-1">
-                    <div className="flex items-center mb-4">
-                      <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
-                      <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+                    <div className="mb-4">
+                      <img src={xconLogo} alt="XCon Technologies" className="h-6 w-auto" />
                     </div>
                     <h3 className="text-xl font-bold mb-3 text-gray-800">Beautiful Bathrooms In Dublin</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
@@ -627,11 +632,13 @@ export default function WebDevelopment() {
                     </p>
                   </div>
                   <div className="flex-shrink-0 w-64">
-                    <img 
-                      src={bathroomImage} 
-                      alt="Beautiful Bathrooms In Dublin" 
-                      className="w-full h-48 object-cover rounded-lg shadow-md"
-                    />
+                    <div className="bg-black rounded-lg p-2">
+                      <img 
+                        src={bathroomImage} 
+                        alt="Beautiful Bathrooms In Dublin" 
+                        className="w-full h-44 object-contain rounded"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -639,9 +646,8 @@ export default function WebDevelopment() {
               <div className="flex-shrink-0 bg-white rounded-xl shadow-lg p-8 w-[600px] hover:shadow-xl transition-shadow">
                 <div className="flex items-start gap-6">
                   <div className="flex-1">
-                    <div className="flex items-center mb-4">
-                      <img src={xconLogo} alt="XCon Technologies" className="h-8 w-auto" />
-                      <div className="text-xs text-gray-500 ml-2">TECHNOLOGIES.COM</div>
+                    <div className="mb-4">
+                      <img src={xconLogo} alt="XCon Technologies" className="h-6 w-auto" />
                     </div>
                     <h3 className="text-xl font-bold mb-3 text-gray-800">Door 2 Door House Removal Services</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
@@ -649,11 +655,13 @@ export default function WebDevelopment() {
                     </p>
                   </div>
                   <div className="flex-shrink-0 w-64">
-                    <img 
-                      src={door2doorImage} 
-                      alt="Door 2 Door House Removal Services" 
-                      className="w-full h-48 object-cover rounded-lg shadow-md"
-                    />
+                    <div className="bg-black rounded-lg p-2">
+                      <img 
+                        src={door2doorImage} 
+                        alt="Door 2 Door House Removal Services" 
+                        className="w-full h-44 object-contain rounded"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
