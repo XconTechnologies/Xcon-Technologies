@@ -54,119 +54,85 @@ export default function Header() {
               onMouseEnter={() => setIsMegaMenuOpen(true)}
               onMouseLeave={() => setIsMegaMenuOpen(false)}
             >
-              <button
-                className="text-white hover:text-primary transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full flex items-center space-x-1"
-              >
-                <span>Services</span>
-                <ChevronDown className="h-4 w-4" />
-              </button>
+              <Link href="/services">
+                <button
+                  className="text-white hover:text-primary transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full flex items-center space-x-1"
+                >
+                  <span>Services</span>
+                  <ChevronDown className="h-4 w-4" />
+                </button>
+              </Link>
               
               {/* Mega Menu Dropdown */}
               {isMegaMenuOpen && (
                 <div 
                   className="fixed top-[104px] left-0 w-full bg-white shadow-2xl z-50 border-t border-gray-200"
                 >
-                  <div className="max-w-[1440px] mx-auto px-8 py-12">
-                    <div className="grid grid-cols-4 gap-8">
+                  <div className="max-w-[1440px] mx-auto px-8 py-8">
+                    <div className="grid grid-cols-3 gap-12">
                       {/* Column 1 - Core Services */}
-                      <div className="space-y-6">
-                        <div className="bg-blue-50 p-6 rounded-lg border border-blue-100">
-                          <div className="flex items-center mb-4">
-                            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
-                              <span className="text-white font-bold text-sm">CS</span>
-                            </div>
-                            <h3 className="text-lg font-bold text-gray-800">Core Services</h3>
+                      <div>
+                        <div className="flex items-center mb-6">
+                          <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
+                            <span className="text-white font-bold text-sm">CS</span>
                           </div>
-                          <div className="space-y-3">
-                            <div>
-                              <a href="/services/mobile-app-development" target="_blank" className="block text-gray-700 hover:text-primary transition-colors font-medium">
-                                ➤ Mobile App Development
-                              </a>
-                              <p className="text-sm text-gray-500 mt-1">iOS, Android & Cross-platform apps</p>
-                            </div>
-                            <div>
-                              <a href="/services/web-development" target="_blank" className="block text-gray-700 hover:text-primary transition-colors font-medium">
-                                ➤ Web Development
-                              </a>
-                              <p className="text-sm text-gray-500 mt-1">Frontend, Backend & Full-stack solutions</p>
-                            </div>
-                            <div>
-                              <a href="/services/custom-software-development" target="_blank" className="block text-gray-700 hover:text-primary transition-colors font-medium">
-                                ➤ Custom Software Development
-                              </a>
-                              <p className="text-sm text-gray-500 mt-1">Enterprise & SaaS solutions</p>
-                            </div>
+                          <h3 className="text-lg font-bold text-gray-800">Core Services</h3>
+                        </div>
+                        <div className="space-y-4">
+                          <div>
+                            <a href="/services/mobile-app-development" target="_blank" className="block text-blue-600 hover:text-primary transition-colors font-medium">
+                              ➤ Mobile App Development
+                            </a>
+                            <p className="text-sm text-gray-500 mt-1">iOS, Android & Cross-platform apps</p>
+                          </div>
+                          <div>
+                            <a href="/services/web-development" target="_blank" className="block text-blue-600 hover:text-primary transition-colors font-medium">
+                              ➤ Web Development
+                            </a>
+                            <p className="text-sm text-gray-500 mt-1">Frontend, Backend & Full-stack solutions</p>
+                          </div>
+                          <div>
+                            <a href="/services/custom-software-development" target="_blank" className="block text-blue-600 hover:text-primary transition-colors font-medium">
+                              ➤ Custom Software Development
+                            </a>
+                            <p className="text-sm text-gray-500 mt-1">Enterprise & SaaS solutions</p>
                           </div>
                         </div>
                       </div>
                       
                       {/* Column 2 - Specialized Support */}
-                      <div className="space-y-6">
-                        <div className="bg-green-50 p-6 rounded-lg border border-green-100">
-                          <div className="flex items-center mb-4">
-                            <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center mr-3">
-                              <span className="text-white font-bold text-sm">SS</span>
-                            </div>
-                            <h3 className="text-lg font-bold text-gray-800">Specialized Support</h3>
+                      <div>
+                        <div className="flex items-center mb-6">
+                          <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center mr-3">
+                            <span className="text-white font-bold text-sm">SS</span>
                           </div>
-                          <div className="space-y-3">
-                            <div>
-                              <a href="/services/cloud-services" target="_blank" className="block text-gray-700 hover:text-primary transition-colors font-medium">
-                                ➤ Cloud Services
-                              </a>
-                              <p className="text-sm text-gray-500 mt-1">AWS, Azure & Google Cloud solutions</p>
-                            </div>
-                            <div>
-                              <a href="/services/artificial-intelligence" target="_blank" className="block text-gray-700 hover:text-primary transition-colors font-medium">
-                                ➤ AI & Machine Learning
-                              </a>
-                              <p className="text-sm text-gray-500 mt-1">ML models & AI-powered solutions</p>
-                            </div>
-                            <div>
-                              <a href="/services/blockchain-development" target="_blank" className="block text-gray-700 hover:text-primary transition-colors font-medium">
-                                ➤ Blockchain Development
-                              </a>
-                              <p className="text-sm text-gray-500 mt-1">Smart contracts & DeFi solutions</p>
-                            </div>
+                          <h3 className="text-lg font-bold text-gray-800">Specialized Support</h3>
+                        </div>
+                        <div className="space-y-4">
+                          <div>
+                            <a href="/services/cloud-services" target="_blank" className="block text-green-600 hover:text-primary transition-colors font-medium">
+                              ➤ Cloud Services
+                            </a>
+                            <p className="text-sm text-gray-500 mt-1">AWS, Azure & Google Cloud solutions</p>
+                          </div>
+                          <div>
+                            <a href="/services/artificial-intelligence" target="_blank" className="block text-green-600 hover:text-primary transition-colors font-medium">
+                              ➤ AI & Machine Learning
+                            </a>
+                            <p className="text-sm text-gray-500 mt-1">ML models & AI-powered solutions</p>
+                          </div>
+                          <div>
+                            <a href="/services/blockchain-development" target="_blank" className="block text-green-600 hover:text-primary transition-colors font-medium">
+                              ➤ Blockchain Development
+                            </a>
+                            <p className="text-sm text-gray-500 mt-1">Smart contracts & DeFi solutions</p>
                           </div>
                         </div>
                       </div>
                       
-                      {/* Column 3 - Additional Services */}
-                      <div className="space-y-6">
-                        <div className="bg-purple-50 p-6 rounded-lg border border-purple-100">
-                          <div className="flex items-center mb-4">
-                            <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center mr-3">
-                              <span className="text-white font-bold text-sm">AS</span>
-                            </div>
-                            <h3 className="text-lg font-bold text-gray-800">Additional Services</h3>
-                          </div>
-                          <div className="space-y-3">
-                            <div>
-                              <a href="/services/game-development" target="_blank" className="block text-gray-700 hover:text-primary transition-colors font-medium">
-                                ➤ Game Development
-                              </a>
-                              <p className="text-sm text-gray-500 mt-1">Mobile, Web & AR/VR games</p>
-                            </div>
-                            <div>
-                              <a href="/services/digital-marketing" target="_blank" className="block text-gray-700 hover:text-primary transition-colors font-medium">
-                                ➤ Digital Marketing
-                              </a>
-                              <p className="text-sm text-gray-500 mt-1">SEO, SEM & Social media marketing</p>
-                            </div>
-                            <div>
-                              <a href="/services/staff-augmentation" target="_blank" className="block text-gray-700 hover:text-primary transition-colors font-medium">
-                                ➤ Staff Augmentation
-                              </a>
-                              <p className="text-sm text-gray-500 mt-1">Dedicated teams & consultancy</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      {/* Column 4 - Image Section */}
-                      <div className="space-y-6">
-                        <div className="bg-gradient-to-br from-primary to-primary/80 p-6 rounded-lg text-white">
+                      {/* Column 3 - End-to-End Support */}
+                      <div>
+                        <div className="bg-gradient-to-br from-primary to-primary/80 p-6 rounded-lg text-white h-fit">
                           <div className="flex items-center mb-4">
                             <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mr-3">
                               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
@@ -178,21 +144,7 @@ export default function Header() {
                           <p className="text-white/90 mb-4">
                             From consultation to deployment, we provide comprehensive technology solutions
                           </p>
-                          <div className="space-y-2 text-sm">
-                            <div className="flex items-center">
-                              <div className="w-4 h-4 bg-white/20 rounded-full mr-2"></div>
-                              <span>✓ 24/7 Technical Support</span>
-                            </div>
-                            <div className="flex items-center">
-                              <div className="w-4 h-4 bg-white/20 rounded-full mr-2"></div>
-                              <span>✓ Agile Development Process</span>
-                            </div>
-                            <div className="flex items-center">
-                              <div className="w-4 h-4 bg-white/20 rounded-full mr-2"></div>
-                              <span>✓ Quality Assurance</span>
-                            </div>
-                          </div>
-                          <div className="mt-6">
+                          <div className="mb-6">
                             <button 
                               onClick={() => setIsQuoteModalOpen(true)}
                               className="bg-white text-primary px-6 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors"
@@ -203,7 +155,7 @@ export default function Header() {
                         </div>
                         
                         {/* Contact Info */}
-                        <div className="bg-gray-50 p-4 rounded-lg border">
+                        <div className="mt-4">
                           <h4 className="font-semibold text-gray-800 mb-2">💬 Need Help?</h4>
                           <div className="space-y-2 text-sm">
                             <div className="flex items-center text-gray-600">
@@ -218,8 +170,6 @@ export default function Header() {
                         </div>
                       </div>
                     </div>
-                    
-
                   </div>
                 </div>
               )}
