@@ -241,6 +241,166 @@ const ITConsulting = () => {
         </div>
       </section>
 
+      {/* Our Process Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-[1440px] mx-auto px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Our <span className="text-primary">IT Consulting</span> Process
+            </h2>
+            <p className="text-lg text-gray-600">
+              A systematic approach to technology strategy and implementation
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-primary text-white rounded-lg flex items-center justify-center mb-4 font-bold text-lg">
+                1
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Discovery & Assessment</h3>
+              <p className="text-gray-600">
+                Comprehensive analysis of your current technology infrastructure, business processes, and strategic objectives.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-primary text-white rounded-lg flex items-center justify-center mb-4 font-bold text-lg">
+                2
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Strategy Development</h3>
+              <p className="text-gray-600">
+                Create customized technology roadmaps and strategic plans aligned with your business goals and market requirements.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-primary text-white rounded-lg flex items-center justify-center mb-4 font-bold text-lg">
+                3
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Solution Design</h3>
+              <p className="text-gray-600">
+                Design comprehensive technology solutions that address your specific challenges and opportunities.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-primary text-white rounded-lg flex items-center justify-center mb-4 font-bold text-lg">
+                4
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Implementation Planning</h3>
+              <p className="text-gray-600">
+                Develop detailed implementation plans with timelines, resource allocation, and risk management strategies.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-primary text-white rounded-lg flex items-center justify-center mb-4 font-bold text-lg">
+                5
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Execution & Support</h3>
+              <p className="text-gray-600">
+                Guide implementation processes and provide ongoing support to ensure successful technology adoption.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-primary text-white rounded-lg flex items-center justify-center mb-4 font-bold text-lg">
+                6
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Optimization & Growth</h3>
+              <p className="text-gray-600">
+                Continuous monitoring, optimization, and strategic adjustments to maximize technology value and business impact.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Tech Stack We Use Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-[1440px] mx-auto px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <span className="text-primary">Tech Stack</span> We Use
+            </h2>
+            <p className="text-lg text-gray-600">
+              Leveraging cutting-edge technologies for optimal IT solutions
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+            {[
+              { name: "Microsoft Azure", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" },
+              { name: "Amazon AWS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" },
+              { name: "Google Cloud", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" },
+              { name: "Docker", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+              { name: "Kubernetes", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" },
+              { name: "Terraform", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" },
+              { name: "Jenkins", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" },
+              { name: "Ansible", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-original.svg" },
+              { name: "VMware", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vmware/vmware-original.svg" },
+              { name: "Splunk", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/splunk/splunk-original.svg" },
+              { name: "Grafana", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" },
+              { name: "Prometheus", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg" }
+            ].map((tech, index) => (
+              <div key={index} className="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow text-center">
+                <img src={tech.logo} alt={tech.name} className="w-12 h-12 mx-auto mb-4" />
+                <h3 className="text-sm font-medium text-gray-800">{tech.name}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Achievements Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-[1440px] mx-auto px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Our <span className="text-primary">Achievements</span>
+            </h2>
+            <p className="text-lg text-gray-600">
+              Proven track record of successful IT consulting projects
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow text-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">150+</h3>
+              <p className="text-gray-600">Successful Consulting Projects</p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow text-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <TrendingUp className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">98%</h3>
+              <p className="text-gray-600">Client Satisfaction Rate</p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow text-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <CheckCircle className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">12+</h3>
+              <p className="text-gray-600">Years of Experience</p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow text-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Eye className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">4.9/5</h3>
+              <p className="text-gray-600">Clutch Rating</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Ready to Transform Section */}
       <section className="py-16 bg-primary">
         <div className="max-w-[1440px] mx-auto px-8 text-center">
