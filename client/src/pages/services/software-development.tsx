@@ -63,7 +63,7 @@ const SoftwareDevelopment = () => {
     <div className="min-h-screen bg-white">
       <Header />
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-gray-900 to-gray-800 text-white pt-20 pb-16">
+      <section className="relative bg-gradient-to-r from-gray-900 to-gray-800 text-white py-20 pt-32 relative overflow-hidden">
         <div className="max-w-[1440px] mx-auto px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -74,15 +74,21 @@ const SoftwareDevelopment = () => {
                 Get the Best Customer Software Development Services! Selecting the right custom software development services company for your business project is key to success. Our custom software developer delivers the best custom software design that support a smooth, multi-channel presence and help you connect with customers wherever they are.
               </p>
               <div className="flex flex-wrap gap-4">
-                <button 
+                <Button 
+                  size="lg"
                   onClick={() => setIsQuoteModalOpen(true)}
-                  className="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors"
+                  className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg rounded-lg"
                 >
-                  GET A QUOTE
-                </button>
-                <button className="border border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-gray-900 transition-colors">
+                  Get A Quote
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+                <Button 
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white bg-transparent hover:bg-white hover:text-black px-8 py-3 text-lg rounded-lg"
+                >
                   View Our Portfolio
-                </button>
+                </Button>
               </div>
             </div>
             <div className="relative">
@@ -510,6 +516,34 @@ const SoftwareDevelopment = () => {
               <h3 className="text-xl font-semibold mb-2">Efficient Workflow</h3>
               <p className="text-gray-600">Streamlined development process with continuous integration</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Ready to Transform Section */}
+      <section className="py-16 bg-primary">
+        <div className="max-w-[1440px] mx-auto px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+            Ready to Transform Your Online Presence?
+          </h2>
+          <p className="text-lg text-gray-200 mb-8 max-w-2xl mx-auto">
+            Join our satisfied clients and let's create something amazing together. Professional software development services tailored to your business needs.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button 
+              size="lg"
+              onClick={() => setIsQuoteModalOpen(true)}
+              className="bg-white text-primary hover:bg-gray-100 px-8 py-3 text-lg rounded-lg"
+            >
+              Get A Quote →
+            </Button>
+            <Button 
+              size="lg"
+              variant="outline"
+              className="border-white text-white bg-transparent hover:bg-white hover:text-primary px-8 py-3 text-lg rounded-lg"
+            >
+              Schedule Consultation
+            </Button>
           </div>
         </div>
       </section>
