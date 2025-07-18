@@ -54,31 +54,6 @@ export default function Footer() {
               At XCon Technologies, we're more than just a software company in the US. We are your partners in innovation. Let's build the future together with cutting-edge IT solutions according to your business requirements. Contact us today to transform your software development ideas into reality!
             </p>
             
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-primary" />
-                <span className="text-gray-800">+1 (513) 302-4718</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-primary" />
-                <div className="flex flex-col">
-                  <span className="text-gray-800">askforquote@xcontechnologies.com</span>
-                  <span className="text-gray-600 text-sm">Business inquiries & quotes</span>
-                </div>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-primary" />
-                <div className="flex flex-col">
-                  <span className="text-gray-800">nouman.ali@xcontechnologies.com</span>
-                  <span className="text-gray-600 text-sm">HR & job applications</span>
-                </div>
-              </div>
-              <div className="flex items-center space-x-3">
-                <MapPin className="h-5 w-5 text-primary" />
-                <span className="text-gray-800">Ohio City, USA</span>
-              </div>
-            </div>
-            
             <div className="flex space-x-4">
               <a href="https://www.facebook.com/xcontechnologies/" target="_blank" rel="noopener noreferrer" className="bg-gray-800 text-white p-2 rounded-full hover:bg-primary transition-colors">
                 <Facebook className="h-5 w-5" />
