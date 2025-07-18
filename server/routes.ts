@@ -2,6 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { sendContactFormEmail, sendQuoteRequestEmail, sendConsultationRequestEmail } from "./email";
+import { emailLogger } from "./email-logger";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form endpoint
@@ -106,6 +107,21 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error("Consultation request error:", error);
       res.status(500).json({ error: "Internal server error" });
+    }
+  });
+
+  // Admin endpoint to view form submissions
+  app.get("/admin/submissions", async (req, res) => {
+    try {
+      const submissions = await emailLogger.getSubmissions();
+      res.json({
+        success: true,
+        total: submissions.length,
+        submissions: submissions.slice(-50) // Show last 50 submissions
+      });
+    } catch (error) {
+      console.error("Error fetching submissions:", error);
+      res.status(500).json({ error: "Failed to fetch submissions" });
     }
   });
 

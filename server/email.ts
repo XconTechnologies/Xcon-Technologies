@@ -1,4 +1,5 @@
 import * as nodemailer from 'nodemailer';
+import { emailLogger } from './email-logger';
 
 interface ContactFormData {
   firstName: string;
@@ -37,17 +38,13 @@ const createTransporter = () => {
 };
 
 export async function sendContactFormEmail(formData: ContactFormData): Promise<boolean> {
-  // For now, let's log the email content and simulate success
-  // This allows the contact form to work while we resolve Gmail authentication
-  
-  console.log('\n📧 NEW CONTACT FORM SUBMISSION 📧');
-  console.log('================================');
-  console.log(`Name: ${formData.firstName} ${formData.lastName}`);
-  console.log(`Email: ${formData.email}`);
-  console.log(`Phone: ${formData.phone || 'Not provided'}`);
-  console.log(`Message: ${formData.message}`);
-  console.log(`Timestamp: ${new Date().toLocaleString()}`);
-  console.log('================================\n');
+  // Log submission to file for reliable tracking
+  await emailLogger.logSubmission({
+    type: 'contact',
+    data: formData,
+    timestamp: new Date().toISOString(),
+    email: formData.email
+  });
 
   // Try to send email, but don't fail if it doesn't work
   try {
@@ -135,16 +132,13 @@ export async function sendContactFormEmail(formData: ContactFormData): Promise<b
 }
 
 export async function sendQuoteRequestEmail(formData: QuoteRequestData): Promise<boolean> {
-  console.log('\n💼 NEW QUOTE REQUEST 💼');
-  console.log('=========================');
-  console.log(`Name: ${formData.name}`);
-  console.log(`Email: ${formData.email}`);
-  console.log(`Phone: ${formData.phone || 'Not provided'}`);
-  console.log(`Business: ${formData.business || 'Not provided'}`);
-  console.log(`Service: ${formData.service || 'Not provided'}`);
-  console.log(`Message: ${formData.message}`);
-  console.log(`Timestamp: ${new Date().toLocaleString()}`);
-  console.log('=========================\n');
+  // Log submission to file for reliable tracking
+  await emailLogger.logSubmission({
+    type: 'quote',
+    data: formData,
+    timestamp: new Date().toISOString(),
+    email: formData.email
+  });
 
   try {
     const transporter = createTransporter();
@@ -235,15 +229,13 @@ export async function sendQuoteRequestEmail(formData: QuoteRequestData): Promise
 }
 
 export async function sendConsultationRequestEmail(formData: ConsultationRequestData): Promise<boolean> {
-  console.log('\n🔍 NEW CONSULTATION REQUEST 🔍');
-  console.log('===============================');
-  console.log(`Name: ${formData.fullName}`);
-  console.log(`Email: ${formData.workEmail}`);
-  console.log(`Phone: ${formData.phone || 'Not provided'}`);
-  console.log(`Company: ${formData.company || 'Not provided'}`);
-  console.log(`Message: ${formData.message}`);
-  console.log(`Timestamp: ${new Date().toLocaleString()}`);
-  console.log('===============================\n');
+  // Log submission to file for reliable tracking
+  await emailLogger.logSubmission({
+    type: 'consultation',
+    data: formData,
+    timestamp: new Date().toISOString(),
+    email: formData.workEmail
+  });
 
   try {
     const transporter = createTransporter();
