@@ -6,7 +6,7 @@ import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Textarea } from './ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
-import XConLogo from "@assets/Xcon Logo cropped_1752479137104.png";
+import XConLogo from "@assets/Xcon Logo_1752834032465.png";
 
 interface QuoteModalProps {
   isOpen: boolean;
@@ -92,7 +92,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
             <img 
               src={XConLogo} 
               alt="XCon Technologies" 
-              className="h-14 w-auto mx-auto"
+              className="h-8 w-auto mx-auto"
             />
           </div>
           <h2 className="text-2xl font-bold text-gray-900 mb-2">Get Your Free Quote</h2>
