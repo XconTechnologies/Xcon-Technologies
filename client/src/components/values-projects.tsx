@@ -54,13 +54,11 @@ export default function ValuesProjects() {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 bg-white">
       <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
-
-
         {/* Tailored Solutions for Every Business */}
         <div>
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
               Tailored <span className="text-primary">Solutions</span> for Every Business
             </h2>
