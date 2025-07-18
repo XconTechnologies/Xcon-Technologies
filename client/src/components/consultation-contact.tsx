@@ -4,6 +4,12 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import PhoneInput from "@/components/ui/phone-input";
 import xconLogo from "@assets/Xcon Logo cropped_1752479137104.png";
+import securityBadge from "@assets/aws-security_1752489212506.png";
+import cloudPractitionerBadge from "@assets/aws-cloud-practitioner_1752489212501.png";
+import devopsBadge from "@assets/aws-devOps_1752489212505.png";
+import developerBadge from "@assets/aws-developer_1752489212504.png";
+import solutionsArchitectBadge from "@assets/aws-solution-architect_1752489212507.png";
+import sysopsBadge from "@assets/aws-sysOps_1752489212508.png";
 
 export default function ConsultationContact() {
   const [formData, setFormData] = useState({
@@ -278,6 +284,66 @@ export default function ConsultationContact() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        
+        {/* Certification Badges */}
+        <div className="mt-16 pt-12 border-t border-gray-200">
+          <div className="flex justify-center items-center gap-8 flex-wrap">
+            <a href="https://www.security.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300">
+              <div className="w-20 h-20 flex items-center justify-center">
+                <img 
+                  src={securityBadge} 
+                  alt="AWS Security Specialty Certification" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </a>
+            <a href="https://www.cloud-practitioner.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300">
+              <div className="w-20 h-20 flex items-center justify-center">
+                <img 
+                  src={cloudPractitionerBadge} 
+                  alt="AWS Cloud Practitioner Foundational Certification" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </a>
+            <a href="https://devops.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300">
+              <div className="w-20 h-20 flex items-center justify-center">
+                <img 
+                  src={devopsBadge} 
+                  alt="AWS DevOps Engineer Professional Certification" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </a>
+            <a href="https://www.developer.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300">
+              <div className="w-20 h-20 flex items-center justify-center">
+                <img 
+                  src={developerBadge} 
+                  alt="AWS Developer Associate Certification" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </a>
+            <a href="https://www.solution-architect.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300">
+              <div className="w-20 h-20 flex items-center justify-center">
+                <img 
+                  src={solutionsArchitectBadge} 
+                  alt="AWS Solutions Architect Professional Certification" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </a>
+            <a href="https://www.sysops.com/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300">
+              <div className="w-20 h-20 flex items-center justify-center">
+                <img 
+                  src={sysopsBadge} 
+                  alt="AWS SysOps Administrator Associate Certification" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </a>
           </div>
         </div>
 
