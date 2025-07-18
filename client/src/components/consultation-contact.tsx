@@ -119,56 +119,44 @@ export default function ConsultationContact() {
   return (
     <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100 relative overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
-        {/* AWS Certification Badges */}
-        <div className="flex flex-wrap justify-center gap-4 mb-8">
-          <div className="bg-white rounded-lg p-2 shadow-sm hover:shadow-md transition-shadow">
-            <img 
-              src={cloudPractitionerBadge} 
-              alt="AWS Cloud Practitioner" 
-              className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
-            />
-          </div>
-          <div className="bg-white rounded-lg p-2 shadow-sm hover:shadow-md transition-shadow">
-            <img 
-              src={developerBadge} 
-              alt="AWS Developer" 
-              className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
-            />
-          </div>
-          <div className="bg-white rounded-lg p-2 shadow-sm hover:shadow-md transition-shadow">
-            <img 
-              src={solutionsArchitectBadge} 
-              alt="AWS Solutions Architect" 
-              className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
-            />
-          </div>
-          <div className="bg-white rounded-lg p-2 shadow-sm hover:shadow-md transition-shadow">
-            <img 
-              src={sysopsBadge} 
-              alt="AWS SysOps" 
-              className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
-            />
-          </div>
-          <div className="bg-white rounded-lg p-2 shadow-sm hover:shadow-md transition-shadow">
-            <img 
-              src={devopsBadge} 
-              alt="AWS DevOps" 
-              className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
-            />
-          </div>
-          <div className="bg-white rounded-lg p-2 shadow-sm hover:shadow-md transition-shadow">
-            <img 
-              src={securityBadge} 
-              alt="AWS Security" 
-              className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
-            />
-          </div>
-        </div>
-
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-12 items-start">
           {/* Left Column - Form */}
           <div className="lg:col-span-2">
             <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 h-full flex flex-col">
+              {/* AWS Certification Badges */}
+              <div className="flex flex-wrap justify-center gap-3 mb-6">
+                <img 
+                  src={cloudPractitionerBadge} 
+                  alt="AWS Cloud Practitioner" 
+                  className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
+                />
+                <img 
+                  src={developerBadge} 
+                  alt="AWS Developer" 
+                  className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
+                />
+                <img 
+                  src={solutionsArchitectBadge} 
+                  alt="AWS Solutions Architect" 
+                  className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
+                />
+                <img 
+                  src={sysopsBadge} 
+                  alt="AWS SysOps" 
+                  className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
+                />
+                <img 
+                  src={devopsBadge} 
+                  alt="AWS DevOps" 
+                  className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
+                />
+                <img 
+                  src={securityBadge} 
+                  alt="AWS Security" 
+                  className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
+                />
+              </div>
+
               <div className="mb-6">
                 <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">
                   Need a Consultation on Your Development Project?
