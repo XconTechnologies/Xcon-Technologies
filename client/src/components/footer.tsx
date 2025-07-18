@@ -1,4 +1,5 @@
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { useState, useEffect } from "react";
 import XConLogo from "@assets/Xcon Logo_1752305014933.png";
 import securityBadge from '@assets/aws-security_1752489212506.png';
 import cloudPractitionerBadge from '@assets/aws-cloud-practitioner_1752489212501.png';
@@ -6,6 +7,37 @@ import devopsBadge from '@assets/aws-devOps_1752489212505.png';
 import developerBadge from '@assets/aws-developer_1752489212504.png';
 import solutionsArchitectBadge from '@assets/aws-solution-architect_1752489212507.png';
 import sysopsBadge from '@assets/aws-sysOps_1752489212508.png';
+
+// Animated Counter Component
+function AnimatedCounter({ end, duration = 2000 }: { end: number; duration?: number }) {
+  const [count, setCount] = useState(0);
+  
+  useEffect(() => {
+    let startTime: number;
+    let animationFrame: number;
+    
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      
+      setCount(Math.floor(progress * end));
+      
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(animate);
+      }
+    };
+    
+    animationFrame = requestAnimationFrame(animate);
+    
+    return () => {
+      if (animationFrame) {
+        cancelAnimationFrame(animationFrame);
+      }
+    };
+  }, [end, duration]);
+  
+  return <span>{count}</span>;
+}
 
 export default function Footer() {
   return (
@@ -104,9 +136,71 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* AWS Certifications */}
+        <div className="mt-12 pt-8 border-t border-gray-200">
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
+            <img 
+              src={securityBadge} 
+              alt="AWS Security" 
+              className="w-16 h-16 sm:w-20 sm:h-20 object-contain hover:scale-110 transition-transform"
+            />
+            <img 
+              src={cloudPractitionerBadge} 
+              alt="AWS Cloud Practitioner" 
+              className="w-16 h-16 sm:w-20 sm:h-20 object-contain hover:scale-110 transition-transform"
+            />
+            <img 
+              src={devopsBadge} 
+              alt="AWS DevOps" 
+              className="w-16 h-16 sm:w-20 sm:h-20 object-contain hover:scale-110 transition-transform"
+            />
+            <img 
+              src={developerBadge} 
+              alt="AWS Developer" 
+              className="w-16 h-16 sm:w-20 sm:h-20 object-contain hover:scale-110 transition-transform"
+            />
+            <img 
+              src={solutionsArchitectBadge} 
+              alt="AWS Solutions Architect" 
+              className="w-16 h-16 sm:w-20 sm:h-20 object-contain hover:scale-110 transition-transform"
+            />
+            <img 
+              src={sysopsBadge} 
+              alt="AWS SysOps" 
+              className="w-16 h-16 sm:w-20 sm:h-20 object-contain hover:scale-110 transition-transform"
+            />
+          </div>
+        </div>
 
-
-
+        {/* Animated Statistics Counter */}
+        <div className="mt-8 py-8 bg-white rounded-2xl shadow-lg">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-3xl lg:text-4xl font-bold text-primary mb-2">
+                <AnimatedCounter end={500} />+
+              </div>
+              <div className="text-gray-600 text-sm lg:text-base">Projects Completed</div>
+            </div>
+            <div>
+              <div className="text-3xl lg:text-4xl font-bold text-primary mb-2">
+                <AnimatedCounter end={98} />%
+              </div>
+              <div className="text-gray-600 text-sm lg:text-base">Client Satisfaction</div>
+            </div>
+            <div>
+              <div className="text-3xl lg:text-4xl font-bold text-primary mb-2">
+                <AnimatedCounter end={50} />+
+              </div>
+              <div className="text-gray-600 text-sm lg:text-base">Team Members</div>
+            </div>
+            <div>
+              <div className="text-3xl lg:text-4xl font-bold text-primary mb-2">
+                <AnimatedCounter end={10} />+
+              </div>
+              <div className="text-gray-600 text-sm lg:text-base">Years Experience</div>
+            </div>
+          </div>
+        </div>
 
         {/* Copyright */}
         <div className="text-center mt-8 pt-6">

@@ -123,40 +123,6 @@ export default function ConsultationContact() {
           {/* Left Column - Form */}
           <div className="lg:col-span-2">
             <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 h-full flex flex-col">
-              {/* AWS Certification Badges */}
-              <div className="flex flex-wrap justify-center gap-3 mb-6">
-                <img 
-                  src={cloudPractitionerBadge} 
-                  alt="AWS Cloud Practitioner" 
-                  className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
-                />
-                <img 
-                  src={developerBadge} 
-                  alt="AWS Developer" 
-                  className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
-                />
-                <img 
-                  src={solutionsArchitectBadge} 
-                  alt="AWS Solutions Architect" 
-                  className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
-                />
-                <img 
-                  src={sysopsBadge} 
-                  alt="AWS SysOps" 
-                  className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
-                />
-                <img 
-                  src={devopsBadge} 
-                  alt="AWS DevOps" 
-                  className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
-                />
-                <img 
-                  src={securityBadge} 
-                  alt="AWS Security" 
-                  className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
-                />
-              </div>
-
               <div className="mb-6">
                 <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">
                   Need a Consultation on Your Development Project?
