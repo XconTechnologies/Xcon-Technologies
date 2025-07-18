@@ -119,6 +119,52 @@ export default function ConsultationContact() {
   return (
     <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100 relative overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
+        {/* AWS Certification Badges */}
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
+          <div className="bg-white rounded-lg p-2 shadow-sm hover:shadow-md transition-shadow">
+            <img 
+              src={cloudPractitionerBadge} 
+              alt="AWS Cloud Practitioner" 
+              className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
+            />
+          </div>
+          <div className="bg-white rounded-lg p-2 shadow-sm hover:shadow-md transition-shadow">
+            <img 
+              src={developerBadge} 
+              alt="AWS Developer" 
+              className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
+            />
+          </div>
+          <div className="bg-white rounded-lg p-2 shadow-sm hover:shadow-md transition-shadow">
+            <img 
+              src={solutionsArchitectBadge} 
+              alt="AWS Solutions Architect" 
+              className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
+            />
+          </div>
+          <div className="bg-white rounded-lg p-2 shadow-sm hover:shadow-md transition-shadow">
+            <img 
+              src={sysopsBadge} 
+              alt="AWS SysOps" 
+              className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
+            />
+          </div>
+          <div className="bg-white rounded-lg p-2 shadow-sm hover:shadow-md transition-shadow">
+            <img 
+              src={devopsBadge} 
+              alt="AWS DevOps" 
+              className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
+            />
+          </div>
+          <div className="bg-white rounded-lg p-2 shadow-sm hover:shadow-md transition-shadow">
+            <img 
+              src={securityBadge} 
+              alt="AWS Security" 
+              className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
+            />
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-12 items-start">
           {/* Left Column - Form */}
           <div className="lg:col-span-2">
