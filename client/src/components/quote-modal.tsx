@@ -56,7 +56,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
 
   const modalContent = (
     <div 
-      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4" 
+      className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4" 
       style={{ 
         position: 'fixed', 
         top: 0, 
@@ -70,92 +70,97 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
       onClick={onClose}
     >
       <div 
-        className="bg-white rounded-2xl p-8 w-full max-w-2xl max-h-[90vh] overflow-y-auto relative shadow-2xl"
+        className="bg-white rounded-3xl p-8 w-full max-w-2xl max-h-[90vh] overflow-y-auto relative shadow-2xl border border-gray-100"
         style={{ 
           transform: 'scale(1)',
-          transformOrigin: 'center center'
+          transformOrigin: 'center center',
+          animation: 'fadeIn 0.3s ease-out'
         }}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-full transition-colors z-10"
+          className="absolute top-6 right-6 p-3 hover:bg-gray-100 rounded-full transition-colors z-10 group"
         >
-          <X className="h-5 w-5 text-gray-500" />
+          <X className="h-5 w-5 text-gray-400 group-hover:text-gray-600" />
         </button>
 
-        {/* XCon Logo */}
+        {/* Header with Logo and Title */}
         <div className="text-center mb-8">
-          <img 
-            src="/attached_assets/Light-Logo.5ba91110-2048x403_1752305014932.png" 
-            alt="XCon Technologies" 
-            className="h-12 w-auto mx-auto mb-2"
-          />
+          <div className="mb-4">
+            <img 
+              src={XConLogo} 
+              alt="XCon Technologies" 
+              className="h-14 w-auto mx-auto"
+            />
+          </div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">Get Your Free Quote</h2>
+          <p className="text-gray-600">Tell us about your project and we'll get back to you within 24 hours</p>
         </div>
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Name and Email row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
-              <Label htmlFor="name" className="text-sm font-medium text-gray-700">Name</Label>
+              <Label htmlFor="name" className="text-sm font-semibold text-gray-800">Full Name *</Label>
               <Input
                 id="name"
                 name="name"
                 type="text"
-                placeholder="Adam Smith"
+                placeholder="Enter your full name"
                 value={formData.name}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 bg-gray-50/50 hover:bg-white"
                 required
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="email" className="text-sm font-medium text-gray-700">Email</Label>
+              <Label htmlFor="email" className="text-sm font-semibold text-gray-800">Email Address *</Label>
               <Input
                 id="email"
                 name="email"
                 type="email"
-                placeholder="example@gmail.com"
+                placeholder="your.email@company.com"
                 value={formData.email}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 bg-gray-50/50 hover:bg-white"
                 required
               />
             </div>
           </div>
 
           {/* Phone and Business row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
-              <Label htmlFor="phone" className="text-sm font-medium text-gray-700">Phone Number</Label>
+              <Label htmlFor="phone" className="text-sm font-semibold text-gray-800">Phone Number *</Label>
               <div className="flex">
-                <div className="flex items-center px-3 py-3 border border-gray-300 border-r-0 rounded-l-lg bg-gray-50">
-                  <span className="text-sm text-gray-600">🇺🇸 +1</span>
+                <div className="flex items-center px-3 py-3 border border-gray-200 border-r-0 rounded-l-xl bg-gray-50">
+                  <span className="text-sm text-gray-600 font-medium">🇺🇸 +1</span>
                 </div>
                 <Input
                   id="phone"
                   name="phone"
                   type="tel"
-                  placeholder=""
+                  placeholder="(555) 123-4567"
                   value={formData.phone}
                   onChange={handleInputChange}
-                  className="flex-1 px-4 py-3 border border-gray-300 rounded-r-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                  className="flex-1 px-4 py-3 border border-gray-200 rounded-r-xl focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 bg-gray-50/50 hover:bg-white"
                   required
                 />
               </div>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="business" className="text-sm font-medium text-gray-700">Your Business</Label>
+              <Label htmlFor="business" className="text-sm font-semibold text-gray-800">Company Name *</Label>
               <Input
                 id="business"
                 name="business"
                 type="text"
-                placeholder="Your Business"
+                placeholder="Your company name"
                 value={formData.business}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 bg-gray-50/50 hover:bg-white"
                 required
               />
             </div>
@@ -163,46 +168,52 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
 
           {/* Services dropdown */}
           <div className="space-y-2">
-            <Label htmlFor="service" className="text-sm font-medium text-gray-700">Services</Label>
+            <Label htmlFor="service" className="text-sm font-semibold text-gray-800">Service Required *</Label>
             <Select value={formData.service} onValueChange={handleServiceChange}>
-              <SelectTrigger className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
-                <SelectValue placeholder="Select a service" />
+              <SelectTrigger className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 bg-gray-50/50 hover:bg-white">
+                <SelectValue placeholder="Select a service you need" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="rounded-xl border border-gray-200 shadow-lg">
                 <SelectItem value="web-development">Web Development</SelectItem>
-                <SelectItem value="software-consulting">Software Consulting</SelectItem>
-                <SelectItem value="cloud-engineering">Cloud Engineering</SelectItem>
-                <SelectItem value="mobile-development">Mobile Development</SelectItem>
-                <SelectItem value="ui-ux-design">UI/UX Design</SelectItem>
-                <SelectItem value="mvp-development">MVP Development</SelectItem>
-                <SelectItem value="digital-marketing">Digital Marketing</SelectItem>
+                <SelectItem value="software-development">Software Development</SelectItem>
+                <SelectItem value="app-development">App Development</SelectItem>
                 <SelectItem value="data-engineering">Data Engineering</SelectItem>
+                <SelectItem value="cloud-engineering">Cloud Engineering</SelectItem>
+                <SelectItem value="mvp-development">MVP Development</SelectItem>
+                <SelectItem value="devops">DevOps</SelectItem>
+                <SelectItem value="qa-testing">QA Testing</SelectItem>
+                <SelectItem value="it-consulting">IT Consulting</SelectItem>
               </SelectContent>
             </Select>
           </div>
 
           {/* Message */}
           <div className="space-y-2">
-            <Label htmlFor="message" className="text-sm font-medium text-gray-700">Message</Label>
+            <Label htmlFor="message" className="text-sm font-semibold text-gray-800">Project Details *</Label>
             <Textarea
               id="message"
               name="message"
-              placeholder="Your Message"
+              placeholder="Tell us about your project requirements, timeline, and budget..."
               value={formData.message}
               onChange={handleInputChange}
               rows={4}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
+              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 bg-gray-50/50 hover:bg-white resize-none"
               required
             />
           </div>
 
           {/* Submit button */}
-          <Button
-            type="submit"
-            className="w-full bg-primary hover:bg-primary/90 text-white py-4 rounded-lg font-medium transition-colors"
-          >
-            Send Message
-          </Button>
+          <div className="pt-4">
+            <Button
+              type="submit"
+              className="w-full bg-primary hover:bg-primary/90 text-white py-4 rounded-xl font-semibold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98]"
+            >
+              Send Message & Get Free Quote
+            </Button>
+            <p className="text-center text-xs text-gray-500 mt-3">
+              We'll respond within 24 hours with a detailed proposal
+            </p>
+          </div>
         </form>
       </div>
     </div>
