@@ -6,6 +6,7 @@ import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Textarea } from './ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
+import PhoneInput from './ui/phone-input';
 import XConLogo from "@assets/Xcon Logo_1752834032465.png";
 
 interface QuoteModalProps {
@@ -135,21 +136,15 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <Label htmlFor="phone" className="text-sm font-semibold text-gray-800">Phone Number *</Label>
-              <div className="flex">
-                <div className="flex items-center px-3 py-3 border border-gray-200 border-r-0 rounded-l-xl bg-gray-50">
-                  <span className="text-sm text-gray-600 font-medium">🇺🇸 +1</span>
-                </div>
-                <Input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  placeholder="(555) 123-4567"
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  className="flex-1 px-4 py-3 border border-gray-200 rounded-r-xl focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 bg-gray-50/50 hover:bg-white"
-                  required
-                />
-              </div>
+              <PhoneInput
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={(value) => setFormData(prev => ({ ...prev, phone: value }))}
+                placeholder="(555) 123-4567"
+                className="bg-gray-50/50 hover:bg-white transition-all duration-200"
+                required
+              />
             </div>
             <div className="space-y-2">
               <Label htmlFor="business" className="text-sm font-semibold text-gray-800">Company Name *</Label>

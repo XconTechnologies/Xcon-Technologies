@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import PhoneInput from "@/components/ui/phone-input";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -123,12 +124,11 @@ export default function Contact() {
               </div>
               <div>
                 <Label htmlFor="phone" className="text-white">Phone</Label>
-                <Input
+                <PhoneInput
                   id="phone"
                   name="phone"
-                  type="tel"
                   value={formData.phone}
-                  onChange={handleInputChange}
+                  onChange={(value) => setFormData(prev => ({ ...prev, phone: value }))}
                   className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
                   placeholder="+1 (555) 123-4567"
                 />

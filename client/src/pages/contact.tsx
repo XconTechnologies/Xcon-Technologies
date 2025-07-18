@@ -11,6 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail, MapPin, Clock, MessageSquare } from "lucide-react";
+import PhoneInput from "@/components/ui/phone-input";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -218,7 +219,12 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel>Phone Number</FormLabel>
                           <FormControl>
-                            <Input placeholder="Enter your phone number" {...field} />
+                            <PhoneInput
+                              value={field.value}
+                              onChange={field.onChange}
+                              placeholder="Enter your phone number"
+                              required
+                            />
                           </FormControl>
                           <FormMessage />
                         </FormItem>

@@ -10,6 +10,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { MapPin, Clock, Users, Target, Star, Trophy, Heart, Zap, Upload, CheckCircle, X, Globe, Award, Search } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "wouter";
+import PhoneInput from "@/components/ui/phone-input";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
@@ -555,11 +556,11 @@ Note: This is a job application. For direct HR contact, reach out to nouman.ali@
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <Label htmlFor="phone" className="text-gray-700 font-medium">Phone Number *</Label>
-                      <Input
+                      <PhoneInput
                         id="phone"
                         name="phone"
                         value={formData.phone}
-                        onChange={handleInputChange}
+                        onChange={(value) => setFormData(prev => ({ ...prev, phone: value }))}
                         className="mt-1"
                         placeholder="+1 (555) 123-4567"
                         required
@@ -830,11 +831,11 @@ Note: This is a job application. For direct HR contact, reach out to nouman.ali@
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <Label htmlFor="phone" className="text-gray-700 font-medium">Phone Number *</Label>
-                <Input
+                <PhoneInput
                   id="phone"
                   name="phone"
                   value={formData.phone}
-                  onChange={handleInputChange}
+                  onChange={(value) => setFormData(prev => ({ ...prev, phone: value }))}
                   className="mt-1"
                   placeholder="+1 (555) 123-4567"
                   required

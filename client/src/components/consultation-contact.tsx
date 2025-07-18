@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Phone, Mail, MessageCircle, MessageSquare, Upload, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import PhoneInput from "@/components/ui/phone-input";
 import xconLogo from "@assets/Xcon Logo cropped_1752479137104.png";
 import securityBadge from "@assets/aws-security_1752489212506.png";
 import cloudPractitionerBadge from "@assets/aws-cloud-practitioner_1752489212501.png";
@@ -198,13 +199,12 @@ export default function ConsultationContact() {
                     className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm sm:text-base"
                     required
                   />
-                  <input
-                    type="tel"
+                  <PhoneInput
                     name="phone"
                     value={formData.phone}
-                    onChange={handleInputChange}
+                    onChange={(value) => setFormData(prev => ({ ...prev, phone: value }))}
                     placeholder="Phone number"
-                    className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm sm:text-base"
+                    className="text-sm sm:text-base"
                     required
                   />
                 </div>

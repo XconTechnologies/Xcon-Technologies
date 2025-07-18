@@ -36,6 +36,7 @@ import {
   Cog
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import PhoneInput from "@/components/ui/phone-input";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
@@ -1239,11 +1240,11 @@ Note: This is an internship application. For direct HR contact, reach out to nou
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <Label htmlFor="phone" className="text-gray-700 font-medium">Phone Number *</Label>
-                <Input
+                <PhoneInput
                   id="phone"
                   name="phone"
                   value={formData.phone}
-                  onChange={handleInputChange}
+                  onChange={(value) => setFormData(prev => ({ ...prev, phone: value }))}
                   className="mt-1"
                   placeholder="+1 (555) 123-4567"
                   required
