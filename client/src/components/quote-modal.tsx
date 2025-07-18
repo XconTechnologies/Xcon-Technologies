@@ -8,6 +8,7 @@ import { Textarea } from './ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import PhoneInput from './ui/phone-input';
 import XConLogo from "@assets/Xcon Logo_1752834032465.png";
+import { useToast } from '@/hooks/use-toast';
 
 interface QuoteModalProps {
   isOpen: boolean;
@@ -23,6 +24,8 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
     service: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   // Handle body scroll lock when modal is open
   useEffect(() => {
@@ -46,11 +49,51 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
     setFormData(prev => ({ ...prev, service: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    onClose();
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch('/api/quote', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok) {
+        toast({
+          title: "Quote request sent successfully!",
+          description: data.message || "We'll get back to you within 24 hours.",
+        });
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          business: '',
+          service: '',
+          message: ''
+        });
+        onClose();
+      } else {
+        toast({
+          title: "Error",
+          description: data.error || "Failed to send quote request. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send quote request. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (!isOpen) return null;
@@ -201,9 +244,10 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
           <div className="pt-4">
             <Button
               type="submit"
-              className="w-full bg-primary hover:bg-primary/90 text-white py-4 rounded-xl font-semibold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98]"
+              disabled={isSubmitting}
+              className="w-full bg-primary hover:bg-primary/90 text-white py-4 rounded-xl font-semibold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
             >
-              Send Message & Get Free Quote
+              {isSubmitting ? "Sending..." : "Send Message & Get Free Quote"}
             </Button>
             <p className="text-center text-xs text-gray-500 mt-3">
               We'll respond within 24 hours with a detailed proposal

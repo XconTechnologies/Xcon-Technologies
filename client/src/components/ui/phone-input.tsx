@@ -174,7 +174,7 @@ export default function PhoneInput({
             onClick={() => setIsOpen(!isOpen)}
             className="flex items-center space-x-2 px-3 py-3 border border-gray-200 border-r-0 rounded-l-xl bg-gray-50 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
           >
-            <span className="text-lg">{selectedCountry.flag}</span>
+            <span className="text-lg font-emoji" style={{fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'}}>{selectedCountry.flag}</span>
             <span className="text-sm font-medium text-gray-700">{selectedCountry.dialCode}</span>
             <ChevronDown className="h-4 w-4 text-gray-500" />
           </button>
@@ -202,7 +202,7 @@ export default function PhoneInput({
                     onClick={() => handleCountrySelect(country)}
                     className="w-full flex items-center space-x-3 px-3 py-2 text-left hover:bg-gray-50 transition-colors"
                   >
-                    <span className="text-lg">{country.flag}</span>
+                    <span className="text-lg font-emoji" style={{fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'}}>{country.flag}</span>
                     <span className="text-sm font-medium text-gray-700">{country.dialCode}</span>
                     <span className="text-sm text-gray-600 truncate">{country.name}</span>
                   </button>

@@ -53,12 +53,18 @@ export default function ConsultationContact() {
         message: `Company: ${formData.company}\n\n${formData.message}${file ? `\n\nFile attached: ${file.name}` : ''}`
       };
       
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/api/consultation', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(submitData),
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          company: formData.company,
+          workEmail: formData.email,
+          phone: formData.phone,
+          message: formData.message
+        }),
       });
       
       const data = await response.json();
