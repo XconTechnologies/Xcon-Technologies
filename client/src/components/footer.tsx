@@ -1,4 +1,5 @@
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 import { useState, useEffect } from "react";
 import XConLogo from "@assets/Xcon Logo_1752305014933.png";
 import securityBadge from '@assets/aws-security_1752489212506.png';
@@ -71,16 +72,16 @@ export default function Footer() {
           <div className="space-y-6">
             <h3 className="text-xl font-bold text-gray-800">Services</h3>
             <ul className="space-y-3 text-gray-600">
-              <li><a href="#" className="hover:text-primary transition-colors">Software Development</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Web Development</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Mobile App Development</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">UI/UX Design</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Data Engineering</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">SaaS & PaaS Development</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">MVP Development</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">DevOps Development & Service</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">QA (Quality Assurance) Testing</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">IT Consultation</a></li>
+              <li><Link href="/services/software-development" className="hover:text-primary transition-colors">Software Development</Link></li>
+              <li><Link href="/services/web-development" className="hover:text-primary transition-colors">Web Development</Link></li>
+              <li><Link href="/services/mobile-app-development" className="hover:text-primary transition-colors">Mobile App Development</Link></li>
+              <li><Link href="/services/cloud-services" className="hover:text-primary transition-colors">Cloud Services</Link></li>
+              <li><Link href="/services/data-engineering" className="hover:text-primary transition-colors">Data Engineering</Link></li>
+              <li><Link href="/services/artificial-intelligence" className="hover:text-primary transition-colors">AI & Machine Learning</Link></li>
+              <li><Link href="/services/mvp-development" className="hover:text-primary transition-colors">MVP Development</Link></li>
+              <li><Link href="/services/devops" className="hover:text-primary transition-colors">DevOps</Link></li>
+              <li><Link href="/services/qa-testing" className="hover:text-primary transition-colors">QA Testing</Link></li>
+              <li><Link href="/services/it-consultation" className="hover:text-primary transition-colors">IT Consultation</Link></li>
             </ul>
           </div>
 
