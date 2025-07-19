@@ -2,6 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { sendContactFormEmail, sendQuoteRequestEmail, sendConsultationRequestEmail } from "./email";
+import { sendContactFormEmailSG, sendQuoteRequestEmailSG, sendConsultationRequestEmailSG } from "./sendgrid-email";
 import { emailLogger } from "./email-logger";
 
 export async function registerRoutes(app: Express): Promise<Server> {
@@ -33,7 +34,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       // Send email notification
       try {
-        await sendContactFormEmail({ firstName, lastName, email, phone, message });
+        await sendContactFormEmailSG({ firstName, lastName, email, phone, message });
         res.json({ success: true, message: "Message sent successfully! We'll get back to you within 24 hours." });
       } catch (emailError) {
         console.error("Email sending failed:", emailError);
@@ -66,7 +67,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
       
       try {
-        await sendQuoteRequestEmail({ name, email, phone, business, service, message });
+        await sendQuoteRequestEmailSG({ name, email, phone, business, service, message });
         res.json({ success: true, message: "Quote request sent successfully! We'll get back to you within 24 hours." });
       } catch (emailError) {
         console.error("Email sending failed:", emailError);
@@ -81,7 +82,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Consultation form endpoint
   app.post("/api/consultation", async (req, res) => {
     try {
-      const { fullName, company, workEmail, phone, message } = req.body;
+      const { fullName, company, workEmail, phone, service, message } = req.body;
       
       if (!fullName || !workEmail || !message) {
         return res.status(400).json({ error: "Missing required fields" });
@@ -93,12 +94,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
       
       console.log("Consultation request submission:", {
-        fullName, company, workEmail, phone, message,
+        fullName, company, workEmail, phone, service, message,
         timestamp: new Date().toISOString(),
       });
       
       try {
-        await sendConsultationRequestEmail({ fullName, company, workEmail, phone, message });
+        await sendConsultationRequestEmailSG({ fullName, company, workEmail, phone, service, message });
         res.json({ success: true, message: "Consultation request sent successfully! We'll get back to you within 24 hours." });
       } catch (emailError) {
         console.error("Email sending failed:", emailError);

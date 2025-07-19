@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import PhoneInput from './ui/phone-input';
 import XConLogo from "@assets/Xcon Logo_1752834032465.png";
 import { useToast } from '@/hooks/use-toast';
+import { SERVICES } from '../../../shared/services';
 
 interface QuoteModalProps {
   isOpen: boolean;
@@ -212,15 +213,11 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                 <SelectValue placeholder="Select a service you need" />
               </SelectTrigger>
               <SelectContent className="rounded-xl border border-gray-200 shadow-lg">
-                <SelectItem value="web-development">Web Development</SelectItem>
-                <SelectItem value="software-development">Software Development</SelectItem>
-                <SelectItem value="app-development">App Development</SelectItem>
-                <SelectItem value="data-engineering">Data Engineering</SelectItem>
-                <SelectItem value="cloud-engineering">Cloud Engineering</SelectItem>
-                <SelectItem value="mvp-development">MVP Development</SelectItem>
-                <SelectItem value="devops">DevOps</SelectItem>
-                <SelectItem value="qa-testing">QA Testing</SelectItem>
-                <SelectItem value="it-consulting">IT Consulting</SelectItem>
+                {SERVICES.map((service) => (
+                  <SelectItem key={service.value} value={service.value}>
+                    {service.label}
+                  </SelectItem>
+                ))}
               </SelectContent>
             </Select>
           </div>

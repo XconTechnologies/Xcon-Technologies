@@ -1,5 +1,11 @@
-import * as nodemailer from 'nodemailer';
+import sgMail from '@sendgrid/mail';
 import { emailLogger } from './email-logger';
+
+// Check if SendGrid API key is available
+const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
+if (SENDGRID_API_KEY) {
+  sgMail.setApiKey(SENDGRID_API_KEY);
+}
 
 interface ContactFormData {
   firstName: string;
@@ -27,18 +33,7 @@ interface ConsultationRequestData {
   message: string;
 }
 
-// Create transporter with Gmail SMTP (you can use other providers too)
-const createTransporter = () => {
-  return nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: process.env.EMAIL_USER || 'askforquote@xcontechnologies.com',
-      pass: process.env.EMAIL_PASS || 'your-app-password-here'
-    }
-  });
-};
-
-export async function sendContactFormEmail(formData: ContactFormData): Promise<boolean> {
+export async function sendContactFormEmailSG(formData: ContactFormData): Promise<boolean> {
   // Log submission to file for reliable tracking
   await emailLogger.logSubmission({
     type: 'contact',
@@ -47,14 +42,16 @@ export async function sendContactFormEmail(formData: ContactFormData): Promise<b
     email: formData.email
   });
 
-  // Try to send email, but don't fail if it doesn't work
-  try {
-    const transporter = createTransporter();
+  if (!SENDGRID_API_KEY) {
+    console.log('⚠️  SendGrid API key not configured, but form submission logged');
+    return true;
+  }
 
+  try {
     // Email to you (the business owner)
     const emailToOwner = {
-      from: process.env.EMAIL_USER || 'askforquote@xcontechnologies.com',
       to: 'askforquote@xcontechnologies.com',
+      from: 'noreply@xcontechnologies.com', // Must be verified domain
       subject: `New Contact Form Submission - ${formData.firstName} ${formData.lastName}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
@@ -84,8 +81,8 @@ export async function sendContactFormEmail(formData: ContactFormData): Promise<b
 
     // Auto-reply to the customer
     const autoReply = {
-      from: process.env.EMAIL_USER || 'askforquote@xcontechnologies.com',
       to: formData.email,
+      from: 'noreply@xcontechnologies.com',
       subject: 'Thank you for contacting XCon Technologies',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
@@ -102,8 +99,6 @@ export async function sendContactFormEmail(formData: ContactFormData): Promise<b
             <p style="white-space: pre-wrap; line-height: 1.6;">${formData.message}</p>
           </div>
           
-          <p>In the meantime, feel free to explore our services and solutions on our website.</p>
-          
           <div style="margin-top: 30px; padding: 20px; background-color: #7CB342; color: white; border-radius: 8px;">
             <h3 style="margin-top: 0;">Contact Information:</h3>
             <p><strong>Email:</strong> askforquote@xcontechnologies.com</p>
@@ -118,21 +113,20 @@ export async function sendContactFormEmail(formData: ContactFormData): Promise<b
     };
 
     // Send both emails
-    await transporter.sendMail(emailToOwner);
-    await transporter.sendMail(autoReply);
+    await sgMail.send(emailToOwner);
+    await sgMail.send(autoReply);
 
-    console.log('✅ Contact form emails sent successfully to Gmail');
+    console.log('✅ Contact form emails sent successfully via SendGrid');
     return true;
 
   } catch (error) {
-    console.log('⚠️  Gmail sending failed, but contact form submission logged above');
-    console.error('Email sending error:', error.message);
-    // Return true anyway so the contact form works
+    console.log('⚠️  SendGrid sending failed, but contact form submission logged');
+    console.error('SendGrid error:', error);
     return true;
   }
 }
 
-export async function sendQuoteRequestEmail(formData: QuoteRequestData): Promise<boolean> {
+export async function sendQuoteRequestEmailSG(formData: QuoteRequestData): Promise<boolean> {
   // Log submission to file for reliable tracking
   await emailLogger.logSubmission({
     type: 'quote',
@@ -141,13 +135,16 @@ export async function sendQuoteRequestEmail(formData: QuoteRequestData): Promise
     email: formData.email
   });
 
-  try {
-    const transporter = createTransporter();
+  if (!SENDGRID_API_KEY) {
+    console.log('⚠️  SendGrid API key not configured, but quote request logged');
+    return true;
+  }
 
+  try {
     // Email to you (the business owner)
     const emailToOwner = {
-      from: process.env.EMAIL_USER || 'askforquote@xcontechnologies.com',
       to: 'askforquote@xcontechnologies.com',
+      from: 'noreply@xcontechnologies.com',
       subject: `New Quote Request - ${formData.name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
@@ -179,8 +176,8 @@ export async function sendQuoteRequestEmail(formData: QuoteRequestData): Promise
 
     // Auto-reply to the customer
     const autoReply = {
-      from: process.env.EMAIL_USER || 'askforquote@xcontechnologies.com',
       to: formData.email,
+      from: 'noreply@xcontechnologies.com',
       subject: 'Quote Request Received - XCon Technologies',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
@@ -216,20 +213,20 @@ export async function sendQuoteRequestEmail(formData: QuoteRequestData): Promise
     };
 
     // Send both emails
-    await transporter.sendMail(emailToOwner);
-    await transporter.sendMail(autoReply);
+    await sgMail.send(emailToOwner);
+    await sgMail.send(autoReply);
 
-    console.log('✅ Quote request emails sent successfully');
+    console.log('✅ Quote request emails sent successfully via SendGrid');
     return true;
 
   } catch (error) {
-    console.log('⚠️  Quote request logged, email sending failed');
-    console.error('Email sending error:', error.message);
+    console.log('⚠️  SendGrid sending failed, but quote request logged');
+    console.error('SendGrid error:', error);
     return true;
   }
 }
 
-export async function sendConsultationRequestEmail(formData: ConsultationRequestData): Promise<boolean> {
+export async function sendConsultationRequestEmailSG(formData: ConsultationRequestData): Promise<boolean> {
   // Log submission to file for reliable tracking
   await emailLogger.logSubmission({
     type: 'consultation',
@@ -238,13 +235,16 @@ export async function sendConsultationRequestEmail(formData: ConsultationRequest
     email: formData.workEmail
   });
 
-  try {
-    const transporter = createTransporter();
+  if (!SENDGRID_API_KEY) {
+    console.log('⚠️  SendGrid API key not configured, but consultation request logged');
+    return true;
+  }
 
+  try {
     // Email to you (the business owner)
     const emailToOwner = {
-      from: process.env.EMAIL_USER || 'askforquote@xcontechnologies.com',
       to: 'askforquote@xcontechnologies.com',
+      from: 'noreply@xcontechnologies.com',
       subject: `New Consultation Request - ${formData.fullName}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
@@ -276,8 +276,8 @@ export async function sendConsultationRequestEmail(formData: ConsultationRequest
 
     // Auto-reply to the customer
     const autoReply = {
-      from: process.env.EMAIL_USER || 'askforquote@xcontechnologies.com',
       to: formData.workEmail,
+      from: 'noreply@xcontechnologies.com',
       subject: 'Consultation Request Received - XCon Technologies',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
@@ -313,15 +313,15 @@ export async function sendConsultationRequestEmail(formData: ConsultationRequest
     };
 
     // Send both emails
-    await transporter.sendMail(emailToOwner);
-    await transporter.sendMail(autoReply);
+    await sgMail.send(emailToOwner);
+    await sgMail.send(autoReply);
 
-    console.log('✅ Consultation request emails sent successfully');
+    console.log('✅ Consultation request emails sent successfully via SendGrid');
     return true;
 
   } catch (error) {
-    console.log('⚠️  Consultation request logged, email sending failed');
-    console.error('Email sending error:', error.message);
+    console.log('⚠️  SendGrid sending failed, but consultation request logged');
+    console.error('SendGrid error:', error);
     return true;
   }
 }

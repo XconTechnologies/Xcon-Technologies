@@ -12,6 +12,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail, MapPin, Clock, MessageSquare } from "lucide-react";
 import PhoneInput from "@/components/ui/phone-input";
+import { SERVICES } from "../../../shared/services";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -258,9 +259,9 @@ export default function Contact() {
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            {services.map((service) => (
-                              <SelectItem key={service} value={service}>
-                                {service}
+                            {SERVICES.map((service) => (
+                              <SelectItem key={service.value} value={service.value}>
+                                {service.label}
                               </SelectItem>
                             ))}
                           </SelectContent>

@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { Phone, Mail, MessageCircle, MessageSquare, Upload, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import PhoneInput from "@/components/ui/phone-input";
+import { SERVICES } from "../../../shared/services";
 import xconLogo from "@assets/Xcon Logo cropped_1752479137104.png";
 import securityBadge from "@assets/aws-security_1752489212506.png";
 import cloudPractitionerBadge from "@assets/aws-cloud-practitioner_1752489212501.png";
@@ -17,7 +20,8 @@ export default function ConsultationContact() {
     fullName: "",
     company: "",
     email: "",
-    phone: ""
+    phone: "",
+    service: ""
   });
 
   const [file, setFile] = useState<File | null>(null);
@@ -63,6 +67,7 @@ export default function ConsultationContact() {
           company: formData.company,
           workEmail: formData.email,
           phone: formData.phone,
+          service: formData.service,
           message: formData.message
         }),
       });
@@ -79,7 +84,8 @@ export default function ConsultationContact() {
           fullName: "",
           company: "",
           email: "",
-          phone: ""
+          phone: "",
+          service: ""
         });
         setFile(null);
       } else {
@@ -179,6 +185,28 @@ export default function ConsultationContact() {
                     className="text-sm sm:text-base"
                     required
                   />
+                </div>
+
+                {/* Service Selection */}
+                <div>
+                  <Label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
+                    Service Required *
+                  </Label>
+                  <Select 
+                    value={formData.service} 
+                    onValueChange={(value) => setFormData(prev => ({ ...prev, service: value }))}
+                  >
+                    <SelectTrigger className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm sm:text-base">
+                      <SelectValue placeholder="Select a service you need" />
+                    </SelectTrigger>
+                    <SelectContent className="rounded-lg border border-gray-200 shadow-lg">
+                      {SERVICES.map((service) => (
+                        <SelectItem key={service.value} value={service.value}>
+                          {service.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </div>
 
                 {/* File Upload */}
