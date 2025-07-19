@@ -9,7 +9,7 @@ async function sendTestEmail() {
     
     const result = await resend.emails.send({
       from: 'XCon Technologies <onboarding@resend.dev>',
-      to: 'askforquote@xcontechnologies.com',
+      to: ['xconreplit@gmail.com'],
       subject: '🧪 Test Email from XCon Technologies Website',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
@@ -22,6 +22,7 @@ async function sendTestEmail() {
             <p>Your XCon Technologies website email system is working perfectly!</p>
             <p><strong>Timestamp:</strong> ${new Date().toLocaleString()}</p>
             <p><strong>Test Type:</strong> Direct Resend API Test</p>
+            <p><strong>Note:</strong> This test is sent to your verified email. To receive emails at askforquote@xcontechnologies.com, domain verification is needed.</p>
           </div>
           
           <div style="background-color: #7CB342; color: white; padding: 20px; border-radius: 8px; margin: 20px 0;">
@@ -44,8 +45,15 @@ async function sendTestEmail() {
     });
 
     console.log('✅ Test email sent successfully!');
+    console.log('📧 Full result:', JSON.stringify(result, null, 2));
     console.log('📧 Email ID:', result.data?.id);
     console.log('📬 Delivered to: askforquote@xcontechnologies.com');
+    
+    if (result.error) {
+      console.error('❌ Resend API Error:', result.error);
+      throw new Error(result.error.message);
+    }
+    
     return result;
     
   } catch (error) {
