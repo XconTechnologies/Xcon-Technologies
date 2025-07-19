@@ -220,7 +220,6 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
           {/* Services dropdown */}
           <div className="space-y-2">
             <Label htmlFor="service" className="text-sm font-semibold text-gray-800">Service Required *</Label>
-            <div>{SERVICES.length > 0 ? `${SERVICES.length} services available` : 'No services loaded'}</div>
             <Select value={formData.service} onValueChange={handleServiceChange} required>
               <SelectTrigger className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 bg-gray-50/50 hover:bg-white">
                 <SelectValue placeholder="Select a service you need" />
