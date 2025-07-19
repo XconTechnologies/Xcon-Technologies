@@ -47,11 +47,23 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
   };
 
   const handleServiceChange = (value: string) => {
+    console.log('Service selected:', value);
     setFormData(prev => ({ ...prev, service: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate required fields
+    if (!formData.name || !formData.email || !formData.phone || !formData.business || !formData.service || !formData.message) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill in all required fields, including service selection.",
+        variant: "destructive",
+      });
+      return;
+    }
+    
     setIsSubmitting(true);
     
     try {
@@ -208,13 +220,14 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
           {/* Services dropdown */}
           <div className="space-y-2">
             <Label htmlFor="service" className="text-sm font-semibold text-gray-800">Service Required *</Label>
-            <Select value={formData.service} onValueChange={handleServiceChange}>
+            <div>{SERVICES.length > 0 ? `${SERVICES.length} services available` : 'No services loaded'}</div>
+            <Select value={formData.service} onValueChange={handleServiceChange} required>
               <SelectTrigger className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 bg-gray-50/50 hover:bg-white">
                 <SelectValue placeholder="Select a service you need" />
               </SelectTrigger>
-              <SelectContent className="rounded-xl border border-gray-200 shadow-lg">
+              <SelectContent className="rounded-xl border border-gray-200 shadow-lg max-h-[300px] overflow-y-auto" style={{ zIndex: 9999999 }}>
                 {SERVICES.map((service) => (
-                  <SelectItem key={service.value} value={service.value}>
+                  <SelectItem key={service.value} value={service.value} className="cursor-pointer">
                     {service.label}
                   </SelectItem>
                 ))}
