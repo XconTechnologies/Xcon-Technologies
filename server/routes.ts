@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { sendContactFormEmail, sendQuoteRequestEmail, sendConsultationRequestEmail } from "./email";
 import { sendContactFormEmailSG, sendQuoteRequestEmailSG, sendConsultationRequestEmailSG } from "./sendgrid-email";
+import { sendContactFormEmailResend, sendQuoteRequestEmailResend, sendConsultationRequestEmailResend } from "./resend-email";
 import { emailLogger } from "./email-logger";
 
 export async function registerRoutes(app: Express): Promise<Server> {
@@ -32,13 +33,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
         timestamp: new Date().toISOString(),
       });
       
-      // Send email notification - try SendGrid first, fallback to Gmail SMTP
+      // Send email notification using Resend
       try {
-        const emailSent = await sendContactFormEmailSG({ firstName, lastName, email, phone, message });
-        if (!emailSent) {
-          // Fallback to Gmail SMTP
-          await sendContactFormEmail({ firstName, lastName, email, phone, message });
-        }
+        await sendContactFormEmailResend({ firstName, lastName, email, phone, message });
         res.json({ success: true, message: "Message sent successfully! We'll get back to you within 24 hours." });
       } catch (emailError) {
         console.error("Email sending failed:", emailError);
@@ -72,11 +69,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
       
       try {
-        const emailSent = await sendQuoteRequestEmailSG({ name, email, phone, business, service, message });
-        if (!emailSent) {
-          // Fallback to Gmail SMTP
-          await sendQuoteRequestEmail({ name, email, phone, business, service, message });
-        }
+        await sendQuoteRequestEmailResend({ name, email, phone, business, service, message });
         res.json({ success: true, message: "Quote request sent successfully! We'll get back to you within 24 hours." });
       } catch (emailError) {
         console.error("Email sending failed:", emailError);
@@ -109,11 +102,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
       
       try {
-        const emailSent = await sendConsultationRequestEmailSG({ fullName, company, workEmail, phone, service, message });
-        if (!emailSent) {
-          // Fallback to Gmail SMTP
-          await sendConsultationRequestEmail({ fullName, company, workEmail, phone, service, message });
-        }
+        await sendConsultationRequestEmailResend({ fullName, company, workEmail, phone, service, message });
         res.json({ success: true, message: "Consultation request sent successfully! We'll get back to you within 24 hours." });
       } catch (emailError) {
         console.error("Email sending failed:", emailError);
