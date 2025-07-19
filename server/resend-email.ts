@@ -295,7 +295,8 @@ export async function sendConsultationRequestEmailResend(formData: ConsultationR
       emailData.attachments = [{
         filename: formData.file.filename,
         content: formData.file.content,
-        type: formData.file.contentType
+        type: formData.file.contentType,
+        disposition: 'attachment'
       }];
     }
 

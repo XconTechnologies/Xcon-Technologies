@@ -159,7 +159,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       if (file) {
         consultationData.file = {
           filename: file.originalname,
-          content: file.buffer,
+          content: file.buffer.toString('base64'),
           contentType: file.mimetype
         };
       }
