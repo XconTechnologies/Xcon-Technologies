@@ -10,7 +10,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
-import { Phone, Mail, MapPin, Clock, MessageSquare } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, MessageSquare, Upload, FileText, X } from "lucide-react";
 import PhoneInput from "@/components/ui/phone-input";
 import { SERVICES } from "../../../shared/services";
 
@@ -27,6 +27,7 @@ type ContactForm = z.infer<typeof contactSchema>;
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const { toast } = useToast();
 
   const form = useForm<ContactForm>({
@@ -41,15 +42,46 @@ export default function Contact() {
     },
   });
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      if (file.size > 10 * 1024 * 1024) {
+        toast({
+          title: "File too large",
+          description: "Please select a file smaller than 10MB.",
+          variant: "destructive",
+        });
+        return;
+      }
+      setSelectedFile(file);
+    }
+  };
+
+  const removeFile = () => {
+    setSelectedFile(null);
+    const fileInput = document.getElementById('contact-file') as HTMLInputElement;
+    if (fileInput) fileInput.value = '';
+  };
+
   const onSubmit = async (data: ContactForm) => {
     setIsSubmitting(true);
     try {
+      const submitData = new FormData();
+      submitData.append('firstName', data.name.split(' ')[0]);
+      submitData.append('lastName', data.name.split(' ').slice(1).join(' ') || '');
+      submitData.append('email', data.email);
+      submitData.append('phone', data.phone);
+      submitData.append('company', data.company);
+      submitData.append('service', data.service);
+      submitData.append('message', data.message);
+      
+      if (selectedFile) {
+        submitData.append('file', selectedFile);
+      }
+
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
+        body: submitData,
       });
 
       if (response.ok) {
@@ -58,6 +90,9 @@ export default function Contact() {
           description: "We'll get back to you within 24 hours.",
         });
         form.reset();
+        setSelectedFile(null);
+        const fileInput = document.getElementById('contact-file') as HTMLInputElement;
+        if (fileInput) fileInput.value = '';
       } else {
         throw new Error("Failed to send message");
       }
@@ -288,6 +323,50 @@ export default function Contact() {
                       </FormItem>
                     )}
                   />
+
+                  {/* File Upload */}
+                  <div className="space-y-2">
+                    <label htmlFor="contact-file" className="text-sm font-medium text-gray-700">
+                      Attach Files (Optional)
+                    </label>
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-center w-full">
+                        <label htmlFor="contact-file" className="flex flex-col items-center justify-center w-full h-24 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 hover:border-primary/50 transition-all duration-200">
+                          <div className="flex flex-col items-center justify-center pt-2 pb-2">
+                            <Upload className="w-6 h-6 mb-2 text-gray-400" />
+                            <p className="text-sm text-gray-500">
+                              <span className="font-semibold text-primary">Click to upload</span> or drag and drop
+                            </p>
+                            <p className="text-xs text-gray-400">PNG, JPG, PDF, DOC (max 10MB)</p>
+                          </div>
+                          <input 
+                            id="contact-file" 
+                            type="file" 
+                            className="hidden" 
+                            onChange={handleFileChange}
+                            accept=".pdf,.doc,.docx,.txt,.png,.jpg,.jpeg,.gif,.zip,.rar,.csv"
+                          />
+                        </label>
+                      </div>
+                      
+                      {selectedFile && (
+                        <div className="flex items-center justify-between p-3 bg-blue-50 border border-blue-200 rounded-lg">
+                          <div className="flex items-center space-x-2">
+                            <FileText className="w-4 h-4 text-blue-600" />
+                            <span className="text-sm text-blue-800 font-medium">{selectedFile.name}</span>
+                            <span className="text-xs text-blue-600">({(selectedFile.size / 1024 / 1024).toFixed(2)} MB)</span>
+                          </div>
+                          <button
+                            type="button"
+                            onClick={removeFile}
+                            className="text-blue-600 hover:text-blue-800 transition-colors"
+                          >
+                            <X className="w-4 h-4" />
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  </div>
 
                   <Button
                     type="submit"

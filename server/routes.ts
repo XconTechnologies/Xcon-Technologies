@@ -56,10 +56,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Contact form endpoint
-  app.post("/api/contact", async (req, res) => {
+  // Contact form endpoint with file upload
+  app.post("/api/contact", upload.single('file'), async (req, res) => {
     try {
-      const { firstName, lastName, email, phone, message } = req.body;
+      const { firstName, lastName, email, phone, company, service, message } = req.body;
+      const file = req.file;
       
       // Validate required fields
       if (!firstName || !email || !message) {
@@ -78,13 +79,28 @@ export async function registerRoutes(app: Express): Promise<Server> {
         lastName,
         email,
         phone,
+        company,
+        service,
         message,
+        fileAttached: !!file,
+        fileName: file?.originalname,
         timestamp: new Date().toISOString(),
       });
       
+      // Prepare contact data with optional file
+      const contactData: any = { firstName, lastName, email, phone, company, service, message };
+      
+      if (file) {
+        contactData.file = {
+          filename: file.originalname,
+          content: file.buffer.toString('base64'),
+          contentType: file.mimetype
+        };
+      }
+      
       // Send email notification using Resend
       try {
-        await sendContactFormEmailResend({ firstName, lastName, email, phone, message });
+        await sendContactFormEmailResend(contactData);
         res.json({ success: true, message: "Message sent successfully! We'll get back to you within 24 hours." });
       } catch (emailError) {
         console.error("Email sending failed:", emailError);
@@ -98,10 +114,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Quote modal endpoint
-  app.post("/api/quote", async (req, res) => {
+  // Quote modal endpoint with file upload
+  app.post("/api/quote", upload.single('file'), async (req, res) => {
     try {
       const { name, email, phone, business, service, message } = req.body;
+      const file = req.file;
       
       if (!name || !email || !message) {
         return res.status(400).json({ error: "Missing required fields" });
@@ -114,11 +131,24 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       console.log("Quote request submission:", {
         name, email, phone, business, service, message,
+        fileAttached: !!file,
+        fileName: file?.originalname,
         timestamp: new Date().toISOString(),
       });
       
+      // Prepare quote data with optional file
+      const quoteData: any = { name, email, phone, business, service, message };
+      
+      if (file) {
+        quoteData.file = {
+          filename: file.originalname,
+          content: file.buffer.toString('base64'),
+          contentType: file.mimetype
+        };
+      }
+      
       try {
-        await sendQuoteRequestEmailResend({ name, email, phone, business, service, message });
+        await sendQuoteRequestEmailResend(quoteData);
         res.json({ success: true, message: "Quote request sent successfully! We'll get back to you within 24 hours." });
       } catch (emailError) {
         console.error("Email sending failed:", emailError);

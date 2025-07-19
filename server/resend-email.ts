@@ -58,8 +58,8 @@ export async function sendContactFormEmailResend(formData: ContactFormData): Pro
   }
 
   try {
-    // Email to you (the business owner)
-    await resend.emails.send({
+    // Prepare email data with optional attachment
+    const emailData: any = {
       from: 'XCon Technologies <noreply@xcontechnologies.com>',
       to: 'askforquote@xcontechnologies.com',
       subject: `New Contact Form Submission - ${formData.firstName} ${formData.lastName}`,
@@ -74,6 +74,8 @@ export async function sendContactFormEmailResend(formData: ContactFormData): Pro
             <p><strong>Name:</strong> ${formData.firstName} ${formData.lastName}</p>
             <p><strong>Email:</strong> ${formData.email}</p>
             ${formData.phone ? `<p><strong>Phone:</strong> ${formData.phone}</p>` : ''}
+            ${formData.company ? `<p><strong>Company:</strong> ${formData.company}</p>` : ''}
+            ${formData.service ? `<p><strong>Service Required:</strong> ${formData.service}</p>` : ''}
           </div>
           
           <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; margin: 20px 0;">
@@ -81,13 +83,35 @@ export async function sendContactFormEmailResend(formData: ContactFormData): Pro
             <p style="white-space: pre-wrap; line-height: 1.6;">${formData.message}</p>
           </div>
           
+          ${formData.file ? `
+          <div style="background-color: #e3f2fd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #2196F3;">
+            <h3 style="color: #1976D2; margin-top: 0;">📎 File Attachment:</h3>
+            <p><strong>Filename:</strong> ${formData.file.filename}</p>
+            <p><strong>File Type:</strong> ${formData.file.contentType}</p>
+            <p><em>File is attached to this email for download.</em></p>
+          </div>
+          ` : ''}
+          
           <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; color: #666; font-size: 14px;">
             <p>This message was sent from your XCon Technologies website contact form.</p>
             <p>Submitted on: ${new Date().toLocaleString()}</p>
           </div>
         </div>
       `
-    });
+    };
+
+    // Add attachment if file exists
+    if (formData.file) {
+      emailData.attachments = [{
+        filename: formData.file.filename,
+        content: formData.file.content,
+        type: formData.file.contentType,
+        disposition: 'attachment'
+      }];
+    }
+
+    // Send the email
+    await resend.emails.send(emailData);
 
     // Auto-reply to the customer
     await resend.emails.send({
@@ -152,8 +176,8 @@ export async function sendQuoteRequestEmailResend(formData: QuoteRequestData): P
   }
 
   try {
-    // Email to you (the business owner)
-    await resend.emails.send({
+    // Prepare email data with optional attachment
+    const emailData: any = {
       from: 'XCon Technologies <noreply@xcontechnologies.com>',
       to: 'askforquote@xcontechnologies.com',
       subject: `New Quote Request - ${formData.name}`,
@@ -177,13 +201,35 @@ export async function sendQuoteRequestEmailResend(formData: QuoteRequestData): P
             <p style="white-space: pre-wrap; line-height: 1.6;">${formData.message}</p>
           </div>
           
+          ${formData.file ? `
+          <div style="background-color: #e3f2fd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #2196F3;">
+            <h3 style="color: #1976D2; margin-top: 0;">📎 File Attachment:</h3>
+            <p><strong>Filename:</strong> ${formData.file.filename}</p>
+            <p><strong>File Type:</strong> ${formData.file.contentType}</p>
+            <p><em>File is attached to this email for download.</em></p>
+          </div>
+          ` : ''}
+          
           <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; color: #666; font-size: 14px;">
             <p>This quote request was sent from your XCon Technologies website.</p>
             <p>Submitted on: ${new Date().toLocaleString()}</p>
           </div>
         </div>
       `
-    });
+    };
+
+    // Add attachment if file exists
+    if (formData.file) {
+      emailData.attachments = [{
+        filename: formData.file.filename,
+        content: formData.file.content,
+        type: formData.file.contentType,
+        disposition: 'attachment'
+      }];
+    }
+
+    // Send the email
+    await resend.emails.send(emailData);
 
     // Auto-reply to the customer
     await resend.emails.send({
