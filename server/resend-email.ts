@@ -36,6 +36,11 @@ interface ConsultationRequestData {
   phone?: string;
   service?: string;
   message: string;
+  file?: {
+    filename: string;
+    content: Buffer;
+    contentType: string;
+  };
 }
 
 export async function sendContactFormEmailResend(formData: ContactFormData): Promise<boolean> {
@@ -243,8 +248,8 @@ export async function sendConsultationRequestEmailResend(formData: ConsultationR
   }
 
   try {
-    // Email to you (the business owner)
-    await resend.emails.send({
+    // Prepare email data with optional attachment
+    const emailData: any = {
       from: 'XCon Technologies <noreply@xcontechnologies.com>',
       to: 'askforquote@xcontechnologies.com',
       subject: `New Consultation Request - ${formData.fullName}`,
@@ -268,13 +273,34 @@ export async function sendConsultationRequestEmailResend(formData: ConsultationR
             <p style="white-space: pre-wrap; line-height: 1.6;">${formData.message}</p>
           </div>
           
+          ${formData.file ? `
+          <div style="background-color: #e3f2fd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #2196F3;">
+            <h3 style="color: #1976D2; margin-top: 0;">📎 File Attachment:</h3>
+            <p><strong>Filename:</strong> ${formData.file.filename}</p>
+            <p><strong>File Type:</strong> ${formData.file.contentType}</p>
+            <p><em>File is attached to this email for download.</em></p>
+          </div>
+          ` : ''}
+          
           <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; color: #666; font-size: 14px;">
             <p>This consultation request was sent from your XCon Technologies website.</p>
             <p>Submitted on: ${new Date().toLocaleString()}</p>
           </div>
         </div>
       `
-    });
+    };
+
+    // Add attachment if file exists
+    if (formData.file) {
+      emailData.attachments = [{
+        filename: formData.file.filename,
+        content: formData.file.content,
+        type: formData.file.contentType
+      }];
+    }
+
+    // Send the email
+    await resend.emails.send(emailData);
 
     // Auto-reply to the customer
     await resend.emails.send({

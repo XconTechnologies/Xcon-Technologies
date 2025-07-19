@@ -1,10 +1,41 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
+import multer from "multer";
 import { storage } from "./storage";
 import { sendContactFormEmail, sendQuoteRequestEmail, sendConsultationRequestEmail } from "./email";
 import { sendContactFormEmailSG, sendQuoteRequestEmailSG, sendConsultationRequestEmailSG } from "./sendgrid-email";
 import { sendContactFormEmailResend, sendQuoteRequestEmailResend, sendConsultationRequestEmailResend } from "./resend-email";
 import { emailLogger } from "./email-logger";
+
+// Configure multer for file uploads
+const upload = multer({
+  storage: multer.memoryStorage(),
+  limits: {
+    fileSize: 10 * 1024 * 1024, // 10MB limit
+  },
+  fileFilter: (req, file, cb) => {
+    // Allow common file types
+    const allowedMimeTypes = [
+      'image/jpeg', 'image/jpg', 'image/png', 'image/gif',
+      'application/pdf',
+      'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+      'text/plain', 'text/csv',
+      'application/zip', 'application/x-rar-compressed',
+      'application/json'
+    ];
+    
+    const allowedExtensions = /\.(jpeg|jpg|png|gif|pdf|doc|docx|txt|csv|zip|rar|json)$/i;
+    
+    const validMimeType = allowedMimeTypes.includes(file.mimetype);
+    const validExtension = allowedExtensions.test(file.originalname);
+    
+    if (validMimeType || validExtension) {
+      return cb(null, true);
+    } else {
+      cb(new Error(`Invalid file type: ${file.originalname}. Only images, PDFs, documents, and archives are allowed.`));
+    }
+  }
+});
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Test email endpoint
@@ -100,10 +131,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Consultation form endpoint
-  app.post("/api/consultation", async (req, res) => {
+  // Consultation form endpoint with file upload
+  app.post("/api/consultation", upload.single('file'), async (req, res) => {
     try {
       const { fullName, company, workEmail, phone, service, message } = req.body;
+      const file = req.file;
       
       if (!fullName || !workEmail || !message) {
         return res.status(400).json({ error: "Missing required fields" });
@@ -116,11 +148,24 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       console.log("Consultation request submission:", {
         fullName, company, workEmail, phone, service, message,
+        fileAttached: !!file,
+        fileName: file?.originalname,
         timestamp: new Date().toISOString(),
       });
       
+      // Prepare consultation data with optional file
+      const consultationData: any = { fullName, company, workEmail, phone, service, message };
+      
+      if (file) {
+        consultationData.file = {
+          filename: file.originalname,
+          content: file.buffer,
+          contentType: file.mimetype
+        };
+      }
+      
       try {
-        await sendConsultationRequestEmailResend({ fullName, company, workEmail, phone, service, message });
+        await sendConsultationRequestEmailResend(consultationData);
         res.json({ success: true, message: "Consultation request sent successfully! We'll get back to you within 24 hours." });
       } catch (emailError) {
         console.error("Email sending failed:", emailError);

@@ -57,19 +57,22 @@ export default function ConsultationContact() {
         message: `Company: ${formData.company}\n\n${formData.message}${file ? `\n\nFile attached: ${file.name}` : ''}`
       };
       
+      // Create FormData to handle file upload
+      const formDataToSend = new FormData();
+      formDataToSend.append('fullName', formData.fullName);
+      formDataToSend.append('company', formData.company || '');
+      formDataToSend.append('workEmail', formData.email);
+      formDataToSend.append('phone', formData.phone);
+      formDataToSend.append('service', formData.service);
+      formDataToSend.append('message', formData.message);
+      
+      if (file) {
+        formDataToSend.append('file', file);
+      }
+
       const response = await fetch('/api/consultation', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          fullName: formData.fullName,
-          company: formData.company,
-          workEmail: formData.email,
-          phone: formData.phone,
-          service: formData.service,
-          message: formData.message
-        }),
+        body: formDataToSend, // Send FormData instead of JSON
       });
       
       const data = await response.json();
