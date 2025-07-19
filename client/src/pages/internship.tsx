@@ -260,8 +260,11 @@ Personal Details:
 Internship Preferences:
 - Track: ${formData.internshipTrack}
 - Availability: ${formData.availability}
-- Experience Level: ${formData.experience}
+- Experience Level: Entry Level
 - Portfolio: ${formData.portfolio}
+
+Previous Experience:
+${formData.experience}
 
 Motivation:
 ${formData.motivation}
@@ -270,7 +273,7 @@ ${formData.motivation}
 Note: This is an internship application. For direct HR contact, reach out to nouman.ali@xcontechnologies.com`
       };
       
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/api/internship', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

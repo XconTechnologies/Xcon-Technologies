@@ -4,7 +4,7 @@ import multer from "multer";
 import { storage } from "./storage";
 import { sendContactFormEmail, sendQuoteRequestEmail, sendConsultationRequestEmail } from "./email";
 import { sendContactFormEmailSG, sendQuoteRequestEmailSG, sendConsultationRequestEmailSG } from "./sendgrid-email";
-import { sendContactFormEmailResend, sendQuoteRequestEmailResend, sendConsultationRequestEmailResend } from "./resend-email";
+import { sendContactFormEmailResend, sendQuoteRequestEmailResend, sendConsultationRequestEmailResend, sendInternshipApplicationEmailResend } from "./resend-email";
 import { emailLogger } from "./email-logger";
 
 // Configure multer for file uploads
@@ -204,6 +204,48 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
     } catch (error) {
       console.error("Consultation request error:", error);
+      res.status(500).json({ error: "Internal server error" });
+    }
+  });
+
+  // Internship application endpoint
+  app.post("/api/internship", async (req, res) => {
+    try {
+      const { firstName, lastName, email, phone, message } = req.body;
+      
+      // Validate required fields
+      if (!firstName || !email || !message) {
+        return res.status(400).json({ error: "Missing required fields" });
+      }
+      
+      // Validate email format
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        return res.status(400).json({ error: "Invalid email format" });
+      }
+      
+      // Log the internship application submission
+      console.log("Internship application submission:", {
+        firstName,
+        lastName,
+        email,
+        phone,
+        message,
+        timestamp: new Date().toISOString(),
+      });
+      
+      // Send email notification using Resend
+      try {
+        await sendInternshipApplicationEmailResend({ firstName, lastName, email, phone, message });
+        res.json({ success: true, message: "Internship application sent successfully! We'll review your application and get back to you within 2-3 business days." });
+      } catch (emailError) {
+        console.error("Email sending failed:", emailError);
+        // Always log the submission even if email fails
+        res.json({ success: true, message: "Your internship application has been received! We'll review and contact you within 2-3 business days." });
+      }
+      
+    } catch (error) {
+      console.error("Internship application error:", error);
       res.status(500).json({ error: "Internal server error" });
     }
   });
