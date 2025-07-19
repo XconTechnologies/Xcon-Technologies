@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { X, Upload, FileText } from 'lucide-react';
+import { trackEvent } from '@/lib/analytics';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
@@ -112,6 +113,9 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
       const data = await response.json();
       
       if (response.ok) {
+        // Track successful quote submission
+        trackEvent('form_submit', 'quote', formData.service, 1);
+        
         toast({
           title: "Quote request sent successfully!",
           description: data.message || "We'll get back to you within 24 hours.",

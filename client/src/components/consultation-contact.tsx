@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import PhoneInput from "@/components/ui/phone-input";
 import MultiFileUpload from "@/components/multi-file-upload";
+import { trackEvent } from "@/lib/analytics";
 import { SERVICES } from "../../../shared/services";
 import xconLogo from "@assets/Xcon Logo cropped_1752479137104.png";
 import securityBadge from "@assets/aws-security_1752489212506.png";
@@ -79,6 +80,9 @@ export default function ConsultationContact() {
       const data = await response.json();
       
       if (response.ok) {
+        // Track successful consultation submission
+        trackEvent('form_submit', 'consultation', formData.service || 'general', 1);
+        
         toast({
           title: "Message sent successfully!",
           description: data.message || "We'll get back to you within 24 hours.",

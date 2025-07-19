@@ -13,6 +13,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail, MapPin, Clock, MessageSquare, Upload, FileText, X } from "lucide-react";
 import PhoneInput from "@/components/ui/phone-input";
 import { SERVICES } from "../../../shared/services";
+import { trackEvent } from "@/lib/analytics";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -85,6 +86,9 @@ export default function Contact() {
       });
 
       if (response.ok) {
+        // Track successful contact form submission
+        trackEvent('form_submit', 'contact', data.service, 1);
+        
         toast({
           title: "Message sent successfully!",
           description: "We'll get back to you within 24 hours.",

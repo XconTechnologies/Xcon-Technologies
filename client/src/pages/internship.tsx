@@ -39,6 +39,7 @@ import { useToast } from "@/hooks/use-toast";
 import PhoneInput from "@/components/ui/phone-input";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import { trackEvent } from "@/lib/analytics";
 
 const internshipTracks = [
   {
@@ -284,6 +285,9 @@ Note: This is an internship application. For direct HR contact, reach out to nou
       const data = await response.json();
       
       if (response.ok) {
+        // Track successful internship application submission
+        trackEvent('form_submit', 'internship', formData.internshipTrack || 'general', 1);
+        
         toast({
           title: "Internship application submitted successfully!",
           description: "We'll review your application and get back to you within 2-3 business days.",
