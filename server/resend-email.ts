@@ -2,11 +2,14 @@ import { Resend } from 'resend';
 import { emailLogger } from './email-logger';
 
 // Check if Resend API key is available
-const RESEND_API_KEY = process.env.RESEND_API_KEY;
+const RESEND_API_KEY = process.env.RESEND_API_KEY || 're_XzcqVNwT_7CA8WS5NgxVp1dX79TowURDG';
 let resend: Resend | null = null;
 
 if (RESEND_API_KEY) {
   resend = new Resend(RESEND_API_KEY);
+  console.log('✅ Resend initialized with API key');
+} else {
+  console.log('❌ Resend API key not found');
 }
 
 interface ContactFormData {

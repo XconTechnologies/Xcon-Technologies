@@ -8,8 +8,8 @@ async function sendTestEmail() {
     console.log('🚀 Sending test email to askforquote@xcontechnologies.com...');
     
     const result = await resend.emails.send({
-      from: 'XCon Technologies <onboarding@resend.dev>',
-      to: ['xconreplit@gmail.com'],
+      from: 'XCon Technologies <noreply@xcontechnologies.com>',
+      to: ['askforquote@xcontechnologies.com'],
       subject: '🧪 Test Email from XCon Technologies Website',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
@@ -22,7 +22,7 @@ async function sendTestEmail() {
             <p>Your XCon Technologies website email system is working perfectly!</p>
             <p><strong>Timestamp:</strong> ${new Date().toLocaleString()}</p>
             <p><strong>Test Type:</strong> Direct Resend API Test</p>
-            <p><strong>Note:</strong> This test is sent to your verified email. To receive emails at askforquote@xcontechnologies.com, domain verification is needed.</p>
+            <p><strong>Status:</strong> Domain verified! This email is being sent directly to askforquote@xcontechnologies.com</p>
           </div>
           
           <div style="background-color: #7CB342; color: white; padding: 20px; border-radius: 8px; margin: 20px 0;">
