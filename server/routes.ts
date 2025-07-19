@@ -7,6 +7,24 @@ import { sendContactFormEmailResend, sendQuoteRequestEmailResend, sendConsultati
 import { emailLogger } from "./email-logger";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Test email endpoint
+  app.post("/api/test-email", async (req, res) => {
+    try {
+      console.log("Testing email with Resend...");
+      await sendContactFormEmailResend({
+        firstName: "Test",
+        lastName: "Email",
+        email: "test@example.com",
+        phone: "+1 (513) 302-4718",
+        message: "This is a test email to verify that the email system is working properly. If you receive this email, the Resend integration is successful!"
+      });
+      res.json({ success: true, message: "Test email sent successfully to askforquote@xcontechnologies.com" });
+    } catch (error) {
+      console.error("Test email failed:", error);
+      res.status(500).json({ error: "Failed to send test email", details: error.message });
+    }
+  });
+
   // Contact form endpoint
   app.post("/api/contact", async (req, res) => {
     try {
