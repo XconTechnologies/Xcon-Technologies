@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Phone, Mail, MessageCircle, MessageSquare, Upload, Send } from "lucide-react";
+import { Phone, Mail, MessageCircle, MessageSquare, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import PhoneInput from "@/components/ui/phone-input";
+import MultiFileUpload from "@/components/multi-file-upload";
 import { SERVICES } from "../../../shared/services";
 import xconLogo from "@assets/Xcon Logo cropped_1752479137104.png";
 import securityBadge from "@assets/aws-security_1752489212506.png";
@@ -24,7 +25,7 @@ export default function ConsultationContact() {
     service: ""
   });
 
-  const [file, setFile] = useState<File | null>(null);
+  const [files, setFiles] = useState<File[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
@@ -33,10 +34,8 @@ export default function ConsultationContact() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setFile(e.target.files[0]);
-    }
+  const handleFilesChange = (newFiles: File[]) => {
+    setFiles(newFiles);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -54,7 +53,7 @@ export default function ConsultationContact() {
         lastName,
         email: formData.email,
         phone: formData.phone,
-        message: `Company: ${formData.company}\n\n${formData.message}${file ? `\n\nFile attached: ${file.name}` : ''}`
+        message: `Company: ${formData.company}\n\n${formData.message}${files.length > 0 ? `\n\nFiles attached: ${files.map(f => f.name).join(', ')}` : ''}`
       };
       
       // Create FormData to handle file upload
@@ -66,8 +65,10 @@ export default function ConsultationContact() {
       formDataToSend.append('service', formData.service);
       formDataToSend.append('message', formData.message);
       
-      if (file) {
-        formDataToSend.append('file', file);
+      if (files.length > 0) {
+        files.forEach((file, index) => {
+          formDataToSend.append(`file${index}`, file);
+        });
       }
 
       const response = await fetch('/api/consultation', {
@@ -90,7 +91,7 @@ export default function ConsultationContact() {
           phone: "",
           service: ""
         });
-        setFile(null);
+        setFiles([]);
       } else {
         toast({
           title: "Error",
@@ -213,25 +214,13 @@ export default function ConsultationContact() {
                 </div>
 
                 {/* File Upload */}
-                <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 sm:p-6 text-center hover:border-primary transition-colors">
-                  <input
-                    type="file"
-                    onChange={handleFileUpload}
-                    className="hidden"
-                    id="file-upload"
-                  />
-                  <label htmlFor="file-upload" className="cursor-pointer">
-                    <Upload className="h-6 w-6 sm:h-8 sm:w-8 mx-auto mb-2 text-gray-400" />
-                    <p className="text-gray-600 text-sm sm:text-base">
-                      Drag and drop or <span className="text-primary font-semibold">browse</span> to upload your file(s)
-                    </p>
-                  </label>
-                  {file && (
-                    <p className="mt-2 text-sm text-green-600">
-                      File selected: {file.name}
-                    </p>
-                  )}
-                </div>
+                <MultiFileUpload
+                  files={files}
+                  onFilesChange={handleFilesChange}
+                  maxFiles={5}
+                  maxSizePerFile={10}
+                  label="Attach Files (Optional)"
+                />
 
                 {/* Message Textarea */}
                 <div>

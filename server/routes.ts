@@ -11,7 +11,8 @@ import { emailLogger } from "./email-logger";
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: {
-    fileSize: 10 * 1024 * 1024, // 10MB limit
+    fileSize: 10 * 1024 * 1024, // 10MB limit per file
+    files: 10, // Max 10 files per request
   },
   fileFilter: (req, file, cb) => {
     // Allow common file types
@@ -56,11 +57,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Contact form endpoint with file upload
-  app.post("/api/contact", upload.single('file'), async (req, res) => {
+  // Contact form endpoint with multiple file upload
+  app.post("/api/contact", upload.fields([
+    { name: 'file0', maxCount: 1 },
+    { name: 'file1', maxCount: 1 },
+    { name: 'file2', maxCount: 1 },
+    { name: 'file3', maxCount: 1 },
+    { name: 'file4', maxCount: 1 }
+  ]), async (req, res) => {
     try {
       const { firstName, lastName, email, phone, company, service, message } = req.body;
-      const file = req.file;
+      const files = req.files as { [fieldname: string]: Express.Multer.File[] };
       
       // Validate required fields
       if (!firstName || !email || !message) {

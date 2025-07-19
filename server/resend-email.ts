@@ -12,12 +12,19 @@ if (RESEND_API_KEY) {
   console.log('❌ Resend API key not found');
 }
 
+interface FileAttachment {
+  filename: string;
+  content: Buffer;
+  contentType: string;
+}
+
 interface ContactFormData {
   firstName: string;
   lastName: string;
   email: string;
   phone?: string;
   message: string;
+  files?: FileAttachment[];
 }
 
 interface QuoteRequestData {
@@ -27,6 +34,7 @@ interface QuoteRequestData {
   business?: string;
   service?: string;
   message: string;
+  files?: FileAttachment[];
 }
 
 interface ConsultationRequestData {
@@ -36,11 +44,7 @@ interface ConsultationRequestData {
   phone?: string;
   service?: string;
   message: string;
-  file?: {
-    filename: string;
-    content: Buffer;
-    contentType: string;
-  };
+  files?: FileAttachment[];
 }
 
 interface InternshipApplicationData {
@@ -49,6 +53,7 @@ interface InternshipApplicationData {
   email: string;
   phone?: string;
   message: string;
+  files?: FileAttachment[];
 }
 
 export async function sendContactFormEmailResend(formData: ContactFormData): Promise<boolean> {
@@ -70,12 +75,17 @@ export async function sendContactFormEmailResend(formData: ContactFormData): Pro
     const emailData: any = {
       from: 'XCon Technologies <noreply@xcontechnologies.com>',
       to: 'askforquote@xcontechnologies.com',
-      subject: `New Contact Form Submission - ${formData.firstName} ${formData.lastName}`,
+      subject: `📞 Contact Form Submission - ${formData.firstName} ${formData.lastName}`,
       html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-          <h2 style="color: #7CB342; border-bottom: 2px solid #7CB342; padding-bottom: 10px;">
-            New Contact Form Submission
+        <div style="font-family: Arial, sans-serif; max-width: 700px; margin: 0 auto; padding: 20px;">
+          <h2 style="color: #7CB342; border-bottom: 2px solid #7CB342; padding-bottom: 10px; text-align: center;">
+            📞 New Contact Form Submission
           </h2>
+          
+          <div style="background-color: #e8f5e8; padding: 15px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #7CB342;">
+            <h3 style="color: #2e7d2e; margin-top: 0; text-align: center;">🏢 CONTACT FORM - XCon Technologies Website</h3>
+            <p style="color: #333; margin: 0; text-align: center; font-weight: bold;">Customer inquiry from main contact form</p>
+          </div>
           
           <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <h3 style="color: #333; margin-top: 0;">Contact Details:</h3>
@@ -91,12 +101,16 @@ export async function sendContactFormEmailResend(formData: ContactFormData): Pro
             <p style="white-space: pre-wrap; line-height: 1.6;">${formData.message}</p>
           </div>
           
-          ${formData.file ? `
+          ${formData.files && formData.files.length > 0 ? `
           <div style="background-color: #e3f2fd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #2196F3;">
-            <h3 style="color: #1976D2; margin-top: 0;">📎 File Attachment:</h3>
-            <p><strong>Filename:</strong> ${formData.file.filename}</p>
-            <p><strong>File Type:</strong> ${formData.file.contentType}</p>
-            <p><em>File is attached to this email for download.</em></p>
+            <h3 style="color: #1976D2; margin-top: 0;">📎 File Attachments (${formData.files.length}):</h3>
+            ${formData.files.map(file => `
+              <div style="background-color: white; padding: 10px; margin: 5px 0; border-radius: 4px; border: 1px solid #ddd;">
+                <p style="margin: 0;"><strong>📄 ${file.filename}</strong></p>
+                <p style="margin: 0; color: #666; font-size: 14px;">Type: ${file.contentType}</p>
+              </div>
+            `).join('')}
+            <p style="margin-top: 10px; color: #1976D2;"><em>All files are attached to this email for download.</em></p>
           </div>
           ` : ''}
           
@@ -108,14 +122,14 @@ export async function sendContactFormEmailResend(formData: ContactFormData): Pro
       `
     };
 
-    // Add attachment if file exists
-    if (formData.file) {
-      emailData.attachments = [{
-        filename: formData.file.filename,
-        content: formData.file.content,
-        type: formData.file.contentType,
+    // Add attachments if files exist
+    if (formData.files && formData.files.length > 0) {
+      emailData.attachments = formData.files.map(file => ({
+        filename: file.filename,
+        content: file.content,
+        type: file.contentType,
         disposition: 'attachment'
-      }];
+      }));
     }
 
     // Send the email
@@ -188,12 +202,17 @@ export async function sendQuoteRequestEmailResend(formData: QuoteRequestData): P
     const emailData: any = {
       from: 'XCon Technologies <noreply@xcontechnologies.com>',
       to: 'askforquote@xcontechnologies.com',
-      subject: `New Quote Request - ${formData.name}`,
+      subject: `💰 Quote Request - ${formData.name}`,
       html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-          <h2 style="color: #7CB342; border-bottom: 2px solid #7CB342; padding-bottom: 10px;">
-            New Quote Request
+        <div style="font-family: Arial, sans-serif; max-width: 700px; margin: 0 auto; padding: 20px;">
+          <h2 style="color: #7CB342; border-bottom: 2px solid #7CB342; padding-bottom: 10px; text-align: center;">
+            💰 New Quote Request
           </h2>
+          
+          <div style="background-color: #fff3e0; padding: 15px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #ff9800;">
+            <h3 style="color: #e65100; margin-top: 0; text-align: center;">💼 QUOTE POPUP MODAL - XCon Technologies Website</h3>
+            <p style="color: #333; margin: 0; text-align: center; font-weight: bold;">Quote request from popup modal form</p>
+          </div>
           
           <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <h3 style="color: #333; margin-top: 0;">Client Details:</h3>
@@ -209,12 +228,16 @@ export async function sendQuoteRequestEmailResend(formData: QuoteRequestData): P
             <p style="white-space: pre-wrap; line-height: 1.6;">${formData.message}</p>
           </div>
           
-          ${formData.file ? `
+          ${formData.files && formData.files.length > 0 ? `
           <div style="background-color: #e3f2fd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #2196F3;">
-            <h3 style="color: #1976D2; margin-top: 0;">📎 File Attachment:</h3>
-            <p><strong>Filename:</strong> ${formData.file.filename}</p>
-            <p><strong>File Type:</strong> ${formData.file.contentType}</p>
-            <p><em>File is attached to this email for download.</em></p>
+            <h3 style="color: #1976D2; margin-top: 0;">📎 File Attachments (${formData.files.length}):</h3>
+            ${formData.files.map(file => `
+              <div style="background-color: white; padding: 10px; margin: 5px 0; border-radius: 4px; border: 1px solid #ddd;">
+                <p style="margin: 0;"><strong>📄 ${file.filename}</strong></p>
+                <p style="margin: 0; color: #666; font-size: 14px;">Type: ${file.contentType}</p>
+              </div>
+            `).join('')}
+            <p style="margin-top: 10px; color: #1976D2;"><em>All files are attached to this email for download.</em></p>
           </div>
           ` : ''}
           
@@ -226,14 +249,14 @@ export async function sendQuoteRequestEmailResend(formData: QuoteRequestData): P
       `
     };
 
-    // Add attachment if file exists
-    if (formData.file) {
-      emailData.attachments = [{
-        filename: formData.file.filename,
-        content: formData.file.content,
-        type: formData.file.contentType,
+    // Add attachments if files exist
+    if (formData.files && formData.files.length > 0) {
+      emailData.attachments = formData.files.map(file => ({
+        filename: file.filename,
+        content: file.content,
+        type: file.contentType,
         disposition: 'attachment'
-      }];
+      }));
     }
 
     // Send the email
@@ -306,12 +329,17 @@ export async function sendConsultationRequestEmailResend(formData: ConsultationR
     const emailData: any = {
       from: 'XCon Technologies <noreply@xcontechnologies.com>',
       to: 'askforquote@xcontechnologies.com',
-      subject: `New Consultation Request - ${formData.fullName}`,
+      subject: `🔍 Consultation Request - ${formData.fullName}`,
       html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-          <h2 style="color: #7CB342; border-bottom: 2px solid #7CB342; padding-bottom: 10px;">
-            New Consultation Request
+        <div style="font-family: Arial, sans-serif; max-width: 700px; margin: 0 auto; padding: 20px;">
+          <h2 style="color: #7CB342; border-bottom: 2px solid #7CB342; padding-bottom: 10px; text-align: center;">
+            🔍 New Consultation Request
           </h2>
+          
+          <div style="background-color: #f3e5f5; padding: 15px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #9c27b0;">
+            <h3 style="color: #6a1b9a; margin-top: 0; text-align: center;">🏗️ CONSULTATION FORM - XCon Technologies Website</h3>
+            <p style="color: #333; margin: 0; text-align: center; font-weight: bold;">Development consultation request from homepage</p>
+          </div>
           
           <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <h3 style="color: #333; margin-top: 0;">Client Details:</h3>
@@ -327,12 +355,16 @@ export async function sendConsultationRequestEmailResend(formData: ConsultationR
             <p style="white-space: pre-wrap; line-height: 1.6;">${formData.message}</p>
           </div>
           
-          ${formData.file ? `
+          ${formData.files && formData.files.length > 0 ? `
           <div style="background-color: #e3f2fd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #2196F3;">
-            <h3 style="color: #1976D2; margin-top: 0;">📎 File Attachment:</h3>
-            <p><strong>Filename:</strong> ${formData.file.filename}</p>
-            <p><strong>File Type:</strong> ${formData.file.contentType}</p>
-            <p><em>File is attached to this email for download.</em></p>
+            <h3 style="color: #1976D2; margin-top: 0;">📎 File Attachments (${formData.files.length}):</h3>
+            ${formData.files.map(file => `
+              <div style="background-color: white; padding: 10px; margin: 5px 0; border-radius: 4px; border: 1px solid #ddd;">
+                <p style="margin: 0;"><strong>📄 ${file.filename}</strong></p>
+                <p style="margin: 0; color: #666; font-size: 14px;">Type: ${file.contentType}</p>
+              </div>
+            `).join('')}
+            <p style="margin-top: 10px; color: #1976D2;"><em>All files are attached to this email for download.</em></p>
           </div>
           ` : ''}
           
@@ -344,14 +376,14 @@ export async function sendConsultationRequestEmailResend(formData: ConsultationR
       `
     };
 
-    // Add attachment if file exists
-    if (formData.file) {
-      emailData.attachments = [{
-        filename: formData.file.filename,
-        content: formData.file.content,
-        type: formData.file.contentType,
+    // Add attachments if files exist
+    if (formData.files && formData.files.length > 0) {
+      emailData.attachments = formData.files.map(file => ({
+        filename: file.filename,
+        content: file.content,
+        type: file.contentType,
         disposition: 'attachment'
-      }];
+      }));
     }
 
     // Send the email
