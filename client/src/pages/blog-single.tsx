@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { Link, useParams } from "wouter";
-import { Calendar, User, Clock, Share2, Facebook, Twitter, Linkedin, ArrowLeft, Eye, Tag, ThumbsUp } from "lucide-react";
+import { useParams, Link } from "wouter";
+import { ArrowLeft, Calendar, Clock, User, Share2, Heart, BookOpen, Eye, MessageCircle, Twitter, Facebook, Linkedin, Copy, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { trackEvent } from "@/lib/analytics";
@@ -138,56 +138,68 @@ const relatedPosts: any[] = [];
 export default function BlogSingle() {
   const params = useParams();
   const slug = params?.slug;
-  const [blogPost, setBlogPost] = useState<any>(null);
   const [isLiked, setIsLiked] = useState(false);
+  const [likes, setLikes] = useState(0);
+  const [copied, setCopied] = useState(false);
+  
+  const post = slug ? blogPostsData[slug] : null;
 
   useEffect(() => {
-    if (slug && blogPostsData[slug]) {
-      setBlogPost(blogPostsData[slug]);
+    if (post) {
+      setLikes(post.likes);
       // Track page view
-      trackEvent('page_view', 'blog_post', slug);
+      trackEvent('blog_page_view', 'engagement', post.title);
     }
-  }, [slug]);
-
-  const handleShare = (platform: string) => {
-    trackEvent('share', 'blog_post', platform);
-    
-    const url = window.location.href;
-    const title = blogPost?.title || "";
-    
-    switch (platform) {
-      case 'facebook':
-        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
-        break;
-      case 'twitter':
-        window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`, '_blank');
-        break;
-      case 'linkedin':
-        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank');
-        break;
-    }
-  };
+  }, [post]);
 
   const handleLike = () => {
     setIsLiked(!isLiked);
-    trackEvent('like', 'blog_post', slug || '', isLiked ? -1 : 1);
+    setLikes(prev => isLiked ? prev - 1 : prev + 1);
+    trackEvent('blog_like', 'engagement', post?.title);
   };
 
-  if (!blogPost) {
+  const handleShare = (platform: string) => {
+    const url = window.location.href;
+    const title = post?.title;
+    
+    let shareUrl = '';
+    switch (platform) {
+      case 'twitter':
+        shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
+        break;
+      case 'facebook':
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+        break;
+      case 'linkedin':
+        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+        break;
+      case 'copy':
+        navigator.clipboard.writeText(url);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+        trackEvent('blog_share', 'engagement', `copy_${post?.title}`);
+        return;
+    }
+    
+    if (shareUrl) {
+      window.open(shareUrl, '_blank', 'width=600,height=400');
+      trackEvent('blog_share', 'engagement', `${platform}_${post?.title}`);
+    }
+  };
+
+  if (!post) {
     return (
       <div className="min-h-screen bg-white">
         <Header />
-        <div className="flex items-center justify-center min-h-[60vh] pt-20">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">Article Not Found</h1>
-            <p className="text-gray-600 mb-8">The blog post you're looking for doesn't exist.</p>
-            <Link href="/blog">
-              <Button className="bg-primary text-white px-6 py-3 rounded-full">
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                Back to Blog
-              </Button>
-            </Link>
-          </div>
+        <div className="max-w-4xl mx-auto px-4 lg:px-8 py-32 text-center">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Article Not Found</h1>
+          <p className="text-gray-600 mb-8">The article you're looking for doesn't exist.</p>
+          <Link href="/blog">
+            <Button className="bg-primary text-white hover:bg-primary/90">
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Back to Blog
+            </Button>
+          </Link>
         </div>
         <Footer />
       </div>
@@ -198,231 +210,318 @@ export default function BlogSingle() {
     <div className="min-h-screen bg-white">
       <Header />
       
-      {/* Hero Section */}
-      <section className="pt-20 pb-8">
-        <div className="max-w-6xl mx-auto px-4 lg:px-8">
-          <Link href="/blog">
-            <Button variant="ghost" className="mb-6 text-primary hover:text-primary/80">
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to Blog
-            </Button>
-          </Link>
-          
-          <div className="mb-6">
-            <Badge className="bg-primary/10 text-primary mb-4">{blogPost.category}</Badge>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
-              {blogPost.title}
+      {/* Enhanced Hero Section */}
+      <section className="relative pt-32 pb-16 bg-gradient-to-br from-gray-900 via-gray-800 to-primary">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="relative max-w-6xl mx-auto px-4 lg:px-8">
+          {/* Breadcrumb */}
+          <nav className="flex items-center space-x-2 text-sm text-gray-300 mb-8">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span>/</span>
+            <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
+            <span>/</span>
+            <span className="text-primary">{post.category}</span>
+          </nav>
+
+          {/* Article Header */}
+          <div className="max-w-4xl">
+            <Badge className="bg-primary/20 text-primary mb-6 px-4 py-2 text-sm font-semibold">
+              {post.category}
+            </Badge>
+            
+            <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+              {post.title}
             </h1>
             
-            <div className="flex flex-wrap items-center gap-6 text-gray-600 mb-6">
-              <div className="flex items-center gap-2">
-                <User className="h-4 w-4" />
-                <span>{blogPost.author}</span>
+            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+              {post.content.match(/<p>(.*?)<\/p>/)?.[1]?.substring(0, 200)}...
+            </p>
+
+            {/* Enhanced Meta Information */}
+            <div className="flex flex-wrap items-center gap-6 text-gray-300">
+              <div className="flex items-center gap-3">
+                <Avatar className="w-12 h-12 border-2 border-primary/50">
+                  <AvatarImage src="/api/placeholder/48/48" />
+                  <AvatarFallback className="bg-primary text-white font-semibold">
+                    {post.author.split(' ').map((n: string) => n[0]).join('')}
+                  </AvatarFallback>
+                </Avatar>
+                <div>
+                  <div className="font-semibold text-white">{post.author}</div>
+                  <div className="text-sm text-gray-400">Technology Expert</div>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <Calendar className="h-4 w-4" />
-                <span>{new Date(blogPost.date).toLocaleDateString('en-US', { 
-                  year: 'numeric', 
-                  month: 'long', 
-                  day: 'numeric' 
-                })}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="h-4 w-4" />
-                <span>{blogPost.readTime}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Eye className="h-4 w-4" />
-                <span>{blogPost.views.toLocaleString()} views</span>
-              </div>
-            </div>
-            
-            <div className="flex flex-wrap gap-2 mb-6">
-              {blogPost.tags.map((tag: string) => (
-                <span key={tag} className="inline-flex items-center gap-1 text-sm bg-gray-100 text-gray-600 px-3 py-1 rounded-full">
-                  <Tag className="h-3 w-3" />
-                  {tag}
+              
+              <div className="flex items-center gap-6 text-sm">
+                <span className="flex items-center gap-2">
+                  <Calendar className="h-4 w-4" />
+                  {new Date(post.date).toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                  })}
                 </span>
-              ))}
+                <span className="flex items-center gap-2">
+                  <Clock className="h-4 w-4" />
+                  {post.readTime}
+                </span>
+                <span className="flex items-center gap-2">
+                  <Eye className="h-4 w-4" />
+                  {post.views} views
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Featured Image */}
-      <section className="mb-8">
+      {/* Enhanced Content Section */}
+      <section className="py-16">
         <div className="max-w-6xl mx-auto px-4 lg:px-8">
-          <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden">
-            <img
-              src={blogPost.image}
-              alt={blogPost.title}
-              className="w-full h-64 md:h-96 object-cover"
-            />
-          </div>
-        </div>
-      </section>
+          <div className="lg:grid lg:grid-cols-12 lg:gap-12">
+            {/* Main Content */}
+            <article className="lg:col-span-8">
+              <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-12 border border-gray-100">
+                {/* Featured Image */}
+                <div className="mb-8">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-64 lg:h-80 object-cover rounded-xl shadow-lg"
+                  />
+                </div>
 
-      {/* Article Content */}
-      <section className="pb-16">
-        <div className="max-w-6xl mx-auto px-4 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-            {/* Social Sharing Sidebar */}
-            <div className="lg:col-span-1">
-              <div className="sticky top-24">
-                <div className="bg-gray-50 rounded-xl p-6">
-                  <h3 className="font-semibold text-gray-900 mb-4">Share this article</h3>
-                  <div className="flex flex-row lg:flex-col gap-3">
+                {/* Article Content */}
+                <div 
+                  className="prose prose-lg max-w-none"
+                  dangerouslySetInnerHTML={{ __html: post.content }}
+                />
+
+                {/* Enhanced Tags */}
+                <div className="mt-12 pt-8 border-t border-gray-200">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Topics covered in this article:</h4>
+                  <div className="flex flex-wrap gap-3">
+                    {post.tags.map((tag: string) => (
+                      <Button
+                        key={tag}
+                        variant="outline"
+                        size="sm"
+                        className="rounded-full px-6 py-2 hover:bg-primary hover:text-white hover:border-primary transition-all"
+                      >
+                        #{tag}
+                      </Button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Enhanced Author Bio */}
+                <div className="mt-12 pt-8 border-t border-gray-200">
+                  <div className="flex items-start gap-4">
+                    <Avatar className="w-16 h-16 border-2 border-primary/20">
+                      <AvatarImage src="/api/placeholder/64/64" />
+                      <AvatarFallback className="bg-primary text-white text-lg font-bold">
+                        {post.author.split(' ').map((n: string) => n[0]).join('')}
+                      </AvatarFallback>
+                    </Avatar>
+                    <div className="flex-1">
+                      <h4 className="text-xl font-bold text-gray-900 mb-2">{post.author}</h4>
+                      <p className="text-gray-600 mb-4">
+                        Our team of technology experts specializes in delivering cutting-edge digital solutions 
+                        and insights that drive business growth and innovation.
+                      </p>
+                      <div className="flex gap-2">
+                        <Button size="sm" variant="outline" className="rounded-full">
+                          Follow
+                        </Button>
+                        <Button size="sm" variant="outline" className="rounded-full">
+                          View Profile
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            {/* Enhanced Sidebar */}
+            <aside className="lg:col-span-4 mt-12 lg:mt-0">
+              <div className="sticky top-24 space-y-8">
+                {/* Social Share & Engagement */}
+                <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
+                  <h3 className="text-lg font-bold text-gray-900 mb-4">Share & Engage</h3>
+                  
+                  {/* Like Button */}
+                  <Button
+                    onClick={handleLike}
+                    variant="outline"
+                    className={`w-full mb-4 ${isLiked ? 'bg-red-50 border-red-200 text-red-600' : ''}`}
+                  >
+                    <Heart className={`h-5 w-5 mr-2 ${isLiked ? 'fill-red-600' : ''}`} />
+                    {isLiked ? 'Liked' : 'Like'} ({likes})
+                  </Button>
+
+                  {/* Share Buttons */}
+                  <div className="grid grid-cols-2 gap-2 mb-4">
                     <Button
-                      size="sm"
-                      variant="outline"
-                      onClick={() => handleShare('facebook')}
-                      className="flex items-center gap-2 w-full justify-start"
-                    >
-                      <Facebook className="h-4 w-4 text-blue-600" />
-                      Facebook
-                    </Button>
-                    <Button
-                      size="sm"
-                      variant="outline"
                       onClick={() => handleShare('twitter')}
-                      className="flex items-center gap-2 w-full justify-start"
+                      variant="outline"
+                      size="sm"
+                      className="flex items-center justify-center gap-2"
                     >
-                      <Twitter className="h-4 w-4 text-blue-400" />
+                      <Twitter className="h-4 w-4" />
                       Twitter
                     </Button>
                     <Button
-                      size="sm"
+                      onClick={() => handleShare('facebook')}
                       variant="outline"
-                      onClick={() => handleShare('linkedin')}
-                      className="flex items-center gap-2 w-full justify-start"
+                      size="sm"
+                      className="flex items-center justify-center gap-2"
                     >
-                      <Linkedin className="h-4 w-4 text-blue-700" />
+                      <Facebook className="h-4 w-4" />
+                      Facebook
+                    </Button>
+                    <Button
+                      onClick={() => handleShare('linkedin')}
+                      variant="outline"
+                      size="sm"
+                      className="flex items-center justify-center gap-2"
+                    >
+                      <Linkedin className="h-4 w-4" />
                       LinkedIn
                     </Button>
-                  </div>
-                  
-                  <Separator className="my-4" />
-                  
-                  <Button
-                    size="sm"
-                    variant={isLiked ? "default" : "outline"}
-                    onClick={handleLike}
-                    className={`flex items-center gap-2 w-full justify-start ${
-                      isLiked ? "bg-red-500 hover:bg-red-600 text-white" : ""
-                    }`}
-                  >
-                    <ThumbsUp className={`h-4 w-4 ${isLiked ? "text-white" : "text-red-500"}`} />
-                    {isLiked ? "Liked" : "Like"} ({blogPost.likes + (isLiked ? 1 : 0)})
-                  </Button>
-                </div>
-              </div>
-            </div>
-            
-            {/* Article Content */}
-            <div className="lg:col-span-3">
-              <div 
-                className="prose prose-lg max-w-none"
-                dangerouslySetInnerHTML={{ __html: blogPost.content }}
-                style={{
-                  lineHeight: '1.8',
-                  fontSize: '1.125rem'
-                }}
-              />
-              
-              {/* Author Bio */}
-              <div className="mt-12 p-6 bg-gray-50 rounded-xl">
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl">
-                    {blogPost.author.charAt(0)}
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">{blogPost.author}</h4>
-                    <p className="text-gray-600">
-                      Technology expert at XCon Technologies, passionate about sharing knowledge and helping businesses grow through innovative solutions.
-                    </p>
+                    <Button
+                      onClick={() => handleShare('copy')}
+                      variant="outline"
+                      size="sm"
+                      className="flex items-center justify-center gap-2"
+                    >
+                      {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+                      {copied ? 'Copied!' : 'Copy'}
+                    </Button>
                   </div>
                 </div>
+
+                {/* Article Stats */}
+                <div className="bg-gray-50 rounded-2xl p-6">
+                  <h3 className="text-lg font-bold text-gray-900 mb-4">Article Stats</h3>
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-600">Views</span>
+                      <span className="font-semibold">{post.views.toLocaleString()}</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-600">Reading Time</span>
+                      <span className="font-semibold">{post.readTime}</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-600">Published</span>
+                      <span className="font-semibold">
+                        {new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                      </span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-600">Category</span>
+                      <Badge className="bg-primary/10 text-primary">{post.category}</Badge>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Newsletter Signup */}
+                <div className="bg-gradient-to-br from-primary to-primary/90 rounded-2xl p-6 text-white">
+                  <h3 className="text-lg font-bold mb-3">Get More Insights</h3>
+                  <p className="text-sm mb-4 opacity-90">
+                    Subscribe to our newsletter for the latest technology trends and partnership opportunities.
+                  </p>
+                  <div className="space-y-3">
+                    <input
+                      type="email"
+                      placeholder="Your email address"
+                      className="w-full px-4 py-2 rounded-lg border-0 text-gray-900"
+                    />
+                    <Button className="w-full bg-white text-primary hover:bg-gray-100">
+                      Subscribe Now
+                    </Button>
+                  </div>
+                </div>
+
+                {/* Back to Blog */}
+                <div className="text-center">
+                  <Link href="/blog">
+                    <Button variant="outline" className="rounded-full px-6">
+                      <ArrowLeft className="h-4 w-4 mr-2" />
+                      Back to All Articles
+                    </Button>
+                  </Link>
+                </div>
               </div>
-            </div>
+            </aside>
           </div>
         </div>
       </section>
 
-      {/* Related Posts - Show only when there are related posts */}
-      {relatedPosts.length > 0 && (
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-6xl mx-auto px-4 lg:px-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Related Articles</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {relatedPosts.map((post) => (
-                <article key={post.id} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
-                  <div className="aspect-w-16 aspect-h-9 overflow-hidden">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  
-                  <div className="p-6">
-                    <Badge className="bg-primary/10 text-primary mb-3">{post.category}</Badge>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-4 group-hover:text-primary transition-colors line-clamp-2">
-                      <Link href={`/blog/${post.slug}`}>
-                        {post.title}
-                      </Link>
-                    </h3>
-                    
-                    <Link href={`/blog/${post.slug}`}>
-                      <Button size="sm" variant="ghost" className="text-primary hover:text-primary/80 hover:bg-primary/10 p-0">
-                        Read More <ArrowLeft className="h-4 w-4 ml-2 rotate-180" />
-                      </Button>
-                    </Link>
-                  </div>
-                </article>
-              ))}
-            </div>
+      {/* Call to Action Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 lg:px-8 text-center">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+            Ready to Start Your Partnership Journey?
+          </h2>
+          <p className="text-xl text-gray-600 mb-8">
+            Join hundreds of successful partners who are growing their business with XCon Technologies.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button className="bg-primary text-white hover:bg-primary/90 px-8 py-3 rounded-full">
+              Apply for Partnership
+            </Button>
+            <Button variant="outline" className="px-8 py-3 rounded-full">
+              Schedule a Call
+            </Button>
           </div>
-        </section>
-      )}
+        </div>
+      </section>
 
       <Footer />
     </div>
   );
 }
 
-// CSS styles for the prose content
+// Enhanced CSS styles for the prose content
 const styles = `
   .prose h2 {
-    font-size: 1.875rem;
+    font-size: 2rem;
     font-weight: 700;
     color: #111827;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
     line-height: 1.2;
+    border-bottom: 3px solid #7CB342;
+    padding-bottom: 0.5rem;
   }
   
   .prose h3 {
     font-size: 1.5rem;
     font-weight: 600;
     color: #111827;
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
   }
   
   .prose p {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
     color: #374151;
+    font-size: 1.125rem;
+    line-height: 1.8;
   }
   
   .prose ul, .prose ol {
-    margin-bottom: 1.25rem;
-    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
   }
   
   .prose li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     color: #374151;
+    font-size: 1.125rem;
+    line-height: 1.7;
   }
   
   .prose strong {
@@ -431,13 +530,29 @@ const styles = `
   }
   
   .prose-image {
-    margin: 2rem 0;
+    margin: 3rem 0;
   }
   
   .prose-image img {
     width: 100%;
+    border-radius: 0.75rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease;
+  }
+  
+  .prose-image img:hover {
+    transform: scale(1.02);
+  }
+  
+  .prose blockquote {
+    border-left: 4px solid #7CB342;
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: #6B7280;
+    background: #F9FAFB;
+    padding: 1.5rem;
     border-radius: 0.5rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   }
 `;
 
