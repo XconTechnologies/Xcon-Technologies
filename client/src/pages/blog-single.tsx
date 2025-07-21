@@ -281,8 +281,8 @@ export default function BlogSingle() {
 
       {/* Content Section - Matching Homepage Style */}
       <section className="py-16">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
-          <div className="lg:grid lg:grid-cols-12 lg:gap-12">
+        <div className="max-w-[1200px] mx-auto px-4 lg:px-8">
+          <div className="lg:grid lg:grid-cols-12 lg:gap-8">
             {/* Main Content */}
             <article className="lg:col-span-8">
               <div className="bg-white rounded-xl shadow-lg p-8 lg:p-12 border border-gray-100">
@@ -350,7 +350,7 @@ export default function BlogSingle() {
 
             {/* Enhanced Sidebar */}
             <aside className="lg:col-span-4 mt-12 lg:mt-0">
-              <div className="sticky top-24 space-y-8">
+              <div className="sticky top-32 space-y-6">
                 {/* Partnership CTA - Moved to Top */}
                 <div className="bg-primary rounded-xl p-5 text-white">
                   <h3 className="text-base font-bold mb-3">Ready to Start Your Partnership Journey?</h3>
@@ -448,7 +448,7 @@ export default function BlogSingle() {
 
       {/* Newsletter Section - Moved to Last Position */}
       <section className="py-12 bg-primary">
-        <div className="max-w-6xl mx-auto px-6 lg:px-12 text-center">
+        <div className="max-w-6xl mx-auto px-4 lg:px-8 text-center">
           <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">Get More Insights</h2>
           <p className="text-base text-white/90 mb-6 max-w-2xl mx-auto">
             Subscribe to our newsletter for the latest technology trends and partnership opportunities.
