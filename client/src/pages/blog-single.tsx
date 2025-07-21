@@ -351,7 +351,30 @@ export default function BlogSingle() {
             {/* Enhanced Sidebar */}
             <aside className="lg:col-span-4 mt-12 lg:mt-0">
               <div className="sticky top-24 space-y-8">
-                {/* Social Share & Engagement */}
+                {/* Partnership CTA - Moved to Top */}
+                <div className="bg-primary rounded-2xl p-6 text-white">
+                  <h3 className="text-lg font-bold mb-4">Ready to Start Your Partnership Journey?</h3>
+                  <p className="text-primary-foreground/90 mb-6" style={{ fontSize: '1.125rem', lineHeight: '1.8' }}>
+                    Join hundreds of successful partners who are growing their business with XCon Technologies.
+                  </p>
+                  <div className="space-y-3">
+                    <Button
+                      className="w-full bg-white text-primary hover:bg-gray-100 font-semibold"
+                      onClick={() => trackEvent('partnership_apply', 'blog_cta', 'sidebar')}
+                    >
+                      Apply for Partnership
+                    </Button>
+                    <Button
+                      variant="outline"
+                      className="w-full border-white text-white hover:bg-white hover:text-primary font-semibold"
+                      onClick={() => trackEvent('partnership_schedule', 'blog_cta', 'sidebar')}
+                    >
+                      Schedule a Call
+                    </Button>
+                  </div>
+                </div>
+
+                {/* Social Share & Engagement - Moved After Partnership CTA */}
                 <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
                   <h3 className="text-lg font-bold text-gray-900 mb-4">Share & Engage</h3>
                   
@@ -402,29 +425,6 @@ export default function BlogSingle() {
                     >
                       {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
                       {copied ? 'Copied!' : 'Copy'}
-                    </Button>
-                  </div>
-                </div>
-
-                {/* Partnership CTA */}
-                <div className="bg-primary rounded-2xl p-6 text-white">
-                  <h3 className="text-lg font-bold mb-4">Ready to Start Your Partnership Journey?</h3>
-                  <p className="text-primary-foreground/90 mb-6" style={{ fontSize: '1.125rem', lineHeight: '1.8' }}>
-                    Join hundreds of successful partners who are growing their business with XCon Technologies.
-                  </p>
-                  <div className="space-y-3">
-                    <Button
-                      className="w-full bg-white text-primary hover:bg-gray-100 font-semibold"
-                      onClick={() => trackEvent('partnership_apply', 'blog_cta', 'sidebar')}
-                    >
-                      Apply for Partnership
-                    </Button>
-                    <Button
-                      variant="outline"
-                      className="w-full border-white text-white hover:bg-white hover:text-primary font-semibold"
-                      onClick={() => trackEvent('partnership_schedule', 'blog_cta', 'sidebar')}
-                    >
-                      Schedule a Call
                     </Button>
                   </div>
                 </div>
