@@ -7,6 +7,8 @@ import { useEffect } from "react";
 import { initGA } from "./lib/analytics";
 import { useAnalytics } from "./hooks/use-analytics";
 import { useScrollRestoration } from "./hooks/use-scroll-restoration";
+import { preloadImages, preloadFonts } from "./utils/performance";
+import { usePerformanceOptimization } from "./hooks/use-performance";
 import Home from "@/pages/home";
 import Career from "@/pages/career";
 import Internship from "@/pages/internship";
@@ -33,6 +35,9 @@ function Router() {
   
   // Scroll to top on route change
   useScrollRestoration();
+  
+  // Optimize performance
+  usePerformanceOptimization();
   
   return (
     <Switch>
@@ -61,9 +66,15 @@ function Router() {
 }
 
 function App() {
-  // Initialize Google Analytics when app loads
+  // Initialize Google Analytics and performance optimizations
   useEffect(() => {
-    // Verify required environment variable is present
+    // Preload critical resources
+    preloadFonts();
+    preloadImages([
+      'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=75'
+    ]);
+    
+    // Initialize Google Analytics
     if (!import.meta.env.VITE_GA_MEASUREMENT_ID) {
       console.warn('Missing required Google Analytics key: VITE_GA_MEASUREMENT_ID');
     } else {

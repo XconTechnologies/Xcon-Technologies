@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Code, Database, Cloud, Smartphone, Edit, Target, BarChart3, Repeat } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import QuoteModal from "./quote-modal";
+import LazyImage from "@/components/lazy-image";
 import softwareImg from "@assets/Xcon web - software_1752304457704.jpg";
 import mvpImg from "@assets/Xcon web - MVP development_1752304457706.jpg";
 import cloudImg from "@assets/Xcon web - cloud Computing_1752304457707.jpg";
@@ -265,13 +266,11 @@ export default function Services() {
                       <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
                     </div>
                   )}
-                  <img 
+                  <LazyImage 
                     key={activeTab}
-                    src={activeTabData?.content.image} 
-                    alt={activeTabData?.content.cardTitle}
+                    src={activeTabData?.content.image || ""} 
+                    alt={activeTabData?.content.cardTitle || "Service image"}
                     className="w-full h-full object-cover transition-all duration-300"
-                    loading="eager"
-                    decoding="async"
                     onLoad={() => setImageLoaded(prev => ({ ...prev, [activeTab]: true }))}
                   />
                 </div>
