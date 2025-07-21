@@ -51,14 +51,29 @@ export default function Hero() {
   const duplicatedLogos = [...logos, ...logos, ...logos];
 
   return (
-    <section className="relative overflow-hidden pt-36 pb-20 min-h-screen bg-gray-900">
-      {/* Optimized Background Image - Fast Loading */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-gray-900"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=75&fm=webp')"
-        }}
-      />
+    <section className="relative overflow-hidden pt-36 pb-20 min-h-screen">
+      {/* Video Background */}
+      <div className="absolute inset-0 w-full h-full">
+        <video
+          className="w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source
+            src="https://videos.pexels.com/video-files/3129957/3129957-uhd_3840_2160_25fps.mp4"
+            type="video/mp4"
+          />
+          {/* Fallback background image */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: "url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1926&q=80')"
+            }}
+          />
+        </video>
+      </div>
       
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/60"></div>
@@ -95,8 +110,6 @@ export default function Hero() {
                       <img
                         src={logo.logo}
                         alt={logo.name}
-                        loading="lazy"
-                        decoding="async"
                         className="h-6 sm:h-8 md:h-10 w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-all duration-300"
                         style={{ maxWidth: '60px' }}
                       />

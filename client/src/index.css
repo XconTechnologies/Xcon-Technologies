@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap&text=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -73,45 +73,6 @@ body.modal-open {
   overflow: hidden !important;
   position: fixed !important;
   width: 100% !important;
-}
-
-/* Performance optimizations */
-* {
-  box-sizing: border-box;
-}
-
-img {
-  content-visibility: auto;
-  contain-intrinsic-size: 1px 1000px;
-}
-
-/* Faster animations */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* GPU acceleration for animations */
-.animate-scroll-right-to-left,
-.animate-scroll-left,
-.animate-scroll-logos {
-  transform: translateZ(0);
-  will-change: transform;
-}
-
-/* Optimize scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Critical above-the-fold styles */
-.hero-bg {
-  background-color: #1f2937; /* gray-800 fallback */
 }
 
 /* Modal animation */
