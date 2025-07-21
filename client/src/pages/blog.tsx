@@ -11,79 +11,19 @@ import { trackEvent } from "@/lib/analytics";
 const blogPosts = [
   {
     id: 1,
-    title: "The Future of Web Development: Trends to Watch in 2025",
-    slug: "future-web-development-trends-2025",
-    excerpt: "Discover the cutting-edge technologies and methodologies that will shape web development in 2025. From AI integration to advanced frameworks, explore what's coming next.",
+    title: "Become a Partner with XCon Technologies",
+    slug: "become-partner-xcon-technologies",
+    excerpt: "In today's fast-moving digital world, collaboration is more than just a business strategy. It's a growth engine. Discover how you can join our expanding partner network and grow your business with XCon Technologies.",
     author: "XCon Technologies Team",
-    date: "2025-01-15",
+    date: "2025-01-21",
     readTime: "8 min read",
-    category: "Web Development",
-    tags: ["React", "AI", "Web3", "Performance"],
-    image: "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: 2,
-    title: "Cloud Engineering Best Practices for Scalable Applications",
-    slug: "cloud-engineering-best-practices",
-    excerpt: "Learn essential cloud engineering principles that ensure your applications can scale efficiently while maintaining security and cost-effectiveness.",
-    author: "Sarah Johnson",
-    date: "2025-01-10",
-    readTime: "12 min read",
-    category: "Cloud Engineering",
-    tags: ["AWS", "Azure", "DevOps", "Scaling"],
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: 3,
-    title: "MVP Development: From Idea to Launch in Record Time",
-    slug: "mvp-development-guide",
-    excerpt: "A comprehensive guide to building and launching your minimum viable product efficiently. Learn our proven methodology that has helped startups succeed.",
-    author: "Mike Chen",
-    date: "2025-01-05",
-    readTime: "10 min read",
-    category: "MVP Development",
-    tags: ["Startup", "Agile", "Product Strategy"],
-    image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: 4,
-    title: "Data Engineering Solutions for Modern Businesses",
-    slug: "data-engineering-modern-businesses",
-    excerpt: "How modern data engineering practices can transform your business intelligence and decision-making processes. Real-world examples and case studies included.",
-    author: "Alex Rodriguez",
-    date: "2024-12-28",
-    readTime: "15 min read",
-    category: "Data Engineering",
-    tags: ["Big Data", "Analytics", "Machine Learning"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: 5,
-    title: "DevOps Automation: Streamlining Your Development Pipeline",
-    slug: "devops-automation-pipeline",
-    excerpt: "Discover how to implement effective DevOps automation strategies that reduce deployment time and improve software quality across your development lifecycle.",
-    author: "Jennifer Liu",
-    date: "2024-12-20",
-    readTime: "9 min read",
-    category: "DevOps",
-    tags: ["CI/CD", "Docker", "Kubernetes", "Automation"],
-    image: "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: 6,
-    title: "Quality Assurance in Agile Development: Testing Strategies",
-    slug: "qa-testing-agile-strategies",
-    excerpt: "Effective QA testing methodologies for agile development teams. Learn how to maintain quality while moving fast in iterative development cycles.",
-    author: "David Park",
-    date: "2024-12-15",
-    readTime: "11 min read",
-    category: "QA Testing",
-    tags: ["Testing", "Agile", "Quality Assurance", "Automation"],
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    category: "Partnership",
+    tags: ["Partnership", "Business Growth", "Collaboration", "Digital Solutions"],
+    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
   }
 ];
 
-const categories = ["All", "Web Development", "Cloud Engineering", "MVP Development", "Data Engineering", "DevOps", "QA Testing"];
+const categories = ["All", "Partnership"];
 
 export default function Blog() {
   const [searchTerm, setSearchTerm] = useState("");
