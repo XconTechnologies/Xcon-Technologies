@@ -429,23 +429,7 @@ export default function BlogSingle() {
                   </div>
                 </div>
 
-                {/* Newsletter Signup */}
-                <div className="bg-gradient-to-br from-primary to-primary/90 rounded-2xl p-6 text-white">
-                  <h3 className="text-lg font-bold mb-3">Get More Insights</h3>
-                  <p className="text-sm mb-4 opacity-90">
-                    Subscribe to our newsletter for the latest technology trends and partnership opportunities.
-                  </p>
-                  <div className="space-y-3">
-                    <input
-                      type="email"
-                      placeholder="Your email address"
-                      className="w-full px-4 py-2 rounded-lg border-0 text-gray-900"
-                    />
-                    <Button className="w-full bg-white text-primary hover:bg-gray-100">
-                      Subscribe Now
-                    </Button>
-                  </div>
-                </div>
+
 
                 {/* Back to Blog */}
                 <div className="text-center">
@@ -462,22 +446,24 @@ export default function BlogSingle() {
         </div>
       </section>
 
-      {/* Call to Action Section */}
-      <section className="py-16 bg-gray-50">
+      {/* Newsletter Section - Moved to Last Position */}
+      <section className="py-16 bg-gradient-to-br from-primary to-primary/90">
         <div className="max-w-4xl mx-auto px-4 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-            Ready to Start Your Partnership Journey?
-          </h2>
-          <p className="text-xl text-gray-600 mb-8">
-            Join hundreds of successful partners who are growing their business with XCon Technologies.
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Get More Insights</h2>
+          <p className="text-xl text-primary-foreground/90 mb-8" style={{ fontSize: '1.125rem', lineHeight: '1.8' }}>
+            Subscribe to our newsletter for the latest technology trends and partnership opportunities.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-primary text-white hover:bg-primary/90 px-8 py-3 rounded-full">
-              Apply for Partnership
-            </Button>
-            <Button variant="outline" className="px-8 py-3 rounded-full">
-              Schedule a Call
-            </Button>
+          <div className="max-w-md mx-auto">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <input
+                type="email"
+                placeholder="Your email address"
+                className="flex-1 px-6 py-3 rounded-xl border-0 text-gray-900 text-lg"
+              />
+              <Button className="bg-white text-primary hover:bg-gray-100 px-8 py-3 rounded-xl font-semibold text-lg">
+                Subscribe Now
+              </Button>
+            </div>
           </div>
         </div>
       </section>
