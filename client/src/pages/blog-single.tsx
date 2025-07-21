@@ -210,10 +210,14 @@ export default function BlogSingle() {
     <div className="min-h-screen bg-white">
       <Header />
       
-      {/* Enhanced Hero Section */}
-      <section className="relative pt-32 pb-16 bg-gradient-to-br from-gray-900 via-gray-800 to-primary">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative max-w-6xl mx-auto px-4 lg:px-8">
+      {/* Hero Section - Matching Homepage Style */}
+      <section className="relative pt-32 pb-16 bg-gradient-to-br from-gray-900 to-gray-800">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute w-96 h-96 bg-primary/10 rounded-full blur-3xl -top-48 -left-48 animate-pulse"></div>
+          <div className="absolute w-96 h-96 bg-primary/10 rounded-full blur-3xl -bottom-48 -right-48 animate-pulse delay-1000"></div>
+        </div>
+        
+        <div className="relative max-w-[1440px] mx-auto px-8 lg:px-16">
           {/* Breadcrumb */}
           <nav className="flex items-center space-x-2 text-sm text-gray-300 mb-8">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -224,40 +228,40 @@ export default function BlogSingle() {
           </nav>
 
           {/* Article Header */}
-          <div className="max-w-4xl">
+          <div className="text-center text-white">
             <Badge className="bg-primary/20 text-primary mb-6 px-4 py-2 text-sm font-semibold">
               {post.category}
             </Badge>
             
-            <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               {post.title}
             </h1>
             
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              {post.content.match(/<p>(.*?)<\/p>/)?.[1]?.substring(0, 200)}...
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+              In today's fast-moving digital world, collaboration is more than just a business strategy. It's a growth engine. Discover partnership opportunities with XCon Technologies.
             </p>
 
-            {/* Enhanced Meta Information */}
-            <div className="flex flex-wrap items-center gap-6 text-gray-300">
+            {/* Meta Information */}
+            <div className="flex flex-wrap items-center justify-center gap-6 text-gray-300">
               <div className="flex items-center gap-3">
-                <Avatar className="w-12 h-12 border-2 border-primary/50">
+                <Avatar className="w-10 h-10 border-2 border-primary/50">
                   <AvatarImage src="/api/placeholder/48/48" />
-                  <AvatarFallback className="bg-primary text-white font-semibold">
+                  <AvatarFallback className="bg-primary text-white font-semibold text-sm">
                     {post.author.split(' ').map((n: string) => n[0]).join('')}
                   </AvatarFallback>
                 </Avatar>
-                <div>
-                  <div className="font-semibold text-white">{post.author}</div>
-                  <div className="text-sm text-gray-400">Technology Expert</div>
+                <div className="text-left">
+                  <div className="font-semibold text-white text-sm">{post.author}</div>
+                  <div className="text-xs text-gray-400">Technology Expert</div>
                 </div>
               </div>
               
-              <div className="flex items-center gap-6 text-sm">
+              <div className="flex items-center gap-4 text-sm">
                 <span className="flex items-center gap-2">
                   <Calendar className="h-4 w-4" />
                   {new Date(post.date).toLocaleDateString('en-US', { 
                     year: 'numeric', 
-                    month: 'long', 
+                    month: 'short', 
                     day: 'numeric' 
                   })}
                 </span>
@@ -275,26 +279,27 @@ export default function BlogSingle() {
         </div>
       </section>
 
-      {/* Enhanced Content Section */}
+      {/* Content Section - Matching Homepage Style */}
       <section className="py-16">
-        <div className="max-w-6xl mx-auto px-4 lg:px-8">
+        <div className="max-w-[1440px] mx-auto px-8 lg:px-16">
           <div className="lg:grid lg:grid-cols-12 lg:gap-12">
             {/* Main Content */}
             <article className="lg:col-span-8">
-              <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-12 border border-gray-100">
+              <div className="bg-white rounded-xl shadow-lg p-8 lg:p-12 border border-gray-100">
                 {/* Featured Image */}
                 <div className="mb-8">
                   <img
                     src={post.image}
                     alt={post.title}
-                    className="w-full h-64 lg:h-80 object-cover rounded-xl shadow-lg"
+                    className="w-full h-64 lg:h-80 object-cover rounded-xl shadow-md"
                   />
                 </div>
 
                 {/* Article Content */}
                 <div 
-                  className="prose prose-lg max-w-none"
+                  className="prose prose-lg max-w-none text-gray-600 leading-relaxed"
                   dangerouslySetInnerHTML={{ __html: post.content }}
+                  style={{ fontSize: '1.125rem', lineHeight: '1.8' }}
                 />
 
                 {/* Enhanced Tags */}
