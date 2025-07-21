@@ -15,10 +15,6 @@ const blogPostsData: { [key: string]: any } = {
     title: "Become a Partner with XCon Technologies",
     slug: "become-partner-xcon-technologies",
     content: `
-      <div class="prose-image">
-        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Team collaboration and partnership" class="w-full h-64 object-cover rounded-lg mb-6" />
-      </div>
-
       <h2>Introduction</h2>
       <p>In today's fast-moving digital world, collaboration is more than just a business strategy. It's a growth engine. At XCon Technologies, building strong, meaningful partnerships is the key to mutual success. Whether you're an individual freelancer or a full-scale digital agency, there's a place for you in our expanding partner network. Let's explore how you can become part of something impactful.</p>
 
@@ -97,10 +93,6 @@ const blogPostsData: { [key: string]: any } = {
       </ol>
       
       <p>From there, you'll have everything you need to succeed, including marketing support, case studies, and project tracking tools.</p>
-
-      <div class="prose-image">
-        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Success and growth in business partnership" class="w-full h-64 object-cover rounded-lg mb-6 mt-6" />
-      </div>
 
       <h2>Success in Action</h2>
       <p>One of our partners started by referring just two clients. Within three months, they expanded into a full-time white-label reseller, handling over ten active projects with our backend support. That's the kind of growth you can experience when you team up with the right people.</p>
