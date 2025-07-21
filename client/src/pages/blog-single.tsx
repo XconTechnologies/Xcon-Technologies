@@ -281,7 +281,7 @@ export default function BlogSingle() {
 
       {/* Content Section - Matching Homepage Style */}
       <section className="py-16">
-        <div className="max-w-[1440px] mx-auto px-8 lg:px-16">
+        <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <div className="lg:grid lg:grid-cols-12 lg:gap-12">
             {/* Main Content */}
             <article className="lg:col-span-8">
@@ -406,28 +406,26 @@ export default function BlogSingle() {
                   </div>
                 </div>
 
-                {/* Article Stats */}
-                <div className="bg-gray-50 rounded-2xl p-6">
-                  <h3 className="text-lg font-bold text-gray-900 mb-4">Article Stats</h3>
+                {/* Partnership CTA */}
+                <div className="bg-primary rounded-2xl p-6 text-white">
+                  <h3 className="text-lg font-bold mb-4">Ready to Start Your Partnership Journey?</h3>
+                  <p className="text-primary-foreground/90 mb-6" style={{ fontSize: '1.125rem', lineHeight: '1.8' }}>
+                    Join hundreds of successful partners who are growing their business with XCon Technologies.
+                  </p>
                   <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-600">Views</span>
-                      <span className="font-semibold">{post.views.toLocaleString()}</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-600">Reading Time</span>
-                      <span className="font-semibold">{post.readTime}</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-600">Published</span>
-                      <span className="font-semibold">
-                        {new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
-                      </span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-600">Category</span>
-                      <Badge className="bg-primary/10 text-primary">{post.category}</Badge>
-                    </div>
+                    <Button
+                      className="w-full bg-white text-primary hover:bg-gray-100 font-semibold"
+                      onClick={() => trackEvent('partnership_apply', 'blog_cta', 'sidebar')}
+                    >
+                      Apply for Partnership
+                    </Button>
+                    <Button
+                      variant="outline"
+                      className="w-full border-white text-white hover:bg-white hover:text-primary font-semibold"
+                      onClick={() => trackEvent('partnership_schedule', 'blog_cta', 'sidebar')}
+                    >
+                      Schedule a Call
+                    </Button>
                   </div>
                 </div>
 
