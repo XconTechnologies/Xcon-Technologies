@@ -88,6 +88,7 @@ export default function Footer() {
           {/* Right Column - Company Links */}
           <div className="space-y-6">
             <ul className="space-y-3 text-gray-600">
+              <li><Link href="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
               <li><a href="#" className="hover:text-primary transition-colors">Privacy Policy</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Terms Of Service</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">About Us</a></li>

@@ -23,6 +23,8 @@ import MvpDevelopment from "@/pages/services/mvp-development";
 import DevOps from "@/pages/services/devops";
 import QaTesting from "@/pages/services/qa-testing";
 import ItConsulting from "@/pages/services/it-consulting";
+import Blog from "@/pages/blog";
+import BlogSingle from "@/pages/blog-single";
 
 function Router() {
   // Track page views when routes change
@@ -47,6 +49,8 @@ function Router() {
       <Route path="/services/qa-testing" component={QaTesting} />
       <Route path="/services/it-consulting" component={ItConsulting} />
       <Route path="/services/it-consultation" component={ItConsulting} />
+      <Route path="/blog" component={Blog} />
+      <Route path="/blog/:slug" component={BlogSingle} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -173,6 +173,11 @@ export default function Header() {
                 Career
               </button>
             </Link>
+            <Link href="/blog">
+              <button className="text-white hover:text-primary transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">
+                Blog
+              </button>
+            </Link>
             <Link href="/about">
               <button className="text-white hover:text-primary transition-colors font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">
                 About
@@ -229,6 +234,11 @@ export default function Header() {
               <Link href="/career">
                 <button className="text-white hover:text-primary transition-colors font-medium text-left py-2">
                   Career
+                </button>
+              </Link>
+              <Link href="/blog">
+                <button className="text-white hover:text-primary transition-colors font-medium text-left py-2">
+                  Blog
                 </button>
               </Link>
               <Link href="/about">
