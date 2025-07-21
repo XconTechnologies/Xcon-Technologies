@@ -1,13 +1,19 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "wouter";
-import { ArrowLeft, Calendar, Clock, User, Share2, Heart, BookOpen, Eye, MessageCircle, Twitter, Facebook, Linkedin, Copy, Check } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, User, Share2, Heart, BookOpen, Eye, MessageCircle, Twitter, Facebook, Linkedin, Copy, Check, ChevronDown, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import QuoteModal from "@/components/quote-modal";
 import { trackEvent } from "@/lib/analytics";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useToast } from "@/hooks/use-toast";
+import PhoneInput from "@/components/ui/phone-input";
 
 // XCon Technologies blog post data
 const blogPostsData: { [key: string]: any } = {
@@ -142,7 +148,19 @@ export default function BlogSingle() {
   const [isLiked, setIsLiked] = useState(false);
   const [likes, setLikes] = useState(0);
   const [copied, setCopied] = useState(false);
-  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  const [isPartnershipModalOpen, setIsPartnershipModalOpen] = useState(false);
+  const [expandedFaqs, setExpandedFaqs] = useState<number[]>([]);
+  const [partnershipForm, setPartnershipForm] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    partnershipType: '',
+    experience: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
   
   const post = slug ? blogPostsData[slug] : null;
 
@@ -188,6 +206,86 @@ export default function BlogSingle() {
       trackEvent('blog_share', 'engagement', `${platform}_${post?.title}`);
     }
   };
+
+  const toggleFaq = (index: number) => {
+    setExpandedFaqs(prev => 
+      prev.includes(index) 
+        ? prev.filter(i => i !== index)
+        : [...prev, index]
+    );
+  };
+
+  const handlePartnershipSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/partnership', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(partnershipForm),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Partnership Application Submitted!",
+          description: "We'll review your application and get back to you within 24 hours.",
+        });
+        setIsPartnershipModalOpen(false);
+        setPartnershipForm({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          partnershipType: '',
+          experience: '',
+          message: ''
+        });
+        trackEvent('partnership_form_submit', 'blog_partnership', 'success');
+      } else {
+        throw new Error('Failed to submit');
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to submit partnership application. Please try again.",
+        variant: "destructive",
+      });
+      trackEvent('partnership_form_submit', 'blog_partnership', 'error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  // FAQs data
+  const faqs = [
+    {
+      question: "What types of partnerships does XCon Technologies offer?",
+      answer: "We offer four main partnership types: Referral Partners (earn commissions for successful referrals), Affiliate Marketers (promote our services online), Strategic Business Partners (joint ventures and collaborations), and White-Label Resellers (offer our services under your brand)."
+    },
+    {
+      question: "How much can I earn as a partner?",
+      answer: "Earnings vary by partnership type and project size. Referral partners typically earn 10-15% commission, while white-label resellers can earn 20-30% margins. Strategic partners negotiate custom revenue sharing agreements based on their contribution and involvement."
+    },
+    {
+      question: "What support do you provide to partners?",
+      answer: "Partners receive dedicated support including marketing materials, technical documentation, sales training, direct access to our partnership team, co-branded presentations, and ongoing assistance with client communication and project delivery."
+    },
+    {
+      question: "How long does the partnership approval process take?",
+      answer: "We typically review partnership applications within 24-48 hours. Once approved, we'll schedule an onboarding call to discuss your goals, provide access to partner resources, and outline next steps for collaboration."
+    },
+    {
+      question: "Are there any requirements to become a partner?",
+      answer: "While we welcome partners from various backgrounds, we look for individuals or companies with relevant industry experience, a professional network, commitment to quality service, and alignment with our values of transparency and client success."
+    },
+    {
+      question: "Can I pause or end the partnership anytime?",
+      answer: "Yes, our partnerships are flexible with no long-term contracts. You can pause or terminate the partnership at any time. We believe in building relationships based on mutual benefit and success rather than binding agreements."
+    }
+  ];
 
   if (!post) {
     return (
@@ -304,6 +402,33 @@ export default function BlogSingle() {
                   style={{ fontSize: '1.125rem', lineHeight: '1.8' }}
                 />
 
+                {/* FAQs Section */}
+                <div className="mt-12 pt-8 border-t border-gray-200">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+                  <div className="space-y-4">
+                    {faqs.map((faq, index) => (
+                      <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
+                        <button
+                          onClick={() => toggleFaq(index)}
+                          className="w-full px-6 py-4 text-left flex items-center justify-between bg-white hover:bg-gray-50 transition-colors"
+                        >
+                          <h3 className="font-medium text-gray-900 text-base">{faq.question}</h3>
+                          {expandedFaqs.includes(index) ? (
+                            <ChevronDown className="h-5 w-5 text-gray-500 flex-shrink-0" />
+                          ) : (
+                            <ChevronRight className="h-5 w-5 text-gray-500 flex-shrink-0" />
+                          )}
+                        </button>
+                        {expandedFaqs.includes(index) && (
+                          <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
+                            <p className="text-gray-600 text-sm leading-relaxed">{faq.answer}</p>
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
                 {/* Enhanced Tags */}
                 <div className="mt-12 pt-8 border-t border-gray-200">
                   <h4 className="text-lg font-semibold text-gray-900 mb-4">Topics covered in this article:</h4>
@@ -363,21 +488,11 @@ export default function BlogSingle() {
                     <Button
                       className="w-full bg-white text-primary hover:bg-gray-100 font-medium text-sm py-2"
                       onClick={() => {
-                        setIsQuoteModalOpen(true);
+                        setIsPartnershipModalOpen(true);
                         trackEvent('partnership_apply', 'blog_cta', 'sidebar');
                       }}
                     >
                       Apply for Partnership
-                    </Button>
-                    <Button
-                      variant="outline"
-                      className="w-full border-white text-white hover:bg-white hover:text-primary font-medium text-sm py-2 border-2"
-                      onClick={() => {
-                        setIsQuoteModalOpen(true);
-                        trackEvent('partnership_schedule', 'blog_cta', 'sidebar');
-                      }}
-                    >
-                      Schedule a Call
                     </Button>
                   </div>
                 </div>
@@ -478,11 +593,103 @@ export default function BlogSingle() {
 
       <Footer />
       
-      {/* Quote Modal */}
-      <QuoteModal 
-        isOpen={isQuoteModalOpen} 
-        onClose={() => setIsQuoteModalOpen(false)} 
-      />
+      {/* Partnership Form Modal */}
+      <Dialog open={isPartnershipModalOpen} onOpenChange={setIsPartnershipModalOpen}>
+        <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-xl font-bold text-center">Partnership Application</DialogTitle>
+          </DialogHeader>
+          <form onSubmit={handlePartnershipSubmit} className="space-y-4">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="name">Full Name *</Label>
+                <Input
+                  id="name"
+                  required
+                  value={partnershipForm.name}
+                  onChange={(e) => setPartnershipForm(prev => ({ ...prev, name: e.target.value }))}
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="company">Company Name</Label>
+                <Input
+                  id="company"
+                  value={partnershipForm.company}
+                  onChange={(e) => setPartnershipForm(prev => ({ ...prev, company: e.target.value }))}
+                />
+              </div>
+            </div>
+            
+            <div className="space-y-2">
+              <Label htmlFor="email">Email Address *</Label>
+              <Input
+                id="email"
+                type="email"
+                required
+                value={partnershipForm.email}
+                onChange={(e) => setPartnershipForm(prev => ({ ...prev, email: e.target.value }))}
+              />
+            </div>
+            
+            <div className="space-y-2">
+              <Label htmlFor="phone">Phone Number *</Label>
+              <PhoneInput
+                value={partnershipForm.phone}
+                onChange={(value) => setPartnershipForm(prev => ({ ...prev, phone: value }))}
+              />
+            </div>
+            
+            <div className="space-y-2">
+              <Label htmlFor="partnershipType">Partnership Type *</Label>
+              <Select
+                value={partnershipForm.partnershipType}
+                onValueChange={(value) => setPartnershipForm(prev => ({ ...prev, partnershipType: value }))}
+                required
+              >
+                <SelectTrigger>
+                  <SelectValue placeholder="Select partnership type" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="referral">Referral Partner</SelectItem>
+                  <SelectItem value="affiliate">Affiliate Marketer</SelectItem>
+                  <SelectItem value="strategic">Strategic Business Partner</SelectItem>
+                  <SelectItem value="white-label">White-Label Reseller</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            
+            <div className="space-y-2">
+              <Label htmlFor="experience">Relevant Experience</Label>
+              <Textarea
+                id="experience"
+                placeholder="Tell us about your background and experience..."
+                value={partnershipForm.experience}
+                onChange={(e) => setPartnershipForm(prev => ({ ...prev, experience: e.target.value }))}
+                rows={3}
+              />
+            </div>
+            
+            <div className="space-y-2">
+              <Label htmlFor="message">Why do you want to partner with us?</Label>
+              <Textarea
+                id="message"
+                placeholder="Share your goals and how you envision our partnership..."
+                value={partnershipForm.message}
+                onChange={(e) => setPartnershipForm(prev => ({ ...prev, message: e.target.value }))}
+                rows={4}
+              />
+            </div>
+            
+            <Button
+              type="submit"
+              className="w-full bg-primary text-white hover:bg-primary/90"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "Submitting..." : "Submit Partnership Application"}
+            </Button>
+          </form>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

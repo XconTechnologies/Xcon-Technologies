@@ -4,7 +4,7 @@ import multer from "multer";
 import { storage } from "./storage";
 import { sendContactFormEmail, sendQuoteRequestEmail, sendConsultationRequestEmail } from "./email";
 import { sendContactFormEmailSG, sendQuoteRequestEmailSG, sendConsultationRequestEmailSG } from "./sendgrid-email";
-import { sendContactFormEmailResend, sendQuoteRequestEmailResend, sendConsultationRequestEmailResend, sendInternshipApplicationEmailResend } from "./resend-email";
+import { sendContactFormEmailResend, sendQuoteRequestEmailResend, sendConsultationRequestEmailResend, sendInternshipApplicationEmailResend, sendPartnershipApplicationEmailResend } from "./resend-email";
 import { emailLogger } from "./email-logger";
 
 // Configure multer for file uploads
@@ -253,6 +253,50 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
     } catch (error) {
       console.error("Internship application error:", error);
+      res.status(500).json({ error: "Internal server error" });
+    }
+  });
+
+  // Partnership application endpoint
+  app.post("/api/partnership", async (req, res) => {
+    try {
+      const { name, email, phone, company, partnershipType, experience, message } = req.body;
+      
+      // Validate required fields
+      if (!name || !email || !partnershipType) {
+        return res.status(400).json({ error: "Missing required fields" });
+      }
+      
+      // Validate email format
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        return res.status(400).json({ error: "Invalid email format" });
+      }
+      
+      // Log the partnership application submission
+      console.log("Partnership application submission:", {
+        name,
+        email,
+        phone,
+        company,
+        partnershipType,
+        experience,
+        message,
+        timestamp: new Date().toISOString(),
+      });
+      
+      // Send email notification using Resend
+      try {
+        await sendPartnershipApplicationEmailResend({ name, email, phone, company, partnershipType, experience, message });
+        res.json({ success: true, message: "Partnership application sent successfully! We'll review your application and get back to you within 24 hours." });
+      } catch (emailError) {
+        console.error("Email sending failed:", emailError);
+        // Always log the submission even if email fails
+        res.json({ success: true, message: "Your partnership application has been received! We'll review and contact you within 24 hours." });
+      }
+      
+    } catch (error) {
+      console.error("Partnership application error:", error);
       res.status(500).json({ error: "Internal server error" });
     }
   });

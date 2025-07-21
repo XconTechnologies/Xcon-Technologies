@@ -626,3 +626,168 @@ export async function sendInternshipApplicationEmailResend(formData: InternshipA
     return true;
   }
 }
+
+export const sendPartnershipApplicationEmailResend = async ({
+  name,
+  email,
+  phone,
+  company,
+  partnershipType,
+  experience,
+  message
+}: {
+  name: string;
+  email: string;
+  phone?: string;
+  company?: string;
+  partnershipType: string;
+  experience?: string;
+  message?: string;
+}) => {
+  // Log submission to file for reliable tracking
+  await emailLogger.logSubmission({
+    type: 'partnership',
+    data: { name, email, phone, company, partnershipType, experience, message },
+    timestamp: new Date().toISOString(),
+    email: email
+  });
+
+  if (!resend || !RESEND_API_KEY) {
+    console.log('⚠️  Resend API key not configured, but partnership application logged');
+    return true;
+  }
+
+  try {
+    // Send email to company
+    await resend.emails.send({
+      from: 'XCon Technologies <noreply@xcontechnologies.com>',
+      to: 'askforquote@xcontechnologies.com',
+      subject: `🤝 Partnership Application - ${name}`,
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 700px; margin: 0 auto; padding: 20px;">
+          <h2 style="color: #7CB342; border-bottom: 2px solid #7CB342; padding-bottom: 10px; text-align: center;">
+            🤝 New Partnership Application
+          </h2>
+          
+          <div style="background-color: #f0f8ff; padding: 15px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #2196F3;">
+            <h3 style="color: #1976D2; margin-top: 0; text-align: center;">Partnership Application from Blog</h3>
+            <p style="color: #333; margin: 0; text-align: center; font-weight: bold;">Application submitted via blog partnership form</p>
+          </div>
+          
+          <table style="width: 100%; border-collapse: collapse; margin: 20px 0; background-color: #f9f9f9; border-radius: 8px;">
+            <tr style="background-color: #7CB342; color: white;">
+              <th colspan="2" style="padding: 15px; text-align: left; border-radius: 8px 8px 0 0;">
+                👤 Applicant Details
+              </th>
+            </tr>
+            <tr>
+              <td style="padding: 12px 15px; border-bottom: 1px solid #ddd; font-weight: bold; width: 30%;">Name:</td>
+              <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">${name}</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">Email:</td>
+              <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">${email}</td>
+            </tr>
+            ${phone ? `
+            <tr>
+              <td style="padding: 12px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">Phone:</td>
+              <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">${phone}</td>
+            </tr>` : ''}
+            ${company ? `
+            <tr>
+              <td style="padding: 12px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">Company:</td>
+              <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">${company}</td>
+            </tr>` : ''}
+            <tr>
+              <td style="padding: 12px 15px; font-weight: bold;">Partnership Type:</td>
+              <td style="padding: 12px 15px;">${partnershipType}</td>
+            </tr>
+          </table>
+
+          ${experience ? `
+          <table style="width: 100%; border-collapse: collapse; margin: 20px 0; background-color: #fff8e1; border-radius: 8px;">
+            <tr style="background-color: #ff9800; color: white;">
+              <th style="padding: 15px; text-align: left; border-radius: 8px 8px 0 0;">
+                💼 Relevant Experience
+              </th>
+            </tr>
+            <tr>
+              <td style="padding: 15px; line-height: 1.6;">${experience}</td>
+            </tr>
+          </table>` : ''}
+
+          ${message ? `
+          <table style="width: 100%; border-collapse: collapse; margin: 20px 0; background-color: #f3e5f5; border-radius: 8px;">
+            <tr style="background-color: #9c27b0; color: white;">
+              <th style="padding: 15px; text-align: left; border-radius: 8px 8px 0 0;">
+                💡 Partnership Goals
+              </th>
+            </tr>
+            <tr>
+              <td style="padding: 15px; line-height: 1.6;">${message}</td>
+            </tr>
+          </table>` : ''}
+          
+          <div style="margin-top: 30px; padding: 20px; border-top: 1px solid #ddd; color: #666; font-size: 14px; text-align: center;">
+            <p><strong>🤝 This partnership application was submitted from XCon Technologies blog</strong></p>
+            <p>Submitted on: ${new Date().toLocaleString()}</p>
+          </div>
+        </div>
+      `
+    });
+
+    // Auto-reply to the applicant
+    await resend.emails.send({
+      from: 'XCon Technologies <noreply@xcontechnologies.com>',
+      to: email,
+      subject: 'Partnership Application Received - XCon Technologies',
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+          <h2 style="color: #7CB342; border-bottom: 2px solid #7CB342; padding-bottom: 10px;">
+            🤝 Thank You for Your Partnership Interest!
+          </h2>
+          
+          <p>Dear ${name},</p>
+          
+          <p>Thank you for your interest in partnering with XCon Technologies! We've received your partnership application and are excited about the potential opportunity to work together.</p>
+          
+          <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h3 style="color: #333; margin-top: 0;">What's Next:</h3>
+            <ul style="line-height: 1.6;">
+              <li>Our partnership team will review your application within 24 hours</li>
+              <li>We'll evaluate your background and partnership type preference</li>
+              <li>A partnership specialist will reach out to discuss opportunities</li>
+              <li>If approved, we'll guide you through our partner onboarding process</li>
+            </ul>
+          </div>
+          
+          <div style="background-color: #e8f5e8; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #7CB342;">
+            <h3 style="color: #2e7d2e; margin-top: 0;">📋 Application Summary:</h3>
+            <ul style="line-height: 1.6; color: #333;">
+              <li>Partnership Type: ${partnershipType}</li>
+              <li>Submitted: ${new Date().toLocaleString()}</li>
+            </ul>
+          </div>
+          
+          <div style="margin-top: 30px; padding: 20px; background-color: #7CB342; color: white; border-radius: 8px;">
+            <h3 style="margin-top: 0;">Contact Information:</h3>
+            <p><strong>Email:</strong> askforquote@xcontechnologies.com</p>
+            <p><strong>Phone:</strong> +1 (513) 302-4718</p>
+            <p><strong>Address:</strong> Ohio City, USA</p>
+          </div>
+          
+          <p>Best regards,<br>
+          <strong>XCon Technologies Partnership Team</strong></p>
+        </div>
+      `
+    });
+
+    console.log('✅ Partnership application emails sent successfully via Resend');
+    return true;
+
+  } catch (error) {
+    console.log('⚠️  Resend sending failed, but partnership application logged');
+    console.error('Resend error:', error);
+    return true;
+  }
+}
