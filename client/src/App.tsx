@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { useEffect } from "react";
 import { initGA } from "./lib/analytics";
 import { useAnalytics } from "./hooks/use-analytics";
+import { useScrollRestoration } from "./hooks/use-scroll-restoration";
 import Home from "@/pages/home";
 import Career from "@/pages/career";
 import Internship from "@/pages/internship";
@@ -29,6 +30,9 @@ import BlogSingle from "@/pages/blog-single";
 function Router() {
   // Track page views when routes change
   useAnalytics();
+  
+  // Scroll to top on route change
+  useScrollRestoration();
   
   return (
     <Switch>
