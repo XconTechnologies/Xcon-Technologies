@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import QuoteModal from "@/components/quote-modal";
 import { trackEvent } from "@/lib/analytics";
 
 // XCon Technologies blog post data
@@ -141,6 +142,7 @@ export default function BlogSingle() {
   const [isLiked, setIsLiked] = useState(false);
   const [likes, setLikes] = useState(0);
   const [copied, setCopied] = useState(false);
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   
   const post = slug ? blogPostsData[slug] : null;
 
@@ -281,7 +283,7 @@ export default function BlogSingle() {
 
       {/* Content Section - Matching Homepage Style */}
       <section className="py-16">
-        <div className="max-w-[1200px] mx-auto px-4 lg:px-8">
+        <div className="max-w-[1200px] mx-auto px-2 lg:px-4">
           <div className="lg:grid lg:grid-cols-12 lg:gap-8">
             {/* Main Content */}
             <article className="lg:col-span-8">
@@ -360,14 +362,20 @@ export default function BlogSingle() {
                   <div className="space-y-2">
                     <Button
                       className="w-full bg-white text-primary hover:bg-gray-100 font-medium text-sm py-2"
-                      onClick={() => trackEvent('partnership_apply', 'blog_cta', 'sidebar')}
+                      onClick={() => {
+                        setIsQuoteModalOpen(true);
+                        trackEvent('partnership_apply', 'blog_cta', 'sidebar');
+                      }}
                     >
                       Apply for Partnership
                     </Button>
                     <Button
                       variant="outline"
-                      className="w-full border-white text-white hover:bg-white hover:text-primary font-medium text-sm py-2"
-                      onClick={() => trackEvent('partnership_schedule', 'blog_cta', 'sidebar')}
+                      className="w-full border-white text-white hover:bg-white hover:text-primary font-medium text-sm py-2 border-2"
+                      onClick={() => {
+                        setIsQuoteModalOpen(true);
+                        trackEvent('partnership_schedule', 'blog_cta', 'sidebar');
+                      }}
                     >
                       Schedule a Call
                     </Button>
@@ -448,7 +456,7 @@ export default function BlogSingle() {
 
       {/* Newsletter Section - Moved to Last Position */}
       <section className="py-12 bg-primary">
-        <div className="max-w-6xl mx-auto px-4 lg:px-8 text-center">
+        <div className="max-w-6xl mx-auto px-2 lg:px-4 text-center">
           <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">Get More Insights</h2>
           <p className="text-base text-white/90 mb-6 max-w-2xl mx-auto">
             Subscribe to our newsletter for the latest technology trends and partnership opportunities.
@@ -469,6 +477,12 @@ export default function BlogSingle() {
       </section>
 
       <Footer />
+      
+      {/* Quote Modal */}
+      <QuoteModal 
+        isOpen={isQuoteModalOpen} 
+        onClose={() => setIsQuoteModalOpen(false)} 
+      />
     </div>
   );
 }
