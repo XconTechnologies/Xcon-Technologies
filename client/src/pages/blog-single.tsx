@@ -281,7 +281,7 @@ export default function BlogSingle() {
 
       {/* Content Section - Matching Homepage Style */}
       <section className="py-16">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
           <div className="lg:grid lg:grid-cols-12 lg:gap-12">
             {/* Main Content */}
             <article className="lg:col-span-8">
@@ -352,21 +352,21 @@ export default function BlogSingle() {
             <aside className="lg:col-span-4 mt-12 lg:mt-0">
               <div className="sticky top-24 space-y-8">
                 {/* Partnership CTA - Moved to Top */}
-                <div className="bg-primary rounded-2xl p-6 text-white">
-                  <h3 className="text-lg font-bold mb-4">Ready to Start Your Partnership Journey?</h3>
-                  <p className="text-primary-foreground/90 mb-6" style={{ fontSize: '1.125rem', lineHeight: '1.8' }}>
+                <div className="bg-primary rounded-xl p-5 text-white">
+                  <h3 className="text-base font-bold mb-3">Ready to Start Your Partnership Journey?</h3>
+                  <p className="text-white/90 mb-5 text-sm leading-relaxed">
                     Join hundreds of successful partners who are growing their business with XCon Technologies.
                   </p>
-                  <div className="space-y-3">
+                  <div className="space-y-2">
                     <Button
-                      className="w-full bg-white text-primary hover:bg-gray-100 font-semibold"
+                      className="w-full bg-white text-primary hover:bg-gray-100 font-medium text-sm py-2"
                       onClick={() => trackEvent('partnership_apply', 'blog_cta', 'sidebar')}
                     >
                       Apply for Partnership
                     </Button>
                     <Button
                       variant="outline"
-                      className="w-full border-white text-white hover:bg-white hover:text-primary font-semibold"
+                      className="w-full border-white text-white hover:bg-white hover:text-primary font-medium text-sm py-2"
                       onClick={() => trackEvent('partnership_schedule', 'blog_cta', 'sidebar')}
                     >
                       Schedule a Call
@@ -375,55 +375,55 @@ export default function BlogSingle() {
                 </div>
 
                 {/* Social Share & Engagement - Moved After Partnership CTA */}
-                <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
-                  <h3 className="text-lg font-bold text-gray-900 mb-4">Share & Engage</h3>
+                <div className="bg-white rounded-xl shadow-sm p-5 border border-gray-200">
+                  <h3 className="text-base font-bold text-gray-900 mb-3">Share & Engage</h3>
                   
                   {/* Like Button */}
                   <Button
                     onClick={handleLike}
                     variant="outline"
-                    className={`w-full mb-4 ${isLiked ? 'bg-red-50 border-red-200 text-red-600' : ''}`}
+                    className={`w-full mb-3 text-sm py-2 ${isLiked ? 'bg-red-50 border-red-200 text-red-600' : ''}`}
                   >
-                    <Heart className={`h-5 w-5 mr-2 ${isLiked ? 'fill-red-600' : ''}`} />
+                    <Heart className={`h-4 w-4 mr-2 ${isLiked ? 'fill-red-600' : ''}`} />
                     {isLiked ? 'Liked' : 'Like'} ({likes})
                   </Button>
 
                   {/* Share Buttons */}
-                  <div className="grid grid-cols-2 gap-2 mb-4">
+                  <div className="grid grid-cols-2 gap-2">
                     <Button
                       onClick={() => handleShare('twitter')}
                       variant="outline"
                       size="sm"
-                      className="flex items-center justify-center gap-2"
+                      className="flex items-center justify-center gap-1 text-xs py-1.5"
                     >
-                      <Twitter className="h-4 w-4" />
+                      <Twitter className="h-3 w-3" />
                       Twitter
                     </Button>
                     <Button
                       onClick={() => handleShare('facebook')}
                       variant="outline"
                       size="sm"
-                      className="flex items-center justify-center gap-2"
+                      className="flex items-center justify-center gap-1 text-xs py-1.5"
                     >
-                      <Facebook className="h-4 w-4" />
+                      <Facebook className="h-3 w-3" />
                       Facebook
                     </Button>
                     <Button
                       onClick={() => handleShare('linkedin')}
                       variant="outline"
                       size="sm"
-                      className="flex items-center justify-center gap-2"
+                      className="flex items-center justify-center gap-1 text-xs py-1.5"
                     >
-                      <Linkedin className="h-4 w-4" />
+                      <Linkedin className="h-3 w-3" />
                       LinkedIn
                     </Button>
                     <Button
                       onClick={() => handleShare('copy')}
                       variant="outline"
                       size="sm"
-                      className="flex items-center justify-center gap-2"
+                      className="flex items-center justify-center gap-1 text-xs py-1.5"
                     >
-                      {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+                      {copied ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
                       {copied ? 'Copied!' : 'Copy'}
                     </Button>
                   </div>
@@ -447,20 +447,20 @@ export default function BlogSingle() {
       </section>
 
       {/* Newsletter Section - Moved to Last Position */}
-      <section className="py-16 bg-gradient-to-br from-primary to-primary/90">
-        <div className="max-w-4xl mx-auto px-4 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Get More Insights</h2>
-          <p className="text-xl text-primary-foreground/90 mb-8" style={{ fontSize: '1.125rem', lineHeight: '1.8' }}>
+      <section className="py-12 bg-primary">
+        <div className="max-w-6xl mx-auto px-6 lg:px-12 text-center">
+          <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">Get More Insights</h2>
+          <p className="text-base text-white/90 mb-6 max-w-2xl mx-auto">
             Subscribe to our newsletter for the latest technology trends and partnership opportunities.
           </p>
-          <div className="max-w-md mx-auto">
-            <div className="flex flex-col sm:flex-row gap-4">
+          <div className="max-w-lg mx-auto">
+            <div className="flex flex-col sm:flex-row gap-3">
               <input
                 type="email"
                 placeholder="Your email address"
-                className="flex-1 px-6 py-3 rounded-xl border-0 text-gray-900 text-lg"
+                className="flex-1 px-4 py-2.5 rounded-lg border-0 text-gray-900 text-sm focus:ring-2 focus:ring-white/20 focus:outline-none"
               />
-              <Button className="bg-white text-primary hover:bg-gray-100 px-8 py-3 rounded-xl font-semibold text-lg">
+              <Button className="bg-white text-primary hover:bg-gray-100 px-6 py-2.5 rounded-lg font-medium text-sm transition-all">
                 Subscribe Now
               </Button>
             </div>
