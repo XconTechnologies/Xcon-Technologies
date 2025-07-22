@@ -87,11 +87,11 @@ export default function ValuesProjects() {
                 <span>✨</span>
                 Solutions for Every Stage
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Grow with the Right
                 <span className="text-primary block md:inline"> Technology Partner</span>
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
                 Whether you're launching your first product or scaling to enterprise level, 
                 we deliver solutions that evolve with your business journey.
               </p>
