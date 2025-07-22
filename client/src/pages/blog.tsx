@@ -130,11 +130,11 @@ export default function Blog() {
       </section>
 
       {/* Search Filter Section - Centered */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-8 bg-gray-50">
         <div className="max-w-[1440px] mx-auto px-8 lg:px-16">
           {/* Centered Search Section */}
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Search Articles</h2>
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Search Articles</h2>
             <div className="max-w-2xl mx-auto">
               <div className="relative">
                 <Input
@@ -156,7 +156,7 @@ export default function Blog() {
             </div>
 
             {/* Category Filters - Centered */}
-            <div className="flex flex-wrap justify-center gap-3 mt-8">
+            <div className="flex flex-wrap justify-center gap-3 mt-6">
               {categories.map((category) => (
                 <Button
                   key={category}
@@ -178,15 +178,8 @@ export default function Blog() {
       </section>
 
       {/* Blog Articles Section */}
-      <section className="py-16 bg-white">
+      <section className="py-8 bg-white">
         <div className="max-w-[1440px] mx-auto px-8 lg:px-16">
-          {/* Results Count */}
-          <div className="text-center mb-12">
-            <h3 className="text-2xl font-bold text-gray-900">
-              {filteredPosts.length} Article{filteredPosts.length !== 1 ? 's' : ''}
-              {searchTerm && <span> for "<span className="text-primary">{searchTerm}</span>"</span>}
-            </h3>
-          </div>
 
           {/* Clean Card-Based Blog Layout */}
           {filteredPosts.length === 0 ? (
@@ -209,7 +202,7 @@ export default function Blog() {
               </Button>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredPosts.map((post, index) => (
                 <article key={post.id} className="group bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300">
                   {/* Card Image */}
