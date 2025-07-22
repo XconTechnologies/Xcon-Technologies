@@ -58,78 +58,36 @@ export default function ValuesProjects() {
       <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
         {/* Tailored Solutions for Every Business */}
         <div>
-          <div className="text-center mb-10">
+          <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
               Tailored <span className="text-primary">Solutions</span> for Every Business
             </h2>
-            <p className="text-gray-600 mt-4 max-w-3xl mx-auto">
-              From rapid prototyping for startups to enterprise-scale solutions, we deliver the right technology services to accelerate your business growth at every stage
+            <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
+              From rapid prototyping for startups to enterprise-scale solutions
             </p>
           </div>
           
-          <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
-            <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[400px]">
-              {/* Left Sidebar - Business Types */}
-              <div className="lg:col-span-4 bg-gray-50 p-8">
-                <h3 className="text-lg font-semibold text-gray-800 mb-6">Business Types</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {businessTypes.map((business, index) => (
+              <div key={index} className="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-lg transition-all duration-300 hover:border-primary/20">
+                <div className="text-center mb-4">
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">{business.title}</h3>
+                  <p className="text-gray-600 text-sm">
+                    {business.title === "For Startups" && "Accelerate your startup journey with rapid solutions"}
+                    {business.title === "For SMBs" && "Scale your business with custom development solutions"}
+                    {business.title === "For Enterprises" && "Transform operations with comprehensive solutions"}
+                  </p>
+                </div>
+                
                 <div className="space-y-2">
-                  {businessTypes.map((business, index) => (
-                    <button
-                      key={index}
-                      onMouseEnter={() => setSelectedBusiness(business.title)}
-                      className={`w-full text-left px-6 py-4 rounded-xl transition-all duration-200 ${
-                        selectedBusiness === business.title
-                          ? "bg-primary text-white shadow-lg"
-                          : "bg-white text-gray-700 hover:bg-gray-100 shadow-sm"
-                      }`}
-                    >
-                      <span className="font-medium">{business.title}</span>
-                    </button>
+                  {business.services.map((service, serviceIndex) => (
+                    <div key={serviceIndex} className="bg-primary/10 text-primary rounded-lg px-3 py-2 text-center">
+                      <span className="text-sm font-medium">{service}</span>
+                    </div>
                   ))}
                 </div>
               </div>
-
-              {/* Right Content - Details */}
-              <div className="lg:col-span-8 p-8">
-                {businessTypes.map((business, index) => (
-                  <div
-                    key={index}
-                    className={`${
-                      selectedBusiness === business.title ? "block" : "hidden"
-                    }`}
-                  >
-                    <div className="h-full flex flex-col">
-                      <div className="mb-8">
-                        <h2 className="text-3xl font-bold text-gray-800 mb-4">
-                          {business.title}
-                        </h2>
-                        <p className="text-gray-600">
-                          {business.title === "For Startups" && "Accelerate your startup journey with rapid prototyping, MVP development, and proof-of-concept solutions designed to validate your ideas quickly and efficiently."}
-                          {business.title === "For SMBs" && "Scale your small to medium business with custom software development, digital marketing solutions, and ongoing maintenance to keep your systems running smoothly."}
-                          {business.title === "For Enterprises" && "Transform your enterprise operations with comprehensive software solutions, cloud implementation services, and DevOps practices for maximum efficiency and scalability."}
-                        </p>
-                      </div>
-
-                      <div className="flex-1">
-                        <h4 className="text-lg font-semibold text-gray-800 mb-4">Our Services</h4>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                          {business.services.map((service, serviceIndex) => (
-                            <div key={serviceIndex} className="bg-primary text-white rounded-xl p-4 flex items-center">
-                              <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" />
-                              <span className="text-sm font-medium">
-                                {service}
-                              </span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
