@@ -478,125 +478,7 @@ export default function BlogSingle() {
                   </div>
                 </div>
 
-                {/* Related Blogs Section */}
-                <div className="mt-16 pt-12 border-t border-gray-200">
-                  <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Related Articles</h2>
-                    <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-                      Discover more insights and expert knowledge from XCon Technologies
-                    </p>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
-                    {[
-                      {
-                        id: 1,
-                        slug: "digital-transformation-guide",
-                        title: "Complete Guide to Digital Transformation",
-                        excerpt: "Discover how digital transformation can revolutionize your business operations and drive growth in the modern marketplace.",
-                        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        category: "Technology",
-                        date: "2025-01-10",
-                        readTime: "12 min read",
-                        author: "XCon Technologies Team"
-                      },
-                      {
-                        id: 2,
-                        slug: "cloud-migration-strategies",
-                        title: "Cloud Migration Strategies for Modern Businesses",
-                        excerpt: "Learn the best practices for migrating your business to the cloud and maximizing the benefits of cloud computing.",
-                        image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        category: "Cloud",
-                        date: "2025-01-05",
-                        readTime: "10 min read",
-                        author: "XCon Technologies Team"
-                      },
-                      {
-                        id: 3,
-                        slug: "ai-development-trends",
-                        title: "AI Development Trends Shaping 2025",
-                        excerpt: "Explore the latest artificial intelligence trends and how they're transforming software development and business operations.",
-                        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        category: "AI & Technology",
-                        date: "2024-12-28",
-                        readTime: "15 min read",
-                        author: "XCon Technologies Team"
-                      },
-                      {
-                        id: 4,
-                        slug: "cybersecurity-best-practices",
-                        title: "Cybersecurity Best Practices for Small Businesses",
-                        excerpt: "Protect your business from cyber threats with these essential cybersecurity practices and tools for modern enterprises.",
-                        image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        category: "Security",
-                        date: "2024-12-20",
-                        readTime: "9 min read",
-                        author: "XCon Technologies Team"
-                      }
-                    ].map((relatedPost) => (
-                      <article
-                        key={relatedPost.id}
-                        className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group border border-gray-100"
-                        onClick={() => {
-                          window.open(`/blog/${relatedPost.slug}`, '_blank');
-                          trackEvent('related_blog_click', 'blog_engagement', relatedPost.slug);
-                        }}
-                      >
-                        <div className="relative overflow-hidden">
-                          <img
-                            src={relatedPost.image}
-                            alt={relatedPost.title}
-                            className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                          />
-                          <div className="absolute top-3 left-3">
-                            <Badge className="bg-primary text-white text-xs font-medium">
-                              {relatedPost.category}
-                            </Badge>
-                          </div>
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-all duration-300"></div>
-                        </div>
-                        
-                        <div className="p-5">
-                          <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors line-clamp-2 leading-tight">
-                            {relatedPost.title}
-                          </h3>
-                          
-                          <p className="text-gray-600 mb-4 text-sm line-clamp-3 leading-relaxed">
-                            {relatedPost.excerpt}
-                          </p>
-                          
-                          <div className="flex items-center justify-between text-xs text-gray-500 pt-3 border-t border-gray-100">
-                            <div className="flex items-center gap-3">
-                              <span className="flex items-center gap-1">
-                                <Calendar className="h-3 w-3" />
-                                {new Date(relatedPost.date).toLocaleDateString('en-US', { 
-                                  month: 'short', 
-                                  day: 'numeric' 
-                                })}
-                              </span>
-                              <span className="flex items-center gap-1">
-                                <Clock className="h-3 w-3" />
-                                {relatedPost.readTime}
-                              </span>
-                            </div>
-                            <Button
-                              size="sm"
-                              variant="ghost"
-                              className="text-primary hover:bg-primary/10 h-6 px-2 text-xs font-medium"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                window.open(`/blog/${relatedPost.slug}`, '_blank');
-                                trackEvent('related_blog_read_more', 'blog_engagement', relatedPost.slug);
-                              }}
-                            >
-                              Read More
-                            </Button>
-                          </div>
-                        </div>
-                      </article>
-                    ))}
-                  </div>
-                </div>
+
               </div>
             </article>
 
@@ -690,6 +572,128 @@ export default function BlogSingle() {
                 </div>
               </div>
             </aside>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Articles Section - Full Width */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-[1440px] mx-auto px-8 lg:px-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Related Articles</h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Discover more insights and expert knowledge from XCon Technologies
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {[
+              {
+                id: 1,
+                slug: "digital-transformation-guide",
+                title: "Complete Guide to Digital Transformation",
+                excerpt: "Discover how digital transformation can revolutionize your business operations and drive growth in the modern marketplace.",
+                image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                category: "Technology",
+                date: "2025-01-10",
+                readTime: "12 min read",
+                author: "XCon Technologies Team"
+              },
+              {
+                id: 2,
+                slug: "cloud-migration-strategies",
+                title: "Cloud Migration Strategies for Modern Businesses",
+                excerpt: "Learn the best practices for migrating your business to the cloud and maximizing the benefits of cloud computing.",
+                image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                category: "Cloud",
+                date: "2025-01-05",
+                readTime: "10 min read",
+                author: "XCon Technologies Team"
+              },
+              {
+                id: 3,
+                slug: "ai-development-trends",
+                title: "AI Development Trends Shaping 2025",
+                excerpt: "Explore the latest artificial intelligence trends and how they're transforming software development and business operations.",
+                image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                category: "AI & Technology",
+                date: "2024-12-28",
+                readTime: "15 min read",
+                author: "XCon Technologies Team"
+              },
+              {
+                id: 4,
+                slug: "cybersecurity-best-practices",
+                title: "Cybersecurity Best Practices for Small Businesses",
+                excerpt: "Protect your business from cyber threats with these essential cybersecurity practices and tools for modern enterprises.",
+                image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                category: "Security",
+                date: "2024-12-20",
+                readTime: "9 min read",
+                author: "XCon Technologies Team"
+              }
+            ].map((relatedPost) => (
+              <article
+                key={relatedPost.id}
+                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group border border-gray-100"
+                onClick={() => {
+                  window.open(`/blog/${relatedPost.slug}`, '_blank');
+                  trackEvent('related_blog_click', 'blog_engagement', relatedPost.slug);
+                }}
+              >
+                <div className="relative overflow-hidden">
+                  <img
+                    src={relatedPost.image}
+                    alt={relatedPost.title}
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute top-3 left-3">
+                    <Badge className="bg-primary text-white text-xs font-medium">
+                      {relatedPost.category}
+                    </Badge>
+                  </div>
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-all duration-300"></div>
+                </div>
+                
+                <div className="p-5">
+                  <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors line-clamp-2 leading-tight">
+                    {relatedPost.title}
+                  </h3>
+                  
+                  <p className="text-gray-600 mb-4 text-sm line-clamp-3 leading-relaxed">
+                    {relatedPost.excerpt}
+                  </p>
+                  
+                  <div className="flex items-center justify-between text-xs text-gray-500 pt-3 border-t border-gray-100">
+                    <div className="flex items-center gap-3">
+                      <span className="flex items-center gap-1">
+                        <Calendar className="h-3 w-3" />
+                        {new Date(relatedPost.date).toLocaleDateString('en-US', { 
+                          month: 'short', 
+                          day: 'numeric' 
+                        })}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Clock className="h-3 w-3" />
+                        {relatedPost.readTime}
+                      </span>
+                    </div>
+                    <Button
+                      size="sm"
+                      variant="ghost"
+                      className="text-primary hover:bg-primary/10 h-6 px-2 text-xs font-medium"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open(`/blog/${relatedPost.slug}`, '_blank');
+                        trackEvent('related_blog_read_more', 'blog_engagement', relatedPost.slug);
+                      }}
+                    >
+                      Read More
+                    </Button>
+                  </div>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
