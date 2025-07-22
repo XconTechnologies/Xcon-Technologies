@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Code, Database, Cloud, Smartphone, Edit, Target, BarChart3, Repeat } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 import QuoteModal from "./quote-modal";
 import softwareImg from "@assets/Xcon web - software_1752304457704.jpg";
 import mvpImg from "@assets/Xcon web - MVP development_1752304457706.jpg";
@@ -31,7 +32,8 @@ export default function Services() {
           "Seamlessly integrating new and the right software with existing systems for improved efficiency."
         ],
         image: seoImg,
-        cardTitle: "Unlock Growth with Scalable, SEO-Friendly Website Solutions"
+        cardTitle: "Unlock Growth with Scalable, SEO-Friendly Website Solutions",
+        serviceUrl: "/services/web-development"
       }
     },
     {
@@ -48,7 +50,8 @@ export default function Services() {
           "Performance optimization and scalability planning."
         ],
         image: softwareImg,
-        cardTitle: "Smart Software for Smart Business Decisions"
+        cardTitle: "Smart Software for Smart Business Decisions",
+        serviceUrl: "/services/software-development"
       }
     },
     {
@@ -66,7 +69,8 @@ export default function Services() {
           "Get 24/7 support for seamless cloud operations and maintenance."
         ],
         image: cloudImg,
-        cardTitle: "Optimizing Cloud Infrastructure for Smarter Business Decisions"
+        cardTitle: "Optimizing Cloud Infrastructure for Smarter Business Decisions",
+        serviceUrl: "/services/cloud-engineering"
       }
     },
     {
@@ -84,7 +88,8 @@ export default function Services() {
           "Maintaining mobile app development software for continued performance and reliability."
         ],
         image: appImg,
-        cardTitle: "Turning Your Business Needs into Smart, Functional Apps"
+        cardTitle: "Turning Your Business Needs into Smart, Functional Apps",
+        serviceUrl: "/services/app-development"
       }
     },
     {
@@ -102,7 +107,8 @@ export default function Services() {
           "Provide clear feedback to user actions through visual cues."
         ],
         image: uiuxImg,
-        cardTitle: "Enhance User Satisfaction with our Flawless UI/UX Design"
+        cardTitle: "Enhance User Satisfaction with our Flawless UI/UX Design",
+        serviceUrl: "/services/web-development"
       }
     },
     {
@@ -120,7 +126,8 @@ export default function Services() {
           "Scalable architecture for future growth."
         ],
         image: mvpImg,
-        cardTitle: "Turning Ideas into Scalable, Market-Ready MVPs"
+        cardTitle: "Turning Ideas into Scalable, Market-Ready MVPs",
+        serviceUrl: "/services/mvp-development"
       }
     },
     {
@@ -138,7 +145,8 @@ export default function Services() {
           "Conversion rate optimization for better results."
         ],
         image: digitalMarketingImg,
-        cardTitle: "Drive More Traffic, Leads & Sales with Customized Digital Marketing Plan"
+        cardTitle: "Drive More Traffic, Leads & Sales with Customized Digital Marketing Plan",
+        serviceUrl: "/services/web-development"
       }
     },
     {
@@ -156,7 +164,8 @@ export default function Services() {
           "Build flexible systems that grow with your business requirements."
         ],
         image: dataEngineeringImg,
-        cardTitle: "Transforming Data into Business Intelligence"
+        cardTitle: "Transforming Data into Business Intelligence",
+        serviceUrl: "/services/data-engineering"
       }
     }
   ];
@@ -229,9 +238,6 @@ export default function Services() {
                     <span className="flex-shrink-0">{activeTabData?.icon}</span>
                     <span className="font-semibold text-sm sm:text-base">{activeTabData?.title}</span>
                   </div>
-                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-                    {activeTabData?.content.title}
-                  </h3>
                 </div>
                 
                 <div className="space-y-3 sm:space-y-4">
@@ -247,13 +253,21 @@ export default function Services() {
                   ))}
                 </div>
                 
-                <div className="pt-4">
+                <div className="pt-4 flex flex-col sm:flex-row gap-3">
                   <Button
                     onClick={() => setIsQuoteModalOpen(true)}
                     className="bg-primary hover:bg-primary/90 text-white px-6 sm:px-8 py-3 rounded-full font-medium transition-all duration-300 uppercase text-sm shadow-lg hover:shadow-xl w-full sm:w-auto"
                   >
                     GET A QUOTE
                   </Button>
+                  <Link href={activeTabData?.content.serviceUrl || "#"}>
+                    <Button
+                      variant="outline"
+                      className="border-primary text-primary hover:bg-primary hover:text-white px-6 sm:px-8 py-3 rounded-full font-medium transition-all duration-300 uppercase text-sm w-full sm:w-auto"
+                    >
+                      VIEW SERVICE
+                    </Button>
+                  </Link>
                 </div>
               </div>
 
