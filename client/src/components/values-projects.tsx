@@ -32,7 +32,7 @@ export default function ValuesProjects() {
       subtitle: "Launch & Scale Fast",
       description: "Turn innovative ideas into market-ready products with our agile development approach and startup-focused solutions.",
       icon: "🚀",
-      gradient: "from-purple-500 to-pink-500",
+      gradient: "from-primary to-primary/80",
       services: [
         "MVP Development",
         "Product Validation",
@@ -45,7 +45,7 @@ export default function ValuesProjects() {
       subtitle: "Scale & Optimize",
       description: "Enhance your existing operations with custom solutions designed to streamline processes and drive growth.",
       icon: "📈",
-      gradient: "from-blue-500 to-cyan-500",
+      gradient: "from-primary to-primary/80",
       services: [
         "Custom Software Solutions",
         "Process Automation",
@@ -58,7 +58,7 @@ export default function ValuesProjects() {
       subtitle: "Transform & Lead",
       description: "Comprehensive enterprise solutions that modernize infrastructure and position you as an industry leader.",
       icon: "🏢",
-      gradient: "from-green-500 to-emerald-500",
+      gradient: "from-primary to-primary/80",
       services: [
         "Enterprise Architecture",
         "Cloud Migration",
