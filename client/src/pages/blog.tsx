@@ -120,7 +120,7 @@ export default function Blog() {
         <div className="relative max-w-[1440px] mx-auto px-8 lg:px-16">
           <div className="text-center text-white">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Blog <span className="text-primary">Archive</span>
+              Our <span className="text-primary">Blog</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-0 max-w-4xl mx-auto leading-relaxed">
               Explore our comprehensive collection of technology insights and partnership resources
@@ -169,7 +169,6 @@ export default function Blog() {
                   }`}
                 >
                   {category}
-                  {category === "All" && <span className="ml-2 text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">{blogPosts.length}</span>}
                 </Button>
               ))}
             </div>
