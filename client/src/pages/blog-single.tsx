@@ -143,6 +143,9 @@ export default function BlogSingle() {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  // Newsletter subscription state
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [isNewsletterSubmitting, setIsNewsletterSubmitting] = useState(false);
   const { toast } = useToast();
   
   const post = slug ? blogPostsData[slug] : null;
@@ -239,6 +242,64 @@ export default function BlogSingle() {
       trackEvent('partnership_form_submit', 'blog_partnership', 'error');
     } finally {
       setIsSubmitting(false);
+    }
+  };
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!newsletterEmail) {
+      toast({
+        title: "Email Required",
+        description: "Please enter your email address to subscribe.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(newsletterEmail)) {
+      toast({
+        title: "Invalid Email",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsNewsletterSubmitting(true);
+
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: newsletterEmail }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast({
+          title: "Successfully Subscribed!",
+          description: "Thank you for subscribing to our newsletter. Check your email for confirmation.",
+        });
+        setNewsletterEmail('');
+        trackEvent('newsletter_subscribe', 'blog_engagement', newsletterEmail);
+      } else {
+        throw new Error(data.error || 'Failed to subscribe');
+      }
+    } catch (error) {
+      toast({
+        title: "Subscription Failed",
+        description: "Failed to subscribe to newsletter. Please try again.",
+        variant: "destructive",
+      });
+      trackEvent('newsletter_subscribe_error', 'blog_engagement', newsletterEmail);
+    } finally {
+      setIsNewsletterSubmitting(false);
     }
   };
 
@@ -685,16 +746,23 @@ export default function BlogSingle() {
             Subscribe to our newsletter for the latest technology trends and partnership opportunities.
           </p>
           <div className="max-w-lg mx-auto">
-            <div className="flex flex-col sm:flex-row gap-3">
+            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3">
               <input
                 type="email"
                 placeholder="Your email address"
+                value={newsletterEmail}
+                onChange={(e) => setNewsletterEmail(e.target.value)}
                 className="flex-1 px-4 py-2.5 rounded-lg border-0 text-gray-900 text-sm focus:ring-2 focus:ring-white/20 focus:outline-none"
+                required
               />
-              <Button className="bg-white text-primary hover:bg-gray-100 px-6 py-2.5 rounded-lg font-medium text-sm transition-all">
-                Subscribe Now
+              <Button 
+                type="submit"
+                disabled={isNewsletterSubmitting}
+                className="bg-white text-primary hover:bg-gray-100 px-6 py-2.5 rounded-lg font-medium text-sm transition-all disabled:opacity-50"
+              >
+                {isNewsletterSubmitting ? 'Subscribing...' : 'Subscribe Now'}
               </Button>
-            </div>
+            </form>
           </div>
         </div>
       </section>

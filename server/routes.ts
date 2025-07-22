@@ -301,6 +301,114 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Newsletter subscription endpoint
+  app.post('/api/newsletter', upload.none(), async (req, res) => {
+    try {
+      const { email } = req.body;
+      
+      if (!email) {
+        return res.status(400).json({ error: 'Email is required' });
+      }
+      
+      // Basic email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        return res.status(400).json({ error: 'Invalid email format' });
+      }
+      
+      // Send confirmation email to subscriber
+      const subscriberEmailData = {
+        from: 'XCon Technologies <no-reply@xcontechnologies.com>',
+        to: email,
+        subject: 'Welcome to XCon Technologies Newsletter!',
+        html: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9f9f9;">
+            <div style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+              <div style="text-align: center; margin-bottom: 30px;">
+                <h1 style="color: #7CB342; font-size: 28px; margin: 0;">XCon Technologies</h1>
+                <p style="color: #666; font-size: 16px; margin-top: 5px;">Your Technology Partner</p>
+              </div>
+              
+              <h2 style="color: #333; font-size: 24px; margin-bottom: 20px;">Welcome to Our Newsletter!</h2>
+              
+              <p style="color: #666; font-size: 16px; line-height: 1.6; margin-bottom: 20px;">
+                Thank you for subscribing to the XCon Technologies newsletter! You'll now receive:
+              </p>
+              
+              <ul style="color: #666; font-size: 16px; line-height: 1.8; margin-bottom: 25px; padding-left: 20px;">
+                <li>Latest technology trends and insights</li>
+                <li>Partnership opportunities and announcements</li>
+                <li>Industry news and expert analysis</li>
+                <li>Exclusive content and early access to resources</li>
+                <li>Notifications about new blog posts and articles</li>
+              </ul>
+              
+              <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 25px;">
+                <p style="color: #666; font-size: 14px; margin: 0; text-align: center;">
+                  <strong>Stay Connected:</strong> Follow us on social media for daily updates and insights.
+                </p>
+              </div>
+              
+              <div style="text-align: center; margin-top: 30px;">
+                <p style="color: #666; font-size: 14px; margin: 0;">
+                  Best regards,<br>
+                  <strong>The XCon Technologies Team</strong>
+                </p>
+              </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 20px;">
+              <p style="color: #999; font-size: 12px;">
+                © 2025 XCon Technologies. All rights reserved.
+              </p>
+            </div>
+          </div>
+        `
+      };
+      
+      // Send notification email to company
+      const companyEmailData = {
+        from: 'XCon Technologies <no-reply@xcontechnologies.com>',
+        to: 'askforquote@xcontechnologies.com',
+        subject: 'New Newsletter Subscription',
+        html: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+            <h2 style="color: #7CB342;">New Newsletter Subscription</h2>
+            <p style="font-size: 16px; color: #333;">
+              Someone has subscribed to the XCon Technologies newsletter.
+            </p>
+            <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; margin: 20px 0;">
+              <p style="margin: 0; font-size: 16px;"><strong>Email:</strong> ${email}</p>
+              <p style="margin: 10px 0 0 0; font-size: 14px; color: #666;"><strong>Subscribed:</strong> ${new Date().toLocaleString()}</p>
+            </div>
+          </div>
+        `
+      };
+      
+      // Send emails using existing Resend functionality
+      // We'll create a dedicated newsletter email function
+      const { Resend } = await import('resend');
+      const resendInstance = new Resend(process.env.RESEND_API_KEY || 're_XzcqVNwT_7CA8WS5NgxVp1dX79TowURDG');
+      
+      await resendInstance.emails.send(subscriberEmailData);
+      await resendInstance.emails.send(companyEmailData);
+      
+      // Log the subscription
+      console.log(`Newsletter subscription: ${email} at ${new Date().toISOString()}`);
+      
+      res.json({ 
+        success: true, 
+        message: 'Successfully subscribed to newsletter!' 
+      });
+      
+    } catch (error) {
+      console.error('Newsletter subscription error:', error);
+      res.status(500).json({ 
+        error: 'Failed to subscribe to newsletter. Please try again.' 
+      });
+    }
+  });
+
   // Admin endpoint to view form submissions
   app.get("/admin/submissions", async (req, res) => {
     try {
