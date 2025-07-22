@@ -244,31 +244,27 @@ export default function BlogSingle() {
     }
   };
 
-  // FAQs data - Original content
+  // FAQs data - Partnership content
   const faqs = [
     {
-      question: "What is your software development process?",
-      answer: "We follow an agile methodology with iterative development cycles, regular client feedback, and continuous testing to ensure high-quality deliverables."
+      question: "Do I need technical skills to become a partner?",
+      answer: "No, we offer partnership options that don't require any tech background."
     },
     {
-      question: "How do you ensure code quality?",
-      answer: "Our quality assurance includes code reviews, automated testing, manual testing, performance optimization, and adherence to industry best practices."
+      question: "Is there any cost to join?",
+      answer: "No, joining our partner program is completely free."
     },
     {
-      question: "What technologies do you specialize in?",
-      answer: "We work with modern technologies including React, Node.js, Python, cloud platforms, mobile development frameworks, and emerging technologies like AI and blockchain."
+      question: "When will I get paid?",
+      answer: "We offer timely payments once the referred client completes their payment."
     },
     {
-      question: "How do you handle project timelines?",
-      answer: "We provide realistic timelines based on project scope, maintain regular communication, and use project management tools to track progress and milestones."
+      question: "Can I work from outside Pakistan?",
+      answer: "Yes, we accept partners from all countries."
     },
     {
-      question: "Do you provide post-launch support?",
-      answer: "Yes, we offer comprehensive post-launch support including maintenance, updates, bug fixes, and feature enhancements to ensure your application continues to perform optimally."
-    },
-    {
-      question: "What makes XCon Technologies different?",
-      answer: "Our commitment to quality, experienced team, client-focused approach, use of cutting-edge technologies, and proven track record of successful project deliveries set us apart."
+      question: "What if I want to stop?",
+      answer: "There's no contract binding you. You can pause or stop anytime."
     }
   ];
 
