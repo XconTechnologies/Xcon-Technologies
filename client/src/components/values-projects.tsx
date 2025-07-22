@@ -28,27 +28,42 @@ export default function ValuesProjects() {
 
   const businessTypes = [
     {
-      title: "For Startups",
+      title: "Startups",
+      subtitle: "Launch & Scale Fast",
+      description: "Turn innovative ideas into market-ready products with our agile development approach and startup-focused solutions.",
+      icon: "🚀",
+      gradient: "from-purple-500 to-pink-500",
       services: [
-        "Rapid Prototyping",
         "MVP Development",
-        "POC Development"
+        "Product Validation",
+        "Technical Consulting",
+        "Rapid Prototyping"
       ]
     },
     {
-      title: "For SMBs",
+      title: "Growing Businesses",
+      subtitle: "Scale & Optimize",
+      description: "Enhance your existing operations with custom solutions designed to streamline processes and drive growth.",
+      icon: "📈",
+      gradient: "from-blue-500 to-cyan-500",
       services: [
-        "Custom Software Development",
-        "Digital Marketing Solutions",
-        "App Maintenance and Fixes"
+        "Custom Software Solutions",
+        "Process Automation",
+        "Digital Transformation",
+        "System Integration"
       ]
     },
     {
-      title: "For Enterprises",
+      title: "Enterprise",
+      subtitle: "Transform & Lead",
+      description: "Comprehensive enterprise solutions that modernize infrastructure and position you as an industry leader.",
+      icon: "🏢",
+      gradient: "from-green-500 to-emerald-500",
       services: [
-        "Enterprise Software Solutions",
-        "Cloud Implementation Services",
-        "DevOps Services"
+        "Enterprise Architecture",
+        "Cloud Migration",
+        "DevOps Implementation",
+        "Legacy Modernization"
       ]
     }
   ];
@@ -56,65 +71,79 @@ export default function ValuesProjects() {
   return (
     <section className="py-12 bg-white">
       <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
-        {/* Tailored Solutions for Every Business */}
-        <div className="relative">
-          {/* Background Elements */}
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-blue-50 rounded-3xl"></div>
-          <div className="absolute top-10 left-10 w-20 h-20 bg-primary/10 rounded-full blur-2xl"></div>
-          <div className="absolute bottom-10 right-10 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl"></div>
+        {/* Solutions for Every Business Stage */}
+        <div className="relative overflow-hidden">
+          {/* Background Design */}
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-50"></div>
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-br from-blue-500/10 to-transparent rounded-full blur-3xl"></div>
           
-          <div className="relative z-10 p-8 lg:p-12">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                Tailored <span className="text-primary">Solutions</span> for Every Business
+          <div className="relative z-10 py-16">
+            {/* Header Section */}
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                <span>✨</span>
+                Solutions for Every Stage
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                Grow with the Right
+                <span className="text-primary block md:inline"> Technology Partner</span>
               </h2>
-              <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-                From rapid prototyping for startups to enterprise-scale solutions
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Whether you're launching your first product or scaling to enterprise level, 
+                we deliver solutions that evolve with your business journey.
               </p>
             </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Cards Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
               {businessTypes.map((business, index) => (
                 <div key={index} className="group relative">
-                  {/* Card Background with Gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-500"></div>
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  
-                  {/* Card Content */}
-                  <div className="relative z-10 p-8 rounded-2xl border border-gray-200/50 group-hover:border-primary/20 transition-all duration-500">
-                    {/* Icon/Badge */}
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-2xl shadow-lg mb-6 group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-white font-bold text-lg">
-                        {business.title === "For Startups" && "🚀"}
-                        {business.title === "For SMBs" && "🏢"}
-                        {business.title === "For Enterprises" && "🏛️"}
-                      </span>
-                    </div>
+                  {/* Card Container */}
+                  <div className="bg-white rounded-3xl p-8 h-full shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 group-hover:border-gray-200 relative overflow-hidden">
                     
-                    <div className="mb-6">
-                      <h3 className="text-2xl font-bold text-gray-800 mb-3">{business.title}</h3>
-                      <p className="text-gray-600 leading-relaxed">
-                        {business.title === "For Startups" && "Accelerate your startup journey with rapid prototyping and proof-of-concept solutions"}
-                        {business.title === "For SMBs" && "Scale your business with custom development and digital marketing solutions"}
-                        {business.title === "For Enterprises" && "Transform operations with comprehensive software and cloud solutions"}
-                      </p>
-                    </div>
+                    {/* Background Gradient on Hover */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${business.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-3xl`}></div>
                     
-                    <div className="space-y-3">
-                      {business.services.map((service, serviceIndex) => (
-                        <div key={serviceIndex} className="relative">
-                          <div className="bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 rounded-xl px-4 py-3 group-hover:from-primary/15 group-hover:to-primary/10 transition-all duration-300">
-                            <div className="flex items-center">
-                              <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                              <span className="text-gray-700 font-medium text-sm">{service}</span>
-                            </div>
+                    {/* Content */}
+                    <div className="relative z-10">
+                      {/* Icon */}
+                      <div className={`inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br ${business.gradient} rounded-2xl shadow-xl mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                        <span className="text-3xl">{business.icon}</span>
+                      </div>
+                      
+                      {/* Title & Subtitle */}
+                      <div className="mb-6">
+                        <h3 className="text-2xl font-bold text-gray-900 mb-2">{business.title}</h3>
+                        <p className={`text-lg font-semibold bg-gradient-to-r ${business.gradient} bg-clip-text text-transparent mb-3`}>
+                          {business.subtitle}
+                        </p>
+                        <p className="text-gray-600 leading-relaxed">
+                          {business.description}
+                        </p>
+                      </div>
+                      
+                      {/* Services List */}
+                      <div className="space-y-3">
+                        {business.services.map((service, serviceIndex) => (
+                          <div key={serviceIndex} className="flex items-center group-hover:translate-x-1 transition-transform duration-300" style={{ transitionDelay: `${serviceIndex * 50}ms` }}>
+                            <div className={`w-3 h-3 rounded-full bg-gradient-to-r ${business.gradient} mr-4 flex-shrink-0`}></div>
+                            <span className="text-gray-700 font-medium">{service}</span>
                           </div>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
+                      
+                      {/* Call to Action */}
+                      <div className="mt-8 pt-6 border-t border-gray-100">
+                        <button className={`w-full py-3 px-6 rounded-xl bg-gradient-to-r ${business.gradient} text-white font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300`}>
+                          Get Started
+                        </button>
+                      </div>
                     </div>
                     
-                    {/* Hover Effect Decoration */}
-                    <div className="absolute top-4 right-4 w-8 h-8 bg-primary/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    {/* Decorative Elements */}
+                    <div className="absolute top-6 right-6 w-12 h-12 bg-gray-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute bottom-6 left-6 w-8 h-8 bg-gray-50 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                   </div>
                 </div>
               ))}
