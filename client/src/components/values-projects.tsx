@@ -1,8 +1,10 @@
 import { Link, Lightbulb, Users, Shield, CheckCircle } from "lucide-react";
 import { useState } from "react";
+import QuoteModal from './quote-modal';
 
 export default function ValuesProjects() {
   const [selectedBusiness, setSelectedBusiness] = useState("For Startups");
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const values = [
     {
       icon: <Link className="h-6 w-6" />,
@@ -135,7 +137,10 @@ export default function ValuesProjects() {
                       
                       {/* Call to Action */}
                       <div className="mt-8 pt-6 border-t border-gray-100">
-                        <button className="w-full py-3 px-6 rounded-xl bg-primary text-white font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+                        <button 
+                          onClick={() => setIsQuoteModalOpen(true)}
+                          className="w-full py-3 px-6 rounded-xl bg-primary text-white font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+                        >
                           Get Started
                         </button>
                       </div>
@@ -151,6 +156,12 @@ export default function ValuesProjects() {
           </div>
         </div>
       </div>
+
+      {/* Quote Modal */}
+      <QuoteModal 
+        isOpen={isQuoteModalOpen} 
+        onClose={() => setIsQuoteModalOpen(false)} 
+      />
     </section>
   );
 }
