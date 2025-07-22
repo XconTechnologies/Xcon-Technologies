@@ -259,31 +259,31 @@ export default function BlogSingle() {
     }
   };
 
-  // FAQs data
+  // FAQs data - Original content
   const faqs = [
     {
-      question: "What types of partnerships does XCon Technologies offer?",
-      answer: "We offer four main partnership types: Referral Partners (earn commissions for successful referrals), Affiliate Marketers (promote our services online), Strategic Business Partners (joint ventures and collaborations), and White-Label Resellers (offer our services under your brand)."
+      question: "What is your software development process?",
+      answer: "We follow an agile methodology with iterative development cycles, regular client feedback, and continuous testing to ensure high-quality deliverables."
     },
     {
-      question: "How much can I earn as a partner?",
-      answer: "Earnings vary by partnership type and project size. Referral partners typically earn 10-15% commission, while white-label resellers can earn 20-30% margins. Strategic partners negotiate custom revenue sharing agreements based on their contribution and involvement."
+      question: "How do you ensure code quality?",
+      answer: "Our quality assurance includes code reviews, automated testing, manual testing, performance optimization, and adherence to industry best practices."
     },
     {
-      question: "What support do you provide to partners?",
-      answer: "Partners receive dedicated support including marketing materials, technical documentation, sales training, direct access to our partnership team, co-branded presentations, and ongoing assistance with client communication and project delivery."
+      question: "What technologies do you specialize in?",
+      answer: "We work with modern technologies including React, Node.js, Python, cloud platforms, mobile development frameworks, and emerging technologies like AI and blockchain."
     },
     {
-      question: "How long does the partnership approval process take?",
-      answer: "We typically review partnership applications within 24-48 hours. Once approved, we'll schedule an onboarding call to discuss your goals, provide access to partner resources, and outline next steps for collaboration."
+      question: "How do you handle project timelines?",
+      answer: "We provide realistic timelines based on project scope, maintain regular communication, and use project management tools to track progress and milestones."
     },
     {
-      question: "Are there any requirements to become a partner?",
-      answer: "While we welcome partners from various backgrounds, we look for individuals or companies with relevant industry experience, a professional network, commitment to quality service, and alignment with our values of transparency and client success."
+      question: "Do you provide post-launch support?",
+      answer: "Yes, we offer comprehensive post-launch support including maintenance, updates, bug fixes, and feature enhancements to ensure your application continues to perform optimally."
     },
     {
-      question: "Can I pause or end the partnership anytime?",
-      answer: "Yes, our partnerships are flexible with no long-term contracts. You can pause or terminate the partnership at any time. We believe in building relationships based on mutual benefit and success rather than binding agreements."
+      question: "What makes XCon Technologies different?",
+      answer: "Our commitment to quality, experienced team, client-focused approach, use of cutting-edge technologies, and proven track record of successful project deliveries set us apart."
     }
   ];
 
@@ -479,16 +479,22 @@ export default function BlogSingle() {
                 </div>
 
                 {/* Related Blogs Section */}
-                <div className="mt-12 pt-8 border-t border-gray-200">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-8">Related Articles</h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="mt-16 pt-12 border-t border-gray-200">
+                  <div className="text-center mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Related Articles</h2>
+                    <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                      Discover more insights and expert knowledge from XCon Technologies
+                    </p>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
                     {[
                       {
                         id: 1,
                         slug: "digital-transformation-guide",
                         title: "Complete Guide to Digital Transformation",
                         excerpt: "Discover how digital transformation can revolutionize your business operations and drive growth in the modern marketplace.",
-                        image: "/api/placeholder/400/250",
+                        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
                         category: "Technology",
                         date: "2025-01-10",
                         readTime: "12 min read",
@@ -499,7 +505,7 @@ export default function BlogSingle() {
                         slug: "cloud-migration-strategies",
                         title: "Cloud Migration Strategies for Modern Businesses",
                         excerpt: "Learn the best practices for migrating your business to the cloud and maximizing the benefits of cloud computing.",
-                        image: "/api/placeholder/400/250",
+                        image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
                         category: "Cloud",
                         date: "2025-01-05",
                         readTime: "10 min read",
@@ -510,16 +516,27 @@ export default function BlogSingle() {
                         slug: "ai-development-trends",
                         title: "AI Development Trends Shaping 2025",
                         excerpt: "Explore the latest artificial intelligence trends and how they're transforming software development and business operations.",
-                        image: "/api/placeholder/400/250",
+                        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
                         category: "AI & Technology",
                         date: "2024-12-28",
                         readTime: "15 min read",
+                        author: "XCon Technologies Team"
+                      },
+                      {
+                        id: 4,
+                        slug: "cybersecurity-best-practices",
+                        title: "Cybersecurity Best Practices for Small Businesses",
+                        excerpt: "Protect your business from cyber threats with these essential cybersecurity practices and tools for modern enterprises.",
+                        image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                        category: "Security",
+                        date: "2024-12-20",
+                        readTime: "9 min read",
                         author: "XCon Technologies Team"
                       }
                     ].map((relatedPost) => (
                       <article
                         key={relatedPost.id}
-                        className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group"
+                        className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group border border-gray-100"
                         onClick={() => {
                           window.open(`/blog/${relatedPost.slug}`, '_blank');
                           trackEvent('related_blog_click', 'blog_engagement', relatedPost.slug);
@@ -531,15 +548,16 @@ export default function BlogSingle() {
                             alt={relatedPost.title}
                             className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                           />
-                          <div className="absolute top-4 left-4">
-                            <Badge className="bg-primary text-white text-xs">
+                          <div className="absolute top-3 left-3">
+                            <Badge className="bg-primary text-white text-xs font-medium">
                               {relatedPost.category}
                             </Badge>
                           </div>
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-all duration-300"></div>
                         </div>
                         
-                        <div className="p-6">
-                          <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                        <div className="p-5">
+                          <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors line-clamp-2 leading-tight">
                             {relatedPost.title}
                           </h3>
                           
@@ -547,8 +565,8 @@ export default function BlogSingle() {
                             {relatedPost.excerpt}
                           </p>
                           
-                          <div className="flex items-center justify-between text-xs text-gray-500">
-                            <div className="flex items-center gap-4">
+                          <div className="flex items-center justify-between text-xs text-gray-500 pt-3 border-t border-gray-100">
+                            <div className="flex items-center gap-3">
                               <span className="flex items-center gap-1">
                                 <Calendar className="h-3 w-3" />
                                 {new Date(relatedPost.date).toLocaleDateString('en-US', { 
@@ -564,7 +582,7 @@ export default function BlogSingle() {
                             <Button
                               size="sm"
                               variant="ghost"
-                              className="text-primary hover:bg-primary/10 h-6 px-2 text-xs"
+                              className="text-primary hover:bg-primary/10 h-6 px-2 text-xs font-medium"
                               onClick={(e) => {
                                 e.stopPropagation();
                                 window.open(`/blog/${relatedPost.slug}`, '_blank');
