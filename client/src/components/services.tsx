@@ -234,10 +234,9 @@ export default function Services() {
               {/* Left side - Content */}
               <div className="space-y-6 sm:space-y-8 order-2 lg:order-1">
                 <div>
-                  <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 sm:px-4 py-2 rounded-full mb-4">
-                    <span className="flex-shrink-0">{activeTabData?.icon}</span>
-                    <span className="font-semibold text-sm sm:text-base">{activeTabData?.title}</span>
-                  </div>
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+                    {activeTabData?.content.title}
+                  </h3>
                 </div>
                 
                 <div className="space-y-3 sm:space-y-4">
