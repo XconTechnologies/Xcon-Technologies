@@ -27,6 +27,8 @@ import ItConsulting from "@/pages/services/it-consulting";
 import Blog from "@/pages/blog";
 import BlogSingle from "@/pages/blog-single";
 import Profile from "@/pages/profile";
+import PrivacyPolicy from "@/pages/privacy-policy";
+import TermsOfService from "@/pages/terms-of-service";
 
 function Router() {
   // Track page views when routes change
@@ -57,6 +59,8 @@ function Router() {
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:slug" component={BlogSingle} />
       <Route path="/profile/:username" component={Profile} />
+      <Route path="/privacy-policy" component={PrivacyPolicy} />
+      <Route path="/terms-of-service" component={TermsOfService} />
       <Route component={NotFound} />
     </Switch>
   );

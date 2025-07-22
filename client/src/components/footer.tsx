@@ -89,9 +89,9 @@ export default function Footer() {
           <div className="space-y-6">
             <ul className="space-y-3 text-gray-600">
               <li><Link href="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Terms Of Service</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">About Us</a></li>
+              <li><Link href="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/terms-of-service" className="hover:text-primary transition-colors">Terms Of Service</Link></li>
+              <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
             </ul>
             
             {/* Newsletter Section */}
