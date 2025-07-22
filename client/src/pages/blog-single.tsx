@@ -104,23 +104,6 @@ const blogPostsData: { [key: string]: any } = {
       <h2>Success in Action</h2>
       <p>One of our partners started by referring just two clients. Within three months, they expanded into a full-time white-label reseller, handling over ten active projects with our backend support. That's the kind of growth you can experience when you team up with the right people.</p>
 
-      <h2>Frequently Asked Questions</h2>
-      
-      <h3>Do I need technical skills to become a partner?</h3>
-      <p>No, we offer partnership options that don't require any tech background.</p>
-      
-      <h3>Is there any cost to join?</h3>
-      <p>No, joining our partner program is completely free.</p>
-      
-      <h3>When will I get paid?</h3>
-      <p>We offer timely payments once the referred client completes their payment.</p>
-      
-      <h3>Can I work from outside Pakistan?</h3>
-      <p>Yes, we accept partners from all countries.</p>
-      
-      <h3>What if I want to stop?</h3>
-      <p>There's no contract binding you. You can pause or stop anytime.</p>
-
       <h2>Let's Build Something Together</h2>
       <p>The world is shifting fast, and businesses need smart digital partners more than ever. Whether you're looking for an extra income stream or aiming to grow your existing business, XCon Technologies is ready to support your vision.</p>
       
@@ -398,7 +381,32 @@ export default function BlogSingle() {
                   style={{ fontSize: '1.125rem', lineHeight: '1.8' }}
                 />
 
-
+                {/* FAQs Section - Collapsible */}
+                <div className="mt-12 pt-8 border-t border-gray-200">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+                  <div className="space-y-1">
+                    {faqs.map((faq, index) => (
+                      <div key={index} className="border-b border-gray-200 last:border-b-0">
+                        <button
+                          onClick={() => toggleFaq(index)}
+                          className="w-full px-0 py-4 text-left flex items-center justify-between bg-white hover:bg-gray-50 transition-colors"
+                        >
+                          <h3 className="font-medium text-gray-900 text-base pr-4">{faq.question}</h3>
+                          {expandedFaqs.includes(index) ? (
+                            <ChevronDown className="h-4 w-4 text-gray-400 flex-shrink-0" />
+                          ) : (
+                            <ChevronRight className="h-4 w-4 text-gray-400 flex-shrink-0" />
+                          )}
+                        </button>
+                        {expandedFaqs.includes(index) && (
+                          <div className="pb-4 -mt-2">
+                            <p className="text-gray-600 text-sm leading-relaxed">{faq.answer}</p>
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
 
                 {/* Enhanced Tags */}
                 <div className="mt-12 pt-8 border-t border-gray-200">
