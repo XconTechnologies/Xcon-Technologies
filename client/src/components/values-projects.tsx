@@ -32,7 +32,7 @@ export default function ValuesProjects() {
       subtitle: "Launch & Scale Fast",
       description: "Turn innovative ideas into market-ready products with our agile development approach and startup-focused solutions.",
       icon: "🚀",
-      gradient: "from-primary to-primary/80",
+      gradient: "primary",
       services: [
         "MVP Development",
         "Product Validation",
@@ -45,7 +45,7 @@ export default function ValuesProjects() {
       subtitle: "Scale & Optimize",
       description: "Enhance your existing operations with custom solutions designed to streamline processes and drive growth.",
       icon: "📈",
-      gradient: "from-primary to-primary/80",
+      gradient: "primary",
       services: [
         "Custom Software Solutions",
         "Process Automation",
@@ -58,7 +58,7 @@ export default function ValuesProjects() {
       subtitle: "Transform & Lead",
       description: "Comprehensive enterprise solutions that modernize infrastructure and position you as an industry leader.",
       icon: "🏢",
-      gradient: "from-primary to-primary/80",
+      gradient: "primary",
       services: [
         "Enterprise Architecture",
         "Cloud Migration",
@@ -102,20 +102,20 @@ export default function ValuesProjects() {
                   {/* Card Container */}
                   <div className="bg-white rounded-3xl p-8 h-full shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 group-hover:border-gray-200 relative overflow-hidden">
                     
-                    {/* Background Gradient on Hover */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${business.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-3xl`}></div>
+                    {/* Background Color on Hover */}
+                    <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-3xl"></div>
                     
                     {/* Content */}
                     <div className="relative z-10">
                       {/* Icon */}
-                      <div className={`inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br ${business.gradient} rounded-2xl shadow-xl mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                      <div className="inline-flex items-center justify-center w-20 h-20 bg-primary rounded-2xl shadow-xl mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
                         <span className="text-3xl">{business.icon}</span>
                       </div>
                       
                       {/* Title & Subtitle */}
                       <div className="mb-6">
                         <h3 className="text-2xl font-bold text-gray-900 mb-2">{business.title}</h3>
-                        <p className={`text-lg font-semibold bg-gradient-to-r ${business.gradient} bg-clip-text text-transparent mb-3`}>
+                        <p className="text-lg font-semibold text-primary mb-3">
                           {business.subtitle}
                         </p>
                         <p className="text-gray-600 leading-relaxed">
@@ -127,7 +127,7 @@ export default function ValuesProjects() {
                       <div className="space-y-3">
                         {business.services.map((service, serviceIndex) => (
                           <div key={serviceIndex} className="flex items-center group-hover:translate-x-1 transition-transform duration-300" style={{ transitionDelay: `${serviceIndex * 50}ms` }}>
-                            <div className={`w-3 h-3 rounded-full bg-gradient-to-r ${business.gradient} mr-4 flex-shrink-0`}></div>
+                            <div className="w-3 h-3 rounded-full bg-primary mr-4 flex-shrink-0"></div>
                             <span className="text-gray-700 font-medium">{service}</span>
                           </div>
                         ))}
@@ -135,7 +135,7 @@ export default function ValuesProjects() {
                       
                       {/* Call to Action */}
                       <div className="mt-8 pt-6 border-t border-gray-100">
-                        <button className={`w-full py-3 px-6 rounded-xl bg-gradient-to-r ${business.gradient} text-white font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300`}>
+                        <button className="w-full py-3 px-6 rounded-xl bg-primary text-white font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300">
                           Get Started
                         </button>
                       </div>
