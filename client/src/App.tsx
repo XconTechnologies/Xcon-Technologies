@@ -26,6 +26,7 @@ import QaTesting from "@/pages/services/qa-testing";
 import ItConsulting from "@/pages/services/it-consulting";
 import Blog from "@/pages/blog";
 import BlogSingle from "@/pages/blog-single";
+import Profile from "@/pages/profile";
 
 function Router() {
   // Track page views when routes change
@@ -55,6 +56,7 @@ function Router() {
       <Route path="/services/it-consultation" component={ItConsulting} />
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:slug" component={BlogSingle} />
+      <Route path="/profile/:username" component={Profile} />
       <Route component={NotFound} />
     </Switch>
   );

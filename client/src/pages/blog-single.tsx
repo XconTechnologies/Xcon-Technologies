@@ -448,28 +448,135 @@ export default function BlogSingle() {
 
                 {/* Enhanced Author Bio */}
                 <div className="mt-12 pt-8 border-t border-gray-200">
-                  <div className="flex items-start gap-4">
-                    <Avatar className="w-16 h-16 border-2 border-primary/20">
+                  <div className="flex items-start gap-6">
+                    <Avatar className="w-16 h-16 border-2 border-primary/20 flex-shrink-0">
                       <AvatarImage src="/api/placeholder/64/64" />
                       <AvatarFallback className="bg-primary text-white text-lg font-bold">
-                        {post.author.split(' ').map((n: string) => n[0]).join('')}
+                        XTT
                       </AvatarFallback>
                     </Avatar>
-                    <div className="flex-1">
-                      <h4 className="text-xl font-bold text-gray-900 mb-2">{post.author}</h4>
-                      <p className="text-gray-600 mb-4">
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-xl font-bold text-gray-900 mb-2">XCon Technologies Team</h4>
+                      <p className="text-gray-600 mb-4 leading-relaxed">
                         Our team of technology experts specializes in delivering cutting-edge digital solutions 
                         and insights that drive business growth and innovation.
                       </p>
                       <div className="flex gap-2">
-                        <Button size="sm" variant="outline" className="rounded-full">
-                          Follow
-                        </Button>
-                        <Button size="sm" variant="outline" className="rounded-full">
+                        <Button 
+                          size="sm" 
+                          variant="outline" 
+                          className="rounded-full hover:bg-primary hover:text-white"
+                          onClick={() => {
+                            window.open('/profile/xcon-technologies-team', '_blank');
+                            trackEvent('author_profile_view', 'blog_engagement', 'author_bio');
+                          }}
+                        >
                           View Profile
                         </Button>
                       </div>
                     </div>
+                  </div>
+                </div>
+
+                {/* Related Blogs Section */}
+                <div className="mt-12 pt-8 border-t border-gray-200">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-8">Related Articles</h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {[
+                      {
+                        id: 1,
+                        slug: "digital-transformation-guide",
+                        title: "Complete Guide to Digital Transformation",
+                        excerpt: "Discover how digital transformation can revolutionize your business operations and drive growth in the modern marketplace.",
+                        image: "/api/placeholder/400/250",
+                        category: "Technology",
+                        date: "2025-01-10",
+                        readTime: "12 min read",
+                        author: "XCon Technologies Team"
+                      },
+                      {
+                        id: 2,
+                        slug: "cloud-migration-strategies",
+                        title: "Cloud Migration Strategies for Modern Businesses",
+                        excerpt: "Learn the best practices for migrating your business to the cloud and maximizing the benefits of cloud computing.",
+                        image: "/api/placeholder/400/250",
+                        category: "Cloud",
+                        date: "2025-01-05",
+                        readTime: "10 min read",
+                        author: "XCon Technologies Team"
+                      },
+                      {
+                        id: 3,
+                        slug: "ai-development-trends",
+                        title: "AI Development Trends Shaping 2025",
+                        excerpt: "Explore the latest artificial intelligence trends and how they're transforming software development and business operations.",
+                        image: "/api/placeholder/400/250",
+                        category: "AI & Technology",
+                        date: "2024-12-28",
+                        readTime: "15 min read",
+                        author: "XCon Technologies Team"
+                      }
+                    ].map((relatedPost) => (
+                      <article
+                        key={relatedPost.id}
+                        className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group"
+                        onClick={() => {
+                          window.open(`/blog/${relatedPost.slug}`, '_blank');
+                          trackEvent('related_blog_click', 'blog_engagement', relatedPost.slug);
+                        }}
+                      >
+                        <div className="relative overflow-hidden">
+                          <img
+                            src={relatedPost.image}
+                            alt={relatedPost.title}
+                            className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
+                          <div className="absolute top-4 left-4">
+                            <Badge className="bg-primary text-white text-xs">
+                              {relatedPost.category}
+                            </Badge>
+                          </div>
+                        </div>
+                        
+                        <div className="p-6">
+                          <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                            {relatedPost.title}
+                          </h3>
+                          
+                          <p className="text-gray-600 mb-4 text-sm line-clamp-3 leading-relaxed">
+                            {relatedPost.excerpt}
+                          </p>
+                          
+                          <div className="flex items-center justify-between text-xs text-gray-500">
+                            <div className="flex items-center gap-4">
+                              <span className="flex items-center gap-1">
+                                <Calendar className="h-3 w-3" />
+                                {new Date(relatedPost.date).toLocaleDateString('en-US', { 
+                                  month: 'short', 
+                                  day: 'numeric' 
+                                })}
+                              </span>
+                              <span className="flex items-center gap-1">
+                                <Clock className="h-3 w-3" />
+                                {relatedPost.readTime}
+                              </span>
+                            </div>
+                            <Button
+                              size="sm"
+                              variant="ghost"
+                              className="text-primary hover:bg-primary/10 h-6 px-2 text-xs"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                window.open(`/blog/${relatedPost.slug}`, '_blank');
+                                trackEvent('related_blog_read_more', 'blog_engagement', relatedPost.slug);
+                              }}
+                            >
+                              Read More
+                            </Button>
+                          </div>
+                        </div>
+                      </article>
+                    ))}
                   </div>
                 </div>
               </div>
