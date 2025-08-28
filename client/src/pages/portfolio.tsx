@@ -33,7 +33,7 @@ export default function Portfolio() {
       completionDate: "2024-12-15",
       client: "TechCorp Industries",
       industry: "Technology",
-      teamSize: 5,
+      teamSize: 20,
       duration: "4 months",
       highlights: [
         "Reduced data processing time by 60%",
@@ -53,7 +53,7 @@ export default function Portfolio() {
       completionDate: "2024-11-20",
       client: "MedTech Solutions",
       industry: "Healthcare",
-      teamSize: 6,
+      teamSize: 20,
       duration: "6 months",
       highlights: [
         "Served 10,000+ patients",
@@ -73,7 +73,7 @@ export default function Portfolio() {
       completionDate: "2024-10-10",
       client: "RetailMax Inc",
       industry: "Retail",
-      teamSize: 8,
+      teamSize: 20,
       duration: "5 months",
       highlights: [
         "Processed $2M+ in transactions",
@@ -93,7 +93,7 @@ export default function Portfolio() {
       completionDate: "2024-09-05",
       client: "SecureBank Ltd",
       industry: "Finance",
-      teamSize: 10,
+      teamSize: 20,
       duration: "8 months",
       highlights: [
         "Bank-grade security implementation",
@@ -113,7 +113,7 @@ export default function Portfolio() {
       completionDate: "2024-08-22",
       client: "DataInsights Co",
       industry: "Analytics",
-      teamSize: 4,
+      teamSize: 20,
       duration: "3 months",
       highlights: [
         "Processing 1M+ data points daily",
@@ -133,7 +133,7 @@ export default function Portfolio() {
       completionDate: "2024-07-15",
       client: "PropertyHub LLC",
       industry: "Real Estate",
-      teamSize: 6,
+      teamSize: 20,
       duration: "4 months",
       highlights: [
         "10,000+ property listings",

@@ -7,7 +7,7 @@ export default function About() {
     { number: "500+", label: "Projects Completed", description: "Successfully delivered projects across various industries" },
     { number: "50+", label: "Happy Clients", description: "Trusted by leading companies worldwide" },
     { number: "4.7%", label: "Client Satisfaction", description: "Consistently high client satisfaction ratings" },
-    { number: "67", label: "Team Members", description: "Skilled professionals dedicated to excellence" }
+    { number: "20+", label: "Team Members", description: "Skilled professionals dedicated to excellence" }
   ];
 
   const values = [
@@ -41,13 +41,13 @@ export default function About() {
   const factsAndFigures = [
     {
       icon: <Code className="h-12 w-12 text-primary" />,
-      number: "5",
+      number: "5+",
       label: "Years of Excellence",
       description: "Delivering quality solutions since 2019"
     },
     {
       icon: <Users className="h-12 w-12 text-primary" />,
-      number: "100+",
+      number: "20+",
       label: "Expert Team",
       description: "Skilled professionals across technologies"
     },

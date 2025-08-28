@@ -15,7 +15,7 @@ export default function About() {
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-dark mb-6">About XCon Technologies</h2>
             <p className="text-lg text-gray-text mb-6">
-              We are a leading digital transformation company specializing in web development, mobile applications, and custom software solutions. With over 10 years of experience, we've helped businesses of all sizes achieve their digital goals.
+              We are a leading digital transformation company specializing in web development, mobile applications, and custom software solutions. With over 5+ years of experience, we've helped businesses of all sizes achieve their digital goals.
             </p>
             <p className="text-lg text-gray-text mb-8">
               Our team of expert developers, designers, and project managers work together to deliver innovative solutions that drive growth and success for our clients.
@@ -43,7 +43,7 @@ export default function About() {
               className="rounded-2xl shadow-xl"
             />
             <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-lg">
-              <div className="text-3xl font-bold text-primary">10+</div>
+              <div className="text-3xl font-bold text-primary">5+</div>
               <div className="text-sm text-gray-text">Years of Excellence</div>
             </div>
           </div>
