@@ -58,12 +58,6 @@ export default function About() {
       description: "Serving clients worldwide"
     },
     {
-      icon: <Clock className="h-12 w-12 text-primary" />,
-      number: "24/7",
-      label: "Support",
-      description: "Round-the-clock assistance"
-    },
-    {
       icon: <CheckCircle className="h-12 w-12 text-primary" />,
       number: "99%",
       label: "Success Rate",
