@@ -297,7 +297,7 @@ export default function About() {
             </p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
             {factsAndFigures.map((fact, index) => (
               <div key={index} className="text-center">
                 <div className="flex justify-center mb-4">
