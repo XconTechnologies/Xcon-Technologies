@@ -65,7 +65,7 @@ export default function About() {
     },
     {
       icon: <Star className="h-12 w-12 text-primary" />,
-      number: "4.9",
+      number: "5.0",
       label: "Client Rating",
       description: "Average satisfaction score"
     }
