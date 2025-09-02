@@ -80,6 +80,20 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(400).json({ error: "Invalid email format" });
       }
       
+      // Extract file attachments
+      const attachedFiles: Array<{ filename: string; content: string; contentType: string }> = [];
+      if (files) {
+        Object.values(files).flat().forEach(file => {
+          if (file) {
+            attachedFiles.push({
+              filename: file.originalname,
+              content: file.buffer.toString('base64'),
+              contentType: file.mimetype
+            });
+          }
+        });
+      }
+
       // Log the contact form submission
       console.log("Contact form submission:", {
         firstName,
@@ -89,20 +103,20 @@ export async function registerRoutes(app: Express): Promise<Server> {
         company,
         service,
         message,
-        fileAttached: !!file,
-        fileName: file?.originalname,
+        filesAttached: attachedFiles.length,
+        fileNames: attachedFiles.map(f => f.filename),
         timestamp: new Date().toISOString(),
       });
       
-      // Prepare contact data with optional file
+      // Prepare contact data with optional files
       const contactData: any = { firstName, lastName, email, phone, company, service, message };
       
-      if (file) {
-        contactData.file = {
-          filename: file.originalname,
-          content: file.buffer.toString('base64'),
-          contentType: file.mimetype
-        };
+      if (attachedFiles.length > 0) {
+        contactData.files = attachedFiles.map(file => ({
+          filename: file.filename,
+          content: Buffer.from(file.content, 'base64'),
+          contentType: file.contentType
+        }));
       }
       
       // Send email notification using Resend
