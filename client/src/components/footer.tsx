@@ -114,25 +114,25 @@ export default function Footer() {
             {/* Contact Information */}
             <div className="mt-6 space-y-3">
               <div className="flex items-center space-x-3">
-                <Phone className="h-6 w-6 text-primary" />
+                <Phone className="h-7 w-7 text-primary" />
                 <span className="text-gray-800">+1 (513) 302-4718</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="h-8 w-8 text-primary" />
+                <Mail className="h-7 w-7 text-primary" />
                 <div className="flex flex-col">
                   <span className="text-gray-800">askforquote@xcontechnologies.com</span>
                   <span className="text-gray-600 text-sm">Business inquiries & quotes</span>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="h-8 w-8 text-primary" />
+                <Mail className="h-7 w-7 text-primary" />
                 <div className="flex flex-col">
                   <span className="text-gray-800">nouman.ali@xcontechnologies.com</span>
                   <span className="text-gray-600 text-sm">HR & job applications</span>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
-                <MapPin className="h-6 w-6 text-primary" />
+                <MapPin className="h-7 w-7 text-primary" />
                 <span className="text-gray-800">Ohio City, USA</span>
               </div>
             </div>
