@@ -168,11 +168,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Consultation form endpoint with file upload
-  app.post("/api/consultation", upload.single('file'), async (req, res) => {
+  // Consultation form endpoint with multiple file upload
+  app.post("/api/consultation", upload.fields([
+    { name: 'file0', maxCount: 1 },
+    { name: 'file1', maxCount: 1 },
+    { name: 'file2', maxCount: 1 },
+    { name: 'file3', maxCount: 1 },
+    { name: 'file4', maxCount: 1 }
+  ]), async (req, res) => {
     try {
       const { fullName, company, workEmail, phone, service, message } = req.body;
-      const file = req.file;
+      const files = req.files as { [fieldname: string]: Express.Multer.File[] };
       
       if (!fullName || !workEmail || !message) {
         return res.status(400).json({ error: "Missing required fields" });
@@ -183,22 +189,36 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(400).json({ error: "Invalid email format" });
       }
       
+      // Extract file attachments
+      const attachedFiles: Array<{ filename: string; content: string; contentType: string }> = [];
+      if (files) {
+        Object.values(files).flat().forEach(file => {
+          if (file) {
+            attachedFiles.push({
+              filename: file.originalname,
+              content: file.buffer.toString('base64'),
+              contentType: file.mimetype
+            });
+          }
+        });
+      }
+
       console.log("Consultation request submission:", {
         fullName, company, workEmail, phone, service, message,
-        fileAttached: !!file,
-        fileName: file?.originalname,
+        filesAttached: attachedFiles.length,
+        fileNames: attachedFiles.map(f => f.filename),
         timestamp: new Date().toISOString(),
       });
       
-      // Prepare consultation data with optional file
+      // Prepare consultation data with optional files
       const consultationData: any = { fullName, company, workEmail, phone, service, message };
       
-      if (file) {
-        consultationData.file = {
-          filename: file.originalname,
-          content: file.buffer.toString('base64'),
-          contentType: file.mimetype
-        };
+      if (attachedFiles.length > 0) {
+        consultationData.files = attachedFiles.map(file => ({
+          filename: file.filename,
+          content: Buffer.from(file.content, 'base64'),
+          contentType: file.contentType
+        }));
       }
       
       try {
