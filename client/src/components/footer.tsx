@@ -118,14 +118,14 @@ export default function Footer() {
                 <span className="text-gray-800">+1 (513) 302-4718</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="h-6 w-6 text-primary" />
+                <Mail className="h-7 w-7 text-primary" />
                 <div className="flex flex-col">
                   <span className="text-gray-800">askforquote@xcontechnologies.com</span>
                   <span className="text-gray-600 text-sm">Business inquiries & quotes</span>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="h-6 w-6 text-primary" />
+                <Mail className="h-7 w-7 text-primary" />
                 <div className="flex flex-col">
                   <span className="text-gray-800">nouman.ali@xcontechnologies.com</span>
                   <span className="text-gray-600 text-sm">HR & job applications</span>
