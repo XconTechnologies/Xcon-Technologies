@@ -172,7 +172,7 @@ export default function PhoneInput({
           <button
             type="button"
             onClick={() => setIsOpen(!isOpen)}
-            className="flex items-center space-x-2 px-3 py-3 border border-gray-200 border-r-0 rounded-l-xl bg-gray-50 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
+            className="flex items-center space-x-2 px-3 py-3 border border-gray-200 border-r-0 rounded-l-xl bg-gray-50 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary h-12"
           >
             <span className="text-lg font-emoji" style={{fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'}}>{selectedCountry.flag}</span>
             <span className="text-sm font-medium text-gray-700">{selectedCountry.dialCode}</span>
@@ -221,7 +221,7 @@ export default function PhoneInput({
           value={phoneValue}
           onChange={handlePhoneChange}
           required={required}
-          className="flex-1 rounded-l-none border-l-0 focus:ring-2 focus:ring-primary/20 focus:border-primary"
+          className="flex-1 rounded-l-none border-l-0 focus:ring-2 focus:ring-primary/20 focus:border-primary h-12"
         />
       </div>
 
