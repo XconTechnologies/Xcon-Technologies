@@ -166,7 +166,7 @@ export default function PhoneInput({
 
   return (
     <div className={`relative ${className}`}>
-      <div className="flex">
+      <div className="flex items-center">
         {/* Country Code Selector */}
         <div className="relative">
           <button
