@@ -2,7 +2,7 @@ import { Resend } from 'resend';
 import { emailLogger } from './email-logger';
 
 // Check if Resend API key is available
-const RESEND_API_KEY = process.env.RESEND_API_KEY || 're_XzcqVNwT_7CA8WS5NgxVp1dX79TowURDG';
+const RESEND_API_KEY = process.env.RESEND_API_KEY;
 let resend: Resend | null = null;
 
 if (RESEND_API_KEY) {
