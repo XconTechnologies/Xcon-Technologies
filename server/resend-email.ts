@@ -23,6 +23,8 @@ interface ContactFormData {
   lastName: string;
   email: string;
   phone?: string;
+  company?: string;
+  service?: string;
   message: string;
   files?: FileAttachment[];
 }

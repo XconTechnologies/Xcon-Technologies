@@ -2,7 +2,7 @@ import { promises as fs } from 'fs';
 import { join } from 'path';
 
 interface FormSubmission {
-  type: 'contact' | 'quote' | 'consultation';
+  type: 'contact' | 'quote' | 'consultation' | 'internship' | 'partnership';
   data: any;
   timestamp: string;
   email: string;
